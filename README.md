@@ -35,6 +35,6 @@ Elegimos estos sitios por los productos que presentan y por el publico al que ap
 - Giovanni Roncoroni: diseñador freelance. Animador en PandaMotions. Modelador 3d. Músico y Panda.
 - Nicolas Alvarez Cano: Apasionado por los juegos . 
 - Diana Adrover: arquitacta 
-                      _Π_____
-                    /______/~＼
-               _____| 田田｜門｜_____  
+  *                    _Π_____
+  *                  /______/~＼
+  *             _____| 田田｜門｜_____  
