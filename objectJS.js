@@ -36,7 +36,7 @@ const dulceDeLeches = [
   { nombre: "Colonial", precio: 10, stock: 5 },
   { nombre: "Tradicional", precio: 20, stock: 5 },
   { nombre: "Clásico", precio: 30, stock: 5 },
-  { nomnbre: "Repostero", precio: 40, stock: 5 },
+  { nombre: "Repostero", precio: 40, stock: 5 },
 ];
 const lacteos = [
   { leches },
@@ -47,3 +47,4 @@ const lacteos = [
   { dulceDeLeches },
 ];
 //qué conviene usar?: module.exports || object.json => voto por exports
+export default { leches, mantecas, yogurt, quesos, dulceDeLeches }
