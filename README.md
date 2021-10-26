@@ -11,3 +11,22 @@ E-Store centradoe en la distrbucion de productos lacteos de una empresa familiar
 Nuestro objetivo es llegar a toda Argentina y por qué no, al resto de latinoamerica.
 "De Pelegrini, para el mundo."
 
+# Public Objetivo
+Venta mayorista y minorista de productos lacteos.
+# Secciones
+- Home
+- Detalle de producto
+- Carrito de compra
+- Formulario de registro
+- Formulario de login
+
+# Links de referencia
+- https://quesoteca.com/ - 
+- https://www.emporio-gourmet.com.ar/ -
+- https://faro-emporio.cl/ - 
+- https://piedrasblancas.com.ar/ - 
+
+# Opcional
+
+# Acerca del equipo
+- Alejandro Telatnik: game designer. Tech lider en empresa de USA. Atlas Digital. Apasionado por el IT.
