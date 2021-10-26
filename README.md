@@ -26,7 +26,10 @@ Venta mayorista y minorista de productos lacteos.
 - https://faro-emporio.cl/ - 
 - https://piedrasblancas.com.ar/ - 
 
+Elegimos estos sitios por los productos que presentan y por el publico al que apuntan. Cada uno de ellos tiene su forma unica de presentar su propuesta.
+
 # Opcional
 
 # Acerca del equipo
-- Alejandro Telatnik: game designer. Tech lider en empresa de USA. Atlas Digital. Apasionado por el IT.
+- Alejandro Telatnik: Game designer. Tech lider en empresa de USA. Atlas Digital. Apasionado por el IT.
+- Nicolas Alvarez Cano: Apasionado por los juegos . 
