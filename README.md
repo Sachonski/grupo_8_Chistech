@@ -30,3 +30,4 @@ Venta mayorista y minorista de productos lacteos.
 
 # Acerca del equipo
 - Alejandro Telatnik: game designer. Tech lider en empresa de USA. Atlas Digital. Apasionado por el IT.
+- Giovanni Roncoroni: diseñador freelance. Animador en PandaMotions. Modelador 3d. Músico y Panda.
