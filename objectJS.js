@@ -30,7 +30,7 @@ const yogurt = [
 const cremas = [
   { nombre: "Liviana", precio: 10, stock: 5 },
   { nombre: "Chantilly", precio: 20, stock: 5 },
-  { nombre: "Para batir", precio: 30, stock5 },
+  { nombre: "Para batir", precio: 30, stock: 5 },
 ];
 const dulceDeLeches = [
   { nombre: "Colonial", precio: 10, stock: 5 },
@@ -46,4 +46,4 @@ const lacteos = [
   { quesos },
   { dulceDeLeches },
 ];
-//qué conviene usar?: module.exports || object.json
+//qué conviene usar?: module.exports || object.json => voto por exports
