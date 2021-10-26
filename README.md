@@ -34,6 +34,7 @@ Elegimos estos sitios por los productos que presentan y por el publico al que ap
 - Alejandro Telatnik: game designer. Tech lider en empresa de USA. Atlas Digital. Apasionado por el IT.
 - Giovanni Roncoroni: diseñador freelance. Animador en PandaMotions. Modelador 3d. Músico y Panda.
 - Nicolas Alvarez Cano: Apasionado por los juegos . 
-- Diana Adrover: arquitacta  _Π_____
--                           /______/~＼
--                      _____| 田田｜門｜_____  
+- Diana Adrover: arquitacta 
+                      _Π_____
+                    /______/~＼
+               _____| 田田｜門｜_____  
