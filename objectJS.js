@@ -30,6 +30,7 @@ const yogurt = [
 const cremas = [
   { nombre: "Liviana", precio: 10, stock: 5 },
   { nombre: "Chantilly", precio: 20, stock: 5 },
+  { nombre: "Para batir", precio: 30, stock:5 },
   { nombre: "Para batir", precio: 30, stock: 5 },
 ];
 const dulceDeLeches = [
@@ -46,5 +47,9 @@ const lacteos = [
   { quesos },
   { dulceDeLeches },
 ];
+
+let productos = JSON.stringify(lacteos);
+console.log(productos);
+//qué conviene usar?: module.exports || object.json
 //qué conviene usar?: module.exports || object.json => voto por exports
-export default { leches, mantecas, yogurt, quesos, dulceDeLeches }
+
