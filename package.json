@@ -1,0 +1,25 @@
+{
+  "name": "grupo_8_chistech",
+  "version": "1.0.0",
+  "description": "Chistech Inc",
+  "main": "objectJS.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sachonski/grupo_8_Chistech.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sachonski/grupo_8_Chistech/issues"
+  },
+  "homepage": "https://github.com/Sachonski/grupo_8_Chistech#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  }
+}
