@@ -1,0 +1,17 @@
+*{
+    box-sizing: border-box;
+    margin: 1px;
+    text-align: center;
+}
+
+header{
+    border: dotted red 2px;
+}
+
+main{
+    border: dotted red 2px;
+}
+
+footer{
+    border: dotted red 2px;
+}
