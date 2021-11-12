@@ -19,3 +19,18 @@ footer {
 ul img {
     width: 30%;
 }
+
+li {
+    list-style-type: none;
+    width: 30%;
+}
+
+.productos ul {
+    border: dotted red 2px;
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 20px;
+}
