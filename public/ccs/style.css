@@ -1,11 +1,15 @@
-* {
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    outline: 0;
     box-sizing: border-box;
-    margin: 1px;
-    text-align: center;
 }
 
 header {
     border: dotted red 2px;
+    position: relative;
 }
 
 main {
@@ -17,15 +21,16 @@ footer {
 }
 
 ul img {
-    width: 30%;
+    width: 60%;
 }
 
 li {
     list-style-type: none;
-    width: 30%;
+    width: 200px;
 }
 
-.productos ul {
+.productos ul,
+.productos-destacados {
     border: dotted red 2px;
     display: flex;
     align-content: center;
