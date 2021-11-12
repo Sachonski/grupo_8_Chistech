@@ -1,17 +1,21 @@
-*{
+* {
     box-sizing: border-box;
     margin: 1px;
     text-align: center;
 }
 
-header{
+header {
     border: dotted red 2px;
 }
 
-main{
+main {
     border: dotted red 2px;
 }
 
-footer{
+footer {
     border: dotted red 2px;
+}
+
+ul img {
+    width: 30%;
 }
