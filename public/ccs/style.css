@@ -1,33 +1,36 @@
-*,
-*::before,
-*::after {
-  padding: 0;
-  margin: 0;
-  outline: 0;
+*{
+
   box-sizing: border-box;
+  margin:0;
+  padding:0;
+
 }
 
-header {
-  border: dotted red 2px;
-  position: relative;
-}
+.navbar{
+  display: flex;
+  justify-content: space-around; 
+  box-shadow: rgba(4, 17, 29, 0.25) 0px 0px 8px 0px;
 
-main {
-  border: dotted red 2px;
-}
 
-footer {
-  border: dotted red 2px;
-}
+ }
 
-ul img {
-  width: 60%;
-}
-
-li {
+.navbar ul{
   list-style-type: none;
-  width: 200px;
+  display:flex;
+  justify-content:space-around;
+  padding: 10px 15px;
+  width: 100%;
+      
 }
+
+.navbar a{
+  color:black;
+  text-decoration: none;
+}
+
+  i{
+  font-size:1.2rem;
+}  
 
 .productos ul,
 .productos-destacados {
