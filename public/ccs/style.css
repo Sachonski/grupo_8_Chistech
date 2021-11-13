@@ -1,0 +1,67 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+header {
+  border: dotted red 2px;
+  position: relative;
+}
+
+main {
+  border: dotted red 2px;
+}
+
+footer {
+  border: dotted red 2px;
+}
+
+ul img {
+  width: 60%;
+}
+
+li {
+  list-style-type: none;
+  width: 200px;
+}
+
+.productos ul,
+.productos-destacados {
+  border: dotted red 2px;
+  display: flex;
+  align-content: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
+.menu-de-registro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.menu-de-registro div {
+  padding: 4px;
+  margin: 2px;
+}
+
+.menu-user-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.menu-user-login div {
+  padding: 4px;
+  margin: 2px;
+}
