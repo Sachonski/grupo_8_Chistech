@@ -1,3 +1,17 @@
+:root{
+  --font1:'Montserrat', sans-serif;
+  --font2: 'Roboto', sans-serif;
+  --color1:#A6A4A5;
+  --color2:#262401;
+  --color3:#736966;
+  --color4:#403D3C;
+  --color5:#0D0D0D;
+}
+
+
+
+
+
 *{
 
   box-sizing: border-box;
