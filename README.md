@@ -10,12 +10,12 @@ https://www.figma.com/file/mDFuwxZF1JRsLFJoEaOeFP/SONY-Wireframe?node-id=0%3A1
 - Github
 - Visual Code Studio
 # Tematica
-E-Store centradoe en la distrbucion de productos lacteos de una empresa familiar con tradicion en produccion de queso.
+E-Store centrado en la distrbucion de quesos de una empresa familiar con tradicion en produccion de queso.
 Nuestro objetivo es llegar a toda Argentina y por qué no, al resto de latinoamerica.
 "De Pelegrini, para el mundo."
 
 # Public Objetivo
-Venta mayorista y minorista de productos lacteos.
+Venta mayorista y minorista de quesos.
 # Secciones
 - Home
 - Detalle de producto
