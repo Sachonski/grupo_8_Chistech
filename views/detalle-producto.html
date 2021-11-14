@@ -5,46 +5,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/public/ccs/normalize.css" />
-    <link rel="stylesheet" href="/public/ccs/style.css" />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Roboto:wght@300;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/e00ad5da1a.js" crossorigin="anonymous"></script>
-    <title>Detalle Productos</title>
+    <title>Home</title>
 
     <!--Pagina Principal-->
 </head>
 
 <body>
-    <header class="main-header">
-        <div class="main-header-top-bar">
-            <h1>LOGO</h1>
-            <img src="" alt="logo" />
-        </div>
-
-        <a href="# " class="hamburguer-left">
-            <i class="fas fa-bars"></i>
-        </a>
-
-        <a href="# " class="shopping-bag-right">
-            <i class="fas fa-shopping-bag"></i>
-        </a>
-
-        <nav class="main-navbar">
-            <ul class="left-navbar">
-                <li><a href="# ">Productos</a></li>
-                <li><a href="# ">Categorias</a></li>
-                <li><a href="# ">Sobre Nosotros</a></li>
-            </ul>
-
-            <ul class="right-navbar">
-                <li>
-                    <a href="# ">
-                        <i class="fas fa-user"></i>
-                    </a>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li id="menu-hamburguesa">
+                    <a href="#"><i class="fas fa-bars"></i></a>
                 </li>
-                <li>
-                    <a href="# ">
-                        <i class="fas fa-shopping-cart"></i>
-                    </a>
+                <li id="logo">
+                    <img class="logo" src="../img/chistech.png" alt="Queso" />
+                </li>
+                <li id="carrito">
+                    <a href="#"><i class="fas fa-shopping-bag"></i></a>
                 </li>
             </ul>
         </nav>
@@ -63,14 +47,11 @@
         <section class="detalle-producto">
             <h2>Descripcion</h2>
             <p>
-                Sed pretium luctus porttitor. Curabitur congue nec sapien vitae
-                consequat. Quisque dignissim velit et eleifend sagittis. Duis quis
-                nibh nisi. Morbi ut odio posuere, volutpat turpis sit amet, rutrum
-                nisl. Sed rutrum tincidunt viverra. Sed sit amet lectus metus.
+                Sed pretium luctus porttitor. Curabitur congue nec sapien vitae consequat. Quisque dignissim velit et eleifend sagittis. Duis quis nibh nisi. Morbi ut odio posuere, volutpat turpis sit amet, rutrum nisl. Sed rutrum tincidunt viverra. Sed sit amet lectus
+                metus.
             </p>
             <p>
-                Integer scelerisque odio diam, id interdum quam dictum sed. Cras vel
-                augue finibus mauris laoreet placerat. Etiam lobortis sodales maximus
+                Integer scelerisque odio diam, id interdum quam dictum sed. Cras vel augue finibus mauris laoreet placerat. Etiam lobortis sodales maximus
             </p>
             <p class="precio">$2000.00</p>
             <p class="oferta">20%</p>
