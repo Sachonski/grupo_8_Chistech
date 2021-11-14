@@ -36,6 +36,10 @@
 i {
   font-size: 1.2rem;
 }
+.logo {
+  height:  30px;
+
+}
 
 .slider-inicial {
   /*Futuro slideshow de productos y frases de la empresa*/
