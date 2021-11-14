@@ -8,24 +8,94 @@
   --color5:#0D0D0D;
 }
 
-
-
-
-
 *{
+text-decoration: none;
+list-style-type: none;
+box-sizing: border-box;
+margin:0;
+padding:0;
+}
 
-  box-sizing: border-box;
-  margin:0;
-  padding:0;
+.categorias-productos{
+  display: flex;
+  font-family: var(--font1);
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 0.7rem 0 0.7rem 0;
+  border-bottom: 0.5px solid var(--color3);
+  }
 
+.categorias-productos li{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 0.7rem;
+}
+  
+.categorias-productos a{
+  /*ul del slider*/
+  color: black;
+  font-weight: bold;
+  font-family: var(--font1);
+}
+
+.slider-inicial {
+  /*Futuro slideshow de productos y frases de la empresa*/
+  background-image: url("../img/tienda.jpg");
+  height: 50vh;
+}
+
+.productos{ 
+  /*objeto producto con todo su contenido*/
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 0.7rem;
+}
+.clase-producto  {
+  /*ul class name*/
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.7);
+  margin-top: 1.4rem;
+}
+
+.clase-producto ul{
+  /*contenido de los hijos de clase-producto ul*/
+  align-items: center;
+  padding: 0.7rem;      
+}
+
+.clase-producto li{
+  /*contenido de los hijos de clase-producto li*/
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 0.7rem;
+}
+
+.clase-producto p{
+  /*contenido de los hijos de clase-producto paragraphs*/
+  font-family: var(--font1);
+  font-size: 1.2rem;
+  color: var(--color3);
+  margin: 0.7rem;
+}
+.clase-producto img{
+  /*imagenes clase-producto - cada tarjeta*/
+  width: 40%;
+}
+article h2 {
+  text-align: center;
+  margin-top: 0.7rem;
 }
 
 .navbar{
   display: flex;
   justify-content: space-around; 
   box-shadow: rgba(4, 17, 29, 0.25) 0px 0px 8px 0px;
-
-
  }
 
 .navbar ul{
