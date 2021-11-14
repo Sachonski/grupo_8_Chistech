@@ -4,7 +4,7 @@ const port = 3030;
 const path = require('path');
 
 
-app.listen(port, () => { console.log("Server running on " + port)});
+app.listen(port, () => { console.log("Server running on http://localhost/" + port)});
 
 
 app.get("/", (req, res) => {
