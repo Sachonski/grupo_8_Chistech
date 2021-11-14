@@ -46,12 +46,11 @@ i {
 .categorias-productos {
   display: flex;
   overflow-x: scroll;
-  
+
   /* flex-wrap: wrap; */
   flex-direction: row;
   padding: 0.7rem 0;
-  margin:.5rem;
-  border-bottom: 0.5px solid var(--color3);
+  margin: 0.5rem;
 }
 
 .categorias-productos li {
@@ -60,13 +59,8 @@ i {
   flex-wrap: wrap;
   flex-direction: column;
   margin: 0.7rem;
-  
-  
-  
-  
 }
 .categorias-productos img {
-  
   width: 40%;
 }
 .categorias-productos a {
@@ -75,6 +69,11 @@ i {
   font-weight: 300;
   font-family: var(--font1);
   font-size: 1rem;
+  text-align: center;
+}
+
+.linea-separadora {
+  border-bottom: 0.5px solid var(--color3);
 }
 
 .container {
@@ -82,7 +81,10 @@ i {
 }
 
 .container h2 {
+  font-family: var(--font1);
+  font-weight: 300;
   text-align: center;
+  margin-bottom: 0.4rem;
 }
 
 .productos {
@@ -101,7 +103,7 @@ i {
 
 .clase-producto ul {
   /*contenido de los hijos de clase-producto ul*/
-  align-items: center;
+  /* align-items: center; */
 }
 
 .clase-producto li {
@@ -111,21 +113,100 @@ i {
   text-align: center;
   flex-wrap: wrap;
   flex-direction: column;
+  padding-bottom: 0.5rem;
 }
 
 .clase-producto p {
   /*contenido de los hijos de clase-producto paragraphs*/
-  font-family: var(--font1);
-  font-size: 1rem;
-  font-weight: 300;
+  font-family: var(--font2);
+  font-size: 1.5rem;
+
   color: var(--color3);
 }
+
 .clase-producto img {
   /*imagenes clase-producto - cada tarjeta*/
   width: 40%;
 }
 
-/* }  
+/* Hago el footer falta hacer el carrousel de info */
+
+footer h2{
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .productos ul,
 .productos-destacados {
