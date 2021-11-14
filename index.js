@@ -6,15 +6,15 @@ const path = require('path');
 
 app.listen(port, () => { console.log("Server running on " + port)});
 
-<<<<<<< HEAD
+
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname + "/views/home.html"));
-=======
+
 app.use(express.static('public'));
 
 app.get('/', (req,res) => {
     res.sendFile(path.join(__dirname, 'view/home.html'))
->>>>>>> refs/remotes/origin/main
+
 });
 
 app.get("/login", (req, res) => {
@@ -35,6 +35,4 @@ app.get("/login", (req, res) => {
   app.listen(port, () => {
     console.log("Server running on port " + "http://localhost:"+port);
   });
-
-
-
+});
