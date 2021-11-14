@@ -92,6 +92,12 @@ article h2 {
   margin-top: 0.7rem;
 }
 
+.logo  {
+  height: 30px;
+  margin:0px;
+  padding:0px;
+}
+
 .navbar{
   display: flex;
   justify-content: space-around; 
@@ -102,6 +108,7 @@ article h2 {
   list-style-type: none;
   display:flex;
   justify-content:space-around;
+  align-items: center;
   padding: 10px 15px;
   width: 100%;
       
