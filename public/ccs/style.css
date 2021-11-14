@@ -16,12 +16,36 @@ margin:0;
 padding:0;
 }
 
+
+.navbar{
+  display: flex;
+  justify-content: space-around; 
+  box-shadow: rgba(4, 17, 29, 0.25) 0px 0px 8px 0px;
+ }
+
+.navbar ul{
+  
+  display:flex;
+  justify-content:space-around;
+  padding: 10px 15px;
+  width: 100%;
+      
+}
+
+.navbar a{
+  color:black;
+  
+}
+
+  i{
+  font-size:1.2rem;}
+
 .categorias-productos{
   display: flex;
   font-family: var(--font1);
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   flex-direction: column;
-  padding: 0.7rem 0 0.7rem 0;
+  padding: 0.7rem 0;
   border-bottom: 0.5px solid var(--color3);
   }
 
@@ -52,18 +76,21 @@ padding:0;
   align-items: center;
   flex-wrap: wrap;
   flex-direction: column;
-  margin: 0.7rem;
+  margin: 0.2rem;
 }
 .clase-producto  {
   /*ul class name*/
-  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.7);
-  margin-top: 1.4rem;
+  box-shadow: rgba(4, 17, 29, 0.25) 0px 0px 8px 0px;
+ 
+  margin: 1rem;
+  border-radius: 5%;
 }
 
 .clase-producto ul{
   /*contenido de los hijos de clase-producto ul*/
   align-items: center;
-  padding: 0.7rem;      
+  padding: 0.5rem;  
+     
 }
 
 .clase-producto li{
@@ -73,7 +100,7 @@ padding:0;
   text-align: center;
   flex-wrap: wrap;
   flex-direction: column;
-  margin: 0.7rem;
+  margin: 0.5rem;
 }
 
 .clase-producto p{
@@ -81,7 +108,7 @@ padding:0;
   font-family: var(--font1);
   font-size: 1.2rem;
   color: var(--color3);
-  margin: 0.7rem;
+  margin: 0.5rem;
 }
 .clase-producto img{
   /*imagenes clase-producto - cada tarjeta*/
@@ -89,31 +116,41 @@ padding:0;
 }
 article h2 {
   text-align: center;
-  margin-top: 0.7rem;
+  margin-top: 0.3rem;
 }
 
-.navbar{
-  display: flex;
-  justify-content: space-around; 
-  box-shadow: rgba(4, 17, 29, 0.25) 0px 0px 8px 0px;
- }
 
-.navbar ul{
-  list-style-type: none;
-  display:flex;
-  justify-content:space-around;
-  padding: 10px 15px;
-  width: 100%;
-      
-}
 
-.navbar a{
-  color:black;
-  text-decoration: none;
-}
 
-  i{
-  font-size:1.2rem;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* }  
 
 .productos ul,
