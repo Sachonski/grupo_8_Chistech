@@ -53,14 +53,18 @@ i {
 
 .slider-inicial {
   /*Futuro slideshow de productos y frases de la empresa*/
-  background-image: url("../img/tienda.jpg");
+  background-image: url("../img/background.png");
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-attachment: fixed;
+  background-position: center;
   height: 50vh;
 }
 
 .categorias-productos {
   display: flex;
   overflow-x: scroll;
-
+  
   /* flex-wrap: wrap; */
   flex-direction: row;
   padding: 0.7rem 0;
@@ -74,15 +78,23 @@ i {
   flex-direction: column;
   margin: 0.7rem;
 }
+
+.categorias-productos i {
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.2));
+  font-size: 2.5rem;
+  color: #eb992f;
+  padding-bottom: 0.4rem;
+}
+
 .categorias-productos img {
   width: 40%;
 }
 .categorias-productos a {
   /*ul del slider*/
   color: black;
-  font-weight: 300;
+  font-weight: bold;
   font-family: var(--font1);
-  font-size: 1rem;
+  font-size: 0.8rem;
   text-align: center;
 }
 
@@ -105,7 +117,7 @@ i {
 .container {
   max-width: 42rem;
   margin: 0 auto;
-  padding: 4rem 1rem;
+  padding: 1rem 1rem;
 }
 
 @media (min-width: 640px) {
@@ -285,6 +297,59 @@ i {
 
 footer h2 {
   text-align: center;
+}
+
+.barra-lateral {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #f4900c;
+  margin: 1rem 1rem;
+  display: flex;
+  margin: 0px;
+  text-align: center;
+  flex-direction: column;
+
+}
+
+.barra-lateral h2 {
+  text-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  color: white;
+  font-family: var(--font1);
+  font-size: 2rem;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.slider-info {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: #eb992f;
+  display: flex;
+  justify-content: space-evenly;
+  /* flex-wrap: wrap; */
+  flex-direction: row;
+  padding: 0.7rem 0;
+}
+
+.slider-info ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.slider-info i{ 
+  font-size: 5rem;
+  padding-bottom: 1rem;
+}
+
+.slider-info li{
+  text-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  color : white;
+  font-size: 1rem;
+  padding-bottom: 0.4rem;
+  
 }
 
 /* Clases auxiliares */
