@@ -1,6 +1,7 @@
 :root {
   --font1: "Poppins", sans-serif;
   --font2: "Bebas Neue", cursive;
+  --font3: 'Montserrat', sans-serif;
   --color1: #a6a4a5;
   --color2: #262401;
   --color3: #736966;
@@ -24,8 +25,10 @@
   padding: 0;
 }
 
-html{
-  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+html {
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .navbar {
@@ -56,7 +59,7 @@ i {
   /*Futuro slideshow de productos y frases de la empresa*/
   background-image: url("../img/background.png");
   background-repeat: no-repeat;
-  background-size: cover; 
+  background-size: cover;
   background-attachment: fixed;
   background-position: center;
   height: 50vh;
@@ -65,7 +68,7 @@ i {
 .categorias-productos {
   display: flex;
   overflow-x: scroll;
-  
+
   /* flex-wrap: wrap; */
   flex-direction: row;
   padding: 0.7rem 0;
@@ -134,7 +137,6 @@ i {
 }
 /* END CONTAINER */
 
-
 /* BEGIN PRODUCTS */
 
 .destacados h2 {
@@ -158,11 +160,11 @@ i {
   /* margin-bottom: 1.5rem; */
 }
 
-.product-image{
+.product-image {
   position: relative;
   width: 100%;
   height: 18rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   overflow: hidden;
 }
 
@@ -173,19 +175,19 @@ i {
   object-position: center;
 }
 
-.product-description{
+.product-description {
   position: relative;
   margin-top: 1rem;
 }
-.product-description h3{
-  font-size: .875rem;
+.product-description h3 {
+  font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 500;
   color: var(--gray-900);
 }
-.product-description p{
-  margin-top: .25rem;
-  font-size: .875rem;
+.product-description p {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
   line-height: 1.25rem;
   color: var(--gray-500);
 }
@@ -200,7 +202,7 @@ i {
   align-items: flex-end;
   justify-content: flex-end;
   overflow: hidden;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   padding: 1rem;
 }
 
@@ -210,11 +212,10 @@ i {
   right: 0;
   bottom: 0;
   height: 9rem;
-  opacity: .25;
+  opacity: 0.25;
   background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
-
 }
-.product-price p{
+.product-price p {
   position: relative;
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -230,19 +231,18 @@ i {
   justify-content: center;
   align-items: center;
 
-  
   background-color: var(--gray-100);
 
   font-weight: 500;
-  font-size: .875rem;
+  font-size: 0.875rem;
   line-height: 1.25rem;
   color: var(--gray-900);
-  
-  padding: .5rem 2rem;
+
+  padding: 0.5rem 2rem;
   margin-top: 1.5rem;
 
   border-color: transparent;
-  border-radius: .375rem;
+  border-radius: 0.375rem;
   border-width: 1px;
 }
 
@@ -298,27 +298,19 @@ i {
   width: 40%;
 }
 
-/* Hago el footer falta hacer el carrousel de info */
-
-footer h2 {
-  text-align: center;
-}
-
 .barra-lateral {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background-color: #f4900c;
+  background-color:  var(--gray-200);
   margin: 1rem 1rem;
   display: flex;
   margin: 0px;
   text-align: center;
   flex-direction: column;
-
 }
 
 .barra-lateral h2 {
-  text-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  color: white;
+  color: var(--gray-900);
   font-family: var(--font1);
   font-size: 2rem;
   text-align: center;
@@ -326,11 +318,9 @@ footer h2 {
 }
 
 .slider-info {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  background-color: #eb992f;
+ 
   display: flex;
   justify-content: space-evenly;
-  /* flex-wrap: wrap; */
   flex-direction: row;
   padding: 0.7rem 0;
 }
@@ -341,61 +331,64 @@ footer h2 {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-
 }
 
-.slider-info i{ 
+.slider-info i {
   font-size: 5rem;
-  padding-bottom: 1rem;
-}
+  padding: 0.5rem 0.5rem;}
 
-.slider-info li{
-  text-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  color : white;
-  font-size: 1rem;
-  padding-bottom: 0.4rem;
+.slider-info li {
   
+  color: white;
+  font-size: 1rem;
+  margin: 0.5rem;
+  border-radius: 5%;
+  box-shadow: rgba(4, 17, 29, 0.25) 0px 0px 8px 0px;
 }
 
-/* Clases auxiliares */
+.slider-info p {
+  color: var(--gray-900);
+  background-color: var(--gray-500);
+  border-radius: 0 0 5% 5%;
+  overflow:hidden;
+  padding-bottom: 0.2rem;
+}
 
-.bold {
-  font-weight: 700;
+.slider-info i {
+  text-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
-.relative {
-  position: relative;
+
+
+footer h2 {
+  text-align: center;
 }
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--gray-500);
+}
+
+.footer ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer li {
+  
+padding: 1rem;}
+
+
+.footer a {
+ text-decoration: none;
+ color:black;
+}  
+
+
 
 /* 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .productos ul,
 .productos-destacados {
   border: dotted red 2px;
