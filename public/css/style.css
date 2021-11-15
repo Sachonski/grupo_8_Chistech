@@ -9,6 +9,7 @@
 
   --gray-100: rgba(243, 244, 246, 1);
   --gray-200: rgba(229, 231, 235, 1);
+  --gray-500: rgba(107, 114, 128, 1);
   --gray-600: rgba(75, 85, 99, 1);
   --gray-700: rgba(55, 65, 81, 1);
   --gray-800: rgba(31, 41, 55, 1);
@@ -119,20 +120,23 @@ i {
     max-width: 80rem;
   }
 }
+/* END CONTAINER */
+
+
+/* BEGIN PRODUCTS */
+
 .destacados h2 {
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 1.75rem;
   color: var(--gray-900);
 }
-/* END CONTAINER */
 
-/* BEGIN PRODUCTS */
-
+/* Grilla de productos */
 .products {
-  /*objeto producto con todo su contenido*/
-  margin-top: 2rem;
   display: grid;
+  margin-top: 2rem;
+
   grid-template-columns: repeat(1, minmax(0, 1fr));
   row-gap: 3rem;
 }
@@ -194,7 +198,7 @@ i {
   right: 0;
   bottom: 0;
   height: 9rem;
-  opacity: .5;
+  opacity: .25;
   background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
 
 }
@@ -209,19 +213,25 @@ i {
 
 .product .boton {
   position: relative;
+
   display: flex;
+  justify-content: center;
+  align-items: center;
+
+  
   background-color: var(--gray-100);
+
   font-weight: 500;
   font-size: .875rem;
-  color: var(--gray-900);
   line-height: 1.25rem;
+  color: var(--gray-900);
+  
   padding: .5rem 2rem;
+  margin-top: 1.5rem;
+
   border-color: transparent;
   border-radius: .375rem;
   border-width: 1px;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1.5rem;
 }
 
 .product .boton:hover {
@@ -251,11 +261,6 @@ i {
   box-shadow: rgba(4, 17, 29, 0.25) 0px 0px 8px 0px;
 
   border-radius: 5%;
-}
-
-.clase-producto ul {
-  /*contenido de los hijos de clase-producto ul*/
-  /* align-items: center; */
 }
 
 .clase-producto li {
