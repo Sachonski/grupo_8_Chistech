@@ -137,6 +137,7 @@ i {
     font-size: 1.25rem;
     line-height: 1.75rem;
     color: var(--gray-900);
+    text-align: center;
 }
 
 
@@ -175,10 +176,10 @@ i {
 }
 
 .product-description h3 {
-    font-size: 0.875rem;
+    font-size: 1.2rem;
     line-height: 1.25rem;
     font-weight: 500;
-    color: var(--gray-900);
+    color: rgb(241, 127, 34);
 }
 
 .product-description p {
@@ -294,7 +295,7 @@ i {
     width: 40%;
 }
 
-.barra-lateral {
+.container-barra-lateral {
     padding-top: 1rem;
     padding-bottom: 1rem;
     background-color: var(--gray-200);
@@ -305,12 +306,11 @@ i {
     flex-direction: column;
 }
 
-.barra-lateral h2 {
+.container-barra-lateral h2 {
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
     color: var(--gray-900);
-    font-family: var(--font1);
-    font-size: 2rem;
-    text-align: center;
-    padding-bottom: 1rem;
 }
 
 .slider-info {
@@ -358,7 +358,7 @@ footer h2 {
 }
 
 .footer {
-    display: flex;
+    max-width: none;
     justify-content: center;
     align-items: center;
     flex-direction: column;
