@@ -434,7 +434,7 @@ footer h2 {
 
 .carrito-detalle-producto {
     display: flex;
-    justify-content: right;
+    justify-content: space-around;
     align-items: center;
     column-gap: 2rem;
 }
@@ -447,7 +447,9 @@ footer h2 {
 
 .carrito-detalle-compra {
     display: flex;
-    justify-content: space-around;
+    column-gap: 2rem;
+    flex-direction: column
+    
     
 }
 
@@ -455,7 +457,8 @@ footer h2 {
   text-align: center;
   opacity: 0.5;
   width: 2rem;
-  margin-right: 2rem;
+  
+  
 }
 
 .carrito-imagen {
@@ -468,7 +471,6 @@ footer h2 {
 .carrito-compras {
     background-color: var(--gray-100);
     border-radius: 0.5rem;
-    
     margin-top: 1rem;
     display: flex;
     padding: 1rem;
