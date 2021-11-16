@@ -30,7 +30,7 @@ body {
 
 header {
     background-color: var(--gray-100);
-    padding: 2rem 0;
+    /*padding: 2rem 0;*/
 }
 
 .navbar {
@@ -42,6 +42,7 @@ header {
 .navbar ul {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     padding: 10px 15px;
     width: 100%;
 }
@@ -70,7 +71,7 @@ i {
 
 .categorias-productos {
     display: flex;
-    overflow-x: scroll;
+    /*overflow-x: scroll;*/
     justify-content: space-around;
     /* flex-wrap: wrap; */
     flex-direction: row;
@@ -99,14 +100,15 @@ i {
 .categorias-productos a {
     /*ul del slider*/
     color: black;
-    font-weight: bold;
+    font-weight: thin;
     font-family: var(--font1);
     font-size: 0.8rem;
+    padding-top: 0.3rem;
     text-align: center;
 }
 
 .linea-separadora {
-    border-bottom: 0.5px solid var(--color3);
+    border-bottom: 1px solid var(--gray-500);
 }
 
 
@@ -120,13 +122,13 @@ i {
 
 @media (min-width: 640px) {
     .container {
-        padding: 6rem 1.5rem;
+        padding: 1.5rem 1.5rem;
     }
 }
 
 @media (min-width: 1024px) {
     .container {
-        padding: 6rem 2rem;
+        padding: 2rem 1rem;
         max-width: 80rem;
     }
 }
@@ -181,7 +183,7 @@ i {
 }
 
 .product-description h3 {
-    font-size: 1.2rem;
+    font-size: 1rem;
     line-height: 1.25rem;
     font-weight: 500;
     color: var(--naranja)
@@ -325,7 +327,7 @@ i {
 
 .slider-info {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-direction: row;
     padding: 0.7rem 0;
 }
@@ -352,7 +354,8 @@ i {
 }
 
 .slider-info p {
-    color: var(--gray-900);
+    color: white;
+    padding: 0.25rem;
     background-color: var(--gray-500);
     border-radius: 0 0 5% 5%;
     overflow: hidden;
@@ -384,7 +387,7 @@ footer h2 {
 }
 
 .footer li {
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 .footer a {
@@ -634,35 +637,7 @@ footer h2 {
 
 
 /* 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  i{
+    i{
   font-size:1.2rem;}
 /* }  
 
@@ -702,3 +677,107 @@ footer h2 {
   padding: 4px;
   margin: 2px;
 } */
+
+
+
+/*
+LISTA DE TODAS LAS CLASES QUE SE UTILIZAN EN LA PAGINA
+
+.carrito-checkout 
+.carrito-checkout,
+.carrito-compras 
+.carrito-detalle-compra 
+.carrito-detalle-compra input 
+.carrito-detalle-producto 
+.carrito-detalle-producto div 
+.carrito-imagen 
+.carrito-producto 
+.categorias-productos 
+.categorias-productos a 
+.categorias-productos i 
+.categorias-productos img 
+.categorias-productos li 
+.clase-producto 
+.clase-producto img 
+.clase-producto li 
+.clase-producto p 
+.container 
+.container 
+.container 
+.container-barra-lateral 
+.container-barra-lateral h2 
+.descripcion 
+.descripcion 
+.destacados h2 
+.detalle-producto 
+.detalle-producto 
+.detalle-producto 
+.detalle-producto 
+.detalle-producto .boton,
+.detalle-producto .boton:hover,
+.footer 
+.footer a 
+.footer a:hover 
+.footer li 
+.footer ul 
+.grupo-checkout .boton,
+.grupo-checkout .boton:hover 
+.grupo-checkout .precio 
+.grupo-checkout div 
+.grupo-checkout input 
+.linea-separadora 
+.logo 
+.navbar 
+.navbar a 
+.navbar ul 
+.product .boton 
+.product .boton:hover 
+.product-card 
+.product-description 
+.product-description h3 
+.product-description p 
+.product-image 
+.product-image img 
+.product-price 
+.product-price div 
+.product-price p 
+.producto 
+.producto 
+.producto h2 
+.products 
+.products 
+.products 
+.products 
+.slider-info 
+.slider-info i 
+.slider-info i 
+.slider-info li 
+.slider-info p 
+.slider-info ul 
+.slider-inicial 
+.slider-producto 
+.slider-producto img 
+.slider-producto li 
+.slider-producto ul 
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
