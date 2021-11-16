@@ -1,12 +1,7 @@
 :root {
   --font1: "Poppins", sans-serif;
   --font2: "Bebas Neue", cursive;
-  --font3: 'Montserrat', sans-serif;
-  --color1: #a6a4a5;
-  --color2: #262401;
-  --color3: #736966;
-  --color4: #403d3c;
-  --color5: #0d0d0d;
+  --font3: "Montserrat", sans-serif;
 
   --gray-100: rgba(243, 244, 246, 1);
   --gray-200: rgba(229, 231, 235, 1);
@@ -29,6 +24,11 @@ html {
   font-family: "Inter", ui-sans-serif, system-ui, -apple-system,
     BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
     "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+
+body{
+  background-color: var(--gray-200);
 }
 
 .navbar {
@@ -106,17 +106,6 @@ i {
   border-bottom: 0.5px solid var(--color3);
 }
 
-/* .container {
-  margin: 0.7rem;
-}
-
-.container h2 {
-  font-family: var(--font1);
-  font-weight: 300;
-  text-align: center;
-  margin-bottom: 0.4rem;
-} */
-
 /* BEGIN CONTAINER */
 .container {
   max-width: 42rem;
@@ -150,9 +139,9 @@ i {
 .products {
   display: grid;
   margin-top: 2rem;
-
   grid-template-columns: repeat(1, minmax(0, 1fr));
   row-gap: 3rem;
+ 
 }
 
 .product-card {
@@ -212,7 +201,7 @@ i {
   right: 0;
   bottom: 0;
   height: 9rem;
-  opacity: 0.25;
+  opacity: 0.15;
   background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
 }
 .product-price p {
@@ -231,12 +220,12 @@ i {
   justify-content: center;
   align-items: center;
 
-  background-color: var(--gray-100);
+  background-color: var(--gray-300);
 
   font-weight: 500;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  color: var(--gray-900);
+  color: var(--gray-600);
 
   padding: 0.5rem 2rem;
   margin-top: 1.5rem;
@@ -247,7 +236,9 @@ i {
 }
 
 .product .boton:hover {
-  background-color: var(--gray-200);
+  color: #FFFCF9;
+  background-color: #FB8720;
+  transition: 1s;
 }
 
 @media (min-width: 640px) {
@@ -301,7 +292,7 @@ i {
 .barra-lateral {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background-color:  var(--gray-200);
+  background-color: var(--gray-200);
   margin: 1rem 1rem;
   display: flex;
   margin: 0px;
@@ -318,7 +309,6 @@ i {
 }
 
 .slider-info {
- 
   display: flex;
   justify-content: space-evenly;
   flex-direction: row;
@@ -335,10 +325,10 @@ i {
 
 .slider-info i {
   font-size: 5rem;
-  padding: 0.5rem 0.5rem;}
+  padding: 0.5rem 0.5rem;
+}
 
 .slider-info li {
-  
   color: white;
   font-size: 1rem;
   margin: 0.5rem;
@@ -350,14 +340,13 @@ i {
   color: var(--gray-900);
   background-color: var(--gray-500);
   border-radius: 0 0 5% 5%;
-  overflow:hidden;
+  overflow: hidden;
   padding-bottom: 0.2rem;
 }
 
 .slider-info i {
   text-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
-
 
 footer h2 {
   text-align: center;
@@ -368,7 +357,7 @@ footer h2 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: var(--gray-500);
+  background-color: var(--gray-600);
 }
 
 .footer ul {
@@ -377,14 +366,19 @@ footer h2 {
 }
 
 .footer li {
-  
-padding: 1rem;}
-
+  padding: 1rem;
+}
 
 .footer a {
- text-decoration: none;
- color:black;
-}  
+  text-decoration: none;
+  color: var(--gray-100);
+}
+
+.footer a:hover {
+  color: var(--gray-900);
+  transition: color 0.4s;
+}
+
 
 
 
