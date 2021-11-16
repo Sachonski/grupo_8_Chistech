@@ -36,21 +36,21 @@
 
     <main>
 
-        <section class="container carrito-compras">
+        <section class="container carrito-compras destacados" >
             <div>
-
+                <h2 class="destacados">Detalle de tu compra</h2>
                 <ul class="carrito-lista">
                     <li class="carrito-producto">
                         <div class="carrito-detalle-producto">
                             <a href=" /detalle-producto "><img class="carrito-imagen" src="..\img\queso-azul-cabra-920x920.png " alt="Queso " /></a>
                             <div>
-                                <p class="carrito-nombre-producto">Queso Azul</p>
-                                <button>remover</button>
+                                <p class="carrito-nombre-producto" >Queso Azul</p>
+                                <button class="boton">Remover</button>
                             </div>
                         </div>
 
                         <div class="carrito-detalle-compra">
-                            <input type="number " name="cantidad" id=" ">
+                            <input type="number" name="cantidad" value="1" id=" ">
                             <p>$ 2000.00</p>
                         </div>
 
@@ -60,12 +60,12 @@
                             <a href=" /detalle-producto "><img class="carrito-imagen" src="..\img\queso-azul-cabra-920x920.png " alt="Queso " /></a>
                             <div>
                                 <p class="carrito-nombre-producto">Queso Azul</p>
-                                <button>remover</button>
+                                <button class="boton">Remover</button>
                             </div>
                         </div>
 
                         <div class="carrito-detalle-compra">
-                            <input type="number " name="cantidad" id=" ">
+                            <input type="number" name="cantidad" value="1" id=" ">
                             <p>$ 2000.00</p>
                         </div>
 
@@ -75,12 +75,12 @@
                             <a href=" /detalle-producto "><img class="carrito-imagen" src="..\img\queso-azul-cabra-920x920.png " alt="Queso " /></a>
                             <div>
                                 <p class="carrito-nombre-producto">Queso Azul</p>
-                                <button>remover</button>
+                                <button class="boton">Remover</button>
                             </div>
                         </div>
 
                         <div class="carrito-detalle-compra">
-                            <input type="number " name="cantidad" id=" ">
+                            <input type="number" name="cantidad" value="1" id=" ">
                             <p>$ 2000.00</p>
                         </div>
 
@@ -90,13 +90,110 @@
                 </ul>
             </div>
         </section>
-        <section class="container carrito-checkout">
+        <section class="container carrito-checkout destacados">
             <div>
-                <p>Total: $2000.00</p>
-                <button>Comprar</button>
+                <p>Total: $6000.00</p>
+            </div>
+            <div class="carrito-comprar">
+                <button class="boton">Comprar</button>
             </div>
         </section>
-
+        
+       <section class="destacados"><h2 >Productos Sugeridos</h2></section>
+        <div class="products">
+            <div>
+                <div class="product">
+                    <a href="/detalle-producto">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="..\img\queso-azul-cabra-920x920.png" alt="Queso bien rico" />
+                            </div>
+                            <div class="product-description">
+                                <h3>Queso Azul Tradicional</h3>
+                                <p>200g</p>
+                            </div>
+                            <div class="product-price">
+                                <div aria-hidden="true"></div>
+                                <p>$2000</p>
+                            </div>
+                        </div>
+                    </a>
+                    <div>
+                        <a href="#" class="boton"> Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="product">
+                    <a href="/detalle-producto">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="..\img\queso-mozzarella-polpetta-920x920.png" alt="Queso bien rico" />
+                            </div>
+                            <div class="product-description">
+                                <h3>Queso Mozzarella Polpetta</h3>
+                                <p>250g</p>
+                            </div>
+                            <div class="product-price">
+                                <div aria-hidden="true"></div>
+                                <p>$2000</p>
+                            </div>
+                        </div>
+                    </a>
+                    <div>
+                        <a href="#" class="boton"> Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="product">
+                    <a href="/detalle-producto">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="..\img\queso-pecorino-18-meses-920x920.png" alt="Queso bien rico" />
+                            </div>
+                            <div class="product-description">
+                                <h3>Queso Pecorino 18 Meses</h3>
+                                <p>500g</p>
+                            </div>
+                            <div class="product-price">
+                                <div aria-hidden="true"></div>
+                                <p>$2000</p>
+                            </div>
+                        </div>
+                    </a>
+                    <div>
+                        <a href="#" class="boton"> Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+            
+            <section>
+            <div>  
+                <div class="product">
+                    <a href="/detalle-producto">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="..\img\queso-provolone-stagionato-920x920.png" alt="Queso bien rico" />
+                            </div>
+                            <div class="product-description">
+                                <h3>Queso Provolone Stagionato</h3>
+                                <p>500g</p>
+                            </div>
+                            <div class="product-price">
+                                <div aria-hidden="true"></div>
+                                <p>$2000</p>
+                            </div>
+                        </div>
+                    </a>
+                    <div>
+                        <a href="#" class="boton"> Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
     </main>
     <footer>
         <nav class="container footer">

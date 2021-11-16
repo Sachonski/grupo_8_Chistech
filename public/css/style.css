@@ -111,6 +111,10 @@ i {
     border-bottom: 1px solid var(--gray-500);
 }
 
+.linea-separadora-dotted {
+  border-bottom: 1px dotted var(--gray-500);
+}
+
 
 /* BEGIN CONTAINER */
 
@@ -143,8 +147,18 @@ i {
     font-weight: 700;
     font-size: 1.25rem;
     line-height: 1.75rem;
-    color: var(--gray-900);
+    color: var(--gray-500);
     text-align: center;
+    padding-top: 1rem;
+}
+
+.destacados p {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.4rem;
+  color: var(--gray-500);
+  text-align: center;
+  padding-top: 1rem;
 }
 
 
@@ -230,7 +244,7 @@ i {
 }
 
 .detalle-producto .boton,
-.product .boton {
+.product .boton, .carrito-detalle-producto .boton, .carrito-comprar .boton {
     position: relative;
     display: flex;
     justify-content: center;
@@ -251,7 +265,7 @@ i {
 }
 
 .detalle-producto .boton:hover,
-.product .boton:hover {
+.product .boton:hover, .carrito-detalle-producto .boton:hover , .carrito-comprar .boton:hover {
     color: #FFFCF9;
     background-color: var(--naranja);
     transition: 1s;
@@ -317,6 +331,7 @@ i {
     text-align: center;
     flex-direction: column;
 }
+
 
 .container-barra-lateral h2 {
     font-weight: 700;
@@ -407,15 +422,20 @@ footer h2 {
 /* carrito */
 
 .carrito-producto {
+  
     background-color: var(--gray-100);
     border-radius: 0.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .carrito-detalle-producto {
     display: flex;
+    justify-content: right;
+    align-items: center;
     column-gap: 2rem;
 }
 
@@ -427,33 +447,44 @@ footer h2 {
 
 .carrito-detalle-compra {
     display: flex;
-    column-gap: 2rem;
+    justify-content: space-around;
+    
 }
 
 .carrito-detalle-compra input {
-    width: 2rem;
+  text-align: center;
+  opacity: 0.5;
+  width: 2rem;
+  margin-right: 2rem;
 }
 
 .carrito-imagen {
-    height: 4rem
+    height: 6rem; 
+    filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.1));
+    border-radius: 5px;
 }
 
 .carrito-checkout,
 .carrito-compras {
     background-color: var(--gray-100);
     border-radius: 0.5rem;
-    padding: 0.5rem 2rem;
+    
     margin-top: 1rem;
     display: flex;
+    padding: 1rem;
     justify-content: space-between;
     flex-direction: column;
     width: 100%;
+    margin-bottom: 1rem;
 }
 
 .carrito-checkout {
     align-items: flex-end;
-    margin-bottom: 10rem;
+    
 }
+
+
+
 
 
 /* fin carrito */
