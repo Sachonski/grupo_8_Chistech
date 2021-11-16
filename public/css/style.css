@@ -28,6 +28,11 @@ body {
     background-color: var(--gray-200);
 }
 
+header {
+    background-color: var(--gray-100);
+    padding: 2rem 0;
+}
+
 .navbar {
     display: flex;
     justify-content: space-around;
