@@ -496,6 +496,7 @@ footer h2 {
 
 .slider-producto {
     width: 90%;
+    max-width: 550px;
     margin: auto;
     overflow: hidden;
     -webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.07);
