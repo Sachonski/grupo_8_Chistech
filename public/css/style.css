@@ -31,14 +31,14 @@ body {
 }
 
 header {
-  background-color: var(--gray-100);
+  background-color: var(--gray-200);
   /*padding: 2rem 0;*/
 }
 
 .navbar {
   display: flex;
   justify-content: space-around;
-  box-shadow: rgba(4, 17, 29, 0.25) 0px 0px 8px 0px;
+  /* box-shadow: rgba(4, 17, 29, 0.25) 0px 0px 8px 0px; */
 }
 
 .navbar ul {
@@ -59,6 +59,12 @@ i {
 
 .logo {
   height: 30px;
+} 
+
+#logo h1{
+  font-size: 2rem;
+  font-weight: bold;  
+  color: rgb(209, 109, 28);
 }
 
 /* .slider-inicial {
