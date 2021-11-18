@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,69 +9,100 @@
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@900&family=Poppins:wght@400;600;900&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/e00ad5da1a.js"
-      crossorigin="anonymous"
-    ></script>
-    <title>Home Chistech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@900&family=Poppins:wght@400;600;900&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/e00ad5da1a.js" crossorigin="anonymous"></script>
+    <title>Home</title>
 
     <!--Pagina Principal-->
-  </head>
+</head>
 
-  <body>
+<body>
     <header>
-      <nav class="navbar">
-        <ul>
-          <li id="menu-hamburguesa">
-            <a href="#"><i class="fas fa-bars"></i></a>
-          </li>
-          <li id="logo">
-            <img class="logo" src="../img/chistech.png" alt="Queso" />
-          </li>
-          <li id="carrito">
-            <a href="#"><i class="fas fa-shopping-bag"></i></a>
-          </li>
-        </ul>
-      </nav>
+        <nav class="navbar">
+            <ul>
+                <li id="menu-hamburguesa">
+                    <a href="#"><i class="fas fa-bars"></i></a>
+                </li>
+                <li id="logo">
+                    <img class="logo" src="../img/chistech.png" alt="Queso" />
+                   <!---- <h1>CHISTECH</h1> -->
+                </li>
+                <li id="carrito">
+                    <a href="/carrito"><i class="fas fa-shopping-bag"></i></a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-      <div class="slider-inicial"></div>
-      <ul class="categorias-productos">
-        <!--estas categorias van directamente a filtros dentro de productos -->
+        <div class="slider-inicial">    
+            <ul>
+                <li id="slide1">
+                    <div class="slider-inicial-texto">
+                        <h2>Nuestra Tienda</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
+                        <a href="#">+ info</a>
+                    </div>
+                    <img src="..\img\5FE7DE1B-5BCB-4AA9-9B1B-6A7944458D97-768x512.png" alt="prod" />
+                </li>
+                <li id="slide2">
+                    <div class="slider-inicial-texto">
+                        <h2>Estacionamos Artesanalmente</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
+                        <a href="#">+ info</a>
+                    </div>
+                    <img src="..\img\658307E6-CC9A-4EE0-8B46-C3F7EB2F9544-768x512.png" alt="prod" />
+                </li>
+                <li id="slide3">
+                    <div class="slider-inicial-texto">
+                        <h2>Nuevas Cajas de Degustacion</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
+                        <a href="#">+ info</a>
+                    </div>
+                    <img src="..\img\A2E72F69-7670-4F6B-AF62-0C69638DEAC8-768x512.png" alt="prod" />
+                </li>
+                <li id="slide4">
+                    <div class="slider-inicial-texto">
+                        <h2>Somos Maestros Queseros</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
+                        <a href="#">+ info</a>
+                    </div>
+                    <img src="..\img\C35AADD3-CAE1-4532-9937-615F2B8546D4-768x512.png" alt="prod" />
+                </li>
+    
+            </ul>    
+        </div>
+        <ul class="categorias-productos">
+            <!--estas categorias van directamente a filtros dentro de productos -->
 
-        <li>
-          <i class="fas fa-cheese"></i>
-          <a href="#">Quesos Duros</a>
-        </li>
-        <li>
-          <i class="fas fa-cheese"></i>
-          <a href="#">Quesos Blandos</a>
-        </li>
-        <li>
-          <i class="fas fa-cheese"></i>
-          <a href="#">Quesos Azules</a>
-        </li>
-        <li>
-          <i class="fas fa-cheese"></i>
-          <a href="#">Quesos Frescos</a>
-        </li>
-        <li>
-          <i class="fas fa-cheese"></i>
-          <a href="#">Quesos Corteza</a>
-        </li>
-      </ul>
-      <div class="linea-separadora"></div>
+            <li>
+                <a href="/productos"><i class="fas fa-cheese"></i></a>
+                <a href="/productos">Quesos Duros</a>
+            </li>
+            <li>
+                <a href="/productos"><i class="fas fa-cheese"></i></a>
+                <a href="/productos">Quesos Blandos</a>
+            </li>
+            <li>
+                <a href="/productos"><i class="fas fa-cheese"></i></a>
+                <a href="/productos">Quesos Azules</a>
+            </li>
+            <li>
+                <a href="/productos"><i class="fas fa-cheese"></i></a>
+                <a href="/productos">Quesos Frescos</a>
+            </li>
+            <li>
+                <a href="/productos"><i class="fas fa-cheese"></i></a>
+                <a href="/productos">Quesos Corteza</a>
+            </li>
+        </ul>
+        <div class="linea-separadora"></div>
 
-      <section class="destacados">
-        <div class="container">
-          <h2 class="bold">Productos Destacados</h2>
-          <!-- este div en mobile es slider -->
-          <!-- <div class="productos">
+        <section class="destacados">
+            <div class="container">
+                <h2 class="bold">Productos Destacados</h2>
+                <!-- este div en mobile es slider -->
+                <!-- <div class="productos">
             <ul class="clase-producto">
               <li>
                 <img src="../img/gruyere.jpg" alt="Queso" />
@@ -86,136 +118,146 @@
               </li>
             </ul>
           </div> -->
-          <div class="products">
-            <div>
-              <div class="product">
-                <div class="product-card">
-                  <div class="product-image">
-                    <img src="../img/gruyere.jpg" alt="Queso bien rico" />
-                  </div>
-                  <div class="product-description">
-                    <h3>Queso Parmesano Estacionado Horma</h3>
-                    <p>500g</p>
-                  </div>
-                  <div class="product-price">
-                    <div aria-hidden="true"></div>
-                    <p>$2000</p>
-                  </div>
+                <div class="products">
+                    <div>
+                        <div class="product">
+                            <a href="/detalle-producto">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="..\img\queso-azul-cabra-920x920.png" alt="Queso bien rico" />
+                                    </div>
+                                    <div class="product-description">
+                                        <h3>Queso Azul Tradicional</h3>
+                                        <p>200g</p>
+                                    </div>
+                                    <div class="product-price">
+                                        <div aria-hidden="true"></div>
+                                        <p>$2000</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <div>
+                                <a href="#" class="boton"> Agregar al carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="product">
+                            <a href="/detalle-producto">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="..\img\queso-mozzarella-polpetta-920x920.png" alt="Queso bien rico" />
+                                    </div>
+                                    <div class="product-description">
+                                        <h3>Queso Mozzarella Polpetta</h3>
+                                        <p>250g</p>
+                                    </div>
+                                    <div class="product-price">
+                                        <div aria-hidden="true"></div>
+                                        <p>$2000</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <div>
+                                <a href="#" class="boton"> Agregar al carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="product">
+                            <a href="/detalle-producto">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="..\img\queso-pecorino-18-meses-920x920.png" alt="Queso bien rico" />
+                                    </div>
+                                    <div class="product-description">
+                                        <h3>Queso Pecorino 18 Meses</h3>
+                                        <p>500g</p>
+                                    </div>
+                                    <div class="product-price">
+                                        <div aria-hidden="true"></div>
+                                        <p>$2000</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <div>
+                                <a href="#" class="boton"> Agregar al carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="product">
+                            <a href="/detalle-producto">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="..\img\queso-provolone-stagionato-920x920.png" alt="Queso bien rico" />
+                                    </div>
+                                    <div class="product-description">
+                                        <h3>Queso Provolone Stagionato</h3>
+                                        <p>500g</p>
+                                    </div>
+                                    <div class="product-price">
+                                        <div aria-hidden="true"></div>
+                                        <p>$2000</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <div>
+                                <a href="#" class="boton"> Agregar al carrito</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                  <a href="#" class="boton"> Agregar al carrito</a>
-                </div>
-              </div>
             </div>
-            <div>
-              <div class="product">
-                <div class="product-card">
-                  <div class="product-image">
-                    <img src="../img/gruyere.jpg" alt="Queso bien rico" />
-                  </div>
-                  <div class="product-description">
-                    <h3>Queso Parmesano Estacionado Horma</h3>
-                    <p>500g</p>
-                  </div>
-                  <div class="product-price">
-                    <div aria-hidden="true"></div>
-                    <p>$2000</p>
-                  </div>
-                </div>
+        </section>
+        <div class="linea-separadora"></div>
+        <section class="destacados">
+            <h2>Logros Internacionales</h2>
+            <div class="container-barra-lateral">
+                
+                <!-- este div en mobile es slider -->
                 <div>
-                  <a href="#" class="boton"> Agregar al carrito</a>
+                    <ul class="slider-info">
+                        <li>
+                            <i class="fas fa-award"></i>
+                            <p>Cheese Award 2019</p>
+                        </li>
+                        <li>
+                            <i class="fas fa-award"></i>
+                            <p>Farmer's Market 2021</p>
+                        </li>
+                        <li>
+                            <i class="fas fa-award"></i>
+                            <p>Cheese Euro 2017</p>
+                        </li>
+                    </ul>
                 </div>
-              </div>
             </div>
-            <div>
-              <div class="product">
-                <div class="product-card">
-                  <div class="product-image">
-                    <img src="../img/gruyere.jpg" alt="Queso bien rico" />
-                  </div>
-                  <div class="product-description">
-                    <h3>Queso Parmesano Estacionado Horma</h3>
-                    <p>500g</p>
-                  </div>
-                  <div class="product-price">
-                    <div aria-hidden="true"></div>
-                    <p>$2000</p>
-                  </div>
-                </div>
-                <div>
-                  <a href="#" class="boton"> Agregar al carrito</a>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div class="product">
-                <div class="product-card">
-                  <div class="product-image">
-                    <img src="../img/gruyere.jpg" alt="Queso bien rico" />
-                  </div>
-                  <div class="product-description">
-                    <h3>Queso Parmesano Estacionado Horma</h3>
-                    <p>500g</p>
-                  </div>
-                  <div class="product-price">
-                    <div aria-hidden="true"></div>
-                    <p>$2000</p>
-                  </div>
-                </div>
-                <div>
-                  <a href="#" class="boton"> Agregar al carrito</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="container barra-lateral">
-          <h2>Logros Internacionales</h2>
-          <!-- este div en mobile es slider -->
-          <div>
-            <ul class="slider-info">
-              <li id="slide1">
-                <i class="fas fa-award"></i>
-                <p>Cheese Award 2019</p>
-              </li>
-              <li id="slide2">
-                <i class="fas fa-award"></i>
-                <p>Farmer's Market 2021</p>
-              </li>
-              <li id="slide3">
-                <i class="fas fa-award"></i>
-                <p>Cheese Chicago 2017</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
+        </section>
     </main>
     <footer>
-      <nav class="container footer">
-        <h2><a href="#">Menu</a></h2>
+        <nav class="container footer" id="footer-registro">
+            <h2><a href="/">Menu</a></h2>
 
-        <ul>
-          <li><a href="#">Nosotros</a></li>
-          <li><a href="#">Productos</a></li>
-          <li><a href="#">Contacto</a></li>
-        </ul>
-        <!-- cambie redes al footer -->
-        <ul>
-          <li>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fab fa-twitter-square"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-          </li>
-        </ul>
-      </nav>
+            <ul>
+                <li><a href="/sobreNosotros">Nosotros</a></li>
+                <li><a href="/productos">Productos</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+            <!-- cambie redes al footer -->
+            <ul class="footerIcon">
+                <li>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fab fa-twitter-square"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </li>
+            </ul>
+        </nav>
     </footer>
-  </body>
+</body>
+
 </html>

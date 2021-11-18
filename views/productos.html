@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Roboto:wght@300;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/e00ad5da1a.js" crossorigin="anonymous"></script>
-    <title>Home</title>
+    <title>Productos Chistech</title>
 
     <!--Pagina Principal-->
 </head>
@@ -28,25 +28,43 @@
                     <img class="logo" src="../img/chistech.png" alt="Queso" />
                 </li>
                 <li id="carrito">
-                    <a href="#"><i class="fas fa-shopping-bag"></i></a>
+                    <a href="/carrito"><i class="fas fa-shopping-bag"></i></a>
                 </li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h2>Productos</h2>
-        <nav class="filtro">
-            <ul>
-                <li><a href="#">quesos duros</a></li>
-                <li><a href="#">quesos semiduros</a></li>
-                <li><a href="#">quesos blandos</a></li>
-                <li><a href="#">otros productos</a></li>
-            </ul>
-        </nav>
+
+        <div class="placeholderProduct">   </div>
         <section class="destacados">
+            <ul class="categorias-productos">
+                <!--estas categorias van directamente a filtros dentro de productos -->
+
+                <li>
+                    <i class="fas fa-cheese"></i>
+                    <a href="/productos">Quesos Duros</a>
+                </li>
+                <li>
+                    <i class="fas fa-cheese"></i>
+                    <a href="/productos">Quesos Blandos</a>
+                </li>
+                <li>
+                    <i class="fas fa-cheese"></i>
+                    <a href="/productos">Quesos Azules</a>
+                </li>
+                <li>
+                    <i class="fas fa-cheese"></i>
+                    <a href="/productos">Quesos Frescos</a>
+                </li>
+                <li>
+                    <i class="fas fa-cheese"></i>
+                    <a href="/productos">Quesos Corteza</a>
+                </li>
+            </ul>
+            <div class="linea-separadora"></div>
             <div class="container">
-                <h2 class="bold">Productos Destacados</h2>
+                <h2 class="bold">Productos</h2>
                 <!-- este div en mobile es slider -->
                 <!-- <div class="productos">
                 <ul class="clase-producto">
@@ -67,19 +85,21 @@
                 <div class="products">
                     <div>
                         <div class="product">
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="../img/gruyere.jpg" alt="Queso bien rico" />
+                            <a href="/detalle-producto">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="..\img\queso-azul-cabra-920x920.png" alt="Queso bien rico" />
+                                    </div>
+                                    <div class="product-description">
+                                        <h3>Queso Azul Tradicional</h3>
+                                        <p>200g</p>
+                                    </div>
+                                    <div class="product-price">
+                                        <div aria-hidden="true"></div>
+                                        <p>$2000</p>
+                                    </div>
                                 </div>
-                                <div class="product-description">
-                                    <h3>Queso Parmesano Estacionado Horma</h3>
-                                    <p>500g</p>
-                                </div>
-                                <div class="product-price">
-                                    <div aria-hidden="true"></div>
-                                    <p>$2000</p>
-                                </div>
-                            </div>
+                            </a>
                             <div>
                                 <a href="#" class="boton"> Agregar al carrito</a>
                             </div>
@@ -87,19 +107,21 @@
                     </div>
                     <div>
                         <div class="product">
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="../img/gruyere.jpg" alt="Queso bien rico" />
+                            <a href="/detalle-producto">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="..\img\queso-blanco-danes-920x920.png" alt="Queso bien rico" />
+                                    </div>
+                                    <div class="product-description">
+                                        <h3>Queso Blanco Danes</h3>
+                                        <p>200g</p>
+                                    </div>
+                                    <div class="product-price">
+                                        <div aria-hidden="true"></div>
+                                        <p>$2000</p>
+                                    </div>
                                 </div>
-                                <div class="product-description">
-                                    <h3>Queso Parmesano Estacionado Horma</h3>
-                                    <p>500g</p>
-                                </div>
-                                <div class="product-price">
-                                    <div aria-hidden="true"></div>
-                                    <p>$2000</p>
-                                </div>
-                            </div>
+                            </a>
                             <div>
                                 <a href="#" class="boton"> Agregar al carrito</a>
                             </div>
@@ -107,19 +129,21 @@
                     </div>
                     <div>
                         <div class="product">
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="../img/gruyere.jpg" alt="Queso bien rico" />
+                            <a href="/detalle-producto">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="..\img\queso-brie-laboheme-920x920.png" alt="Queso bien rico" />
+                                    </div>
+                                    <div class="product-description">
+                                        <h3>Queso Brie</h3>
+                                        <p>200g</p>
+                                    </div>
+                                    <div class="product-price">
+                                        <div aria-hidden="true"></div>
+                                        <p>$2000</p>
+                                    </div>
                                 </div>
-                                <div class="product-description">
-                                    <h3>Queso Parmesano Estacionado Horma</h3>
-                                    <p>500g</p>
-                                </div>
-                                <div class="product-price">
-                                    <div aria-hidden="true"></div>
-                                    <p>$2000</p>
-                                </div>
-                            </div>
+                            </a>
                             <div>
                                 <a href="#" class="boton"> Agregar al carrito</a>
                             </div>
@@ -127,19 +151,21 @@
                     </div>
                     <div>
                         <div class="product">
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="../img/gruyere.jpg" alt="Queso bien rico" />
+                            <a href="/detalle-producto">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="..\img\queso-canestrato-stagionato-920x920.png" alt="Queso bien rico" />
+                                    </div>
+                                    <div class="product-description">
+                                        <h3>Canestrato Stagionato Cuña</h3>
+                                        <p>250g</p>
+                                    </div>
+                                    <div class="product-price">
+                                        <div aria-hidden="true"></div>
+                                        <p>$2000</p>
+                                    </div>
                                 </div>
-                                <div class="product-description">
-                                    <h3>Queso Parmesano Estacionado Horma</h3>
-                                    <p>500g</p>
-                                </div>
-                                <div class="product-price">
-                                    <div aria-hidden="true"></div>
-                                    <p>$2000</p>
-                                </div>
-                            </div>
+                            </a>
                             <div>
                                 <a href="#" class="boton"> Agregar al carrito</a>
                             </div>
@@ -147,19 +173,21 @@
                     </div>
                     <div>
                         <div class="product">
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="../img/gruyere.jpg" alt="Queso bien rico" />
+                            <a href="/detalle-producto">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="..\img\queso-cheddar-ingles-920x920.png" alt="Queso bien rico" />
+                                    </div>
+                                    <div class="product-description">
+                                        <h3>Queso Cheddar Ingles</h3>
+                                        <p>200g</p>
+                                    </div>
+                                    <div class="product-price">
+                                        <div aria-hidden="true"></div>
+                                        <p>$2000</p>
+                                    </div>
                                 </div>
-                                <div class="product-description">
-                                    <h3>Queso Parmesano Estacionado Horma</h3>
-                                    <p>500g</p>
-                                </div>
-                                <div class="product-price">
-                                    <div aria-hidden="true"></div>
-                                    <p>$2000</p>
-                                </div>
-                            </div>
+                            </a>
                             <div>
                                 <a href="#" class="boton"> Agregar al carrito</a>
                             </div>
@@ -167,19 +195,21 @@
                     </div>
                     <div>
                         <div class="product">
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="../img/gruyere.jpg" alt="Queso bien rico" />
+                            <a href="/detalle-producto">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="..\img\queso-cremoso-920x920.png" alt="Queso bien rico" />
+                                    </div>
+                                    <div class="product-description">
+                                        <h3>Queso Cremoso</h3>
+                                        <p>200g</p>
+                                    </div>
+                                    <div class="product-price">
+                                        <div aria-hidden="true"></div>
+                                        <p>$2000</p>
+                                    </div>
                                 </div>
-                                <div class="product-description">
-                                    <h3>Queso Parmesano Estacionado Horma</h3>
-                                    <p>500g</p>
-                                </div>
-                                <div class="product-price">
-                                    <div aria-hidden="true"></div>
-                                    <p>$2000</p>
-                                </div>
-                            </div>
+                            </a>
                             <div>
                                 <a href="#" class="boton"> Agregar al carrito</a>
                             </div>
@@ -187,19 +217,21 @@
                     </div>
                     <div>
                         <div class="product">
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="../img/gruyere.jpg" alt="Queso bien rico" />
+                            <a href="/detalle-producto">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="..\img\queso-gouda.png" alt="Queso bien rico" />
+                                    </div>
+                                    <div class="product-description">
+                                        <h3>Queso Gouda Cuña</h3>
+                                        <p>250g</p>
+                                    </div>
+                                    <div class="product-price">
+                                        <div aria-hidden="true"></div>
+                                        <p>$2000</p>
+                                    </div>
                                 </div>
-                                <div class="product-description">
-                                    <h3>Queso Parmesano Estacionado Horma</h3>
-                                    <p>500g</p>
-                                </div>
-                                <div class="product-price">
-                                    <div aria-hidden="true"></div>
-                                    <p>$2000</p>
-                                </div>
-                            </div>
+                            </a>
                             <div>
                                 <a href="#" class="boton"> Agregar al carrito</a>
                             </div>
@@ -207,19 +239,21 @@
                     </div>
                     <div>
                         <div class="product">
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="../img/gruyere.jpg" alt="Queso bien rico" />
+                            <a href="/detalle-producto">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="..\img\queso-gruyere-920x920.png" alt="Queso bien rico" />
+                                    </div>
+                                    <div class="product-description">
+                                        <h3>Queso Gruyere</h3>
+                                        <p>200g</p>
+                                    </div>
+                                    <div class="product-price">
+                                        <div aria-hidden="true"></div>
+                                        <p>$2000</p>
+                                    </div>
                                 </div>
-                                <div class="product-description">
-                                    <h3>Queso Parmesano Estacionado Horma</h3>
-                                    <p>500g</p>
-                                </div>
-                                <div class="product-price">
-                                    <div aria-hidden="true"></div>
-                                    <p>$2000</p>
-                                </div>
-                            </div>
+                            </a>
                             <div>
                                 <a href="#" class="boton"> Agregar al carrito</a>
                             </div>
@@ -227,19 +261,21 @@
                     </div>
                     <div>
                         <div class="product">
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="../img/gruyere.jpg" alt="Queso bien rico" />
+                            <a href="/detalle-producto">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="..\img\queso-mozzarella-polpetta-920x920.png" alt="Queso bien rico" />
+                                    </div>
+                                    <div class="product-description">
+                                        <h3>Queso Mozzarella Polpetta</h3>
+                                        <p>250g</p>
+                                    </div>
+                                    <div class="product-price">
+                                        <div aria-hidden="true"></div>
+                                        <p>$2000</p>
+                                    </div>
                                 </div>
-                                <div class="product-description">
-                                    <h3>Queso Parmesano Estacionado Horma</h3>
-                                    <p>500g</p>
-                                </div>
-                                <div class="product-price">
-                                    <div aria-hidden="true"></div>
-                                    <p>$2000</p>
-                                </div>
-                            </div>
+                            </a>
                             <div>
                                 <a href="#" class="boton"> Agregar al carrito</a>
                             </div>
@@ -247,19 +283,21 @@
                     </div>
                     <div>
                         <div class="product">
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="../img/gruyere.jpg" alt="Queso bien rico" />
+                            <a href="/detalle-producto">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="..\img\queso-parmesano-15-meses-920x920.png" alt="Queso bien rico" />
+                                    </div>
+                                    <div class="product-description">
+                                        <h3>Queso Parmesano 15 Meses</h3>
+                                        <p>500g</p>
+                                    </div>
+                                    <div class="product-price">
+                                        <div aria-hidden="true"></div>
+                                        <p>$2000</p>
+                                    </div>
                                 </div>
-                                <div class="product-description">
-                                    <h3>Queso Parmesano Estacionado Horma</h3>
-                                    <p>500g</p>
-                                </div>
-                                <div class="product-price">
-                                    <div aria-hidden="true"></div>
-                                    <p>$2000</p>
-                                </div>
-                            </div>
+                            </a>
                             <div>
                                 <a href="#" class="boton"> Agregar al carrito</a>
                             </div>
@@ -267,19 +305,21 @@
                     </div>
                     <div>
                         <div class="product">
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="../img/gruyere.jpg" alt="Queso bien rico" />
+                            <a href="/detalle-producto">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="..\img\queso-pecorino-18-meses-920x920.png" alt="Queso bien rico" />
+                                    </div>
+                                    <div class="product-description">
+                                        <h3>Queso Pecorino 18 Meses</h3>
+                                        <p>500g</p>
+                                    </div>
+                                    <div class="product-price">
+                                        <div aria-hidden="true"></div>
+                                        <p>$2000</p>
+                                    </div>
                                 </div>
-                                <div class="product-description">
-                                    <h3>Queso Parmesano Estacionado Horma</h3>
-                                    <p>500g</p>
-                                </div>
-                                <div class="product-price">
-                                    <div aria-hidden="true"></div>
-                                    <p>$2000</p>
-                                </div>
-                            </div>
+                            </a>
                             <div>
                                 <a href="#" class="boton"> Agregar al carrito</a>
                             </div>
@@ -287,19 +327,65 @@
                     </div>
                     <div>
                         <div class="product">
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="../img/gruyere.jpg" alt="Queso bien rico" />
+                            <a href="/detalle-producto">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="..\img\queso-provoleta-920x920.png" alt="Queso bien rico" />
+                                    </div>
+                                    <div class="product-description">
+                                        <h3>Queso Provoletta</h3>
+                                        <p>200g</p>
+                                    </div>
+                                    <div class="product-price">
+                                        <div aria-hidden="true"></div>
+                                        <p>$2000</p>
+                                    </div>
                                 </div>
-                                <div class="product-description">
-                                    <h3>Queso Parmesano Estacionado Horma</h3>
-                                    <p>500g</p>
-                                </div>
-                                <div class="product-price">
-                                    <div aria-hidden="true"></div>
-                                    <p>$2000</p>
-                                </div>
+                            </a>
+                            <div>
+                                <a href="#" class="boton"> Agregar al carrito</a>
                             </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="product">
+                            <a href="/detalle-producto">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="..\img\queso-provolone-stagionato-920x920.png" alt="Queso bien rico" />
+                                    </div>
+                                    <div class="product-description">
+                                        <h3>Queso Provolone Stagionato</h3>
+                                        <p>500g</p>
+                                    </div>
+                                    <div class="product-price">
+                                        <div aria-hidden="true"></div>
+                                        <p>$2000</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <div>
+                                <a href="#" class="boton"> Agregar al carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="product">
+                            <a href="/detalle-producto">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="..\img\queso-sbrinz-18-meses-920x920.png" alt="Queso bien rico" />
+                                    </div>
+                                    <div class="product-description">
+                                        <h3>Queso Sbrinz 18 Meses</h3>
+                                        <p>500g</p>
+                                    </div>
+                                    <div class="product-price">
+                                        <div aria-hidden="true"></div>
+                                        <p>$2000</p>
+                                    </div>
+                                </div>
+                            </a>
                             <div>
                                 <a href="#" class="boton"> Agregar al carrito</a>
                             </div>
@@ -311,20 +397,25 @@
 
     </main>
     <footer>
-        <!-- aca pondria en lugar de la palabra menu, el logo 
-      chiquito que nos lleve al inicio -->
-        <h2><a href="# ">Menu</a></h2>
-        <nav>
+        <nav class="container footer" id="footer-registro">
+            <h2><a href="/">Menu</a></h2>
+
             <ul>
-                <li><a href="# ">Nosotros</a></li>
-                <li><a href="# ">Productos</a></li>
-                <li><a href="# ">Contacto</a></li>
+                <li><a href="/sobreNosotros">Nosotros</a></li>
+                <li><a href="/productos">Productos</a></li>
+                <li><a href="#">Contacto</a></li>
             </ul>
             <!-- cambie redes al footer -->
-            <ul>
-                <li><a href="# ">Facebook</a></li>
-                <li><a href="# ">Twitter</a></li>
-                <li><a href="# ">Instagram</a></li>
+            <ul class="footerIcon">
+                <li>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fab fa-twitter-square"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </li>
             </ul>
         </nav>
     </footer>
