@@ -385,6 +385,11 @@ i {
 
 /* footer */
 
+footer {
+    position: relative;
+    margin-top: 10rem;
+}
+
 footer h2 {
   text-align: center;
 }
@@ -414,6 +419,12 @@ footer h2 {
 .footer a:hover {
   color: var(--gray-900);
   transition: color 0.4s;
+}
+
+#footer-registro {
+ position: absolute;
+ bottom: 0;
+ width: 100%;
 }
 
 /* fin footer */

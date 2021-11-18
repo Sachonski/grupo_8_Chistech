@@ -35,53 +35,46 @@
     </header>
 
     <main>
-        <section class="menu-user-login">
-
-            <div class="titulo-user-login">
-                <h2>User Login</h2>
+        <form action="/login" method='post' class='form-login'>
+            <div class="form-control">
+                <label>Nombre de Usuario</label>
+                <input type="text" name="nombreUsuario" placeholder="Nombre de Usuario" required class="control">
+                <span class="feedback" id="feedback"></span>
             </div>
-
-            <div class="email-user">
-                <h3>Email</h3>
-                <input type="email" name=" " id=" ">
+            <div class="form-control">
+                <label>Contraseña</label>
+                <input type="password" name="password" required class="control">
+                <span class="feedback" id="feedback"></span>
             </div>
-
-            <div class="user-password">
-                <h3>Contrasenia</h3>
-                <input type="password" name=" " id=" ">
+            <div class="buttons">
+                <button type="submit" class="boton">Enviar</button>
             </div>
-
-            <div>
-                <button class="boton-entrar" type="button"><strong>Entrar</strong></button>
-            </div>
-
-            <div>
-                <button class="boton-forgot-password" type="button"><strong>Olvidé mi contrasenia</strong></button>
-            </div>
-
-            <div>
-                <h3><a href="/register">Nuevo Usuario</a></h3>
-            </div>
+        </form>
 
         </section>
 
     </main>
 
     <footer>
-        <!-- aca pondria en lugar de la palabra menu, el logo 
-      chiquito que nos lleve al inicio -->
-        <h2><a href="# ">Menu</a></h2>
-        <nav>
+        <nav class="container footer" id="footer-registro">
+            <h2><a href="/">Menu</a></h2>
+
             <ul>
                 <li><a href="/sobreNosotros">Nosotros</a></li>
                 <li><a href="/productos">Productos</a></li>
                 <li><a href="#">Contacto</a></li>
             </ul>
             <!-- cambie redes al footer -->
-            <ul>
-                <li><a href="# ">Facebook</a></li>
-                <li><a href="# ">Twitter</a></li>
-                <li><a href="# ">Instagram</a></li>
+            <ul class="footerIcon">
+                <li>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fab fa-twitter-square"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </li>
             </ul>
         </nav>
     </footer>
