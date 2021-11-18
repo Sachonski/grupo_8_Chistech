@@ -238,7 +238,7 @@ i {
 .product .boton:hover {
   color: #FFFCF9;
   background-color: #FB8720;
-  transition: 1s;
+  transition: .75s;
 }
 
 @media (min-width: 640px) {
