@@ -35,56 +35,66 @@
     </header>
 
     <main>
+        <form action="/register" method='post' class='form-registro'>
 
-        <section class="menu-de-registro">
-
-            <div class="titulo-principal">
-                <h2>Registro</h2>
+            <div class="form-control">
+                <label class="info">Nombre y Apellido</label>
+                <input type="text" name="nombre" placeholder="Nombre y Apellido" required class="control">
+                <span class="feedback" id="feedback"></span>
             </div>
 
-            <div class="nombre-usuario">
-                <h3>Nombre</h3>
-                <input type="text" name=" " id=" ">
+            <div class="form-control">
+                <label>Fecha Nacimiento</label>
+                <input type="date" name="fechaNacimiento" placeholder="Fecha Nacimiento" required class="control">
+                <span class="feedback" id="feedback"></span>
             </div>
 
-            <div class="email-usuario">
-                <h3>Email</h3>
-                <input type="email" name=" " id=" ">
+            <div class="form-control">
+                <label>Seleccionar Foto de Perfil</label>
+                <input type="file" name="fotoPerfil" accept=".jpg, .png, .webp" required class="control">
+                <span class="feedback" id="feedback"></span>
             </div>
 
-            <div class="contrasenia-usuario">
-                <h3>Contrasenia</h3>
-                <input type="password" name=" " id=" ">
+            <div class="form-control">
+                <label>Contraseña</label>
+                <input type="password" name="password" required class="control">
+                <span class="feedback" id="feedback"></span>
+            </div
+            >
+            <div class="form-control">
+                <label>Confirmar Contraseña</label>
+                <input type="password" name="confirmPassword" required class="control">
+                <span class="feedback" id="feedback"></span>
             </div>
 
-            <div class="confirmar-contrasenia-usuario">
-                <h3>Confirmar contrasenia</h3>
-                <input type="password" name=" " id=" ">
+            <div class="buttons">
+                <button type="submit" class="boton">Enviar</button>
+                <button type="reset" class="boton">Borrar</button>
             </div>
 
-            <div>
-                <button class="boton-registrar" type="button"><strong>Registrar</strong></button>
-            </div>
-
-        </section>
-
+        </form>
     </main>
 
     <footer>
-        <!-- aca pondria en lugar de la palabra menu, el logo 
-      chiquito que nos lleve al inicio -->
-        <h2><a href="# ">Menu</a></h2>
-        <nav>
+        <nav class="container footer">
+            <h2><a href="/">Menu</a></h2>
+
             <ul>
                 <li><a href="/sobreNosotros">Nosotros</a></li>
                 <li><a href="/productos">Productos</a></li>
                 <li><a href="#">Contacto</a></li>
             </ul>
             <!-- cambie redes al footer -->
-            <ul>
-                <li><a href="# ">Facebook</a></li>
-                <li><a href="# ">Twitter</a></li>
-                <li><a href="# ">Instagram</a></li>
+            <ul class="footerIcon">
+                <li>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fab fa-twitter-square"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </li>
             </ul>
         </nav>
     </footer>
