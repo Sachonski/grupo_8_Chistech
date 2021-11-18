@@ -1,35 +1,44 @@
 const express = require("express");
 const path = require("path");
-const port = 3030
+const port = 3030;
 const app = express();
-
 
 app.use(express.static(path.resolve(__dirname, "./public")));
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname + "/views/home.html"));
+  res.sendFile(path.join(__dirname + "/views/home.html"));
 });
+
 app.get("/login", (req, res) => {
-    res.sendFile(path.join(__dirname + "/views/login.html"));
+  res.sendFile(path.join(__dirname + "/views/login.html"));
 });
+app.post("/login", (req, res) => {
+  res.sendFile(path.join(__dirname + "/views/login.html"));
+});
+
 app.get("/register", (req, res) => {
-    res.sendFile(path.join(__dirname + "/views/register.html"));
+  res.sendFile(path.join(__dirname + "/views/register.html"));
 });
 app.post("/register", (req, res) => {
-    res.sendFile(path.join(__dirname + "/views/register.html"));
+  res.sendFile(path.join(__dirname + "/views/register.html"));
 });
+
 app.get("/sobreNosotros", (req, res) => {
-    res.sendFile(path.join(__dirname + "/views/sobreNosotros.html"));
+  res.sendFile(path.join(__dirname + "/views/sobreNosotros.html"));
 });
+
 app.get("/carrito", (req, res) => {
-    res.sendFile(path.join(__dirname + "/views/carrito.html"));
+  res.sendFile(path.join(__dirname + "/views/carrito.html"));
 });
+
 app.get("/productos", (req, res) => {
-    res.sendFile(path.join(__dirname + "/views/productos.html"));
+  res.sendFile(path.join(__dirname + "/views/productos.html"));
 });
+
 app.get("/detalle-producto", (req, res) => {
-    res.sendFile(path.join(__dirname + "/views/detalle-producto.html"));
+  res.sendFile(path.join(__dirname + "/views/detalle-producto.html"));
 });
+
 app.listen(port, () => {
-    console.log("Server running on port " + "http://localhost:" + port);
+  console.log("Server running on port " + "http://localhost:" + port);
 });
