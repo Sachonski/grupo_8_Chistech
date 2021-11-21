@@ -31,6 +31,7 @@ body {
 }
 
 header {
+  
   background-color: var(--gray-600);
   filter:drop-shadow(2px 2px 2px rgb(0 0 0 / 0.8));
 
@@ -55,6 +56,7 @@ header {
   color: black;
 }
 
+
 i {
   font-size: 1.4rem;
   color: white;
@@ -72,15 +74,47 @@ i {
 
 }
 
-/* .slider-inicial {
-  Futuro slideshow de productos y frases de la empresa
-  background-image: url("../img/background.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center; 
-  } */
-  
+.navbar-desktop {
+  display: none;
+  justify-content: space-around;
+  filter:drop-shadow(2px 2px 2px rgb(0 0 0 / 0.2));
+}
+
+.navbar-desktop ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 15px;
+  width: 100%;
+}
+
+.navbar-desktop li {
+  color: var(--gray-100);
+  font-size: 1.2rem;
+
+}
+
+.navbar-desktop li:hover {
+  color: var(--naranja);
+
+}
+
+.navbar-desktop i:hover {
+  color: var(--naranja);
+}
+
+@media (min-width: 1024px) {
+  .navbar-movil {
+    display: none;
+  }
+  .navbar-desktop{
+    display: flex;
+    
+  }
+
+}
+
+ 
 .slider-inicial {
   height: 60%;
   width: 100%;
@@ -157,13 +191,13 @@ i {
 .placeholderProduct {
  margin: 20px;
 }
-.categorias-productos i,.logo {
+.categorias-productos i {
   /*filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.2));*/
   font-size: 1.5rem;
   color: var(--gray-200);
   transition: all .5s ease-in-out;
 }
-.categorias-productos i:hover, .logo:hover{
+.categorias-productos i:hover {
   font-size: 2.5rem;
   padding-bottom: 0.5rem;
   color: var(--naranja);
@@ -497,7 +531,7 @@ footer h2 {
 }
 
 .footer a:hover {
-  color: var(--gray-900);
+  color: var(--naranja);
   transition: color 0.4s;
 }
 
