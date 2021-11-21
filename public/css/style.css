@@ -309,6 +309,7 @@ i {
   background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
 }
 
+
 .product-price p {
   position: relative;
   font-size: 1.125rem;
@@ -719,6 +720,7 @@ footer h2 {
   filter:drop-shadow(2px 2px 2px rgb(0 0 0 / 0.3));
 }
 
+
 /* Registro y login */
 
 .form-registro,
@@ -762,7 +764,9 @@ label.info {
   align-items: center;
   column-gap: 3rem;
 }
-
+input[type="file"] {
+  padding-left: 0;
+}
 /* 
 .productos ul,
 .productos-destacados {
