@@ -727,6 +727,7 @@ footer h2 {
 .form-login {
   padding: 20px 15px;
   width: 100%;
+  margin: auto;
 }
 
 .form-control {
@@ -744,15 +745,21 @@ label.info {
   display: none;
 }
 
-/* .opcionPerfil {
+.redireccion-a-registro {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-} */
+  padding: 20px 15px;
+}
+
+.redireccion-a-registro a {
+  font-style: italic;
+  text-decoration:underline;
+  color: black;
+}
 
 .control {
   width: 100%;
-  max-width: 60em;
   padding: 8px;
   border: none;
 }
@@ -764,9 +771,11 @@ label.info {
   align-items: center;
   column-gap: 3rem;
 }
+
 input[type="file"] {
   padding-left: 0;
 }
+
 /* 
 .productos ul,
 .productos-destacados {
