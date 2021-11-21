@@ -36,14 +36,14 @@ header {
 
 }
 
-.navbar {
+.navbar-movil {
   display: flex;
   justify-content: space-around;
   filter:drop-shadow(2px 2px 2px rgb(0 0 0 / 0.2));
 
 }
 
-.navbar ul {
+.navbar-movil ul {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -51,7 +51,7 @@ header {
   width: 100%;
 }
 
-.navbar a {
+.navbar-movil a {
   color: black;
 }
 
