@@ -91,13 +91,13 @@ i {
   width: 100%;
 }
 
-.navbar-desktop li {
+.navbar-desktop li a {
   color: var(--gray-100);
   font-size: 1.2rem;
 
 }
 
-.navbar-desktop li:hover {
+.navbar-desktop li a:hover {
   color: var(--naranja);
 
 }
@@ -172,7 +172,7 @@ i {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  
+  opacity: 1;
 }
 
 .categorias-productos {

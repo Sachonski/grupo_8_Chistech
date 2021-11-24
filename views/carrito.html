@@ -9,8 +9,11 @@
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Roboto:wght@300;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Roboto:wght@300;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <script src="https://kit.fontawesome.com/e00ad5da1a.js" crossorigin="anonymous"></script>
     <title>Carrito</title>
 
@@ -26,7 +29,7 @@
                 </li>
                 <li id="logo">
                     <a href="/"><img class="logo" src="../img/chistech.png" alt="Queso" /></a>
-                   <!---- <h1>CHISTECH</h1> -->
+                    <!---- <h1>CHISTECH</h1> -->
                 </li>
                 <li id="carrito">
                     <a href="/carrito"><i class="fas fa-shopping-bag"></i></a>
@@ -35,45 +38,29 @@
         </nav>
 
         <nav class="navbar-desktop">
-           <ul>
-            <li id="logo">
-                <a href="/"><img class="logo" src="../img/chistech.png" alt="Queso" /></a>
-               <!---- <h1>CHISTECH</h1> -->
-            </li>
-               <li>Productos</li>
-               <li>Sobre Nosotros</li>
-               <li>Registrarse</li>
-               <li id="carrito">
-                <a href="/carrito"><i class="fas fa-shopping-bag"></i></a>
-            </li>
-           </ul>  
-    
+            <ul>
+                <li id="logo">
+                    <a href="/"><img class="logo" src="../img/chistech.png" alt="Queso" /></a>
+                    <!---- <h1>CHISTECH</h1> -->
+                </li>
+                <li><a href="/productos">Productos</a></li>
+                <li><a href="/sobreNosotros">Sobre Nosotros</a></li>
+                <li><a href="/register">Registrarse</a></li>
+                <li id="carrito"><a href="/carrito"><i class="fas fa-shopping-bag"></i></a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
 
-        <section class="container carrito-compras destacados" >
+        <section class="container carrito-compras destacados">
             <div>
                 <h2 class="destacados">Detalle de tu compra</h2>
                 <ul class="carrito-lista">
                     <li class="carrito-producto">
                         <div class="carrito-detalle-producto">
-                            <a href=" /detalle-producto "><img class="carrito-imagen" src="..\img\queso-azul-cabra-920x920.png " alt="Queso " /></a>
-                            <div>
-                                <p class="carrito-nombre-producto" >Queso Azul</p>
-                                <button class="boton">Remover</button>
-                            </div>
-                        </div>
-
-                        <div class="carrito-detalle-compra">
-                            <input type="number" name="cantidad" value="1" id=" ">
-                            <p>$ 2000.00</p>
-                        </div>
-
-                    </li>
-                    <li class="carrito-producto">
-                        <div class="carrito-detalle-producto">
-                            <a href=" /detalle-producto "><img class="carrito-imagen" src="..\img\queso-azul-cabra-920x920.png " alt="Queso " /></a>
+                            <a href=" /detalle-producto "><img class="carrito-imagen"
+                                    src="..\img\queso-azul-cabra-920x920.png " alt="Queso " /></a>
                             <div>
                                 <p class="carrito-nombre-producto">Queso Azul</p>
                                 <button class="boton">Remover</button>
@@ -88,7 +75,24 @@
                     </li>
                     <li class="carrito-producto">
                         <div class="carrito-detalle-producto">
-                            <a href=" /detalle-producto "><img class="carrito-imagen" src="..\img\queso-azul-cabra-920x920.png " alt="Queso " /></a>
+                            <a href=" /detalle-producto "><img class="carrito-imagen"
+                                    src="..\img\queso-azul-cabra-920x920.png " alt="Queso " /></a>
+                            <div>
+                                <p class="carrito-nombre-producto">Queso Azul</p>
+                                <button class="boton">Remover</button>
+                            </div>
+                        </div>
+
+                        <div class="carrito-detalle-compra">
+                            <input type="number" name="cantidad" value="1" id=" ">
+                            <p>$ 2000.00</p>
+                        </div>
+
+                    </li>
+                    <li class="carrito-producto">
+                        <div class="carrito-detalle-producto">
+                            <a href=" /detalle-producto "><img class="carrito-imagen"
+                                    src="..\img\queso-azul-cabra-920x920.png " alt="Queso " /></a>
                             <div>
                                 <p class="carrito-nombre-producto">Queso Azul</p>
                                 <button class="boton">Remover</button>
@@ -114,8 +118,10 @@
                 <button class="boton">Comprar</button>
             </div>
         </section>
-        
-       <section class="destacados"><h2 >Productos Sugeridos</h2></section>
+
+        <section class="destacados">
+            <h2>Productos Sugeridos</h2>
+        </section>
         <div class="products">
             <div>
                 <div class="product">
@@ -183,37 +189,37 @@
                     </div>
                 </div>
             </div>
-            
+
             <section>
-            <div>  
-                <div class="product">
-                    <a href="/detalle-producto">
-                        <div class="product-card">
-                            <div class="product-image">
-                                <img src="..\img\queso-provolone-stagionato-920x920.png" alt="Queso bien rico" />
+                <div>
+                    <div class="product">
+                        <a href="/detalle-producto">
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="..\img\queso-provolone-stagionato-920x920.png" alt="Queso bien rico" />
+                                </div>
+                                <div class="product-description">
+                                    <h3>Queso Provolone Stagionato</h3>
+                                    <p>500g</p>
+                                </div>
+                                <div class="product-price">
+                                    <div aria-hidden="true"></div>
+                                    <p>$2000</p>
+                                </div>
                             </div>
-                            <div class="product-description">
-                                <h3>Queso Provolone Stagionato</h3>
-                                <p>500g</p>
-                            </div>
-                            <div class="product-price">
-                                <div aria-hidden="true"></div>
-                                <p>$2000</p>
-                            </div>
+                        </a>
+                        <div>
+                            <a href="#" class="boton"> Agregar al carrito</a>
                         </div>
-                    </a>
-                    <div>
-                        <a href="#" class="boton"> Agregar al carrito</a>
                     </div>
                 </div>
-            </div>
         </div>
-    </div>
-    </section>
+        </div>
+        </section>
     </main>
     <footer>
         <nav class="container footer" id="footer-registro">
-           
+
 
             <ul>
                 <li><a href="/sobreNosotros">Nosotros</a></li>
