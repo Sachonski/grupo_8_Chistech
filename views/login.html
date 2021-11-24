@@ -29,7 +29,7 @@
                 </li>
                 <li id="logo">
                     <a href="/"><img class="logo" src="../img/chistech.png" alt="Queso" /></a>
-                   <!---- <h1>CHISTECH</h1> -->
+                    <!---- <h1>CHISTECH</h1> -->
                 </li>
                 <li id="carrito">
                     <a href="/carrito"><i class="fas fa-shopping-bag"></i></a>
@@ -38,42 +38,43 @@
         </nav>
 
         <nav class="navbar-desktop">
-           <ul>
-            <li id="logo">
-                <a href="/"><img class="logo" src="../img/chistech.png" alt="Queso" /></a>
-               <!---- <h1>CHISTECH</h1> -->
-            </li>
-               <li>Productos</li>
-               <li>Sobre Nosotros</li>
-               <li>Registrarse</li>
-               <li id="carrito">
-                <a href="/carrito"><i class="fas fa-shopping-bag"></i></a>
-            </li>
-           </ul>  
-    
+            <ul>
+                <li id="logo">
+                    <a href="/"><img class="logo" src="../img/chistech.png" alt="Queso" /></a>
+                    <!---- <h1>CHISTECH</h1> -->
+                </li>
+                <li><a href="/productos">Productos</a></li>
+                <li><a href="/sobreNosotros">Sobre Nosotros</a></li>
+                <li><a href="/register">Registrarse</a></li>
+                <li id="carrito"><a href="/carrito"><i class="fas fa-shopping-bag"></i></a></li>
+            </ul>
+        </nav>
+
     </header>
 
     <main>
-        <section class= "form">
-        <form action="/login" method='post' class='form-login'>
-            <div class="form-control">
-                <label>Nombre de Usuario</label>
-                <input type="text" name="nombreUsuario" placeholder="Nombre de Usuario" required class="control">
-                <span class="feedback" id="feedback"></span>
-            </div>
-            <div class="form-control">
-                <label>Contraseña</label>
-                <input type="password" name="password" required class="control">
-                <span class="feedback" id="feedback"></span>
-            </div>
-            <div class="buttons">
-                <button type="submit" class="boton">Enviar</button>
-            </div>
-        </form>
+        <section class="form">
+            <form action="/login" method='post' class='form-login'>
+                <div class="form-control">
+                    <label>Nombre de Usuario</label>
+                    <input type="text" name="nombreUsuario" placeholder="Nombre de Usuario" required class="control">
+                    <span class="feedback" id="feedback"></span>
+                </div>
+                <div class="form-control">
+                    <label>Contraseña</label>
+                    <input type="password" name="password" required class="control">
+                    <span class="feedback" id="feedback"></span>
+                </div>
+                <div class="buttons">
+                    <button type="submit" class="boton">Enviar</button>
+                </div>
+            </form>
 
-        <div class="redireccion-a-registro">
-            <a href="/register"><h4>No tenes cuenta? Registraté aquí</h4></a>
-        </div>
+            <div class="redireccion-a-registro">
+                <a href="/register">
+                    <h4>No tenes cuenta? Registraté aquí</h4>
+                </a>
+            </div>
 
         </section>
 

@@ -91,13 +91,13 @@ i {
   width: 100%;
 }
 
-.navbar-desktop li {
+.navbar-desktop li a {
   color: var(--gray-100);
   font-size: 1.2rem;
 
 }
 
-.navbar-desktop li:hover {
+.navbar-desktop li a:hover {
   color: var(--naranja);
 
 }

@@ -29,7 +29,7 @@
                 </li>
                 <li id="logo">
                     <a href="/"><img class="logo" src="../img/chistech.png" alt="Queso" /></a>
-                   <!---- <h1>CHISTECH</h1> -->
+                    <!---- <h1>CHISTECH</h1> -->
                 </li>
                 <li id="carrito">
                     <a href="/carrito"><i class="fas fa-shopping-bag"></i></a>
@@ -38,61 +38,60 @@
         </nav>
 
         <nav class="navbar-desktop">
-           <ul>
-            <li id="logo">
-                <a href="/"><img class="logo" src="../img/chistech.png" alt="Queso" /></a>
-               <!---- <h1>CHISTECH</h1> -->
-            </li>
-               <li>Productos</li>
-               <li>Sobre Nosotros</li>
-               <li>Registrarse</li>
-               <li id="carrito">
-                <a href="/carrito"><i class="fas fa-shopping-bag"></i></a>
-            </li>
-           </ul>  
-    
+            <ul>
+                <li id="logo">
+                    <a href="/"><img class="logo" src="../img/chistech.png" alt="Queso" /></a>
+                    <!---- <h1>CHISTECH</h1> -->
+                </li>
+                <li><a href="/productos">Productos</a></li>
+                <li><a href="/sobreNosotros">Sobre Nosotros</a></li>
+                <li><a href="/register">Registrarse</a></li>
+                <li id="carrito"><a href="/carrito"><i class="fas fa-shopping-bag"></i></a></li>
+            </ul>
+        </nav>
+
     </header>
 
     <main>
-        <section class= "form">
-        <form action="/register" method='post' class='form-registro'>
+        <section class="form">
+            <form action="/register" method='post' class='form-registro'>
 
-            <div class="form-control">
-                <label class="info">Nombre y Apellido</label>
-                <input type="text" name="nombre" placeholder="Nombre y Apellido" required class="control">
-                <span class="feedback" id="feedback"></span>
-            </div>
+                <div class="form-control">
+                    <label class="info">Nombre y Apellido</label>
+                    <input type="text" name="nombre" placeholder="Nombre y Apellido" required class="control">
+                    <span class="feedback" id="feedback"></span>
+                </div>
 
-            <div class="form-control">
-                <label>Fecha Nacimiento</label>
-                <input type="date" name="fechaNacimiento" placeholder="Fecha Nacimiento" required class="control">
-                <span class="feedback" id="feedback"></span>
-            </div>
+                <div class="form-control">
+                    <label>Fecha Nacimiento</label>
+                    <input type="date" name="fechaNacimiento" placeholder="Fecha Nacimiento" required class="control">
+                    <span class="feedback" id="feedback"></span>
+                </div>
 
-            <div class="form-control">
-                <label>Seleccionar Foto de Perfil</label>
-                <input type="file" name="fotoPerfil" accept=".jpg, .png, .webp" required class="control">
-                <span class="feedback" id="feedback"></span>
-            </div>
+                <div class="form-control">
+                    <label>Seleccionar Foto de Perfil</label>
+                    <input type="file" name="fotoPerfil" accept=".jpg, .png, .webp" required class="control">
+                    <span class="feedback" id="feedback"></span>
+                </div>
 
-            <div class="form-control">
-                <label>Contraseña</label>
-                <input type="password" name="password" required class="control">
-                <span class="feedback" id="feedback"></span>
-            </div>
-            <div class="form-control">
-                <label>Confirmar Contraseña</label>
-                <input type="password" name="confirmPassword" required class="control">
-                <span class="feedback" id="feedback"></span>
-            </div>
+                <div class="form-control">
+                    <label>Contraseña</label>
+                    <input type="password" name="password" required class="control">
+                    <span class="feedback" id="feedback"></span>
+                </div>
+                <div class="form-control">
+                    <label>Confirmar Contraseña</label>
+                    <input type="password" name="confirmPassword" required class="control">
+                    <span class="feedback" id="feedback"></span>
+                </div>
 
-            <div class="buttons">
-                <button type="submit" class="boton">Enviar</button>
-                <button type="reset" class="boton">Borrar</button>
-            </div>
+                <div class="buttons">
+                    <button type="submit" class="boton">Enviar</button>
+                    <button type="reset" class="boton">Borrar</button>
+                </div>
 
-        </form>
-    </section>
+            </form>
+        </section>
     </main>
 
     <footer>
