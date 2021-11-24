@@ -39,6 +39,4 @@ app.get("/detalle-producto", (req, res) => {
   res.sendFile(path.join(__dirname + "/views/detalle-producto.html"));
 });
 
-app.listen(port, () => {
-  console.log("Server running on port " + "http://localhost:" + port);
-});
+app.listen(process.env.PORT || 3030, () => console.log("Server running on port " + "http://localhost:" + 3030));
