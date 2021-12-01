@@ -1,5 +1,6 @@
 # Chistech
 Chistech Inc
+https://chistech-demo.herokuapp.com/
 
 # Wireframe
 https://www.figma.com/file/mDFuwxZF1JRsLFJoEaOeFP/SONY-Wireframe?node-id=0%3A1
