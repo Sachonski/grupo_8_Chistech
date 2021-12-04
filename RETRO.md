@@ -25,3 +25,10 @@
 - 3. Continuar haciendo: Rutinas de encuentros los fines de semana y refuerzos antes de clase de ser necesarios.
 - 4. Hacer menos: Crear clases en CSS que no vamos a utilizar.
 - 5. Dejar de hacer: Hacer enfasis en el trabajo en la main branch y enfocarse en trabajar en las branch individuales.
+
+# Retrospective - Sprint 3:
+- 1. Comenzar a hacer: Utilizar branches para desarollo en simulataneo.
+- 2. Hacer más: Comunicarnos para decididir la division de los sprints.
+- 3. Continuar haciendo: Seguir trabajando en equipo y comunicacion.
+- 4. Hacer menos: No trabajar en la misma branch.
+- 5. Dejar de hacer: No pushear a la main branch salvo en meetings grupales.
