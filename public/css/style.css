@@ -772,18 +772,23 @@ footer h2 {
 
 .form {
    height: 61vh;
+   width: 90%;
+   max-width: 800px;
+   margin: 0 auto;
+   margin-bottom: 15rem;
+   margin-top: 10rem;
  }
 
 .form-registro,
 .form-login {
   padding: 20px 15px;
-  width: 100%;
+
   margin: auto;
 }
 
 .form-control {
-  margin-bottom: 15px;
-  width: 100%;
+ margin: 3rem 0;
+
 }
 
 .form-control label {
