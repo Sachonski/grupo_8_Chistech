@@ -1,56 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/normalize.css" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Roboto:wght@300;700&display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-    <script src="https://kit.fontawesome.com/e00ad5da1a.js" crossorigin="anonymous"></script>
-    <title>Detalle Producto Chistech</title>
-
-    <!--Pagina Principal-->
-</head>
+    <%- include('./partials/head', {title: 'Detalle del Producto'}) -%>
 
 <body>
-    <header>
-        <nav class="navbar-movil">
-            <ul>
-                <li id="menu-hamburguesa">
-                    <a href="#"><i class="fas fa-bars"></i></a>
-                </li>
-                <li id="logo">
-                    <a href="/"><img class="logo" src="../img/chistech.png" alt="Queso" /></a>
-                    <!---- <h1>CHISTECH</h1> -->
-                </li>
-                <li id="carrito">
-                    <a href="/carrito"><i class="fas fa-shopping-bag"></i></a>
-                </li>
-            </ul>
-        </nav>
-
-        <nav class="navbar-desktop">
-            <ul>
-                <li id="logo">
-                    <a href="/"><img class="logo" src="../img/chistech.png" alt="Queso" /></a>
-                    <!---- <h1>CHISTECH</h1> -->
-                </li>
-                <li><a href="/productos">Productos</a></li>
-                <li><a href="/sobreNosotros">Sobre Nosotros</a></li>
-                <li><a href="/register">Registrarse</a></li>
-                <li id="carrito"><a href="/carrito"><i class="fas fa-shopping-bag"></i></a></li>
-            </ul>
-        </nav>
-
-    </header>
+    <%- include('./partials/header') -%>
 
     <main>
         <article class="container producto">
@@ -199,28 +153,7 @@
         </section>
 
     </main>
-    <footer>
-        <nav class="container footer" id="footer-registro">
-
-            <ul>
-                <li><a href="/sobreNosotros">Nosotros</a></li>
-                <li><a href="/productos">Productos</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-            <!-- cambie redes al footer -->
-            <ul class="footerIcon">
-                <li>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fab fa-twitter-square"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </li>
-            </ul>
-        </nav>
-    </footer>
+    <%- include('./partials/footer') -%>
 </body>
 
 </html>

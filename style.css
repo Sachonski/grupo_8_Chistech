@@ -637,7 +637,7 @@ footer h2 {
   padding: 0;
   display: flex;
   width: 400%;
-  animation: cambio 10s infinite alternate-reverse;
+  animation: cambio 20s infinite alternate-reverse;
 }
 
 .slider-producto li,

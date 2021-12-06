@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const mainRoutes = require("./routes/mainRoute");
 
-app.use(express.static("./public"));
+app.use(express.static("../public"));
 
 app.set("view engine", "ejs");
 
