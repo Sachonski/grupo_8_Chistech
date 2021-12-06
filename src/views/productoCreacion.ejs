@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head', {title: 'Formulario de Creacion' }) -%>
+
+    <body>
+        <%- include('./partials/header') -%>
+
+            <main>
+                <section class="form">
+                    
+                    <h2>Crear Producto</h2>
+
+                    <form action="/src/views/productoCreacion.ejs" method="post" class=""></form>
+
+                    <div class="form-control">
+                        <label>Nombre del Producto</label>
+                        <input type="text" name="nombre" placeholder="Nombre del producto" required class="control">
+                        <span class="feedback" id="feedback"></span>
+                    </div>
+
+                    <div class="form-control">
+                        <label>Descripcion del producto</label>
+                        <textarea name="descripcion" rows="10" cols="50">Agregue su descripcion del producto</textarea>
+                        <span class="feedback" id="feedback"></span>
+                    </div>
+
+                    <div class="form-control">
+                        <label>Imagen del producto</label>
+                        <input type="file" accept=".jpg,.png">
+                    </div>
+
+                    <div class="form-control">
+                        <label>Categorias</label>
+                        <select name="Categorias">
+                            <option value="quesos-duros" selected>Quesos Duros</option>
+                            <option value="quesos-blandos">Quesos Blandos</option>
+                            <option value="quesos-azules">Quesos Azules</option>
+                            <option value="quesos-frescos">Quesos Frescos</option>
+                            <option value="quesos-corteza">Quesos Corteza</option>
+                        </select>
+                    </div>
+
+                    <div class="form-control">
+                        <label>Presentacion</label>
+                        <input type="text" name="presentacion" placeholder="presentacion del producto" required
+                            class="control">
+                        <span class="feedback" id="feedback"></span>
+                    </div>
+
+                    <div class="form-control">
+                        <label>Precio</label>
+                        <input type="value" name="precio-del-producto" required class="control">
+                        <span class="feedback" id="feedback"></span>
+                    </div>
+                    
+                    <div class="buttons">
+                        <button type="submit" class="boton">Enviar</button>
+                        <button type="reset" class="boton">Borrar</button>
+                    </div>
+
+                    </form>
+
+                </section>
+            </main>
+
+            <%- include('./partials/footer') -%>
+
+    </body>
+
+</html>

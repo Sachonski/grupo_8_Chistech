@@ -507,8 +507,7 @@ i {
 
 
 footer {
-    position: relative;
-    margin-top: 10rem;
+    margin-top: 4rem;
 }
 
 footer h2 {
@@ -516,12 +515,12 @@ footer h2 {
 }
 
 .footer {
-  max-width: none;
+  max-width: 100%;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   background-color: var(--gray-smoky);
-  position: absolute;
+  /*position : absolute */
   bottom: 0;
 }
 
@@ -545,7 +544,7 @@ footer h2 {
 }
 
 #footer-registro {
- position: absolute;
+ /* position: absolute; */
  bottom: 0;
  width: 100%;
 }
@@ -771,23 +770,22 @@ footer h2 {
 /* Registro y login */
 
 .form {
-   height: 61vh;
+   height: 100%;
    width: 90%;
    max-width: 800px;
    margin: 0 auto;
-   margin-bottom: 15rem;
-   margin-top: 10rem;
+   margin-bottom: 1rem;
+   margin-top: 1rem;
  }
 
 .form-registro,
 .form-login {
   padding: 20px 15px;
-
   margin: auto;
 }
 
 .form-control {
- margin: 3rem 0;
+ margin: 1.5rem 0;
 
 }
 

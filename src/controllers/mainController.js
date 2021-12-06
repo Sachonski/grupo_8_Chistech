@@ -20,6 +20,9 @@ const controller = {
     },
     sobreNosotros: (req, res) => {
         return res.render('sobreNosotros');
+    },
+    productoCreacion : (req,res) => {
+        return res.render('productoCreacion')
     }
 }
 
