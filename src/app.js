@@ -1,10 +1,10 @@
 const express = require("express");
 const app = express();
-const mainRoutes = require("./src/routes/mainRoute");
+const mainRoutes = require("./routes/mainRoute");
 
 app.use(express.static("public"));
 
-app.set('views' , './src/views')
+app.set("views", "./src/views");
 
 app.set("view engine", "ejs");
 

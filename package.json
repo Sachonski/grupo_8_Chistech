@@ -2,10 +2,10 @@
   "name": "propia",
   "version": "1.0.0",
   "description": "Chistech Inc",
-  "main": "app.js",
+  "main": "src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node src/app.js"
   },
   "author": "",
   "license": "ISC",
