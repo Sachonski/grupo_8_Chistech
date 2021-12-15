@@ -41,113 +41,36 @@
         <section class="destacados">
             <div class="container">
                 <h2 class="bold">Productos En Oferta</h2>
-                <!-- este div en mobile es slider -->
-                <!-- <div class="productos">
-            <ul class="clase-producto">
-              <li>
-                <img src="../img/gruyere.jpg" alt="Queso" />
-                <p class="item">Queso Parmesano Estacionado Horma</p>
-                <div>
-                  <p>$2000.00</p>
-                  <p>20%</p>
-                </div>
-                <div class="quantity">
-                  <input type="number" min="1" max="999" step="1" value="1" />
-                  <button>Agregar al carrito</button>
-                </div>
-              </li>
-            </ul>
-          </div> -->
+
                 <div class="products">
+                    <% for(product of products) { %>
+                        <% if(product.id < 5)  { %>
+
                     <div>
                         <div class="product">
                             <a href="/detalle-producto">
                                 <div class="product-card">
                                     <div class="product-image">
-                                        <img src="..\img\queso-azul-cabra-920x920.png" alt="Queso bien rico" />
+                                        <img src="..\img\<%= product.image %>" alt="Queso bien rico" />
                                     </div>
                                     <div class="product-description">
-                                        <h3>Queso Azul Tradicional</h3>
-                                        <p>200g</p>
+                                        <h3><%= product.name %></h3>
+                                        <p><%= product.package %></p>
                                     </div>
                                     <div class="product-price">
                                         <div aria-hidden="true"></div>
-                                        <p>$2000</p>
+                                        <p>$ <%= product.price %></p>
                                     </div>
                                 </div>
                             </a>
                             <div>
-                                <a href="#" class="boton"> Agregar al carrito</a>
+                                <a href="/carrito" class="boton"> Agregar al carrito</a>
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <div class="product">
-                            <a href="/detalle-producto">
-                                <div class="product-card">
-                                    <div class="product-image">
-                                        <img src="..\img\queso-mozzarella-polpetta-920x920.png" alt="Queso bien rico" />
-                                    </div>
-                                    <div class="product-description">
-                                        <h3>Queso Mozzarella Polpetta</h3>
-                                        <p>250g</p>
-                                    </div>
-                                    <div class="product-price">
-                                        <div aria-hidden="true"></div>
-                                        <p>$2000</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <div>
-                                <a href="#" class="boton"> Agregar al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product">
-                            <a href="/detalle-producto">
-                                <div class="product-card">
-                                    <div class="product-image">
-                                        <img src="..\img\queso-pecorino-18-meses-920x920.png" alt="Queso bien rico" />
-                                    </div>
-                                    <div class="product-description">
-                                        <h3>Queso Pecorino 18 Meses</h3>
-                                        <p>500g</p>
-                                    </div>
-                                    <div class="product-price">
-                                        <div aria-hidden="true"></div>
-                                        <p>$2000</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <div>
-                                <a href="#" class="boton"> Agregar al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product">
-                            <a href="/detalle-producto">
-                                <div class="product-card">
-                                    <div class="product-image">
-                                        <img src="..\img\queso-provolone-stagionato-920x920.png"
-                                            alt="Queso bien rico" />
-                                    </div>
-                                    <div class="product-description">
-                                        <h3>Queso Provolone Stagionato</h3>
-                                        <p>500g</p>
-                                    </div>
-                                    <div class="product-price">
-                                        <div aria-hidden="true"></div>
-                                        <p>$2000</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <div>
-                                <a href="#" class="boton"> Agregar al carrito</a>
-                            </div>
-                        </div>
-                    </div>
+                    <% } %>
+                    <% } %>
+                                                          
                 </div>
             </div>
         </section>

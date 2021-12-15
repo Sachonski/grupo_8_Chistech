@@ -13,6 +13,10 @@ const controller = {
     productos: (req, res) => {      
         return res.render('productos', { products: products });
     },
+    productosCategoria: (req, res) => { 
+        const category = req.params;     
+        return res.render('productos', { products: products.filter(product => product.category === category) });
+    },
     detalleProducto: (req, res) => {
         return res.render('detalle-producto', { products: products });
     },
