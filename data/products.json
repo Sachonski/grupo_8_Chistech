@@ -280,7 +280,7 @@
     "name": "Feta",
     "description": "Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante.",
     "price": 52,
-    "discount":10
+    "discount":10,
     "category": "Quesos Frescos",
     "package": "horma",
     "stock": false,
@@ -920,7 +920,7 @@
     "name": "Mascarpone",
     "description": "Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
     "price": 21,
-    "discount": 30
+    "discount": 30,
     "category": "Quesos Duros",
     "package": "fraccionado",
     "stock": false,

@@ -10,8 +10,7 @@ const controller = {
     home: (req, res) => {
         return res.render('home', { products: products });
     },
-    productos: (req, res) => {
-        console.log(products);
+    productos: (req, res) => {      
         return res.render('productos', { products: products });
     },
     detalleProducto: (req, res) => {
