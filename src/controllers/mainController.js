@@ -14,8 +14,9 @@ const controller = {
         return res.render('productos', { products: products });
     },
     productosCategoria: (req, res) => { 
-        const category = req.params;     
-        return res.render('productos', { products: products.filter(product => product.category === category) });
+        const category = req.params.category;     
+        const productsByCategory = products.filter(product => product.category == category & product.stock == true);
+        return res.render('productos', { products: productsByCategory });
     },
     detalleProducto: (req, res) => {
         return res.render('detalle-producto', { products: products });
