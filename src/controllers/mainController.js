@@ -35,7 +35,26 @@ const controller = {
     },
     productoCreacion : (req,res) => {
         return res.render('productoCreacion')
-    }
+    },
+    productoGuardar : (req, res) => {
+        console.log('hola');
+        const image = req.file.filename;
+        const { name, price, discount, category, description , stock } = req.body;
+        const newProduct = {}
+        newProduct.id = products[products.length - 1].id + 1;
+        newProduct.name = name;
+        newProduct.price =price;
+        newProduct.discount = discount;
+        newProduct.category = category;
+        newProduct.description = description;
+        newProduct.image = image;
+        newProduct.stock = stock;
+
+        products.push(newProduct);
+
+        fs.writeFileSync(productsFilePath, JSON.stringify(products));
+        res.redirect('/productos');
+    },
 }
 
 module.exports = controller;

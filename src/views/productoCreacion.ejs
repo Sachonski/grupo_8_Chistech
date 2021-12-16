@@ -11,7 +11,7 @@
                     
                     <h2>Crear Producto</h2>
 
-                    <form action="/src/views/productoCreacion.ejs" method="post" class="" ></form>
+                    <form action="/productoCreacion" method="post" class="" name ='productoCreacion' enctype="multipart/form-data" >
 
                     <div class="form-control">
                         <label>Nombre del Producto</label>
@@ -61,7 +61,7 @@
                         <input type="number" name="discount" required class="control">
                         <span class="feedback" id="feedback"></span>
                     </div>
-                    
+
                     <div class="form-control">
                         <label>En Stock</label>
                         <input type="radio" name="stock" value="true">
