@@ -8,69 +8,77 @@
 
             <main>
                 <section class="form">
-                    
+
                     <h2>Crear Producto</h2>
 
-                    <form action="/productoCreacion" method="post" class="" name ='productoCreacion' enctype="multipart/form-data" >
+                    <form action="/productoCreacion" method="post" class="" name='productoCreacion'
+                        enctype="multipart/form-data">
 
-                    <div class="form-control">
-                        <label>Nombre del Producto</label>
-                        <input type="text" name="name" placeholder="Nombre del producto" required class="control">
-                        <span class="feedback" id="feedback"></span>
-                    </div>
+                        <div class="form-control">
+                            <label>Nombre del Producto</label>
+                            <input type="text" name="name" placeholder="Nombre del producto" required class="control">
+                            <span class="feedback" id="feedback"></span>
+                        </div>
 
-                    <div class="form-control">
-                        <label>Descripcion del producto</label>
-                        <textarea name="description" rows="10" cols="50">Agregue su descripcion del producto</textarea>
-                        <span class="feedback" id="feedback"></span>
-                    </div>
+                        <div class="form-control">
+                            <label>Descripcion del producto</label>
+                            <textarea name="description" rows="10"
+                                cols="50">Agregue su descripcion del producto</textarea>
+                            <span class="feedback" id="feedback"></span>
+                        </div>
 
-                    <div class="form-control">
-                        <label>Imagen del producto</label>
-                        <input type="file" name="image" accept=".jpg,.png">
-                    </div>
+                        <div class="form-control">
+                            <label>Imagen del producto</label>
+                            <input type="file" name="image" accept=".jpg,.png">
+                        </div>
 
-                    <div class="form-control">
-                        <label>Categorias</label>
-                        <select name="category"required>
-                            <option value="quesos-duros" selected>Quesos-Duros</option>
-                            <option value="quesos-blandos">Quesos-Blandos</option>
-                            <option value="quesos-azules">Quesos-Azules</option>
-                            <option value="quesos-frescos">Quesos-Frescos</option>
-                            <option value="quesos-corteza">Quesos-Corteza</option>
-                        </select>
-                    </div>
+                        <div class="form-control">
+                            <label>Categorias</label>
+                            <select name="category" required>
+                                <option value="quesos-duros" selected>Quesos-Duros</option>
+                                <option value="quesos-blandos">Quesos-Blandos</option>
+                                <option value="quesos-azules">Quesos-Azules</option>
+                                <option value="quesos-frescos">Quesos-Frescos</option>
+                                <option value="quesos-corteza">Quesos-Corteza</option>
+                            </select>
+                        </div>
 
-                    <div class="form-control">
-                        <label>Presentacion</label>
-                        <select name="category" required>
-                            <option value="fraccionado" selected>fraccionado</option>
-                            <option value="quesos-blandos">horma</option>
-                        </select>   
-                        <span class="feedback" id="feedback"></span>
-                    </div>
+                        <div class="form-control">
+                            <label>Presentacion</label>
+                            <select name="packaging" required>
+                                <option value="fraccionado" selected>fraccionado</option>
+                                <option value="quesos-blandos">horma</option>
+                            </select>
+                            <span class="feedback" id="feedback"></span>
+                        </div>
 
-                    <div class="form-control">
-                        <label>Precio</label>
-                        <input type="number" name="price" required class="control">
-                        <span class="feedback" id="feedback"></span>
-                    </div>
+                        <div class="form-control">
+                            <label>Precio</label>
+                            <input type="number" name="price" required class="control">
+                            <span class="feedback" id="feedback"></span>
+                        </div>
 
-                    <div class="form-control">
-                        <label>Descuento</label>
-                        <input type="number" name="discount" required class="control">
-                        <span class="feedback" id="feedback"></span>
-                    </div>
+                        <div class="form-control">
+                            <label>Descuento</label>
+                            <input type="number" name="discount" class="control" value = '0'/>
+                            <span class="feedback" id="feedback"></span>
+                        </div>
 
-                    <div class="form-control">
-                        <label>En Stock</label>
-                        <input type="radio" name="stock" value="true">
-                    </div>
-                    
-                    <div class="buttons">
-                        <button type="submit" class="boton">Enviar</button>
-                        <button type="reset" class="boton">Borrar</button>
-                    </div>
+                        <div class="form-control inline">
+                            <div>
+                                <label>En Stock</label>
+                                <input name="stock" class="form-control" type="radio" value="true" checked />
+                            </div>
+                            <div>
+                                <label>No en Stock</label>
+                                <input name="stock" class="form-control" type="radio" value="false" />
+                            </div>
+                        </div>
+
+                        <div class="buttons">
+                            <button type="submit" class="boton">Enviar</button>
+                            <button type="reset" class="boton">Borrar</button>
+                        </div>
 
                     </form>
 

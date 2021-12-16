@@ -37,18 +37,18 @@ const controller = {
         return res.render('productoCreacion')
     },
     productoGuardar : (req, res) => {
-        console.log('hola');
-        const image = req.file.filename;
-        const { name, price, discount, category, description , stock } = req.body;
+        
+        const { name, price, discount, category, description, packaging, stock } = req.body;
         const newProduct = {}
         newProduct.id = products[products.length - 1].id + 1;
         newProduct.name = name;
-        newProduct.price =price;
-        newProduct.discount = discount;
+        newProduct.price = parseInt(price);
+        newProduct.discount = parseInt(discount);
         newProduct.category = category;
         newProduct.description = description;
-        newProduct.image = image;
-        newProduct.stock = stock;
+        newProduct.packaging = packaging;
+        newProduct.image = (req.file) ?  req.file.filename: "no image";
+        newProduct.stock = JSON.parse(stock);
 
         products.push(newProduct);
 

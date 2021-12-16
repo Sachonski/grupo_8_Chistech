@@ -6,7 +6,7 @@
         "price": 45,
         "discount": 0,
         "category": "Quesos-Corteza",
-        "package": "horma",
+        "packaging": "horma",
         "stock": true,
         "image": "Background2.png"
     },
@@ -17,7 +17,7 @@
         "price": 14,
         "discount": 0,
         "category": "Quesos-Duros",
-        "package": "fraccionado",
+        "packaging": "fraccionado",
         "stock": false,
         "image": "Background3.png"
     },
@@ -28,7 +28,7 @@
         "price": 83,
         "discount": 0,
         "category": "Quesos-Corteza",
-        "package": "horma",
+        "packaging": "horma",
         "stock": false,
         "image": "queso-provoleta-920x920.png"
     },
@@ -39,7 +39,7 @@
         "price": 58,
         "discount": 0,
         "category": "Quesos-Blandos",
-        "package": "horma",
+        "packaging": "horma",
         "stock": true,
         "image": "Background2.png"
     },
@@ -50,7 +50,7 @@
         "price": 59,
         "discount": 0,
         "category": "Quesos-Azules",
-        "package": "fraccionado",
+        "packaging": "fraccionado",
         "stock": false,
         "image": "semiblandos.jpg"
     },
@@ -61,7 +61,7 @@
         "price": 56,
         "discount": 0,
         "category": "Quesos-Duros",
-        "package": "horma",
+        "packaging": "horma",
         "stock": true,
         "image": "queso-provoleta-920x920.png"
     },
@@ -72,7 +72,7 @@
         "price": 99,
         "discount": 0,
         "category": "Quesos-Duros",
-        "package": "fraccionado",
+        "packaging": "fraccionado",
         "stock": true,
         "image": "00010ccc-ADF4-4841-BBCC-4DB315E8DE4C-768x576.png"
     },
@@ -83,7 +83,7 @@
         "price": 100,
         "discount": 0,
         "category": "Quesos-Azules",
-        "package": "fraccionado",
+        "packaging": "fraccionado",
         "stock": true,
         "image": "semiblandos.jpg"
     },
@@ -94,7 +94,7 @@
         "price": 50,
         "discount": 0,
         "category": "Quesos-Corteza",
-        "package": "fraccionado",
+        "packaging": "fraccionado",
         "stock": true,
         "image": "surtidos2.jpg"
     },
@@ -105,7 +105,7 @@
         "price": 46,
         "discount": 0,
         "category": "Quesos-Duros",
-        "package": "fraccionado",
+        "packaging": "fraccionado",
         "stock": false,
         "image": "queso-provolone-stagionato-920x920.png"
     },
@@ -116,7 +116,7 @@
         "price": 32,
         "discount": 0,
         "category": "Quesos-Blandos",
-        "package": "fraccionado",
+        "packaging": "fraccionado",
         "stock": false,
         "image": "queso-cheddar-ingles-920x920.png"
     },
@@ -127,7 +127,7 @@
         "price": 67,
         "discount": 0,
         "category": "Quesos-Frescos",
-        "package": "horma",
+        "packaging": "horma",
         "stock": true,
         "image": "queso-tybo-pimienta-920x920.png"
     },
@@ -138,7 +138,7 @@
         "price": 89,
         "discount": 0,
         "category": "Quesos-Frescos",
-        "package": "fraccionado",
+        "packaging": "fraccionado",
         "stock": true,
         "image": "queso-brie-laboheme-920x920.png"
     },
@@ -149,7 +149,7 @@
         "price": 4,
         "discount": 0,
         "category": "Quesos-Duros",
-        "package": "fraccionado",
+        "packaging": "fraccionado",
         "stock": false,
         "image": "tienda.jpg"
     },
@@ -160,7 +160,7 @@
         "price": 61,
         "discount": 0,
         "category": "Quesos-Corteza",
-        "package": "fraccionado",
+        "packaging": "fraccionado",
         "stock": false,
         "image": "queso-parmesano-15-meses-920x920.png"
     },
@@ -171,7 +171,7 @@
         "price": 39,
         "discount": 0,
         "category": "Quesos-Frescos",
-        "package": "horma",
+        "packaging": "horma",
         "stock": true,
         "image": "queso-sbrinz-18-meses-920x920.png"
     },
@@ -182,7 +182,7 @@
         "price": 28,
         "discount": 0,
         "category": "Quesos-Azules",
-        "package": "fraccionado",
+        "packaging": "fraccionado",
         "stock": false,
         "image": "queso-mozzarella-polpetta-920x920.png"
     },
@@ -193,7 +193,7 @@
         "price": 93,
         "discount": 0,
         "category": "Quesos-Frescos",
-        "package": "horma",
+        "packaging": "horma",
         "stock": true,
         "image": "00010ccc-ADF4-4841-BBCC-4DB315E8DE4C-768x576.png"
     },
@@ -204,7 +204,7 @@
         "price": 46,
         "discount": 0,
         "category": "Quesos-Corteza",
-        "package": "fraccionado",
+        "packaging": "fraccionado",
         "stock": false,
         "image": "surtidos2.jpg"
     },
@@ -215,7 +215,7 @@
         "price": 30,
         "discount": 0,
         "category": "Quesos-Frescos",
-        "package": "horma",
+        "packaging": "horma",
         "stock": false,
         "image": "queso-tybo-pimienta-920x920.png"
     },
@@ -226,7 +226,7 @@
         "price": 6,
         "discount": 0,
         "category": "Quesos-Duros",
-        "package": "horma",
+        "packaging": "horma",
         "stock": false,
         "image": "queso-blanco-danes-920x920.png"
     },
@@ -237,7 +237,7 @@
         "price": 98,
         "discount": 0,
         "category": "Quesos-Corteza",
-        "package": "fraccionado",
+        "packaging": "fraccionado",
         "stock": true,
         "image": "EB37B83A-D5E4-4D60-91AC-5B6164F36348-1024x683.png"
     },
@@ -248,7 +248,7 @@
         "price": 43,
         "discount": 0,
         "category": "Quesos-Duros",
-        "package": "horma",
+        "packaging": "horma",
         "stock": false,
         "image": "B1EA2786-1E01-4C7F-8ECA-F647031E037A-768x512.png"
     },
@@ -259,7 +259,7 @@
         "price": 12,
         "discount": 0,
         "category": "Quesos-Frescos",
-        "package": "fraccionado",
+        "packaging": "fraccionado",
         "stock": true,
         "image": "queso-cheddar-ingles-920x920.png"
     },
@@ -270,7 +270,7 @@
         "price": 63,
         "discount": 0,
         "category": "Quesos-Frescos",
-        "package": "horma",
+        "packaging": "horma",
         "stock": true,
         "image": "00010ccc-ADF4-4841-BBCC-4DB315E8DE4C-768x576.png"
     },
@@ -281,7 +281,7 @@
         "price": 77,
         "discount": 0,
         "category": "Quesos-Blandos",
-        "package": "horma",
+        "packaging": "horma",
         "stock": false,
         "image": "queso-piramide-cabra-920x920.png"
     },
@@ -292,7 +292,7 @@
         "price": 55,
         "discount": 0,
         "category": "Quesos-Corteza",
-        "package": "fraccionado",
+        "packaging": "fraccionado",
         "stock": false,
         "image": "queso-blanco-cabral-920x920.png"
     },
@@ -303,7 +303,7 @@
         "price": 47,
         "discount": 0,
         "category": "Quesos-Azules",
-        "package": "fraccionado",
+        "packaging": "fraccionado",
         "stock": false,
         "image": "5fe7de1b-5bcb-4aa9-9b1b-6a7944458d97-768x512.png"
     },
@@ -314,7 +314,7 @@
         "price": 52,
         "discount": 10,
         "category": "Quesos-Frescos",
-        "package": "horma",
+        "packaging": "horma",
         "stock": false,
         "image": "00010ccc-ADF4-4841-BBCC-4DB315E8DE4C-768x576.png"
     },
@@ -325,7 +325,7 @@
         "price": 82,
         "discount": 10,
         "category": "Quesos-Duros",
-        "package": "horma",
+        "packaging": "horma",
         "stock": true,
         "image": "queso-tetilla-920x920.png"
     },
@@ -336,7 +336,7 @@
         "price": 11,
         "discount": 10,
         "category": "Quesos-Azules",
-        "package": "horma",
+        "packaging": "horma",
         "stock": true,
         "image": "queso-tetilla-920x920.png"
     },
@@ -347,7 +347,7 @@
         "price": 53,
         "discount": 10,
         "category": "Quesos-Frescos",
-        "package": "horma",
+        "packaging": "horma",
         "stock": false,
         "image": "surtidos1.jpg"
     },
@@ -358,7 +358,7 @@
         "price": 93,
         "discount": 10,
         "category": "Quesos-Frescos",
-        "package": "horma",
+        "packaging": "horma",
         "stock": false,
         "image": "C35AADD3-CAE1-4532-9937-615F2B8546D4-768x512.png"
     },
@@ -369,7 +369,7 @@
         "price": 78,
         "discount": 10,
         "category": "Quesos-Duros",
-        "package": "fraccionado",
+        "packaging": "fraccionado",
         "stock": true,
         "image": "surtidos2.jpg"
     },
@@ -380,7 +380,7 @@
         "price": 39,
         "discount": 10,
         "category": "Quesos-Blandos",
-        "package": "horma",
+        "packaging": "horma",
         "stock": true,
         "image": "queso-sbrinz-18-meses-920x920.png"
     },
@@ -391,7 +391,7 @@
         "price": 84,
         "discount": 10,
         "category": "Quesos-Azules",
-        "package": "horma",
+        "packaging": "horma",
         "stock": false,
         "image": "B1EA2786-1E01-4C7F-8ECA-F647031E037A-768x512.png"
     },
@@ -402,7 +402,7 @@
         "price": 76,
         "discount": 10,
         "category": "Quesos-Blandos",
-        "package": "horma",
+        "packaging": "horma",
         "stock": false,
         "image": "658307e6-CC9A-4EE0-8B46-C3F7EB2F9544-768x512.png"
     },
@@ -413,7 +413,7 @@
         "price": 35,
         "discount": 10,
         "category": "Quesos-Blandos",
-        "package": "horma",
+        "packaging": "horma",
         "stock": false,
         "image": "queso-pecorino-18-meses-920x920.png"
     },
@@ -424,7 +424,7 @@
         "price": 21,
         "discount": 10,
         "category": "Quesos-Azules",
-        "package": "fraccionado",
+        "packaging": "fraccionado",
         "stock": true,
         "image": "A2E72F69-7670-4F6B-AF62-0C69638DEAC8-768x512.png"
     },
@@ -435,7 +435,7 @@
         "price": 79,
         "discount": 10,
         "category": "Quesos-Blandos",
-        "package": "fraccionado",
+        "packaging": "fraccionado",
         "stock": true,
         "image": "queso-canestrato-stagionato-920x920.png"
     },
@@ -446,7 +446,7 @@
         "price": 94,
         "discount": 10,
         "category": "Quesos-Duros",
-        "package": "horma",
+        "packaging": "horma",
         "stock": true,
         "image": "tienda2.jpg"
     },
@@ -457,7 +457,7 @@
         "price": 50,
         "discount": 10,
         "category": "Quesos-Corteza",
-        "package": "horma",
+        "packaging": "horma",
         "stock": true,
         "image": "C2F84B43-D143-4EBA-A307-FC41C1A8A229-768x511.png"
     },
@@ -468,7 +468,7 @@
         "price": 63,
         "discount": 100,
         "category": "Quesos-Frescos",
-        "package": "fraccionado",
+        "packaging": "fraccionado",
         "stock": true,
         "image": "queso-pecorino-18-meses-920x920.png"
     },
@@ -479,7 +479,7 @@
         "price": 7,
         "discount": 10,
         "category": "Quesos-Azules",
-        "package": "fraccionado",
+        "packaging": "fraccionado",
         "stock": true,
         "image": "Background1.png"
     },
@@ -490,7 +490,7 @@
         "price": 51,
         "discount": 10,
         "category": "Quesos-Blandos",
-        "package": "horma",
+        "packaging": "horma",
         "stock": false,
         "image": "queso-gruyere-920x920.png"
     },
@@ -501,7 +501,7 @@
         "price": 23,
         "discount": 10,
         "category": "Quesos-Duros",
-        "package": "horma",
+        "packaging": "horma",
         "stock": true,
         "image": "queso-azul-cabra-920x920.png"
     },
@@ -512,7 +512,7 @@
         "price": 75,
         "discount": 10,
         "category": "Quesos-Duros",
-        "package": "fraccionado",
+        "packaging": "fraccionado",
         "stock": true,
         "image": "tienda.jpg"
     },
@@ -523,7 +523,7 @@
         "price": 32,
         "discount": 10,
         "category": "Quesos-Frescos",
-        "package": "horma",
+        "packaging": "horma",
         "stock": true,
         "image": "A2E72F69-7670-4F6B-AF62-0C69638DEAC8-768x512.png"
     },
@@ -534,7 +534,7 @@
         "price": 59,
         "discount": 10,
         "category": "Quesos-Frescos",
-        "package": "horma",
+        "packaging": "horma",
         "stock": true,
         "image": "surtidos2.jpg"
     },
@@ -545,8 +545,219 @@
         "price": 18,
         "discount": 10,
         "category": "Quesos-Azules",
-        "package": "fraccionado",
+        "packaging": "fraccionado",
         "stock": false,
         "image": "queso-blanco-danes-920x920.png"
+    },
+    {
+        "id": 51,
+        "name": "jjyjyg",
+        "price": "867",
+        "discount": "8",
+        "category": [
+            "quesos-duros",
+            "fraccionado"
+        ],
+        "description": "Agregue su descripcion del producto",
+        "image": "1639624822893_Background1.png",
+        "stock": "true"
+    },
+    {
+        "id": 52,
+        "name": "ytityu",
+        "price": "20000000",
+        "discount": "10",
+        "category": [
+            "quesos-duros",
+            "fraccionado"
+        ],
+        "description": "Agregue su descripcion del producto",
+        "image": "1639625208452_1639624822893_Background1.png"
+    },
+    {
+        "id": 53,
+        "name": "queso",
+        "price": "10",
+        "discount": "3",
+        "category": [
+            "quesos-blandos",
+            "quesos-blandos"
+        ],
+        "description": "Agregue su descripcion del producto",
+        "image": "1639625208452_Sin título.png",
+        "stock": "true"
+    },
+    {
+        "id": 54,
+        "name": "rynete",
+        "price": "7537",
+        "discount": "3",
+        "category": "quesos-duros",
+        "description": "Agregue su descripcionerynn del producto",
+        "image": "1639625208452_Sin título.png",
+        "stock": "true"
+    },
+    {
+        "id": 55,
+        "name": "queso",
+        "price": "123456",
+        "discount": "15",
+        "category": "quesos-duros",
+        "description": "Agregue su descripcion del producto iefoqwe9wv8yew",
+        "packaging": "fraccionado",
+        "image": "1639625776220_Sin título.png"
+    },
+    {
+        "id": 56,
+        "name": "ertertr",
+        "price": "7537",
+        "discount": "3",
+        "category": "quesos-corteza",
+        "description": "Agregue su descripcion del producto",
+        "packaging": "quesos-blandos",
+        "image": "1639625776220_Sin título.png"
+    },
+    {
+        "id": 57,
+        "name": "false",
+        "price": "7537",
+        "discount": "10",
+        "category": "quesos-azules",
+        "description": "Agregue su descripcion del producto",
+        "packaging": "quesos-blandos",
+        "image": "1639625776220_Sin título.png",
+        "stock": "false"
+    },
+    {
+        "id": 58,
+        "name": "false",
+        "price": "7537",
+        "discount": "10",
+        "category": "quesos-azules",
+        "description": "Agregue su descripcion del producto",
+        "packaging": "quesos-blandos",
+        "image": "1639625776220_Sin título.png",
+        "stock": "false"
+    },
+    {
+        "id": 59,
+        "name": "rtbwetr",
+        "price": "7537",
+        "discount": "0",
+        "category": "quesos-duros",
+        "description": "Agregue su descripcion del producto",
+        "packaging": "fraccionado",
+        "image": "1639626914541_Sin título.png",
+        "stock": false
+    },
+    {
+        "id": 60,
+        "name": "Diana",
+        "price": "123456",
+        "discount": "10",
+        "category": "quesos-duros",
+        "description": "Agregue su descripcion del producto",
+        "packaging": "fraccionado",
+        "image": "1639626914541_Sin título.png",
+        "stock": false
+    },
+    {
+        "id": 61,
+        "name": "producto",
+        "price": "52",
+        "discount": "10",
+        "category": "quesos-azules",
+        "description": "Agregue su descripcion del producto",
+        "packaging": "quesos-blandos",
+        "image": "1639626914541_Sin título.png",
+        "stock": true
+    },
+    {
+        "id": 62,
+        "name": "producto",
+        "price": 52,
+        "discount": 10,
+        "category": "quesos-azules",
+        "description": "Agregue su descripcion del producto",
+        "packaging": "quesos-blandos",
+        "image": "1639628304454_Sin título.png",
+        "stock": true
+    },
+    {
+        "id": 63,
+        "name": "producto",
+        "price": 52,
+        "discount": 10,
+        "category": "quesos-azules",
+        "description": "Agregue su descripcion del producto",
+        "packaging": "quesos-blandos",
+        "image": "1639628304454_Sin título.png",
+        "stock": false
+    },
+    {
+        "id": 64,
+        "name": "Diana",
+        "price": 52,
+        "discount": null,
+        "category": "quesos-duros",
+        "description": "Agregue su descripcion del producto",
+        "packaging": "fraccionado",
+        "image": "1639628304454_Sin título.png",
+        "stock": true
+    },
+    {
+        "id": 65,
+        "name": "Diana",
+        "price": 52,
+        "discount": null,
+        "category": "quesos-duros",
+        "description": "Agregue su descripcion del producto",
+        "packaging": "fraccionado",
+        "image": "1639628304454_Sin título.png",
+        "stock": true
+    },
+    {
+        "id": 66,
+        "name": "Diana",
+        "price": 52,
+        "discount": null,
+        "category": "quesos-duros",
+        "description": "Agregue su descripcion del producto",
+        "packaging": "fraccionado",
+        "image": "1639629567373_Sin título.png",
+        "stock": true
+    },
+    {
+        "id": 67,
+        "name": "Diana",
+        "price": 52,
+        "discount": 15,
+        "category": "quesos-duros",
+        "description": "Agregue su descripcion del producto",
+        "packaging": "fraccionado",
+        "image": "1639629567373_Sin título.png",
+        "stock": true
+    },
+    {
+        "id": 68,
+        "name": "Diana",
+        "price": 52,
+        "discount": null,
+        "category": "quesos-duros",
+        "description": "Agregue su descripcion del producto",
+        "packaging": "fraccionado",
+        "image": "1639629567373_Sin título.png",
+        "stock": true
+    },
+    {
+        "id": 69,
+        "name": "ertertr",
+        "price": 1346,
+        "discount": 0,
+        "category": "quesos-duros",
+        "description": "Agregue su descripcion del producto",
+        "packaging": "fraccionado",
+        "image": "no image",
+        "stock": true
     }
 ]

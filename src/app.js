@@ -1,10 +1,12 @@
 const express = require("express");
 const morgan = require("morgan");
+const bodyParser= require('body-parser')
+const multer = require('multer');
 const app = express();
 const mainRoutes = require("./routes/mainRoute");
 
-app.use(express.urlencoded({ extended: false }));
-
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json())
 app.use(express.json());
 
 app.use(morgan('tiny'));

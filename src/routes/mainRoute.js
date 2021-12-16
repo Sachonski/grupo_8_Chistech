@@ -9,14 +9,14 @@ const path = require("path");
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     // cb(null, "../public/img");
-    cb(null, path.join(__dirname, '../public/img'))
+    cb(null, path.join(__dirname, '../../public/img'))
   },
-  filename: function (req, file, cb) {
-    cb(null, date +"_"+file.originalname);
-}
+   filename: function (req, file, cb) {
+     cb(null, date +"_"+file.originalname);
+ }
 });
 
-const uploadFile = multer({ storage });
+const uploadFile = multer({ storage});
 
 
 router.get("/", mainController.home);

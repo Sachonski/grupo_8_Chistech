@@ -9,9 +9,11 @@
     "dev": "nodemon src/app.js"
   },
   "nodemonConfig": {
-    "ignore": ["data/", "public/img/"]
+    "ignore": [
+      "data/",
+      "public/img/"
+    ]
   },
-
   "author": "",
   "license": "ISC",
   "dependencies": {

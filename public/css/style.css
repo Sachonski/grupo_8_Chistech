@@ -795,6 +795,18 @@ footer h2 {
   display: block;
 }
 
+.inline {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.inline div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+}
+
 label.info {
   display: none;
 }
