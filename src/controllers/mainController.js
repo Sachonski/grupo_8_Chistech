@@ -1,13 +1,25 @@
+const fs = require('fs');
+const path = require('path');
+
+const productsFilePath = path.join(__dirname, '../../data/products.json');
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+
 const controller = {
     // Initialize the controller
     home: (req, res) => {
-        return res.render('home');
+        return res.render('home', { products: products });
     },
-    productos: (req, res) => {
-        return res.render('productos');
+    productos: (req, res) => {      
+        return res.render('productos', { products: products });
+    },
+    productosCategoria: (req, res) => { 
+        const category = req.params.category;     
+        const productsByCategory = products.filter(product => product.category == category & product.stock == true);
+        return res.render('productos', { products: productsByCategory });
     },
     detalleProducto: (req, res) => {
-        return res.render('detalle-producto');
+        return res.render('detalle-producto', { products: products });
     },
     carrito: (req, res) => {
         return res.render('carrito');

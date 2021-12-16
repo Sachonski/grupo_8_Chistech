@@ -12,26 +12,25 @@
         <section class="destacados">
             <ul class="categorias-productos">
                 <!--estas categorias van directamente a filtros dentro de productos -->
-
                 <li>
-                    <i class="fas fa-cheese"></i>
-                    <a href="/productos">Quesos Duros</a>
+                    <a href="productos/Quesos-Duros"><i class="fas fa-cheese"></i></a>
+                    <a href="productos/Quesos-Duros">Quesos Duros</a>
                 </li>
                 <li>
-                    <i class="fas fa-cheese"></i>
-                    <a href="/productos">Quesos Blandos</a>
+                    <a href="/productos/Quesos-Blandos"><i class="fas fa-cheese"></i></a>
+                    <a href="/productos/Quesos-Blandos">Quesos Blandos</a>
                 </li>
                 <li>
-                    <i class="fas fa-cheese"></i>
-                    <a href="/productos">Quesos Azules</a>
+                    <a href="/productos/Quesos-Azules"><i class="fas fa-cheese"></i></a>
+                    <a href="/productos/Quesos-Azules">Quesos Azules</a>
                 </li>
                 <li>
-                    <i class="fas fa-cheese"></i>
-                    <a href="/productos">Quesos Frescos</a>
+                    <a href="/productos/Quesos-Frescos"><i class="fas fa-cheese"></i></a>
+                    <a href="/productos/Quesos-Frescos">Quesos Frescos</a>
                 </li>
                 <li>
-                    <i class="fas fa-cheese"></i>
-                    <a href="/productos">Quesos Corteza</a>
+                    <a href="/productos/Quesos-Corteza"><i class="fas fa-cheese"></i></a>
+                    <a href="/productos/Quesos-Corteza">Quesos Corteza</a>
                 </li>
             </ul>
             <div class="linea-separadora"></div>
@@ -55,316 +54,34 @@
                 </ul>
               </div> -->
                 <div class="products">
+                    <% for(product of products) { %>
+                        <% if(product.stock){ %>
+
                     <div>
                         <div class="product">
                             <a href="/detalle-producto">
                                 <div class="product-card">
                                     <div class="product-image">
-                                        <img src="..\img\queso-azul-cabra-920x920.png" alt="Queso bien rico" />
+                                        <img src="..\img\<%= product.image %>" alt="Queso bien rico" />
                                     </div>
                                     <div class="product-description">
-                                        <h3>Queso Azul Tradicional</h3>
-                                        <p>200g</p>
+                                        <h3><%= product.name %></h3>
+                                        <p><%= product.package %></p>
                                     </div>
                                     <div class="product-price">
                                         <div aria-hidden="true"></div>
-                                        <p>$2000</p>
+                                        <p>$ <%= product.price %></p>
                                     </div>
                                 </div>
                             </a>
                             <div>
-                                <a href="#" class="boton"> Agregar al carrito</a>
+                                <a href="/carrito" class="boton"> Agregar al carrito</a>
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <div class="product">
-                            <a href="/detalle-producto">
-                                <div class="product-card">
-                                    <div class="product-image">
-                                        <img src="..\img\queso-blanco-danes-920x920.png" alt="Queso bien rico" />
-                                    </div>
-                                    <div class="product-description">
-                                        <h3>Queso Blanco Danes</h3>
-                                        <p>200g</p>
-                                    </div>
-                                    <div class="product-price">
-                                        <div aria-hidden="true"></div>
-                                        <p>$2000</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <div>
-                                <a href="#" class="boton"> Agregar al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product">
-                            <a href="/detalle-producto">
-                                <div class="product-card">
-                                    <div class="product-image">
-                                        <img src="..\img\queso-brie-laboheme-920x920.png" alt="Queso bien rico" />
-                                    </div>
-                                    <div class="product-description">
-                                        <h3>Queso Brie</h3>
-                                        <p>200g</p>
-                                    </div>
-                                    <div class="product-price">
-                                        <div aria-hidden="true"></div>
-                                        <p>$2000</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <div>
-                                <a href="#" class="boton"> Agregar al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product">
-                            <a href="/detalle-producto">
-                                <div class="product-card">
-                                    <div class="product-image">
-                                        <img src="..\img\queso-canestrato-stagionato-920x920.png"
-                                            alt="Queso bien rico" />
-                                    </div>
-                                    <div class="product-description">
-                                        <h3>Canestrato Stagionato Cuña</h3>
-                                        <p>250g</p>
-                                    </div>
-                                    <div class="product-price">
-                                        <div aria-hidden="true"></div>
-                                        <p>$2000</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <div>
-                                <a href="#" class="boton"> Agregar al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product">
-                            <a href="/detalle-producto">
-                                <div class="product-card">
-                                    <div class="product-image">
-                                        <img src="..\img\queso-cheddar-ingles-920x920.png" alt="Queso bien rico" />
-                                    </div>
-                                    <div class="product-description">
-                                        <h3>Queso Cheddar Ingles</h3>
-                                        <p>200g</p>
-                                    </div>
-                                    <div class="product-price">
-                                        <div aria-hidden="true"></div>
-                                        <p>$2000</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <div>
-                                <a href="#" class="boton"> Agregar al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product">
-                            <a href="/detalle-producto">
-                                <div class="product-card">
-                                    <div class="product-image">
-                                        <img src="..\img\queso-cremoso-920x920.png" alt="Queso bien rico" />
-                                    </div>
-                                    <div class="product-description">
-                                        <h3>Queso Cremoso</h3>
-                                        <p>200g</p>
-                                    </div>
-                                    <div class="product-price">
-                                        <div aria-hidden="true"></div>
-                                        <p>$2000</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <div>
-                                <a href="#" class="boton"> Agregar al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product">
-                            <a href="/detalle-producto">
-                                <div class="product-card">
-                                    <div class="product-image">
-                                        <img src="..\img\queso-gouda.png" alt="Queso bien rico" />
-                                    </div>
-                                    <div class="product-description">
-                                        <h3>Queso Gouda Cuña</h3>
-                                        <p>250g</p>
-                                    </div>
-                                    <div class="product-price">
-                                        <div aria-hidden="true"></div>
-                                        <p>$2000</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <div>
-                                <a href="#" class="boton"> Agregar al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product">
-                            <a href="/detalle-producto">
-                                <div class="product-card">
-                                    <div class="product-image">
-                                        <img src="..\img\queso-gruyere-920x920.png" alt="Queso bien rico" />
-                                    </div>
-                                    <div class="product-description">
-                                        <h3>Queso Gruyere</h3>
-                                        <p>200g</p>
-                                    </div>
-                                    <div class="product-price">
-                                        <div aria-hidden="true"></div>
-                                        <p>$2000</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <div>
-                                <a href="#" class="boton"> Agregar al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product">
-                            <a href="/detalle-producto">
-                                <div class="product-card">
-                                    <div class="product-image">
-                                        <img src="..\img\queso-mozzarella-polpetta-920x920.png" alt="Queso bien rico" />
-                                    </div>
-                                    <div class="product-description">
-                                        <h3>Queso Mozzarella Polpetta</h3>
-                                        <p>250g</p>
-                                    </div>
-                                    <div class="product-price">
-                                        <div aria-hidden="true"></div>
-                                        <p>$2000</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <div>
-                                <a href="#" class="boton"> Agregar al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product">
-                            <a href="/detalle-producto">
-                                <div class="product-card">
-                                    <div class="product-image">
-                                        <img src="..\img\queso-parmesano-15-meses-920x920.png" alt="Queso bien rico" />
-                                    </div>
-                                    <div class="product-description">
-                                        <h3>Queso Parmesano 15 Meses</h3>
-                                        <p>500g</p>
-                                    </div>
-                                    <div class="product-price">
-                                        <div aria-hidden="true"></div>
-                                        <p>$2000</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <div>
-                                <a href="#" class="boton"> Agregar al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product">
-                            <a href="/detalle-producto">
-                                <div class="product-card">
-                                    <div class="product-image">
-                                        <img src="..\img\queso-pecorino-18-meses-920x920.png" alt="Queso bien rico" />
-                                    </div>
-                                    <div class="product-description">
-                                        <h3>Queso Pecorino 18 Meses</h3>
-                                        <p>500g</p>
-                                    </div>
-                                    <div class="product-price">
-                                        <div aria-hidden="true"></div>
-                                        <p>$2000</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <div>
-                                <a href="#" class="boton"> Agregar al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product">
-                            <a href="/detalle-producto">
-                                <div class="product-card">
-                                    <div class="product-image">
-                                        <img src="..\img\queso-provoleta-920x920.png" alt="Queso bien rico" />
-                                    </div>
-                                    <div class="product-description">
-                                        <h3>Queso Provoletta</h3>
-                                        <p>200g</p>
-                                    </div>
-                                    <div class="product-price">
-                                        <div aria-hidden="true"></div>
-                                        <p>$2000</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <div>
-                                <a href="#" class="boton"> Agregar al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product">
-                            <a href="/detalle-producto">
-                                <div class="product-card">
-                                    <div class="product-image">
-                                        <img src="..\img\queso-provolone-stagionato-920x920.png"
-                                            alt="Queso bien rico" />
-                                    </div>
-                                    <div class="product-description">
-                                        <h3>Queso Provolone Stagionato</h3>
-                                        <p>500g</p>
-                                    </div>
-                                    <div class="product-price">
-                                        <div aria-hidden="true"></div>
-                                        <p>$2000</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <div>
-                                <a href="#" class="boton"> Agregar al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product">
-                            <a href="/detalle-producto">
-                                <div class="product-card">
-                                    <div class="product-image">
-                                        <img src="..\img\queso-sbrinz-18-meses-920x920.png" alt="Queso bien rico" />
-                                    </div>
-                                    <div class="product-description">
-                                        <h3>Queso Sbrinz 18 Meses</h3>
-                                        <p>500g</p>
-                                    </div>
-                                    <div class="product-price">
-                                        <div aria-hidden="true"></div>
-                                        <p>$2000</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <div>
-                                <a href="#" class="boton"> Agregar al carrito</a>
-                            </div>
-                        </div>
-                    </div>
+                    <% } %>
+                    <% } %>
+                  
                 </div>
             </div>
         </section>
