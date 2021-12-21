@@ -353,14 +353,15 @@ i {
 
 .product-price p {
   position: relative;
-  font-size: 1.125rem;
+  font-size: 1.2rem;
   line-height: 1.75rem;
   font-weight: 600;
-  color: white;
+  color: var(--naranja);
   margin: 0;
 }
 .tachado {
   text-decoration: line-through;
+  font-size: 1rem;
   color: var(--gray-500);
 }
 

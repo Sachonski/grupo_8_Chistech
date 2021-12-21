@@ -3,6 +3,15 @@ const path = require('path');
 
 const productsFilePath = path.join(__dirname, '../../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const toThousand = n => n.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+
+
+product.price.toLocaleString(
+    undefined, 
+    { minimumFractionDigits: 2 }
+  );
+
 
 
 const controller = {
@@ -42,7 +51,7 @@ const controller = {
         const newProduct = {}
         newProduct.id = products[products.length - 1].id + 1;
         newProduct.name = name;
-        newProduct.price = parseInt(price);
+        newProduct.price = toThousand(parseInt(price));
         newProduct.discount = parseInt(discount);
         newProduct.category = category;
         newProduct.description = description;

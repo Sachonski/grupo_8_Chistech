@@ -70,19 +70,37 @@
                                                                 <%= product.name %>
                                                             </h3>
                                                             <p>
-                                                                <%= product.packaging %>
+                                                                Este producto se vende
+                                                                <% if(product.packaging=='horma' ) { %>
+                                                                    <%= 'por ' + product.packaging %>:
+                                                                        <% } else { %>
+                                                                            <%= product.packaging %>
+                                                                                <% } %>
                                                             </p>
                                                             <p>
-                                                                <%= product.discount %>
+                                                                % <%= product.discount %> OFF
                                                             </p>
                                                         </div>
                                                         <div class="product-price">
                                                             <div aria-hidden="true"></div>
-                                                            <p>
-                                                                <!-- <spam class="tachado"> -->
-                                                                $ <%= product.price %>
-                                                                <!-- </spam> -->
-                                                            </p>
+                                                            <% if (product.discount) { %>
+                                                                <p>
+                                                                    <spam class="tachado">
+                                                                        $ <%= product.price.toLocaleString(undefined,
+                                                                            {minimumFractionDigits: 2}) %>
+                                                                    </spam>
+                                                                </p>
+                                                                <p>
+                                                                    $ <%= (product.price - (product.discount *
+                                                                        product.price / 100)).toLocaleString(undefined,
+                                                                        {minimumFractionDigits: 2}) %>
+                                                                </p>
+                                                                <% } else { %>
+                                                                    <p>
+                                                                        $ <%= product.price.toLocaleString(undefined,
+                                                                            {minimumFractionDigits: 2}) %>
+                                                                    </p>
+                                                                    <% } %>
                                                         </div>
                                                     </div>
                                                 </a>
