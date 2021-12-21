@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <%- include('./partials/head') -%>
 
     <body>
@@ -12,7 +11,10 @@
                         <li id="slide">
                             <div class="slider-inicial-texto">
                                 <h2>Nuestra Tienda</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Quisquam, quidem.
+                                </p>
                                 <a href="#">+ info</a>
                             </div>
                             <img src="..\img\Background1.png" alt="prod" />
@@ -20,7 +22,10 @@
                         <li id="slide">
                             <div class="slider-inicial-texto">
                                 <h2>Estacionamos Artesanalmente</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Quisquam, quidem.
+                                </p>
                                 <a href="#">+ info</a>
                             </div>
                             <img src="..\img\Background2.png" alt="prod" />
@@ -28,7 +33,10 @@
                         <li id="slide">
                             <div class="slider-inicial-texto">
                                 <h2>Nuevas Cajas de Degustacion</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Quisquam, quidem.
+                                </p>
                                 <a href="#">+ info</a>
                             </div>
                             <img src="..\img\Background3.png" alt="prod" />
@@ -36,12 +44,14 @@
                         <li id="slide">
                             <div class="slider-inicial-texto">
                                 <h2>Somos Maestros Queseros</h2>
-                                <p>Lorem ipsum dolors sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
+                                <p>
+                                    Lorem ipsum dolors sit amet consectetur adipisicing elit.
+                                    Quisquam, quidem.
+                                </p>
                                 <a href="#">+ info</a>
                             </div>
                             <img src="..\img\Background2.png" alt="prod" />
                         </li>
-
                     </ul>
                 </div>
 
@@ -53,65 +63,11 @@
                             <h2 class="bold">Semana super Ofertas</h2>
 
                             <div class="products">
-
                                 <% for(product of products) { %>
-                                    <% if(product.discount && product.stock) { %>
-
-                                        <div>
-                                            <div class="product">
-                                                <a href="/detalle-producto">
-                                                    <div class="product-card">
-                                                        <div class="product-image">
-                                                            <img src="..\img\<%= product.image %>"
-                                                                alt="Queso bien rico" />
-                                                        </div>
-                                                        <div class="product-description">
-                                                            <h3>
-                                                                <%= product.name %>
-                                                            </h3>
-                                                            <p>
-                                                                Este producto se vende
-                                                                <% if(product.packaging=='horma' ) { %>
-                                                                    <%= 'por ' + product.packaging %>:
-                                                                        <% } else { %>
-                                                                            <%= product.packaging %>
-                                                                                <% } %>
-                                                            </p>
-                                                            <p>
-                                                                % <%= product.discount %> OFF
-                                                            </p>
-                                                        </div>
-                                                        <div class="product-price">
-                                                            <div aria-hidden="true"></div>
-                                                            <% if (product.discount) { %>
-                                                                <p>
-                                                                    <spam class="tachado">
-                                                                        $ <%= product.price.toLocaleString(undefined,
-                                                                            {minimumFractionDigits: 2}) %>
-                                                                    </spam>
-                                                                </p>
-                                                                <p>
-                                                                    $ <%= (product.price - (product.discount *
-                                                                        product.price / 100)).toLocaleString(undefined,
-                                                                        {minimumFractionDigits: 2}) %>
-                                                                </p>
-                                                                <% } else { %>
-                                                                    <p>
-                                                                        $ <%= product.price.toLocaleString(undefined,
-                                                                            {minimumFractionDigits: 2}) %>
-                                                                    </p>
-                                                                    <% } %>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                                <div>
-                                                    <a href="/carrito" class="boton"> Agregar al carrito</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <% } %>
+                                    <% if(product.discount == 25 && product.stock) { %>
+                                        <%- include('./partials/producto') -%>
                                             <% } %>
-
+                                                <% } %>
                             </div>
                         </div>
                     </section>

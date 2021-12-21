@@ -20,34 +20,7 @@
                                 <% for(product of products) { %>
                                     <% if(product.stock){ %>
 
-                                        <div>
-                                            <div class="product">
-                                                <a href="/detalle-producto">
-                                                    <div class="product-card">
-                                                        <div class="product-image">
-                                                            <img src="..\img\<%= product.image %>"
-                                                                alt="Queso bien rico" />
-                                                        </div>
-                                                        <div class="product-description">
-                                                            <h3>
-                                                                <%= product.name %>
-                                                            </h3>
-                                                            <p>
-                                                                <%= product.package %>
-                                                            </p>
-                                                        </div>
-                                                        <div class="product-price">
-                                                            <div aria-hidden="true"></div>
-                                                            <p>$ <%= product.price %>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                                <div>
-                                                    <a href="/carrito" class="boton"> Agregar al carrito</a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <%- include('./partials/producto') -%>
                                         <% } %>
                                             <% } %>
 
