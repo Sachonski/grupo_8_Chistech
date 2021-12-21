@@ -7,12 +7,6 @@ const toThousand = n => n.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 
 
-product.price.toLocaleString(
-    undefined, 
-    { minimumFractionDigits: 2 }
-  );
-
-
 
 const controller = {
     // Initialize the controller
@@ -29,8 +23,8 @@ const controller = {
     },
     detalleProducto: (req, res) => {
         const id = req.params.id;
-        const product = products.find(product => product.id == id);
-        return res.render('detalle-producto', { products: product });
+        const product = products.filter(product => product.id == id);
+        return res.render('detalle-producto',  product[0] );
     },
     carrito: (req, res) => {
         return res.render('carrito');

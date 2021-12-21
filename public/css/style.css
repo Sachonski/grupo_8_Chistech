@@ -763,6 +763,7 @@ footer h2 {
 .grupo-checkout .precio {
   font-size: 2rem;
   color: var(--naranja);
+  padding: 1rem;
 }
 
 .grupo-checkout .boton,

@@ -10,10 +10,10 @@
         <article class="container producto">
             <section class="slider-producto">
                 <ul>
-                    <li id="slide2"><img src="..\img\queso-sbrinz-18-meses-920x920.png" alt="prod" /></li>
-                    <li id="slide2"><img src="..\img\queso-gruyere-920x920.png" alt="prod" /></li>
-                    <li id="slide1"><img src="..\img\quesos-duros.jpg" alt="prod" /></li>
-                    <li id="slide2"><img src="..\img\QA-003-caja3leches-920x920.png" alt="prod" /></li>
+                    <li id="slide2"><img src="..\img\queso-blanco-cabral-920x920.png" alt="prod" /></li>
+                    <li id="slide2"><img src="..\img\queso-blanco-danes-920x920.png" alt="prod" /></li>
+                    <li id="slide1"><img src="..\img\queso-mozzarella-polpetta-920x920.png" alt="prod" /></li>
+                    <li id="slide2"><img src="..\img\queso-cremoso-920x920.png" alt="prod" /></li>
 
                 </ul>
             </section>
@@ -65,36 +65,7 @@
             <div class="container">
                 <h2 class="bold">Productos En Oferta</h2>
 
-                <div class="products">
-                    <% for(product of products) { %>
-                        <% if(product.discount == 25)  { %>
-
-                    <div>
-                        <div class="product">
-                            <a href="/detalle-producto">
-                                <div class="product-card">
-                                    <div class="product-image">
-                                        <img src="..\img\<%= product.image %>" alt="Queso bien rico" />
-                                    </div>
-                                    <div class="product-description">
-                                        <h3><%= product.name %></h3>
-                                        <p><%= product.package %></p>
-                                    </div>
-                                    <div class="product-price">
-                                        <div aria-hidden="true"></div>
-                                        <p>$ <%= product.price %></p>
-                                    </div>
-                                </div>
-                            </a>
-                            <div>
-                                <a href="/carrito" class="boton"> Agregar al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <% } %>
-                    <% } %>
-                                                          
-                </div>
+<!-- aca va la secciond e ofertas -->
             </div>
         </section>
 
