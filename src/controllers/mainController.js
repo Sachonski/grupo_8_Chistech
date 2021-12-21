@@ -28,7 +28,9 @@ const controller = {
         return res.render('productos', { products: productsByCategory });
     },
     detalleProducto: (req, res) => {
-        return res.render('detalle-producto', { products: products });
+        const id = req.params.id;
+        const product = products.find(product => product.id == id);
+        return res.render('detalle-producto', { products: product });
     },
     carrito: (req, res) => {
         return res.render('carrito');
