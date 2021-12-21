@@ -1,135 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include('./partials/head') -%>
+<%- include('./partials/head') -%>
 
-<body>
-    <%- include('./partials/header') -%>
+    <body>
+        <%- include('./partials/header') -%>
 
-    <main>
-        <div class="slider-inicial">
-            <ul>
-                <li id="slide">
-                    <div class="slider-inicial-texto">
-                        <h2>Nuestra Tienda</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
-                        <a href="#">+ info</a>
-                    </div>
-                    <img src="..\img\Background1.png" alt="prod" />
-                </li>
-                <li id="slide">
-                    <div class="slider-inicial-texto">
-                        <h2>Estacionamos Artesanalmente</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
-                        <a href="#">+ info</a>
-                    </div>
-                    <img src="..\img\Background2.png" alt="prod" />
-                </li>
-                <li id="slide">
-                    <div class="slider-inicial-texto">
-                        <h2>Nuevas Cajas de Degustacion</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
-                        <a href="#">+ info</a>
-                    </div>
-                    <img src="..\img\Background3.png" alt="prod" />
-                </li>
-                <li id="slide">
-                    <div class="slider-inicial-texto">
-                        <h2>Somos Maestros Queseros</h2>
-                        <p>Lorem ipsum dolors sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
-                        <a href="#">+ info</a>
-                    </div>
-                    <img src="..\img\Background2.png" alt="prod" />
-                </li>
-
-            </ul>
-        </div>
-        <ul class="categorias-productos">
-            <!--estas categorias van directamente a filtros dentro de productos -->
-            <li>
-                <a href="productos/Quesos-Duros"><i class="fas fa-cheese"></i></a>
-                <a href="productos/Quesos-Duros">Quesos Duros</a>
-            </li>
-            <li>
-                <a href="/productos/Quesos-Blandos"><i class="fas fa-cheese"></i></a>
-                <a href="/productos/Quesos-Blandos">Quesos Blandos</a>
-            </li>
-            <li>
-                <a href="/productos/Quesos-Azules"><i class="fas fa-cheese"></i></a>
-                <a href="/productos/Quesos-Azules">Quesos Azules</a>
-            </li>
-            <li>
-                <a href="/productos/Quesos-Frescos"><i class="fas fa-cheese"></i></a>
-                <a href="/productos/Quesos-Frescos">Quesos Frescos</a>
-            </li>
-            <li>
-                <a href="/productos/Quesos-Corteza"><i class="fas fa-cheese"></i></a>
-                <a href="/productos/Quesos-Corteza">Quesos Corteza</a>
-            </li>
-        </ul>
-        <div class="linea-separadora"></div>
-
-        <section class="destacados">
-            <div class="container">
-                <h2 class="bold">Semana del Queso Blando</h2>
-
-                <div class="products">
-                    
-                    <% for(product of products) { %>
-                        <% if(product.discount >= 20)  { %>
-
-                    <div>
-                        <div class="product">
-                            <a href="/detalle-producto">
-                                <div class="product-card">
-                                    <div class="product-image">
-                                        <img src="..\img\<%= product.image %>" alt="Queso bien rico" />
-                                    </div>
-                                    <div class="product-description">
-                                        <h3><%= product.name %></h3>
-                                        <p><%= product.package %></p>
-                                    </div>
-                                    <div class="product-price">
-                                        <div aria-hidden="true"></div>
-                                        <p>$ <%= product.price %></p>
-                                    </div>
-                                </div>
-                            </a>
-                            <div>
-                                <a href="/carrito" class="boton"> Agregar al carrito</a>
+            <main>
+                <div class="slider-inicial">
+                    <ul>
+                        <li id="slide">
+                            <div class="slider-inicial-texto">
+                                <h2>Nuestra Tienda</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
+                                <a href="#">+ info</a>
                             </div>
-                        </div>
-                    </div>
-                    <% } %>
-                    <% } %>
-  
-                </div>
-            </div>
-        </section>
-        <div class="linea-separadora"></div>
-        <section class="destacados">
-            <h2>Logros Internacionales</h2>
-            <div class="container-barra-lateral">
-                <div>
-                    <ul class="slider-info">
-                        <li>
-                            <i class="fas fa-award"></i>
-                            <p>Cheese Award 2019</p>
+                            <img src="..\img\Background1.png" alt="prod" />
                         </li>
-                        <li>
-                            <i class="fas fa-award"></i>
-                            <p>Farmer's Market 2021</p>
+                        <li id="slide">
+                            <div class="slider-inicial-texto">
+                                <h2>Estacionamos Artesanalmente</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
+                                <a href="#">+ info</a>
+                            </div>
+                            <img src="..\img\Background2.png" alt="prod" />
                         </li>
-                        <li>
-                            <i class="fas fa-award"></i>
-                            <p>Cheese Euro 2017</p>
+                        <li id="slide">
+                            <div class="slider-inicial-texto">
+                                <h2>Nuevas Cajas de Degustacion</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
+                                <a href="#">+ info</a>
+                            </div>
+                            <img src="..\img\Background3.png" alt="prod" />
                         </li>
+                        <li id="slide">
+                            <div class="slider-inicial-texto">
+                                <h2>Somos Maestros Queseros</h2>
+                                <p>Lorem ipsum dolors sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
+                                <a href="#">+ info</a>
+                            </div>
+                            <img src="..\img\Background2.png" alt="prod" />
+                        </li>
+
                     </ul>
                 </div>
-            </div>
-        </section>
-    </main>
-    <%- include('./partials/footer') -%>
-</body>
+
+                <%- include('./partials/category') -%>
+                    <div class="linea-separadora"></div>
+
+                    <section class="destacados">
+                        <div class="container">
+                            <h2 class="bold">Semana super Ofertas</h2>
+
+                            <div class="products">
+
+                                <% for(product of products) { %>
+                                    <% if(product.discount && product.stock) { %>
+
+                                        <div>
+                                            <div class="product">
+                                                <a href="/detalle-producto">
+                                                    <div class="product-card">
+                                                        <div class="product-image">
+                                                            <img src="..\img\<%= product.image %>"
+                                                                alt="Queso bien rico" />
+                                                        </div>
+                                                        <div class="product-description">
+                                                            <h3>
+                                                                <%= product.name %>
+                                                            </h3>
+                                                            <p>
+                                                                <%= product.packaging %>
+                                                            </p>
+                                                            <p>
+                                                                <%= product.discount %>
+                                                            </p>
+                                                        </div>
+                                                        <div class="product-price">
+                                                            <div aria-hidden="true"></div>
+                                                            <p>
+                                                                <!-- <spam class="tachado"> -->
+                                                                $ <%= product.price %>
+                                                                <!-- </spam> -->
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <div>
+                                                    <a href="/carrito" class="boton"> Agregar al carrito</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <% } %>
+                                            <% } %>
+
+                            </div>
+                        </div>
+                    </section>
+                    <div class="linea-separadora"></div>
+                    <section class="destacados">
+                        <h2>Logros Internacionales</h2>
+                        <div class="container-barra-lateral">
+                            <div>
+                                <ul class="slider-info">
+                                    <li>
+                                        <i class="fas fa-award"></i>
+                                        <p>Cheese Award 2019</p>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-award"></i>
+                                        <p>Farmer's Market 2021</p>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-award"></i>
+                                        <p>Cheese Euro 2017</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+            </main>
+            <%- include('./partials/footer') -%>
+    </body>
 
 </html>

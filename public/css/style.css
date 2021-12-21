@@ -359,6 +359,10 @@ i {
   color: white;
   margin: 0;
 }
+.tachado {
+  text-decoration: line-through;
+  color: var(--gray-500);
+}
 
 .detalle-producto .boton,
 .product .boton,

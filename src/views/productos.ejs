@@ -1,94 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include('./partials/head', {title: 'Todos los Productos'}) -%>
+<%- include('./partials/head', {title: 'Todos los Productos' }) -%>
 
-<body>
-    <%- include('./partials/header') -%>
+    <body>
+        <%- include('./partials/header') -%>
 
-    <main>
+            <main>
 
-        <div class="placeholderProduct"> </div>
-        <section class="destacados">
-            <ul class="categorias-productos">
-                <!--estas categorias van directamente a filtros dentro de productos -->
-                <li>
-                    <a href="productos/Quesos-Duros"><i class="fas fa-cheese"></i></a>
-                    <a href="productos/Quesos-Duros">Quesos Duros</a>
-                </li>
-                <li>
-                    <a href="/productos/Quesos-Blandos"><i class="fas fa-cheese"></i></a>
-                    <a href="/productos/Quesos-Blandos">Quesos Blandos</a>
-                </li>
-                <li>
-                    <a href="/productos/Quesos-Azules"><i class="fas fa-cheese"></i></a>
-                    <a href="/productos/Quesos-Azules">Quesos Azules</a>
-                </li>
-                <li>
-                    <a href="/productos/Quesos-Frescos"><i class="fas fa-cheese"></i></a>
-                    <a href="/productos/Quesos-Frescos">Quesos Frescos</a>
-                </li>
-                <li>
-                    <a href="/productos/Quesos-Corteza"><i class="fas fa-cheese"></i></a>
-                    <a href="/productos/Quesos-Corteza">Quesos Corteza</a>
-                </li>
-            </ul>
-            <div class="linea-separadora"></div>
-            <div class="container">
-                <h2 class="bold">Productos</h2>
-                <!-- este div en mobile es slider -->
-                <!-- <div class="productos">
-                <ul class="clase-producto">
-                  <li>
-                    <img src="../img/gruyere.jpg" alt="Queso" />
-                    <p class="item">Queso Parmesano Estacionado Horma</p>
-                    <div>
-                      <p>$2000.00</p>
-                      <p>20%</p>
-                    </div>
-                    <div class="quantity">
-                      <input type="number" min="1" max="999" step="1" value="1" />
-                      <button>Agregar al carrito</button>
-                    </div>
-                  </li>
-                </ul>
-              </div> -->
-                <div class="products">
-                    <% for(product of products) { %>
-                        <% if(product.stock){ %>
+                <div class="placeholderProduct"> </div>
+                <section class="destacados">
+                    <%- include('./partials/category') -%>
 
-                    <div>
-                        <div class="product">
-                            <a href="/detalle-producto">
-                                <div class="product-card">
-                                    <div class="product-image">
-                                        <img src="..\img\<%= product.image %>" alt="Queso bien rico" />
-                                    </div>
-                                    <div class="product-description">
-                                        <h3><%= product.name %></h3>
-                                        <p><%= product.package %></p>
-                                    </div>
-                                    <div class="product-price">
-                                        <div aria-hidden="true"></div>
-                                        <p>$ <%= product.price %></p>
-                                    </div>
-                                </div>
-                            </a>
-                            <div>
-                                <a href="/carrito" class="boton"> Agregar al carrito</a>
+                        <div class="linea-separadora"></div>
+                        <div class="container">
+                            <h2 class="bold">Productos</h2>
+
+                            <div class="products">
+                                <% for(product of products) { %>
+                                    <% if(product.stock){ %>
+
+                                        <div>
+                                            <div class="product">
+                                                <a href="/detalle-producto">
+                                                    <div class="product-card">
+                                                        <div class="product-image">
+                                                            <img src="..\img\<%= product.image %>"
+                                                                alt="Queso bien rico" />
+                                                        </div>
+                                                        <div class="product-description">
+                                                            <h3>
+                                                                <%= product.name %>
+                                                            </h3>
+                                                            <p>
+                                                                <%= product.package %>
+                                                            </p>
+                                                        </div>
+                                                        <div class="product-price">
+                                                            <div aria-hidden="true"></div>
+                                                            <p>$ <%= product.price %>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <div>
+                                                    <a href="/carrito" class="boton"> Agregar al carrito</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <% } %>
+                                            <% } %>
+
                             </div>
                         </div>
-                    </div>
-                    <% } %>
-                    <% } %>
-                  
-                </div>
-            </div>
-        </section>
+                </section>
 
-    </main>
-    <%- include('./partials/footer') -%>
+            </main>
+            <%- include('./partials/footer') -%>
 
-</body>
+    </body>
 
 </html>
