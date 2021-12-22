@@ -28,6 +28,7 @@ router.get("/login", mainController.login);
 router.get("/register", mainController.register);
 router.get("/sobreNosotros", mainController.sobreNosotros);
 
+
 router.get("/productoCreacion", mainController.productoCreacion);
 
 router.post('/productoCreacion' , uploadFile.single('image'), mainController.productoGuardar);
