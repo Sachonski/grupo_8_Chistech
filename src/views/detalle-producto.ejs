@@ -10,28 +10,51 @@
         <article class="container producto">
             <section class="slider-producto">
                 <ul>
-                    <li id="slide2"><img src="..\img\queso-sbrinz-18-meses-920x920.png" alt="prod" /></li>
-                    <li id="slide2"><img src="..\img\queso-gruyere-920x920.png" alt="prod" /></li>
-                    <li id="slide1"><img src="..\img\quesos-duros.jpg" alt="prod" /></li>
-                    <li id="slide2"><img src="..\img\QA-003-caja3leches-920x920.png" alt="prod" /></li>
+                    <li id="slide2"><img src="..\img\queso-blanco-cabral-920x920.png" alt="prod" /></li>
+                    <li id="slide2"><img src="..\img\queso-blanco-danes-920x920.png" alt="prod" /></li>
+                    <li id="slide1"><img src="..\img\queso-mozzarella-polpetta-920x920.png" alt="prod" /></li>
+                    <li id="slide2"><img src="..\img\queso-cremoso-920x920.png" alt="prod" /></li>
 
                 </ul>
             </section>
 
             <section class="detalle-producto">
                 <div class="descripcion">
-                    <h2>Caja De Degustacion 1</h2>
+                    <h2><%= product.name %></h2>
                     <p>
-                        Sorprende de una forma distinta con esta exquisita variedad de quesos Gourmet de Cabaña Piedras
-                        Blancas!! Incluye -Queso Brie 600grs -vacherolau 200grs -feta 200grs -Ligne noir 200grs
-                        -camembert tradional 280grs
-                        <br>Presentado en caja rústica con tarjeta alegórica
+                        <%= product.description %>
+                        <br>
+                        Este producto se vende
+                        <% if(product.packaging=='horma' ) { %>
+                            <%= 'por ' + product.packaging %>
+                                <% } else { %>
+                                    <%= product.packaging %>
+                                        <% } %>
                     </p>
                 </div>
                 <div class="grupo-checkout">
 
                     <div>
-                        <p class="precio">$2000.00</p>
+                        <p class="precio">
+                            <% if (product.discount) { %>
+                                <p>
+                                    <spam class="tachado">
+                                        $ <%= product.price.toLocaleString(undefined,
+                                            {minimumFractionDigits: 2}) %>
+                                    </spam>
+                                </p>
+                                <p class="precio">
+                                    $ <%= (product.price - (product.discount *
+                                        product.price / 100)).toLocaleString(undefined,
+                                        {minimumFractionDigits: 2}) %>
+                                </p>
+                                <% } else { %>
+                                    <p class="precio">
+                                        $ <%= product.price.toLocaleString(undefined,
+                                            {minimumFractionDigits: 2}) %>
+                                    </p>
+                                    <% } %>
+                        </p>
                         <input type="number" name=" " id=" " value="1" />
                         <a href="#" class="boton"> Agregar al carrito</a>
                     </div>
@@ -42,36 +65,7 @@
             <div class="container">
                 <h2 class="bold">Productos En Oferta</h2>
 
-                <div class="products">
-                    <% for(product of products) { %>
-                        <% if(product.id < 5)  { %>
-
-                    <div>
-                        <div class="product">
-                            <a href="/detalle-producto">
-                                <div class="product-card">
-                                    <div class="product-image">
-                                        <img src="..\img\<%= product.image %>" alt="Queso bien rico" />
-                                    </div>
-                                    <div class="product-description">
-                                        <h3><%= product.name %></h3>
-                                        <p><%= product.package %></p>
-                                    </div>
-                                    <div class="product-price">
-                                        <div aria-hidden="true"></div>
-                                        <p>$ <%= product.price %></p>
-                                    </div>
-                                </div>
-                            </a>
-                            <div>
-                                <a href="/carrito" class="boton"> Agregar al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <% } %>
-                    <% } %>
-                                                          
-                </div>
+<!-- aca va la secciond e ofertas -->
             </div>
         </section>
 

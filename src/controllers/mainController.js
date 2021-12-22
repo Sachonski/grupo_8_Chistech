@@ -4,7 +4,6 @@ const path = require('path');
 const productsFilePath = path.join(__dirname, '../../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-
 const controller = {
     // Initialize the controller
     home: (req, res) => {
@@ -19,7 +18,9 @@ const controller = {
         return res.render('productos', { products: productsByCategory });
     },
     detalleProducto: (req, res) => {
-        return res.render('detalle-producto', { products: products });
+        const id = req.params.id;
+		const product = products.find(product => product.id == id);
+		return res.render('detalle-producto', { product: product });
     },
     carrito: (req, res) => {
         return res.render('carrito');
@@ -35,7 +36,26 @@ const controller = {
     },
     productoCreacion : (req,res) => {
         return res.render('productoCreacion')
-    }
+    },
+    productoGuardar : (req, res) => {
+        
+        const { name, price, discount, category, description, packaging, stock } = req.body;
+        const newProduct = {}
+        newProduct.id = products[products.length - 1].id + 1;
+        newProduct.name = name;
+        newProduct.price = parseInt(price);
+        newProduct.discount = parseInt(discount);
+        newProduct.category = category;
+        newProduct.description = description;
+        newProduct.packaging = packaging;
+        newProduct.image = (req.file) ?  req.file.filename: "no image";
+        newProduct.stock = JSON.parse(stock);
+
+        products.push(newProduct);
+
+        fs.writeFileSync(productsFilePath, JSON.stringify(products));
+        res.redirect('/productos');
+    },
 }
 
 module.exports = controller;
