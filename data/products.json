@@ -548,5 +548,16 @@
         "packaging": "fraccionado",
         "stock": false,
         "image": "queso-blanco-danes-920x920.png"
+    },
+    {
+        "id": 51,
+        "name": "Mar del plata",
+        "price": 20,
+        "discount": 25,
+        "category": "quesos-blandos",
+        "description": "queso tradicional mar del plata cascara amarilla.",
+        "packaging": "fraccionado",
+        "image": "1640133636244_queso-gruyere-920x920.png",
+        "stock": true
     }
 ]
