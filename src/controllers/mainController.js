@@ -23,7 +23,7 @@ const controller = {
     },
     detalleProducto: (req, res) => {
         const id = req.params.id;
-        const product = products.filter(product => product.id == id);
+        const product = products.find(product => product.id == id);
         return res.render('detalle-producto',  product[0] );
     },
     carrito: (req, res) => {
