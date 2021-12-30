@@ -56,6 +56,49 @@ const controller = {
         fs.writeFileSync(productsFilePath, JSON.stringify(products));
         res.redirect('/productos');
     },
+    productEdit: (req, res) => {
+		const id = req.params.id;
+		const product = products.find(product => product.id == id);
+		res.render('productoEdicion', { product: product });
+	},
+	// Update - Method to update
+	productUpdate: (req, res) => {
+
+		const image = req.file.filename;	
+		const id = req.params.id;
+		const product = products.find(product => product.id == id);
+        const { name, price, discount, category, description, packaging, stock } = req.body;
+
+        product.id = product.id;
+        product.name = name;
+        product.price = parseInt(price);
+        product.discount = parseInt(discount);
+        product.category = category;
+        product.description = description;
+        product.packaging = packaging;
+        product.image = (req.file) ?  req.file.filename: "no image";
+        product.stock = JSON.parse(stock);
+        
+
+		fs.writeFileSync(productsFilePath, JSON.stringify(products));
+		res.redirect('/productos');
+	},
+
+	// Delete - Delete one product from DB
+	productDestroy: (req, res) => {
+
+		const id = req.params.id;
+		const product = products.find(product => product.id == id);
+
+		products.splice(products.indexOf(product), 1);
+
+		fs.writeFileSync(productsFilePath, JSON.stringify(products));
+
+		if (fs.existsSync(`public/images/${product.image}`)) {
+			fs.unlinkSync(`public/images/${product.image}`);
+		}
+		res.redirect('/productos');
+	}
 }
 
 module.exports = controller;

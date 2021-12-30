@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head', {title: 'Formulario de Edicion' }) -%>
+
+    <body>
+        <%- include('./partials/header') -%>
+
+            <main>
+                <section class="form">
+
+                    <h2>Editar Producto</h2>
+
+                    <form action="/productoEdicion/<%= product.id %>?_method=PUT" method="post" class="" name='productoEdicion' enctype="multipart/form-data" >
+
+                        <div class="form-control">
+                            <label>Nombre del Producto</label>
+                            <input type="text" name="name" placeholder="Nombre del producto" required class="control" value= "<%= product.name  %>">
+                            <span class="feedback" id="feedback"></span>
+                        </div>
+
+                        <div class="form-control">
+                            <label>Descripcion del producto</label>
+                            <textarea name="description" rows="10"
+                                cols="50"><%= product.description  %></textarea>
+                            <span class="feedback" id="feedback"></span>
+                        </div>
+
+                        <div class="form-control">
+                            <label>Imagen del producto</label>
+                            <input type="file" name="image" accept=".jpg,.png" value="<%= product.image  %>">
+                        </div>
+
+                        <div class="form-control">
+                            <label>Categorias</label>
+                            <select name="category" required>
+                                <option value="quesos-duros" <%= product.category == 'quesos-duros'? 'selected' : '' %>>Quesos-Duros</option>
+                                <option value="quesos-blandos" <%= product.category == 'quesos-blandos'? 'selected' : '' %>>Quesos-Blandos</option>
+                                <option value="quesos-azules" <%= product.category == 'quesos-azules'? 'selected' : '' %>>Quesos-Azules</option>
+                                <option value="quesos-frescos" <%= product.category == 'quesos-frescos'? 'selected' : '' %>>Quesos-Frescos</option>
+                                <option value="quesos-corteza" <%= product.category == 'quesos-corteza'? 'selected' : '' %>>Quesos-Corteza</option>
+                            </select>
+                        </div>
+
+                        <div class="form-control">
+                            <label>Presentacion</label>
+                            <select name="packaging" required>
+                                <option value="fraccionado" <%= product.packaging == 'fraccionado'? 'selected' : '' %>>fraccionado</option>
+                                <option value="horma" <%= product.packaging == 'horma'? 'selected' : '' %>>horma</option>
+                            </select>
+                            <span class="feedback" id="feedback"></span>
+                        </div>
+
+                        <div class="form-control">
+                            <label>Precio</label>
+                            <input type="number" name="price" required class="control" value = "<%= product.price  %>"/>
+                            <span class="feedback" id="feedback"></span>
+                        </div>
+
+                        <div class="form-control">
+                            <label>Descuento</label>
+                            <input type="number" name="discount" class="control" value = "<%= product.id %>"/>
+                            <span class="feedback" id="feedback"></span>
+                        </div>
+
+                        <div class="form-control inline">
+                            <div>
+                                <label>En Stock</label>
+                                <input name="stock" class="form-control" type="radio" value="true" <%= product.stock == true ? 'checked' : '' %>/> <!-- arregler stock-->
+                            </div>
+                            <div>
+                                <label>No en Stock</label>
+                                <input name="stock" class="form-control" type="radio" value="false" <%= product.stock ==  false ? 'checked' : '' %>/> <!-- arreglar stock-->
+                            </div>
+                        </div>
+
+                        <div class="buttons">
+                            <button type="submit" class="boton">Enviar</button>
+                            <button type="reset" class="boton">Borrar</button>
+                        </div>
+
+                    </form>
+
+                </section>
+            </main>
+
+            <%- include('./partials/footer') -%>
+
+    </body>
+
+</html>

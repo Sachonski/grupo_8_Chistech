@@ -30,8 +30,10 @@ router.get("/sobreNosotros", mainController.sobreNosotros);
 
 
 router.get("/productoCreacion", mainController.productoCreacion);
-
 router.post('/productoCreacion' , uploadFile.single('image'), mainController.productoGuardar);
+router.get("/productoEdicion/:id/", mainController.productEdit);
+router.put('/productoEdicion/:id/' , uploadFile.single('image'), mainController.productUpdate);
 
+router.delete('/productoDelete/:id', mainController.productDestroy);
 
 module.exports = router;

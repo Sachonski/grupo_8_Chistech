@@ -57,6 +57,11 @@
                         </p>
                         <input type="number" name=" " id=" " value="1" />
                         <a href="#" class="boton"> Agregar al carrito</a>
+                        <a href="/productoEdicion/<%= product.id %>" class="boton admin"> Editar</a>
+                        <form action="/productoDelete/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+							<button type="submit" class="boton admin">Eliminar</button>
+						</form>
+ 
                     </div>
                 </div>
             </section>
