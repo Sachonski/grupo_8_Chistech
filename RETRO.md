@@ -32,3 +32,10 @@
 - 3. Continuar haciendo: Seguir trabajando en equipo y comunicacion.
 - 4. Hacer menos: No trabajar en la misma branch.
 - 5. Dejar de hacer: No pushear a la main branch salvo en meetings grupales.
+
+# Retrospective - Sprint 4:
+- 1. Comenzar a hacer: Comentar el codigo para referencia.
+- 2. Hacer más: Implementar commits con mayor descripcion.
+- 3. Continuar haciendo: Seguir trabajando en branchs aparte durante sprints.
+- 4. Hacer menos: No hacer commits a la main, solo a la dev durante sprints.
+- 5. Dejar de hacer: No comunicar cambios importantes en canales grupales.
