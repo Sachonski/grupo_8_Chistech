@@ -1,7 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const Confirm = require('prompt-confirm');
-const prompt = new Confirm('Desea eliminar el producto?');
 
 const productsFilePath = path.join(__dirname, '../../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -88,8 +86,7 @@ const controller = {
 
     // Delete - Delete one product from DB
     productDestroy: (req, res) => {
-       
-        
+    
         const id = req.params.id;
         const product = products.find(product => product.id == id);
 
@@ -97,8 +94,8 @@ const controller = {
 
         fs.writeFileSync(productsFilePath, JSON.stringify(products));
 
-        if (fs.existsSync(`public/images/products/${product.image}`)) {
-            fs.unlinkSync(`public/images/products/${product.image}`);
+        if (fs.existsSync(`public/img/products/${product.image}`)) {
+            fs.unlinkSync(`public/img/products/${product.image}`);
         }
         res.redirect('/productos');
 

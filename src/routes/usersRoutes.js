@@ -29,10 +29,6 @@ router.get("/register", usersController.register);
 
 router.post("/register", usersController.registerpost);
 
-router.get("/creacion", usersController.creacion);
-
-router.post("/creacion", usersController.creacionpost);
-
 router.delete("/delete", usersController.delete);
 
 router.get("/editar", usersController.editarget);
