@@ -5,6 +5,7 @@ const multer = require('multer');
 const app = express();
 const mainRoutes = require("./routes/mainRoute");
 const methodOverride = require("method-override");
+const usersRoutes = require("./routes/usersRoutes");
 
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
