@@ -22,5 +22,7 @@ app.set("view engine", "ejs");
 
 app.use('/', mainRoutes);
 
+app.use ('/users' , usersRoutes);
+
 
 app.listen(process.env.PORT || 3030, () => console.log("Server running on port " + "http://localhost:" + 3030));
