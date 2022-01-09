@@ -86,7 +86,8 @@ const controller = {
 
 	// Delete - Delete one product from DB
 	productDestroy: (req, res) => {
-
+        let confirmacion = window.confirm("¿Está seguro que desea eliminar el producto?");
+        if (confirmacion) {
 		const id = req.params.id;
 		const product = products.find(product => product.id == id);
 
@@ -97,7 +98,8 @@ const controller = {
 		if (fs.existsSync(`public/images/${product.image}`)) {
 			fs.unlinkSync(`public/images/${product.image}`);
 		}
-		res.redirect('/productos');
+		res.redirect('/productos');}
+        
 	}
 }
 

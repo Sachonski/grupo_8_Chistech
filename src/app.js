@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 app.use(express.json());
 
-app.use(morgan('tiny'));
+app.use(morgan('tiny'))
 
 app.use(express.static("public"));
 

@@ -36,6 +36,13 @@
 # Retrospective - Sprint 4:
 - 1. Comenzar a hacer: Comentar el codigo para referencia.
 - 2. Hacer más: Implementar commits con mayor descripcion.
-- 3. Continuar haciendo: Seguir trabajando en branchs aparte durante sprints.
+- 3. Continuar haciendo: Seguir trabajando en branchs aparte durante sprints. Agregar verificacion
 - 4. Hacer menos: No hacer commits a la main, solo a la dev durante sprints.
 - 5. Dejar de hacer: No comunicar cambios importantes en canales grupales.
+
+# Retrospective - Sprint 5:
+- 1. Comenzar a hacer: 
+- 2. Hacer más:
+- 3. Continuar haciendo: 
+- 4. Hacer menos: 
+- 5. Dejar de hacer: 
