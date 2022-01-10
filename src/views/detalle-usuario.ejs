@@ -30,11 +30,11 @@
        
                 
                         
-                        <a href="#" class="boton"> Usuario</a>
-                        <!--- Usuario en singular -->
+                        <a href="/carrito" class="boton">Carrito</a>
+                        <a href="#" class="boton">Ver Compras</a>
                         <a href="/users/editar/<%= user.id %>" class="boton admin"> Editar</a>
-                        <form action="/users/delete/<%= user.id %>?_method=DELETE" method="POST" style="display: inline-flex">
-							<button type="submit" onclick="confirm('Esta seguro que desea borrar el Usuario?')" value="Click para ver un mensaje de alerta"  class="boton admin">Eliminar</button>
+                        <form action="/users/delete/<%= user.id %>?_method=DELETE" method="POST" >
+							<button type="submit" onclick="confirm('Esta seguro que desea borrar el Usuario?')" value="Click para ver un mensaje de alerta" style="display: inline-flex" class="boton admin">Eliminar</button>
 						</form>
  
                     

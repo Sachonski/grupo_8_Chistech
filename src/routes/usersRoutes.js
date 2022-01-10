@@ -20,7 +20,7 @@ const uploadFile = multer({ storage });
 
 router.get('/', usersController.listarUsuarios);
 
-router.get("/user/:id", usersController.detalleUsuario);
+router.get("/:id", usersController.detalleUsuario);
 
 router.get("/login", usersController.login);
 router.post("/login", usersController.loginpost);
@@ -30,7 +30,7 @@ router.post("/register", usersController.registerpost);
 
 router.delete("/delete/:id", usersController.delete);
 
-router.get("/editar", usersController.editarget);
-router.post("/editar", usersController.editarget);
+router.get("/editar/:id", usersController.editarget);
+router.post("/editar/:id", usersController.editarput);
 
 module.exports = router;

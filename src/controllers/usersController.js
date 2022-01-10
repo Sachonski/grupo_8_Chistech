@@ -9,16 +9,27 @@ const controller2 = {
     listarUsuarios: (req, res) => {
         return res.render('users', { users: users });
     },
+
+    detalleUsuario:(req, res) => {
+        const id = req.params.id;
+        console.log(id)
+        const user = users.find(user => user.id == id);
+        return res.render('detalle-usuario', { user: user });
+    },
+  
     login: (req, res) => {
         return res.render('login');
     },
-    register: (req, res) => {
-        return res.render('register');
-    },
 
+    //falta controller para login
     loginpost: (req, res) => {
         return res.send("loginpost" );
+    },    
+
+    register: (req, res) => {
+        return res.render('userRegister');
     },
+
     registerpost: (req, res) => {
 
         const { nombre, fechadeNacimiento,password,confirmPassword} = req.body;
@@ -34,13 +45,7 @@ const controller2 = {
         res.redirect('/productos');
     },
  
-    detalleUsuario:(req, res) => {
-        const id = req.params.id;
-        console.log(id)
-        const user = users.find(user => user.id == id);
-        return res.render('detalle-usuario', { user: user });
-    },
-  
+
     delete: (req, res) => {
         
         const id = req.params.id;
@@ -56,12 +61,29 @@ const controller2 = {
         res.redirect('../../users/login');
     },
 
-    editarput: (req, res) => {
-        return res.send("postusuario" );
+    editarget: (req, res) => {
+        const id = req.params.id;
+        const user = users.find(user => user.id == id);
+        res.render('userEdit', { user: user });
     },
 
-    editarget: (req, res) => {
-        return res.send("getusuario" );
+    editarput: (req, res) => {
+        const id = req.params.id;
+        const user = users.find(user => user.id == id);
+        const { first_name, last_name, birth, email, gender, password, admin } = req.body;
+
+        user.id = user.id;
+        user.first_name = first_name;
+        user.last_name = last_name;
+        user.birth = birth;
+        user.email = email;
+        user.gender = gender;
+        user.password = password;
+        user.admin = admin;
+
+
+        fs.writeFileSync(usersFilePath, JSON.stringify(users));
+        res.redirect('/');
     },
 
 }
