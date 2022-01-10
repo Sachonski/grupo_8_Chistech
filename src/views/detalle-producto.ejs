@@ -10,7 +10,9 @@
         <article class="container producto">
             <section class="slider-producto">
                 <ul>
+                    <% for (var i = 0; i < 4; i++) { %>
                     <li id="slide2"><img src="..\img\products\<%= product.image %>" alt="prod" /></li>
+                    <% } %>
                 </ul>
             </section>
 

@@ -311,5 +311,33 @@
         "password": "fdg",
         "confirmPassword": "dfg",
         "fotoPerfil": "no image"
+    },
+    {
+        "id": 42,
+        "nombre": "Diana",
+        "password": "123",
+        "confirmPassword": "123",
+        "fotoPerfil": "no image"
+    },
+    {
+        "id": 43,
+        "nombre": "juan",
+        "password": "123",
+        "confirmPassword": "123",
+        "fotoPerfil": "no image"
+    },
+    {
+        "id": 44,
+        "nombre": "pedro",
+        "password": "123",
+        "confirmPassword": "123",
+        "fotoPerfil": "no image"
+    },
+    {
+        "id": 45,
+        "nombre": "pedro",
+        "password": "123",
+        "confirmPassword": "123",
+        "fotoPerfil": "no image"
     }
 ]
