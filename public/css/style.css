@@ -27,6 +27,16 @@ html {
     "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+h4 {
+  font-family: var(--font1);
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: var(--gray-200);
   
@@ -277,7 +287,8 @@ i {
 
 /* Grilla de productos */
 
-.products {
+.products,
+.users {
   display: grid;
   margin: 2rem;
   grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -285,10 +296,27 @@ i {
   padding-bottom: 1rem;
 }
 
-.product-card {
+.product-card,
+.user-card {
   position: relative;
   
   /* margin-bottom: 1.5rem; */
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: var(--gray-smoky);
+  filter:drop-shadow(0px 2px 2px rgb(0 0 0 /0.8));
+  border-radius: 5px;
+}
+
+.user:hover {
+  filter:drop-shadow(0px 3px 4px rgb(0 0 0 /1));
+  margin: -0.2rem;
 }
 
 .product-image {
@@ -311,12 +339,14 @@ margin: -0.2rem;
   object-position: center;
 }
 
-.product-description {
+.product-description,
+.user-description {
   position: relative;
   margin-top: 1rem;
 }
 
-.product-description h3 {
+.product-description h3,
+.user-description h3 {
   font-size: 1rem;
   line-height: 1.25rem;
   font-weight: 500;
@@ -328,6 +358,9 @@ margin: -0.2rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
   color: var(--gray-500);
+}
+.user-description p {
+text-align: left;
 }
 
 .product-price {
@@ -404,14 +437,16 @@ margin: -0.2rem;
 }
 
 @media (min-width: 640px) {
-  .products {
+  .products,
+  .users {
     column-gap: 1.5rem;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (min-width: 1024px) {
-  .products {
+  .products,
+  .users {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
   .logo {
@@ -420,7 +455,8 @@ margin: -0.2rem;
 }
 
 @media (min-width: 1280px) {
-  .products {
+  .products,
+  .users {
     column-gap: 2rem;
   }
 }

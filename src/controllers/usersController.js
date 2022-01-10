@@ -6,6 +6,9 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const controller2 = {
     // Initialize the controller
+    listarUsuarios: (req, res) => {
+        return res.render('users', { users: users });
+    },
     login: (req, res) => {
         return res.render('login');
     },
@@ -31,7 +34,7 @@ const controller2 = {
         res.redirect('/productos');
     },
  
-    detalleusuario:(req, res) => {
+    detalleUsuario:(req, res) => {
         const id = req.params.id;
         console.log(id)
         const user = users.find(user => user.id == id);

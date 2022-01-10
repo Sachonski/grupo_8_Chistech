@@ -518,18 +518,6 @@
         "image": "queso-provoleta-920x920.png"
     },
     {
-        "id": 49,
-        "name": "Brie",
-        "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis.",
-        "price": 59,
-        "discount": 0,
-        "category": "Quesos-Frescos",
-        "packaging": "horma",
-        "stock": true,
-        "image": "queso-blanco-cabral-920x920.png",
-        "_locals": {}
-    },
-    {
         "id": 50,
         "name": "Brie",
         "description": "Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus.",
@@ -541,26 +529,14 @@
         "image": "queso-blanco-danes-920x920.png"
     },
     {
-        "id": 52,
-        "name": "Queso de campo",
-        "price": 24,
-        "discount": 8,
-        "category": "quesos-blandos",
-        "description": "Queso tradicional de campo, sin aditivos ni conservantes. Madurado al natural. Hormita por 250g.",
-        "packaging": "horma",
-        "image": "1640133636244_queso-gouda.png",
-        "stock": true,
-        "_locals": {}
-    },
-    {
-        "id": 53,
-        "name": "Queso mantecoso",
-        "price": 10,
+        "id": 51,
+        "name": "fsdgdfg",
+        "price": 56546,
         "discount": 0,
-        "category": "quesos-blandos",
-        "description": "Queso mantecoso tradicional. Cascara florecida.",
-        "packaging": "horma",
-        "image": "queso-blanco-danes-920x920.png",
+        "category": "quesos-duros",
+        "description": "Agregue su descripcion del producto",
+        "packaging": "fraccionado",
+        "image": "no image",
         "stock": true
     }
 ]

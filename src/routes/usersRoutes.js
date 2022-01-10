@@ -18,21 +18,19 @@ const storage = multer.diskStorage({
 const uploadFile = multer({ storage });
 
 
+router.get('/', usersController.listarUsuarios);
 
-router.get("/user/:id", usersController.detalleusuario);
+router.get("/user/:id", usersController.detalleUsuario);
 
 router.get("/login", usersController.login);
-
 router.post("/login", usersController.loginpost);
 
 router.get("/register", usersController.register);
-
 router.post("/register", usersController.registerpost);
 
 router.delete("/delete/:id", usersController.delete);
 
 router.get("/editar", usersController.editarget);
-
 router.post("/editar", usersController.editarget);
 
 module.exports = router;

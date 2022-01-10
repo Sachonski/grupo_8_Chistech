@@ -8,16 +8,27 @@
 
     <main>
         <article class="container producto">
-            <section class="slider-producto">
-                <ul>
-                    
-                 </ul>
-            </section>
+            <div class="detalle-producto">
+                <div class="descripcion">
+                    <h3>
+                        <%= user.first_name %> <%= user.last_name %>
+                    </h3>
+                    <p>
+                        Email: <%= user.email %><br>
+                        Nombre de Usuario: <%= user.user %><br><br>
+                        <% if (user.admin === true) { %>
+                            Administrador
+                        <% } else { %>
+                            Usuario
+                        <% } %>
+                        </p>
+                </div>
+            </div>
 
             <section class="detalle-producto">
                 <div class="descripcion">
        
-                        </p>
+                
                         
                         <a href="#" class="boton"> Usuario</a>
                         <!--- Usuario en singular -->
