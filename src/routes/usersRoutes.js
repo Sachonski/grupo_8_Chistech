@@ -19,7 +19,7 @@ const uploadFile = multer({ storage });
 
 
 
-router.get("/detalle-usuario/:id", usersController.detalleusuario);
+router.get("/user/:id", usersController.detalleusuario);
 
 router.get("/login", usersController.login);
 
@@ -29,7 +29,7 @@ router.get("/register", usersController.register);
 
 router.post("/register", usersController.registerpost);
 
-router.delete("/delete", usersController.delete);
+router.delete("/delete/:id", usersController.delete);
 
 router.get("/editar", usersController.editarget);
 

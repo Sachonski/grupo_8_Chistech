@@ -3,8 +3,6 @@ const path = require('path');
 
 const usersFilePath = path.join(__dirname, '../../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-console.log(users);
-
 
 const controller2 = {
     // Initialize the controller
@@ -52,7 +50,7 @@ const controller2 = {
         if (fs.existsSync(`public/img/users/${user.image}`)) {
             fs.unlinkSync(`public/img/users/${user.image}`);
         }
-        res.redirect('/login');
+        res.redirect('../../users/login');
     },
 
     editarput: (req, res) => {
