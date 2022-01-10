@@ -669,10 +669,11 @@ footer h2 {
 
 .slider-producto img { 
   width: 100%;
-  -webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.07);
-  -moz-box-shadow: 0px 0px 12px 0px rgba(88, 80, 80, 0.07);
-  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.07);  
+  filter:drop-shadow(0px 2px 2px rgb(0 0 0 /0.2));
+  border-radius: 10px;
+
 }
+
 
 @keyframes cambio {
   0% {
