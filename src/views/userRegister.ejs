@@ -1,39 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include('./partials/head', {title: 'Registrate acá'}) -%>
+    <%- include('./partials/head', {title: 'Edicion'}) -%>
 
 <body>
     <%- include('./partials/header') -%>
 
     <main>
         <section class="form">
-            <form action="/users/register" method='post' class='form-registro'>
+            <h2>Editar Usuario</h2>
+
+            <form action="/users/register" method='post' class='form-registro' name='usuarioRegistro' enctype="multipart/form-data">
 
                 <div class="form-control">
-                    <label class="info">Nombre y Apellidos</label>
-                    <input type="text" name="nombre" placeholder="Nombre y Apellido" required class="control">
+                    <label class="info">Nombre</label>
+                    <input type="text" name="fist_name" placeholder="Nombre" required class="control">
+                    <span class="feedback" id="feedback"></span>
+                </div>
+
+                <div class="form-control">
+                    <label class="info">Apellidos</label>
+                    <input type="text" name="last_name" placeholder="Apellido" required class="control">
                     <span class="feedback" id="feedback"></span>
                 </div>
 
                 <div class="form-control">
                     <label>Fecha Nacimiento</label>
-                    <input type="date" name="fechaNacimiento" placeholder="Fecha Nacimiento" required class="control">
+                    <input type="date" name="birth" placeholder="Fecha Nacimiento" required class="control" ">
                     <span class="feedback" id="feedback"></span>
                 </div>
 
                 <div class="form-control">
                     <label>Email</label>
-                    <input type="email" name="email" placeholder="ingrese un email" required class="control">
+                    <input type="email" name="email" placeholder="ingrese un email" required class="control" ">
                     <span class="feedback" id="feedback"></span>
                 </div>
-
+<!-- 
                 <div class="form-control">
                     <label>Seleccionar Foto de Perfil</label>
-                    <input type="file" name="fotoPerfil" accept=".jpg, .png, .webp" required class="control">
+                    <input type="file" name="fotoPerfil" accept=".jpg, .png, .webp" required class="control" value= "<%= user.avatar  %>">
                     <span class="feedback" id="feedback"></span>
                 </div>
-
+ -->
                 <div class="form-control">
                     <label>Contraseña</label>
                     <input type="password" name="password" required class="control">
@@ -43,9 +51,6 @@
                     <label>Confirmar Contraseña</label>
                     <input type="password" name="confirmPassword" required class="control">
                     <span class="feedback" id="feedback"></span>
-                </div>
-                <div class=register>
-                    <a href="/users/login">Si tiene usuario ingrese aquí</a>
                 </div>
 
                 <div class="buttons">

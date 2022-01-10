@@ -12,9 +12,8 @@ const controller2 = {
 
     detalleUsuario:(req, res) => {
         const id = req.params.id;
-        console.log(id)
         const user = users.find(user => user.id == id);
-        return res.render('detalle-usuario', { user: user });
+        return res.render('userDeail', { user: user });
     },
   
     login: (req, res) => {
@@ -23,7 +22,7 @@ const controller2 = {
 
     //falta controller para login
     loginpost: (req, res) => {
-        return res.send("loginpost" );
+        return res.send("login" );
     },    
 
     register: (req, res) => {
@@ -32,17 +31,17 @@ const controller2 = {
 
     registerpost: (req, res) => {
 
-        const { nombre, fechadeNacimiento,password,confirmPassword} = req.body;
+        const { first_name, last_name, birth, password} = req.body;
         const newUser = {}
         newUser.id = users[users.length - 1].id + 1;
-        newUser.nombre = nombre;
-        newUser.fechadeNacimiento = fechadeNacimiento;
+        newUser.first_name = first_name;
+        newUser.last_name = last_name;
+        newUser.email = email;
+        newUser.birth = birth;
         newUser.password = password;
-        newUser.confirmPassword = confirmPassword;  
-        newUser.fotoPerfil = (req.file) ? req.file.filename : "no image";
         users.push(newUser);
         fs.writeFileSync(usersFilePath, JSON.stringify(users));
-        res.redirect('/productos');
+        res.redirect('/');
     },
  
 
@@ -68,18 +67,19 @@ const controller2 = {
     },
 
     editarput: (req, res) => {
+
         const id = req.params.id;
         const user = users.find(user => user.id == id);
-        const { first_name, last_name, birth, email, gender, password, admin } = req.body;
+        const { first_name, last_name, birth, email, password} = req.body;
 
         user.id = user.id;
         user.first_name = first_name;
         user.last_name = last_name;
         user.birth = birth;
         user.email = email;
-        user.gender = gender;
+        user.gender = user.gender;
         user.password = password;
-        user.admin = admin;
+        user.admin = user.admin;
 
 
         fs.writeFileSync(usersFilePath, JSON.stringify(users));

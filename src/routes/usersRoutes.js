@@ -31,6 +31,6 @@ router.post("/register", usersController.registerpost);
 router.delete("/delete/:id", usersController.delete);
 
 router.get("/editar/:id", usersController.editarget);
-router.post("/editar/:id", usersController.editarput);
+router.put("/editar/:id", usersController.editarput);
 
 module.exports = router;
