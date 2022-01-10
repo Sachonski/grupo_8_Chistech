@@ -2,15 +2,15 @@
   --font1: "Poppins", sans-serif;
   --font2: "Bebas Neue", cursive;
   --font3: "Montserrat", sans-serif;
-  --gray-100: rgba(243, 244, 246, 1);
-  --gray-200: rgba(229, 231, 235, 1);
-  --gray-500: rgba(107, 114, 128, 1);
-  --gray-600: rgba(75, 85, 99, 1);
-  --gray-700: rgba(55, 65, 81, 1);
-  --gray-800: rgba(31, 41, 55, 1);  
-  --gray-900: rgba(17, 24, 39, 1);
-  --gray-smoky: rgb(71,70,70);
-  --naranja: #fb8720;
+  --gray-100: rgb(245, 238, 228);
+  --gray-200: rgb(233, 227, 214);
+  --gray-500: rgb(133, 128, 118);
+  --gray-600: rgb(99, 93, 75);
+  --gray-700: rgb(81, 70, 55);
+  --gray-800: rgb(55, 47, 31);  
+  --gray-900: rgb(39, 34, 17);
+  --gray-smoky: rgb(64, 62, 60);
+  --naranja: #e4ab41;
 }
 
 * {
@@ -67,7 +67,7 @@ i {
 }
 
 .logo {
-  height: 70px;
+  height: 5rem;
 } 
 
 #logo h1{
@@ -292,12 +292,16 @@ i {
 }
 
 .product-image {
-  filter:drop-shadow(0px 2px 2px rgb(0 0 0 / 0.2));
+  filter:drop-shadow(0px 2px 2px rgb(0 0 0 /0.2));
   position: relative;
   width: 100%;
   height: 18rem;
   border-radius: 0.5rem;
   overflow: hidden;
+}
+.product:hover {
+  filter:drop-shadow(0px 3px 4px rgb(0 0 0 /0.1));
+margin: -0.2rem;
 }
 
 .product-image img {
@@ -347,7 +351,7 @@ i {
   bottom: 0;
   height: 9rem;
   opacity: 0.15;
-  background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
+  background-image: linear-gradient(to top, rgb(198, 153, 5), rgba(0, 0, 0, 0));
 }
 
 
@@ -396,7 +400,7 @@ i {
 .buttons .boton:hover {
   color: #fffcf9;
   background-color: var(--naranja);
-  transition: 1s;
+  transition: 0.7s;
 }
 
 @media (min-width: 640px) {
@@ -410,6 +414,9 @@ i {
   .products {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
+  .logo {
+    height: 7rem;
+  } 
 }
 
 @media (min-width: 1280px) {
@@ -545,7 +552,7 @@ footer h2 {
 
 .footer a:hover {
   color: var(--naranja);
-  transition: color 0.4s;
+  transition: color 0.3s;
 }
 
 #footer-registro {
@@ -563,6 +570,10 @@ footer h2 {
   color: var(--naranja);
   transition: color 0.3s;
 }
+
+/* fin footer */
+
+/* carrito */
 
 .carrito-producto {
   background-color: var(--gray-100);
