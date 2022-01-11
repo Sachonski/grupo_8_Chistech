@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partials/head', {title: 'Administrar Usuarios'}) -%>
+
+<body>
+
+    <body>
+        <%- include('./partials/header') -%>
+        <%- include('./partials/category') -%>
+
+        <main>
+            <div class="placeholderProduct"> </div>
+            <section class="destacados">
+
+                    <div class="container">
+                        <h2 >Usuarios</h2>
+
+                        <div class="users">
+                            <% for(user of users) { %>
+                                    <%- include('./partials/user') -%>
+                            <% } %>
+
+                        </div>
+                    </div>
+            </section>
+        </main>
+        <%- include('./partials/footer') -%>
+
+    </body>
+
+</html>

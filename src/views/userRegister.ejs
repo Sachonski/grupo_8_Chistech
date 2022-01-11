@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partials/head', {title: 'Registro'}) -%>
+
+<body>
+    <%- include('./partials/header') -%>
+
+    <main>
+        <section class="form">
+            <h2>Registrar Usuario</h2>
+
+            <form action="/users/register" method='post' class='form-registro' name='usuarioRegistro' enctype="multipart/form-data">
+
+                <div class="form-control">
+                    <label class="info">Nombre</label>
+                    <input type="text" name="fist_name" placeholder="Nombre" required class="control">
+                    <span class="feedback" id="feedback"></span>
+                </div>
+
+                <div class="form-control">
+                    <label class="info">Apellidos</label>
+                    <input type="text" name="last_name" placeholder="Apellido" required class="control">
+                    <span class="feedback" id="feedback"></span>
+                </div>
+
+                <div class="form-control">
+                    <label>Fecha Nacimiento</label>
+                    <input type="date" name="birth" placeholder="Fecha Nacimiento" required class="control" ">
+                    <span class="feedback" id="feedback"></span>
+                </div>
+
+                <div class="form-control">
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="ingrese un email" required class="control" ">
+                    <span class="feedback" id="feedback"></span>
+                </div>
+
+                <div class="form-control">
+                    <label>Contraseña</label>
+                    <input type="password" name="password" required class="control">
+                    <span class="feedback" id="feedback"></span>
+                </div>
+                <div class="form-control">
+                    <label>Confirmar Contraseña</label>
+                    <input type="password" name="confirmPassword" required class="control">
+                    <span class="feedback" id="feedback"></span>
+                </div>
+
+                <div class=register>
+                    <a href="/users/login">Si ya tiene usuario ingrese aquí</a>
+                </div>
+
+                <div class="buttons">
+                    <button type="submit" class="boton">Enviar</button>
+                    <button type="reset" class="boton">Borrar</button>
+                </div>
+
+            </form>
+        </section>
+    </main>
+
+    <%- include('./partials/footer') -%>
+
+</body>
+
+</html>

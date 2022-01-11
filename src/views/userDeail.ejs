@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partials/head', {title: 'Detalle del Usuario'}) -%>
+
+<body>
+    <%- include('./partials/header') -%>
+
+    <main>
+        <article class="container producto">
+            <div class="detalle-producto">
+                <div class="descripcion">
+                    <h3>
+                        <%= user.first_name %> <%= user.last_name %>
+                    </h3>
+                    <p>
+                        Email: <%= user.email %><br>
+                        Nombre de Usuario: <%= user.user %><br><br>
+                        <% if (user.admin === true) { %>
+                            Administrador
+                        <% } else { %>
+                            Usuario
+                        <% } %>
+                        </p>
+                </div>
+            </div>
+
+            <section class="detalle-producto">
+                <div class="descripcion">
+       
+                
+                        
+                        <a href="/carrito" class="boton">Carrito</a>
+                        <a href="#" class="boton">Ver Compras</a>
+                        <a href="/users/editar/<%= user.id %>" class="boton admin"> Editar</a>
+                        <form action="/users/delete/<%= user.id %>?_method=DELETE" method="POST" >
+							<button type="submit" onclick="confirm('Esta seguro que desea borrar el Usuario?')" value="Click para ver un mensaje de alerta" style="display: inline-flex" class="boton admin">Eliminar</button>
+						</form>
+ 
+                    
+                </div>
+            </section>
+        </article>
+
+    </main>
+    <%- include('./partials/footer') -%>
+</body>
+
+</html>

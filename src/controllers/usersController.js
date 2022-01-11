@@ -6,38 +6,45 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const controller2 = {
     // Initialize the controller
-    login: (req, res) => {
-        return res.render('login');
-    },
-    register: (req, res) => {
-        return res.render('register');
+    listarUsuarios: (req, res) => {
+        return res.render('users', { users: users });
     },
 
-    loginpost: (req, res) => {
-        return res.send("loginpost" );
-    },
-    registerpost: (req, res) => {
-
-        const { nombre, fechadeNacimiento,password,confirmPassword} = req.body;
-        const newUser = {}
-        newUser.id = users[users.length - 1].id + 1;
-        newUser.nombre = nombre;
-        newUser.fechadeNacimiento = fechadeNacimiento;
-        newUser.password = password;
-        newUser.confirmPassword = confirmPassword;  
-        newUser.fotoPerfil = (req.file) ? req.file.filename : "no image";
-        users.push(newUser);
-        fs.writeFileSync(usersFilePath, JSON.stringify(users));
-        res.redirect('/productos');
-    },
- 
-    detalleusuario:(req, res) => {
+    detalleUsuario:(req, res) => {
         const id = req.params.id;
-        console.log(id)
         const user = users.find(user => user.id == id);
-        return res.render('detalle-usuario', { user: user });
+        return res.render('userDeail', { user: user });
     },
   
+    login: (req, res) => {
+        return res.render('userLogin');
+    },
+
+    //falta controller para login
+    loginpost: (req, res) => {
+        return res.send("login" );
+    },    
+
+    register: (req, res) => {
+        return res.render('userRegister');
+    },
+
+    registerpost: (req, res) => {
+
+        const { first_name, last_name, birth, password} = req.body;
+        const newUser = {}
+        newUser.id = users[users.length - 1].id + 1;
+        newUser.first_name = first_name;
+        newUser.last_name = last_name;
+        newUser.email = email;
+        newUser.birth = birth;
+        newUser.password = password;
+        users.push(newUser);
+        fs.writeFileSync(usersFilePath, JSON.stringify(users));
+        res.redirect('/');
+    },
+ 
+
     delete: (req, res) => {
         
         const id = req.params.id;
@@ -53,12 +60,30 @@ const controller2 = {
         res.redirect('../../users/login');
     },
 
-    editarput: (req, res) => {
-        return res.send("postusuario" );
+    editarget: (req, res) => {
+        const id = req.params.id;
+        const user = users.find(user => user.id == id);
+        res.render('userEdit', { user: user });
     },
 
-    editarget: (req, res) => {
-        return res.send("getusuario" );
+    editarput: (req, res) => {
+
+        const id = req.params.id;
+        const user = users.find(user => user.id == id);
+        const { first_name, last_name, birth, email, password} = req.body;
+
+        user.id = user.id;
+        user.first_name = first_name;
+        user.last_name = last_name;
+        user.birth = birth;
+        user.email = email;
+        user.gender = user.gender;
+        user.password = password;
+        user.admin = user.admin;
+
+
+        fs.writeFileSync(usersFilePath, JSON.stringify(users));
+        res.redirect('/');
     },
 
 }
