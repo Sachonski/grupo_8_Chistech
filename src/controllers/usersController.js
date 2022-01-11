@@ -17,7 +17,7 @@ const controller2 = {
     },
   
     login: (req, res) => {
-        return res.render('login');
+        return res.render('userLogin');
     },
 
     //falta controller para login

@@ -20,7 +20,7 @@ const uploadFile = multer({ storage });
 
 router.get('/', usersController.listarUsuarios);
 
-router.get("/:id", usersController.detalleUsuario);
+router.get("/perfil/:id", usersController.detalleUsuario);
 
 router.get("/login", usersController.login);
 router.post("/login", usersController.loginpost);
