@@ -8,7 +8,7 @@
 
             <main>
                 <section class="form">
-                    <form action="/users/login" method='post' class='form-login'>
+                    <form action="/users/login" method='post' enctype='application/json' class='form-login'>
                         <div class="form-control">
                             <label>Nombre de Usuario</label>
                             <input type="text" name="nombreUsuario" placeholder="Nombre de Usuario" class="control" value="<%= locals.old && old.nombreUsuario? old.nombreUsuario : '' %> ">

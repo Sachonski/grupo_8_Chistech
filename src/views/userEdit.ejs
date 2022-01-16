@@ -10,7 +10,7 @@
         <section class="form">
             <h2>Editar Usuario</h2>
 
-            <form action="/users/editar/<%= user.id %>?_method=PUT" method='post' class='form-registro' name='usuarioEdicion' enctype="multipart/form-data">
+            <form action="/users/editar/<%= user.id %>?_method=PUT" method='post' enctype='application/json' class='form-registro' name='usuarioEdicion' enctype="multipart/form-data">
 
                 <div class="form-control">
                     <label class="info">Nombre</label>

@@ -17,27 +17,21 @@ let validateLogin = [
 
 const validateRegister = [
   check('first_name')
-      .notEmpty().withMessage('Debes completar el nombre').bail(),
+      .notEmpty().trim().withMessage('Debes completar el nombre').bail(),
   check('last_name')
-      .notEmpty().withMessage('Debes completar el apellido').bail(),
+      .notEmpty().trim().withMessage('Debes completar el apellido').bail(),
   check('user_name')
-      .notEmpty().withMessage('Debes completar el nombre').bail()
+      .notEmpty().trim().withMessage('Debes completar el nombre').bail()
       .isLength({ min: 5 }).withMessage('El nombre debe ser más largo'),
   check('birth')
       .notEmpty().withMessage('Debes completar la fecha de nacimiento').bail()
       .isDate().withMessage('La fecha de nacimiento no es válida'),
   check('email')
-     .notEmpty().withMessage('Debes completar el email').bail()
+     .notEmpty().trim().withMessage('Debes completar el email').bail()
      .isEmail().withMessage('Debes completar un email válido'),
   check('password')
-     .notEmpty().withMessage('Debes completar la contraseña').bail()
+     .notEmpty().trim().withMessage('Debes completar la contraseña').bail()
      .isLength({ min: 8 }).withMessage('La contraseña debe ser más larga'),
-  check('confirmPassword')
-      .notEmpty().withMessage('Debes completar la confirmación de la contraseña').bail()
-      .custom((value, { req }) => {
-        if (value !== req.body.password) {
-          throw new Error('Las contraseñas no coinciden');
-        }})
 ];
 
 

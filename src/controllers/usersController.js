@@ -24,7 +24,7 @@ const controller2 = {
     //falta controller para login
     loginpost: (req, res) => {
         let errors = validationResult(req);
-        console.log(errors);
+        console.log(req.body);
 
         if (errors.isEmpty()) {
             res.redirect('/');       
@@ -38,8 +38,9 @@ const controller2 = {
     },
 
     registerpost: (req, res) => {
-        // let errors = validationResult(req);
-        // if (errors.isEmpty()) {   
+        let errors = validationResult(req);
+        console.log(errors);
+        if (errors.isEmpty()) {   
             console.log(req.body);
             let { first_name, last_name, birth, password, email} = req.body;
             const newUser = {}
@@ -53,10 +54,10 @@ const controller2 = {
             fs.writeFileSync(usersFilePath, JSON.stringify(users));
             res.redirect('/');
         
-        // } else {
-        //     res.render('userRegister', {msgErrors: errors.mapped(), old: req.body});     
-        //     console.log(req.body);   
-        // }   
+        } else {
+            res.render('userRegister', {msgErrors: errors.mapped(), old: req.body});     
+            console.log(req.body);   
+        }   
               
 },
 
@@ -82,6 +83,7 @@ const controller2 = {
     },
 
     editarput: (req, res) => {
+        console.log(req.body);
 
         const id = req.params.id;
         const user = users.find(user => user.id == id);
