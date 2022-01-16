@@ -9,18 +9,18 @@ const controller = {
     home: (req, res) => {
         return res.render('home', { products: products });
     },
-    productos: (req, res) => {      
+    productos: (req, res) => {
         return res.render('productos', { products: products });
     },
-    productosCategoria: (req, res) => { 
-        const category = req.params.category;     
+    productosCategoria: (req, res) => {
+        const category = req.params.category;
         const productsByCategory = products.filter(product => product.category == category & product.stock == true);
         return res.render('productos', { products: productsByCategory });
     },
     detalleProducto: (req, res) => {
         const id = req.params.id;
-		const product = products.find(product => product.id == id);
-		return res.render('detalle-producto', { product: product });
+        const product = products.find(product => product.id == id);
+        return res.render('detalle-producto', { product: product });
     },
     carrito: (req, res) => {
         return res.render('carrito');
@@ -34,11 +34,11 @@ const controller = {
     sobreNosotros: (req, res) => {
         return res.render('sobreNosotros');
     },
-    productoCreacion : (req,res) => {
+    productoCreacion: (req, res) => {
         return res.render('productoCreacion')
     },
-    productoGuardar : (req, res) => {
-        
+    productoGuardar: (req, res) => {
+
         const { name, price, discount, category, description, packaging, stock } = req.body;
         const newProduct = {}
         newProduct.id = products[products.length - 1].id + 1;
@@ -48,7 +48,7 @@ const controller = {
         newProduct.category = category;
         newProduct.description = description;
         newProduct.packaging = packaging;
-        newProduct.image = (req.file) ?  req.file.filename: "no image";
+        newProduct.image = (req.file) ? req.file.filename : "no image";
         newProduct.stock = JSON.parse(stock);
 
         products.push(newProduct);
@@ -57,16 +57,16 @@ const controller = {
         res.redirect('/productos');
     },
     productEdit: (req, res) => {
-		const id = req.params.id;
-		const product = products.find(product => product.id == id);
-		res.render('productoEdicion', { product: product });
-	},
-	// Update - Method to update
-	productUpdate: (req, res) => {
+        const id = req.params.id;
+        const product = products.find(product => product.id == id);
+        res.render('productoEdicion', { product: product });
+    },
+    // Update - Method to update
+    productUpdate: (req, res) => {
 
-		const image = req.file.filename;	
-		const id = req.params.id;
-		const product = products.find(product => product.id == id);
+        const image = req.file.filename;
+        const id = req.params.id;
+        const product = products.find(product => product.id == id);
         const { name, price, discount, category, description, packaging, stock } = req.body;
 
         product.id = product.id;
@@ -76,29 +76,30 @@ const controller = {
         product.category = category;
         product.description = description;
         product.packaging = packaging;
-        product.image = (req.file) ?  req.file.filename: "no image";
+        product.image = (req.file) ? req.file.filename : "no image";
         product.stock = JSON.parse(stock);
-        
 
-		fs.writeFileSync(productsFilePath, JSON.stringify(products));
-		res.redirect('/productos');
-	},
 
-	// Delete - Delete one product from DB
-	productDestroy: (req, res) => {
+        fs.writeFileSync(productsFilePath, JSON.stringify(products));
+        res.redirect('/productos');
+    },
 
-		const id = req.params.id;
-		const product = products.find(product => product.id == id);
+    // Delete - Delete one product from DB
+    productDestroy: (req, res) => {
+    
+        const id = req.params.id;
+        const product = products.find(product => product.id == id);
 
-		products.splice(products.indexOf(product), 1);
+        products.splice(products.indexOf(product), 1);
 
-		fs.writeFileSync(productsFilePath, JSON.stringify(products));
+        fs.writeFileSync(productsFilePath, JSON.stringify(products));
 
-		if (fs.existsSync(`public/images/${product.image}`)) {
-			fs.unlinkSync(`public/images/${product.image}`);
-		}
-		res.redirect('/productos');
-	}
+        if (fs.existsSync(`public/img/products/${product.image}`)) {
+            fs.unlinkSync(`public/img/products/${product.image}`);
+        }
+        res.redirect('/productos');
+
+    }
 }
 
 module.exports = controller;

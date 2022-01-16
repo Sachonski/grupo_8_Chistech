@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partials/head', {title: 'Detalle del Usuario'}) -%>
+
+<body>
+    <%- include('./partials/header') -%>
+
+    <main>
+        <article class="container producto">
+            <section class="slider-producto">
+                <ul>
+                    
+                 </ul>
+            </section>
+
+            <section class="detalle-producto">
+                <div class="descripcion">
+       
+                        </p>
+                        
+                        <a href="#" class="boton"> Usuario</a>
+                        <!--- Usuario en singular -->
+                        <a href="/users/editar/<%= user.id %>" class="boton admin"> Editar</a>
+                        <form action="/users/delete/<%= user.id %>?_method=DELETE" onsubmit="return window.confirm('Seguro que desea eliminar el Usuario?')" method="POST" style="display: inline-flex">
+                            <button type="submit"  value="Click para ver un mensaje de alerta"  class="boton admin">Eliminar</button>
+                        </form>
+ 
+                    
+                </div>
+            </section>
+        </article>
+
+    </main>
+    <%- include('./partials/footer') -%>
+</body>
+
+</html>
