@@ -3,6 +3,7 @@ const path = require('path');
 
 const usersFilePath = path.join(__dirname, '../../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+const { validationResult } = require('express-validator');
 
 const controller2 = {
     // Initialize the controller
@@ -13,7 +14,7 @@ const controller2 = {
     detalleUsuario:(req, res) => {
         const id = req.params.id;
         const user = users.find(user => user.id == id);
-        return res.render('userDeail', { user: user });
+        return res.render('userDetail', { user: user });
     },
   
     login: (req, res) => {
@@ -22,7 +23,14 @@ const controller2 = {
 
     //falta controller para login
     loginpost: (req, res) => {
-        return res.send("login" );
+        let errors = validationResult(req);
+        console.log(errors);
+
+        if (errors.isEmpty()) {
+            res.redirect('/');       
+    } else {
+        res.render('userLogin', {msgErrors: errors.mapped(), old: req.body});        
+    }         
     },    
 
     register: (req, res) => {
@@ -30,20 +38,27 @@ const controller2 = {
     },
 
     registerpost: (req, res) => {
-
-        const { first_name, last_name, birth, password} = req.body;
-        const newUser = {}
-        newUser.id = users[users.length - 1].id + 1;
-        newUser.first_name = first_name;
-        newUser.last_name = last_name;
-        newUser.email = email;
-        newUser.birth = birth;
-        newUser.password = password;
-        users.push(newUser);
-        fs.writeFileSync(usersFilePath, JSON.stringify(users));
-        res.redirect('/');
-    },
- 
+        // let errors = validationResult(req);
+        // if (errors.isEmpty()) {   
+            console.log(req.body);
+            let { first_name, last_name, birth, password, email} = req.body;
+            const newUser = {}
+            newUser.id = users[users.length - 1].id + 1;
+            newUser.first_name = first_name;
+            newUser.last_name = last_name;
+            newUser.email = email;
+            newUser.birth = birth;
+            newUser.password = password;
+            users.push(newUser);
+            fs.writeFileSync(usersFilePath, JSON.stringify(users));
+            res.redirect('/');
+        
+        // } else {
+        //     res.render('userRegister', {msgErrors: errors.mapped(), old: req.body});     
+        //     console.log(req.body);   
+        // }   
+              
+},
 
     delete: (req, res) => {
         
