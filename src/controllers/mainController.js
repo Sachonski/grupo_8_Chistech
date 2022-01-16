@@ -79,16 +79,13 @@ const controller = {
         product.image = (req.file) ? req.file.filename : "no image";
         product.stock = JSON.parse(stock);
 
-
-        fs.writeFileSync(productsFilePath, JSON.stringify(products));
-        res.redirect('/productos');
     },
-
-    // Delete - Delete one product from DB
-    productDestroy: (req, res) => {
-    
-        const id = req.params.id;
-        const product = products.find(product => product.id == id);
+	// Delete - Delete one product from DB
+	productDestroy: (req, res) => {
+        let confirmacion = window.confirm("¿Está seguro que desea eliminar el producto?");
+        if (confirmacion) {
+		const id = req.params.id;
+		const product = products.find(product => product.id == id);
 
         products.splice(products.indexOf(product), 1);
 
@@ -99,7 +96,13 @@ const controller = {
         }
         res.redirect('/productos');
 
+		if (fs.existsSync(`public/images/${product.image}`)) {
+			fs.unlinkSync(`public/images/${product.image}`);
+		}
+		res.redirect('/productos');
     }
+        
+	}
 }
 
 module.exports = controller;
