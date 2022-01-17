@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const usersController = require("../controllers/usersController");
+const sessionUsuario = require('../middlewares/session');
 const multer = require("multer");
 const date = Date.now();
 const path = require("path");
@@ -52,17 +53,19 @@ const uploadFile = multer({ storage });
 
 router.get('/', usersController.listarUsuarios);
 
-router.get("/perfil/:id", usersController.detalleUsuario);
+router.get("/perfil/:id", sessionUsuario, usersController.detalleUsuario);
 
 router.get("/login", usersController.login);
 router.post("/login", validateLogin, usersController.loginpost);
 
+router.get("/logout", usersController.logout);
+
 router.get("/register", usersController.register);
 router.post("/register", validateRegister, usersController.registerpost);
 
-router.delete("/delete/:id", usersController.delete);
+router.delete("/delete/:id", sessionUsuario, usersController.delete);
 
-router.get("/editar/:id", usersController.editarget);
-router.put("/editar/:id", usersController.editarput);
+router.get("/editar/:id", sessionUsuario, usersController.editarget);
+router.put("/editar/:id", sessionUsuario, usersController.editarput);
 
 module.exports = router;

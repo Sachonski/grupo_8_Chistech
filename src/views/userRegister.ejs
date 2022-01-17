@@ -103,6 +103,11 @@
             <button type="submit" class="boton">Enviar</button>
             <button type="reset" class="boton">Borrar</button>
           </div>
+          <label for="">recordame</label>
+          <input type="checkbox" name="remember" value="true" <%=locals.old && old.remember=='true'
+            ? 'checked' : '' %>>
+          <br /><br />
+
         </form>
       </section>
     </main>

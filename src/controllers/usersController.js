@@ -21,7 +21,6 @@ const controller2 = {
         return res.render('userLogin');
     },
 
-    //falta controller para login
     loginpost: (req, res) => {
         let errors = validationResult(req);
         console.log(req.body);
@@ -31,7 +30,13 @@ const controller2 = {
     } else {
         res.render('userLogin', {msgErrors: errors.mapped(), old: req.body});        
     }         
-    },    
+    },
+
+    logout: function(req, res){
+        res.clearCookie('remember');
+        req.session.destroy();
+        res.redirect('/');
+    },
 
     register: (req, res) => {
         return res.render('userRegister');
@@ -39,10 +44,9 @@ const controller2 = {
 
     registerpost: (req, res) => {
         let errors = validationResult(req);
-        console.log(errors);
-        if (errors.isEmpty()) {   
-            console.log(req.body);
-            let { first_name, last_name, user_name, birth, password, email} = req.body;
+        let user = req.body;
+        if (errors.isEmpty()) {     
+            let { first_name, last_name, user_name, birth, password, email} = user;
             const newUser = {}
             newUser.id = users[users.length - 1].id + 1;
             newUser.first_name = first_name;
@@ -51,14 +55,24 @@ const controller2 = {
             newUser.email = email;
             newUser.birth = birth;
             newUser.password = password;
+
             users.push(newUser);
+
             fs.writeFileSync(usersFilePath, JSON.stringify(users));
+
+            req.session.user = user;
+            console.log(req.session.user); 
+            
+            if (req.body.remember) {
+                res.cookie('remember', user, { maxAge: 1000 * 60 * 60 * 24 * 30 });
+            }
+
             res.redirect('/');
         
         } else {
             res.render('userRegister', {msgErrors: errors.mapped(), old: req.body});     
             console.log(req.body);   
-        }   
+        }
               
 },
 

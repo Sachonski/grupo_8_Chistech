@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
-
 const productsFilePath = path.join(__dirname, '../../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
 
 const controller = {
     // Initialize the controller
@@ -23,13 +23,11 @@ const controller = {
         return res.render('detalle-producto', { product: product });
     },
     carrito: (req, res) => {
-        return res.render('carrito');
-    },
-    login: (req, res) => {
-        return res.render('login');
-    },
-    register: (req, res) => {
-        return res.render('register');
+        if (req.session.user) {
+            return res.render('carrito');
+        } else {
+            res.redirect('users/login');
+        }
     },
     sobreNosotros: (req, res) => {
         return res.render('sobreNosotros');
@@ -86,7 +84,7 @@ const controller = {
 
     // Delete - Delete one product from DB
     productDestroy: (req, res) => {
-    
+
         const id = req.params.id;
         const product = products.find(product => product.id == id);
 
