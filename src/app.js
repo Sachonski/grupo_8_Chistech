@@ -4,10 +4,11 @@ const bodyParser= require('body-parser')
 const cookieParser = require('cookie-parser');
 const multer = require('multer');
 const app = express();
-const mainRoutes = require("./routes/mainRoute");
-const methodOverride = require("method-override");
-const usersRoutes = require("./routes/usersRoutes");
 const session = require("express-session");
+const methodOverride = require("method-override");
+
+const mainRoutes = require("./routes/mainRoutes");
+const usersRoutes = require("./routes/usersRoutes");
 const remember = require("./middlewares/remember");
 
 app.use(bodyParser.urlencoded({extended: true}))

@@ -5,23 +5,27 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 
 const controller = {
-    // Initialize the controller
+    // ***este queda en main***
     home: (req, res) => {
         return res.render('home', { products: products });
     },
+    // llevar a carpeta products
     productos: (req, res) => {
         return res.render('productos', { products: products });
     },
+    // llevar a carpeta products
     productosCategoria: (req, res) => {
         const category = req.params.category;
         const productsByCategory = products.filter(product => product.category == category & product.stock == true);
         return res.render('productos', { products: productsByCategory });
     },
+    // llevar a carpeta products
     detalleProducto: (req, res) => {
         const id = req.params.id;
         const product = products.find(product => product.id == id);
         return res.render('detalle-producto', { product: product });
     },
+    // ***este queda en main***
     carrito: (req, res) => {
         if (req.session.user) {
             return res.render('carrito');
@@ -29,12 +33,15 @@ const controller = {
             res.redirect('users/login');
         }
     },
+    // ***este queda en main***
     sobreNosotros: (req, res) => {
         return res.render('sobreNosotros');
     },
+    // llevar a carpeta products
     productoCreacion: (req, res) => {
         return res.render('productoCreacion')
     },
+    // llevar a carpeta products
     productoGuardar: (req, res) => {
 
         const { name, price, discount, category, description, packaging, stock } = req.body;
@@ -54,12 +61,13 @@ const controller = {
         fs.writeFileSync(productsFilePath, JSON.stringify(products));
         res.redirect('/productos');
     },
+    // llevar a carpeta products
     productEdit: (req, res) => {
         const id = req.params.id;
         const product = products.find(product => product.id == id);
         res.render('productoEdicion', { product: product });
     },
-    // Update - Method to update
+    // llevar a carpeta products
     productUpdate: (req, res) => {
 
         const image = req.file.filename;
@@ -82,7 +90,7 @@ const controller = {
         res.redirect('/productos');
     },
 
-    // Delete - Delete one product from DB
+    // llevar a carpeta products
     productDestroy: (req, res) => {
 
         const id = req.params.id;
