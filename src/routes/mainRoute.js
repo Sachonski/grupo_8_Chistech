@@ -26,14 +26,12 @@ router.get("/carrito", mainController.carrito);
 router.get("/sobreNosotros", mainController.sobreNosotros);
 
 router.get("/productoCreacion", mainController.productoCreacion);
-router.post(
-  "/productoCreacion",
+router.post("/productoCreacion",
   uploadFile.single("image"),
   mainController.productoGuardar
 );
 router.get("/productoEdicion/:id/", mainController.productEdit);
-router.put(
-  "/productoEdicion/:id/",
+router.put("/productoEdicion/:id/",
   uploadFile.single("image"),
   mainController.productUpdate
 );
