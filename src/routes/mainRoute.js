@@ -1,9 +1,13 @@
 const express = require("express");
 const router = express.Router();
+
+//controllers
 const mainController = require("../controllers/mainController");
+
+//middlewares
 const uploadFile = require('../middlewares/multer');
 
-
+//routes
 router.get("/", mainController.home);
 router.get("/productos", mainController.productos);
 router.get("/productos/:category", mainController.productosCategoria);
@@ -24,4 +28,5 @@ router.put("/productoEdicion/:id/",
 
 router.delete("/productoDelete/:id", mainController.productDestroy);
 
+//exports
 module.exports = router;
