@@ -1,14 +1,29 @@
 const express = require("express");
 const morgan = require("morgan");
 const bodyParser= require('body-parser')
+const cookieParser = require('cookie-parser');
 const multer = require('multer');
 const app = express();
 const mainRoutes = require("./routes/mainRoute");
 const methodOverride = require("method-override");
 const usersRoutes = require("./routes/usersRoutes");
+const session = require("express-session");
+const remember = require("./middlewares/remember");
 
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
+
+app.use(cookieParser());
+
+app.use(session({
+    cookie: {maxAge:60*60*1000},
+    secret: "mySecret",
+    resave: false,
+    saveUninitialized: true,
+    sameSite: false
+}));
+app.use(remember);
+
 app.use(express.json());
 
 app.use(morgan('tiny'));
