@@ -17,7 +17,7 @@
               name="first_name"
               placeholder="Nombre de Usuario"
               class="control"
-              value="<%= locals.old && old.first_name? old.first_name : '' %> "
+              value="<%= locals.old && old.first_name? old.first_name : undefined %> "
             />
             <span class="feedback" id="feedback"></span>
           </div>
@@ -32,7 +32,7 @@
               name="last_name"
               placeholder="Apellido"
               class="control"
-              value="<%= locals.old && old.last_name? old.last_name : '' %> "
+              value="<%= locals.old && old.last_name? old.last_name : undefined %> "
             />
             <span class="feedback" id="feedback"></span>
           </div>
@@ -47,7 +47,7 @@
               name="user_name"
               placeholder="Nombre Usuario"
               class="control"
-              value="<%= locals.old && old.user_name? old.user_name : '' %> "
+              value="<%= locals.old && old.user_name? old.user_name : undefined %> "
             />
             <span class="feedback" id="feedback"></span>
           </div>
@@ -62,7 +62,7 @@
               name="birth"
               placeholder="Fecha Nacimiento"
               class="control"
-              value="<%= locals.old && old.birth? old.birth : '' %> "
+              value="<%= locals.old && old.birth? old.birth : undefined %> "
             />
             <span class="feedback" id="feedback"></span>
           </div>
@@ -77,7 +77,7 @@
               name="email"
               placeholder="ingrese un email"
               class="control"
-              value="<%= locals.old && old.email? old.email : '' %> "
+              value="<%= locals.old && old.email? old.email : undefined %> "
             />
             <span class="feedback" id="feedback"></span>
           </div>

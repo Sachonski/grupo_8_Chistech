@@ -221,5 +221,30 @@
         "email": "dadrover75@hotmail.com",
         "birth": "2022-01-08",
         "password": "123456789"
+    },
+    {
+        "id": 22,
+        "first_name": "diana",
+        "last_name": "Adrover",
+        "email": "dadrover75@hotmail.com",
+        "birth": "2022-01-14",
+        "password": "123456789"
+    },
+    {
+        "id": 23,
+        "first_name": "Diana",
+        "last_name": "Adrover",
+        "email": "dadrover75@hotmail.com",
+        "birth": "2022-01-15",
+        "password": "123456789"
+    },
+    {
+        "id": 24,
+        "first_name": "Diana",
+        "last_name": "Adrover",
+        "user_name": "diana",
+        "email": "dadrover75@hotmail.com",
+        "birth": "2022-01-15",
+        "password": "123456789"
     }
 ]

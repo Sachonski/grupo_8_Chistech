@@ -42,11 +42,12 @@ const controller2 = {
         console.log(errors);
         if (errors.isEmpty()) {   
             console.log(req.body);
-            let { first_name, last_name, birth, password, email} = req.body;
+            let { first_name, last_name, user_name, birth, password, email} = req.body;
             const newUser = {}
             newUser.id = users[users.length - 1].id + 1;
             newUser.first_name = first_name;
             newUser.last_name = last_name;
+            newUser.user_name = user_name;
             newUser.email = email;
             newUser.birth = birth;
             newUser.password = password;
