@@ -9,6 +9,7 @@ const methodOverride = require("method-override");
 
 const mainRoutes = require("./routes/mainRoutes");
 const usersRoutes = require("./routes/usersRoutes");
+const productsRoutes = require("./routes/productsRoutes");
 const remember = require("./middlewares/remember");
 
 app.use(bodyParser.urlencoded({extended: true}))
@@ -41,5 +42,6 @@ app.use('/', mainRoutes);
 
 app.use ('/users' , usersRoutes);
 
+app.use ('/products' , productsRoutes);
 
 app.listen(process.env.PORT || 3030, () => console.log("Server running on port " + "http://localhost:" + 3030));

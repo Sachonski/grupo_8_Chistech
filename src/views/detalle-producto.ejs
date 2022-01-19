@@ -55,8 +55,8 @@
                         </p>
                         <input type="number" name=" " id=" " value="1" />
                         <a href="#" class="boton"> Agregar al carrito</a>
-                        <a href="/productoEdicion/<%= product.id %>" class="boton admin"> Editar</a>
-                        <form action="/productoDelete/<%= product.id %>?_method=DELETE" method="POST" onsubmit="return window.confirm('Seguro que desea eliminar el Producto?')" style="display: inline-flex">
+                        <a href="/products/productoEdicion/<%= product.id %>" class="boton admin"> Editar</a>
+                        <form action="/products/productoDelete/<%= product.id %>?_method=DELETE" method="POST" onsubmit="return window.confirm('Seguro que desea eliminar el Producto?')" style="display: inline-flex">
 							<button type="submit" class="boton admin"   class="boton admin">Eliminar</button>
 						</form>
  
