@@ -29,17 +29,17 @@ const controller2 = {
         if (errors.isEmpty()) {
 
             const user = users.find(user => user.user_name == req.body.user_name);
-            console.log(user)
 
             if (user) {
                 let result = bcryptjs.compareSync(req.body.password, user.password);
                 if (result) {
                     delete user.password;
                     req.session.user = user;
+                    console.log(req.session.user);
                     if (req.body.remember) {
-                        res.cookie('user', user, { maxAge: 1000 * 60 * 60 * 24 * 7 });
+                        res.cookie('remember', user, { maxAge: 1000 * 60 * 60 * 24 * 7 });
                     }
-                    return res.redirect('/users/perfil' + user.id);
+                    return res.redirect('/users/perfil/' + user.id);
                 } else {
                     return res.render('userLogin', { msgErrors: { password: { msg: 'Contraseña incorrecta' } } });
                 }

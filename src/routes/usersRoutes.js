@@ -14,7 +14,7 @@ const validateRegister = require('../middlewares/validateRegister');
 router.get('/', usersController.listarUsuarios);
 
 //profile
-router.get("/perfil/:id", /*userSession,*/ usersController.detalleUsuario);
+router.get("/perfil/:id", userSession, usersController.detalleUsuario);
 
 //login
 router.get("/login", usersController.login);
@@ -28,11 +28,11 @@ router.get("/register", usersController.register);
 router.post("/register", validateRegister, usersController.registerpost);
 
 //delete
-router.delete("/delete/:id", /*userSession,*/ usersController.delete);
+router.delete("/delete/:id", userSession, usersController.delete);
 
 //edit
-router.get("/editar/:id", /*userSession,*/ usersController.editget);
-router.put("/editar/:id", /*userSession,*/ validateRegister, usersController.editput);
+router.get("/editar/:id", userSession, usersController.editget);
+router.put("/editar/:id", userSession, validateRegister, usersController.editput);
 
 //exports
 module.exports = router;
