@@ -25,7 +25,6 @@ const controller2 = {
 
     loginpost: (req, res) => {
         let errors = validationResult(req);
-        console.log(req.body);
 
         if (errors.isEmpty()) {
             res.redirect('/');       
@@ -45,10 +44,13 @@ const controller2 = {
     },
 
     registerpost: (req, res) => {
+
         let errors = validationResult(req);
         let user = req.body;
-        if (errors.isEmpty()) {     
-            let { first_name, last_name, user_name, birth, password, email} = user;
+
+        if (errors.isEmpty()) {   
+
+            let { first_name, last_name, user_name, birth, password, email, admin} = user;
             const newUser = {}
             newUser.id = users[users.length - 1].id + 1;
             newUser.first_name = first_name;
@@ -57,15 +59,17 @@ const controller2 = {
             newUser.email = email;
             newUser.birth = birth;
             newUser.password = password;
+            newUser.admin = parseInt(user.admin) ? parseInt(user.admin) : 0;
+
 
             users.push(newUser);
 
             fs.writeFileSync(usersFilePath, JSON.stringify(users));
 
             req.session.user = user;
-            console.log(req.session.user); 
             
             if (req.body.remember) {
+
                 res.cookie('remember', user, { maxAge: 1000 * 60 * 60 * 24 * 30 });
             }
 
@@ -73,7 +77,6 @@ const controller2 = {
         
         } else {
             res.render('userRegister', {msgErrors: errors.mapped(), old: req.body});     
-            console.log(req.body);   
         }
               
 },
@@ -93,30 +96,39 @@ const controller2 = {
         res.redirect('../../users/login');
     },
 
-    editarget: (req, res) => {
+    editget: (req, res) => {
+
         const id = req.params.id;
         const user = users.find(user => user.id == id);
+
         res.render('userEdit', { user: user });
     },
 
-    editarput: (req, res) => {
+    editput: (req, res) => {
 
+        const errors = validationResult(req);
         const id = req.params.id;
         const user = users.find(user => user.id == id);
-        const { first_name, last_name, birth, email, password} = req.body;
+        const { first_name, last_name, user_name, birth, password, email, admin} = req.body;
+        
+        if (errors.isEmpty()) {     
 
         user.id = user.id;
         user.first_name = first_name;
         user.last_name = last_name;
+        user.user_name = user_name;
         user.birth = birth;
         user.email = email;
-        user.gender = user.gender;
         user.password = password;
-        user.admin = user.admin;
+        user.admin = parseInt(admin) ? parseInt(admin) : 0;
 
 
         fs.writeFileSync(usersFilePath, JSON.stringify(users));
         res.redirect('/');
+    } else {
+        res.render('userEdit', {msgErrors: errors.mapped(), user: req.body, id: id});     
+    }
+
     },
 
 }

@@ -5,7 +5,7 @@ const router = express.Router();
 const usersController = require("../controllers/usersController");
 
 //middlewares
-const session = require('../middlewares/session');
+const userSession = require('../middlewares/userSession');
 const validateLogin = require('../middlewares/validateLogin');
 const validateRegister = require('../middlewares/validateRegister');
 
@@ -14,7 +14,7 @@ const validateRegister = require('../middlewares/validateRegister');
 router.get('/', usersController.listarUsuarios);
 
 //profile
-router.get("/perfil/:id", session, usersController.detalleUsuario);
+router.get("/perfil/:id", /*userSession,*/ usersController.detalleUsuario);
 
 //login
 router.get("/login", usersController.login);
@@ -28,11 +28,11 @@ router.get("/register", usersController.register);
 router.post("/register", validateRegister, usersController.registerpost);
 
 //delete
-router.delete("/delete/:id", session, usersController.delete);
+router.delete("/delete/:id", /*userSession,*/ usersController.delete);
 
 //edit
-router.get("/editar/:id", session, usersController.editarget);
-router.put("/editar/:id", session, usersController.editarput);
+router.get("/editar/:id", /*userSession,*/ usersController.editget);
+router.put("/editar/:id", /*userSession,*/ validateRegister, usersController.editput);
 
 //exports
 module.exports = router;

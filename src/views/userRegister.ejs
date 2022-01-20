@@ -93,7 +93,18 @@
           <% if (locals.msgErrors && msgErrors.password) { %>
           <div style="color: maroon"><%= msgErrors.password.msg %></div>
           <% } %>
-
+          <div class="form-control">
+            <label>Código Administrador</label>
+            <input
+              type="password"
+              name="adminCode"
+              class="control"
+            />
+            <span class="feedback" id="feedback"></span>
+          </div>
+          <% if (locals.msgErrors && msgErrors.adminCode) { %>
+            <div style="color: maroon"><%= msgErrors.adminCode.msg %></div>
+            <% } %>
 
           <div class="register">
             <a href="/users/login">Si ya tiene usuario ingrese aquí</a>
@@ -104,8 +115,10 @@
             <button type="reset" class="boton">Borrar</button>
           </div>
           <label for="">recordame</label>
-          <input type="checkbox" name="remember" value="true" <%=locals.old && old.remember=='true'
-            ? 'checked' : '' %>>
+            <input type="checkbox" name="remember" value="true" <%=locals.old && old.remember=='true'? 'checked' : '' %>>
+          <label for="">administrador</label>
+          <input type="checkbox" name="admin" value= 1 <%=locals.old && old.admin==='1'? 'checked' : 0 %>>
+            
           <br /><br />
 
         </form>
