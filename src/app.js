@@ -12,8 +12,9 @@ const usersRoutes = require("./routes/usersRoutes");
 const productsRoutes = require("./routes/productsRoutes");
 const remember = require("./middlewares/remember");
 
-app.use(bodyParser.urlencoded({extended: true}))
-app.use(bodyParser.json())
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
+
 
 app.use(cookieParser());
 
