@@ -50,6 +50,10 @@ const controller2 = {
 
         if (errors.isEmpty()) {   
 
+            let exist = users.find(user => user.email == req.body.email);
+            if (exist) {
+                return res.render('userRegister', {msgErrors: {email: {msg: 'El usuario ya existe'}}, old: req.body});
+            }
             let { first_name, last_name, user_name, birth, password, email, admin} = user;
             const newUser = {}
             newUser.id = users[users.length - 1].id + 1;
@@ -58,8 +62,8 @@ const controller2 = {
             newUser.user_name = user_name;
             newUser.email = email;
             newUser.birth = birth;
-            newUser.password = password;
-            newUser.admin = parseInt(user.admin) ? parseInt(user.admin) : 0;
+            newUser.password = bcryptjs.hashSync(password, 10);
+            newUser.admin = parseInt(admin) ? parseInt(admin) : 0;
 
 
             users.push(newUser);
@@ -73,7 +77,7 @@ const controller2 = {
                 res.cookie('remember', user, { maxAge: 1000 * 60 * 60 * 24 * 30 });
             }
 
-            res.redirect('/');
+            res.redirect('/users/perfil/' + newUser.id);
         
         } else {
             res.render('userRegister', {msgErrors: errors.mapped(), old: req.body});     

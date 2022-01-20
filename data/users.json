@@ -238,5 +238,25 @@
         "birth": "2022-01-27",
         "password": "111111111111111111111111",
         "admin": 0
+    },
+    {
+        "id": 23,
+        "first_name": "Diana",
+        "last_name": "Adrover",
+        "user_name": "diana",
+        "email": "diana@adrover.com",
+        "birth": "2022-01-07",
+        "password": "$2a$10$jYrz11zwOiTb83FBr9ibmu8kk94Tta4jTs56HxqC1emz.ym04z8D.",
+        "admin": 1
+    },
+    {
+        "id": 24,
+        "first_name": "Diana",
+        "last_name": "Adrover",
+        "user_name": "diana",
+        "email": "nuevo@mail.com",
+        "birth": "2022-01-29",
+        "password": "$2a$10$M5QoeZMJAtKAC3Q0Lwb3hu95UMQ3pFdbLBWgSr6pgMSZT7dX8Clfu",
+        "admin": 1
     }
 ]
