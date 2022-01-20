@@ -9,23 +9,22 @@
       <section class="form">
         <form
           action="/users/login"
-          method="post"
-          enctype="application/json"
+          method="POST"
           class="form-login"
         >
           <div class="form-control">
             <label>Nombre de Usuario</label>
             <input
               type="text"
-              name="nombreUsuario"
+              name="user_name"
               placeholder="Nombre de Usuario"
               class="control"
-              value="<%= locals.old && old.nombreUsuario? old.nombreUsuario : '' %> "
+              value="<%= locals.old && old.user_name? old.user_name : '' %> "
             />
             <span class="feedback" id="feedback"></span>
           </div>
-          <% if (locals.msgErrors && msgErrors.nombreUsuario) { %>
-          <div style="color: maroon"><%= msgErrors.nombreUsuario.msg %></div>
+          <% if (locals.msgErrors && msgErrors.user_name) { %>
+          <div style="color: maroon"><%= msgErrors.user_name.msg %></div>
           <% } %>
           <br /><br />
           <div class="form-control">

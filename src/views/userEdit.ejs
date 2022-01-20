@@ -10,7 +10,7 @@
         <h2>Editar Usuario</h2>
 
         <form
-          action="/users/editar/<%=id %>?_method=PUT"
+          action="/users/editar/<%= id %>?_method=PUT"
           method="post"
           enctype="application/json"
           class="form-registro"
@@ -24,7 +24,7 @@
               name="first_name"
               placeholder="Nombre"
               class="control"
-              value="<%= user.first_name  %> <%= user.last_name  %>"
+              value="<%= user.first_name  %>"
             />
             <span class="feedback" id="feedback"></span>
           </div>
@@ -39,7 +39,7 @@
               name="last_name"
               placeholder="Apellido"
               class="control"
-              value="<%= user.first_name %> <%= user.last_name %>"
+              value="<%= user.last_name %>"
             />
             <span class="feedback" id="feedback"></span>
           </div>
@@ -84,7 +84,7 @@
               class="control"
               value="<%= user.email  %>"
             />
-            <span class="feedback" id="feedback"></span>old
+            <span class="feedback" id="feedback"></span>
           </div>
           <% if (locals.msgErrors && msgErrors.email) { %>
             <div style="color: maroon"><%= msgErrors.email.msg %></div>

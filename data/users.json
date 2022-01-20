@@ -210,14 +210,14 @@
     },
     {
         "id": 20,
-        "user_name": "pancha",
         "avatar": "pngegg(3).png",
         "admin": 1,
-        "last_name": "Juana Sanchez Juana Sanchez",
+        "last_name": "Sanchez",
         "birth": "2022-01-24",
-        "email": "juana@sanchez.com",
-        "password": "$2a$10$HMRI7OEOPmZl0e2bAjxss.lxHH5Vn3Ns3kbAI1WSjoWszpEdB9S8.",
-        "first_name": "Juana Sanchez Juana Sanchez"
+        "password": "$2a$10$oE96QaGmqsZNrM.F2vmXEOKy0B1vJv39IfCDydryYMvS7baFWHYBa",
+        "first_name": "Juana",
+        "user_name": "pancha",
+        "email": "juana@sanchez.com"
     },
     {
         "id": 21,
