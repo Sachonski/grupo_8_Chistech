@@ -100,7 +100,6 @@ const controller2 = {
     },
 
     editarput: (req, res) => {
-        console.log(req.body);
 
         const id = req.params.id;
         const user = users.find(user => user.id == id);
