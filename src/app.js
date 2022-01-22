@@ -9,7 +9,7 @@ const app = express();
 const session = require("express-session");
 const methodOverride = require("method-override");
 
-// const userLogged = require('./middlewares/userLogged');
+const userLogged = require('./middlewares/userLogged');
 const mainRoutes = require("./routes/mainRoutes");
 const usersRoutes = require("./routes/usersRoutes");
 const productsRoutes = require("./routes/productsRoutes");
@@ -27,7 +27,7 @@ app.use(session({
 
 app.use(cookies());
 
-// app.use(userLogged); 
+app.use(userLogged); 
 
 app.use(remember);
 

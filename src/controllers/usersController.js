@@ -14,7 +14,6 @@ const controller2 = {
     },
 
     detalleUsuario: (req, res) => {
-        console.log('este usuario se guarda en session: ' + JSON.stringify(req.session.user));
 
         const id = req.params.id;
         const user = users.find(user => user.id == id);
@@ -35,7 +34,6 @@ const controller2 = {
                 let result = bcryptjs.compareSync(req.body.password, user.password);
                 if (result) {
                     req.session.user = user;
-                    console.log('prueba usuario guardado en sesion: ' + req.session.user)
 
                     if (req.body.remember) {
                         res.cookie('remember', user, { maxAge: 1000 * 60 * 60 * 24 * 7 });

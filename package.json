@@ -26,8 +26,7 @@
     "method-override": "^3.0.0",
     "morgan": "^1.10.0",
     "multer": "^1.4.4",
-    "prompt-confirm": "^2.0.4",
-    "session": "^0.1.0"
+    "prompt-confirm": "^2.0.4"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
