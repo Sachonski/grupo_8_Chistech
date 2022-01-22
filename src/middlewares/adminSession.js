@@ -1,9 +1,9 @@
 const adminSession = (req, res, next) => {
-    if(req.session.user){
+    if(req.session.user && req.session.user.admin === 1){
       console.log('adminSession: ' + req.session.user);
         next();
     } else {
-       res.send('Esta pagina es solo para administradores. Registrate o inicia sesion: <a href="/users/register">Registrarse</a> o <a href="/users/login">Iniciar sesion</a>');
+       res.send('Esta pagina es solo para administradores. <a href="/">HOME</a>');
     }
 };
 
