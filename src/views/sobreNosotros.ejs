@@ -11,6 +11,13 @@
 
         <main>
            <h1>Pagina en construccion</h1>
+           <% if (locals.user && user.admin===1) { %>
+            <h1>Administrador</h1>
+           <% } %>
+           <% if (locals.user && user.admin===0) { %>
+            <h1>Usuario</h1>
+           <% } %>
+
         </main>
         <%- include('./partials/footer') -%>
 

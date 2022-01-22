@@ -23,8 +23,14 @@
             </li>
             <li><a href="/products">Productos</a></li>
             <li><a href="/sobreNosotros">Sobre Nosotros</a></li>
-            <li><a href="/users/register">Registrarse</a></li>
+            <% if (locals.user) { %>
+                <li><a href="/users/perfil/<%= user.id %> "> Hola <%= user.user_name %> </a><a href="/users/logout">| Logout </a></li>
+                <% } else { %>
+                <li><a href="/users/register">Registrarse </a><a href="/users/login">| Login </a></li>
+                <% } %>
+            <% if (locals.user && user.admin===1) { %>
             <li><a href="/products/productoCreacion">Agregar Productos</a></li>
+            <% } %>
             <li id="carrito"><a href="/carrito"><i class="fas fa-shopping-bag"></i></a></li>
         </ul>
     </nav>

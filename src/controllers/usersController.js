@@ -14,8 +14,23 @@ const controller2 = {
     },
 
     detalleUsuario: (req, res) => {
+        let id; 
+        if (req.session && req.session.user) {
+            
+            if(req.session.user.admin === 1){
+                id = req.params.id;
+            } else {
+                id = req.session.user.id;
+                if(req.session.user.id != req.params.id){
+                    res.redirect('/users/perfil/' + id);
+                }
+    
+            }
 
-        const id = req.params.id;
+        } else {
+            id = req.params.id;
+        }
+
         const user = users.find(user => user.id == id);
         return res.render('userDetail', { user: user });
     },

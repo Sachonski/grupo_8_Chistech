@@ -4,7 +4,7 @@ function userLogged (req, res, next) {
     if (userCookie) {
         req.session.user = userCookie;
     }
-    if (req.session && req.session) {
+    if (req.session && req.session.user) {
         res.locals.isLogged = true;
         res.locals.user = req.session.user;
     }
