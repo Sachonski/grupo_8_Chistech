@@ -3,7 +3,7 @@ const adminSession = (req, res, next) => {
       console.log('adminSession: ' + req.session.user);
         next();
     } else {
-       res.send('Esta pagina es solo para administradores. <a href="/">HOME</a>');
+      res.render('Error', {error: {msg: 'Esta pagina es solo para administradores'}});
     }
 };
 

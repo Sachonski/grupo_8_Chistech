@@ -9,7 +9,8 @@ function validate (req, res, next) {
 
     const valid = users.find(u => u.email === user);
     
-        valid ? next() : res.send('no se encuentra registrado');
+        valid ? next() : res.render('Error', {error: {msg: 'No se encueentra el usuario'}});
+
     
 }
 
