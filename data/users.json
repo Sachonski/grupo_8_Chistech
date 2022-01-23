@@ -260,16 +260,6 @@
         "admin": 0
     },
     {
-        "id": 25,
-        "first_name": "Jack",
-        "last_name": "Frost",
-        "user_name": "jack123",
-        "email": "jack@frost.com",
-        "birth": "2022-01-06",
-        "password": "$2a$10$pOo8oMsSyuhjZD3DANGyiu26dqGQhtYc3hDl9NPGGB98/mMDZVvI2",
-        "admin": 0
-    },
-    {
         "id": 26,
         "first_name": "Jill",
         "last_name": "Frost",

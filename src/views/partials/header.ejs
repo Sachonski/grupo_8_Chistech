@@ -24,7 +24,7 @@
             <li><a href="/products">Productos</a></li>
             <li><a href="/sobreNosotros">Sobre Nosotros</a></li>
             <% if (locals.user) { %>
-                <li><a href="/users/perfil/<%= user.id %> "> Hola <%= user.user_name %> </a><a href="/users/logout">| Logout </a></li>
+                <li><a href="/users/perfil/<%= user.id %> "> Hola <%= userSession.user_name %> </a><a href="/users/logout">| Logout </a></li>
                 <% } else { %>
                 <li><a href="/users/register">Registrarse </a><a href="/users/login">| Login </a></li>
                 <% } %>

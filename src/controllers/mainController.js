@@ -7,19 +7,25 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const controller = {
     // ***este queda en main***
     home: (req, res) => {
-        return res.render('home', { products: products });
+        let userSession = req.session.user
+
+        return res.render('home', { products: products, userSession: userSession });
     },
     // ***este queda en main***
     carrito: (req, res) => {
+        let userSession = req.session.user
+
         if (req.session.user) {
-            return res.render('carrito');
+            return res.render('carrito', {userSession: userSession});
         } else {
             res.redirect('users/login');
         }
     },
     // ***este queda en main***
     sobreNosotros: (req, res) => {
-        return res.render('sobreNosotros');
+        let userSession = req.session.user
+
+        return res.render('sobreNosotros', {userSession: userSession});
     }, 
 }
 

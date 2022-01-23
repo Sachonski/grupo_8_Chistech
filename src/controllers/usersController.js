@@ -5,18 +5,21 @@ const { validationResult } = require('express-validator');
 
 const usersFilePath = path.join(__dirname, '../../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+
 const User = require('../models/User');
 
 const controller2 = {
     // Initialize the controller
     listarUsuarios: (req, res) => {
+        let userSession = req.session.user
+
         if (req.session && req.session.user) {
             
             if(req.session.user.admin === 1){
-                return res.render('users', { users: users });
+                return res.render('users', { users: users, userSession: userSession });
 
             } else {
-                return res.render('Error', {error: {msg: 'No tienes permisos para acceder a esta página'}});
+                return res.render('Error', {error: {msg: 'No tienes permisos para acceder a esta página', userSession: userSession}});
             }
 
         }
@@ -24,6 +27,9 @@ const controller2 = {
     },
 
     detalleUsuario: (req, res) => {
+
+        let userSession = req.session.user
+
         let params = req.params.id;
         let id; 
         if (req.session && req.session.user) {
@@ -39,14 +45,18 @@ const controller2 = {
         }
 
         const user = users.find(user => user.id == id);
-        return res.render('userDetail', { user: user });
+        return res.render('userDetail', { user: user, userSession: userSession });
     },
 
     login: (req, res) => {
-        return res.render('userLogin');
+        let userSession = req.session.user
+
+        return res.render('userLogin', {userSession: userSession});
     },
 
     loginpost: (req, res) => {
+        let userSession = req.session.user
+
         let errors = validationResult(req);
 
         if (errors.isEmpty()) {
@@ -63,30 +73,34 @@ const controller2 = {
                     }
                     return res.redirect('/users/perfil/' + user.id);
                 } else {
-                    return res.render('userLogin', { msgErrors: { password: { msg: 'Contraseña incorrecta' } }, old: req.body });
+                    return res.render('userLogin', { msgErrors: { password: { msg: 'Contraseña incorrecta' } }, old: req.body, userSession: userSession });
                 }
                 
 
             } else {
-                return res.render('userLogin', { msgErrors: { user_name: { msg: 'El usuario no existe' } }, old: req.body });
+                return res.render('userLogin', { msgErrors: { user_name: { msg: 'El usuario no existe' } }, old: req.body, userSession: userSession });
             }
 
         } else {
-            res.render('userLogin', { msgErrors: errors.mapped(), old: req.body });
+            res.render('userLogin', { msgErrors: errors.mapped(), old: req.body, userSession: userSession });
         }
     },
 
     logout: function (req, res) {
+
         res.clearCookie('remember');
         req.session.destroy();
         res.redirect('/');
     },
 
     register: (req, res) => {
-        return res.render('userRegister');
+        let userSession = req.session.user
+
+        return res.render('userRegister', {userSession: userSession});
     },
 
     registerpost: (req, res) => {
+        let userSession = req.session.user
 
         let errors = validationResult(req);
         let user = req.body;
@@ -95,11 +109,11 @@ const controller2 = {
 
             let existName = users.find(user => user.user_name == req.body.user_name);
             if (existName) {
-                return res.render('userRegister', { msgErrors: { user_name: { msg: 'Ese nombre ya existe' } }, old: req.body });
+                return res.render('userRegister', { msgErrors: { user_name: { msg: 'Ese nombre ya existe' } }, old: req.body, userSession: userSession });
             }
             let existEmail = users.find(user => user.email == req.body.email);
             if (existEmail) {
-                return res.render('userRegister', { msgErrors: { email: { msg: 'Ese email ya existe' } }, old: req.body });
+                return res.render('userRegister', { msgErrors: { email: { msg: 'Ese email ya existe' } }, old: req.body , userSession: userSession});
             }
             let { first_name, last_name, user_name, birth, password, email, admin } = user;
             const newUser = {}
@@ -127,14 +141,26 @@ const controller2 = {
             res.redirect('/users/perfil/' + newUser.id);
 
         } else {
-            res.render('userRegister', { msgErrors: errors.mapped(), old: req.body});
+            res.render('userRegister', { msgErrors: errors.mapped(), old: req.body, userSession: userSession});
         }
 
     },
 
     delete: (req, res) => {
+        let params = req.params.id;
+        let id; 
+        if (req.session && req.session.user) {
+            
+            if(req.session.user.admin === 1){
+                id = params;
+            } else {
+                id = req.session.user.id;
+            }
 
-        const id = req.params.id;
+        } else {
+            id = req.params.id;
+        }
+
         const user = users.find(users => users.id == id);
 
         users.splice(users.indexOf(user), 1);
@@ -144,31 +170,60 @@ const controller2 = {
         if (fs.existsSync(`public/img/users/${user.image}`)) {
             fs.unlinkSync(`public/img/users/${user.image}`);
         }
+        res.clearCookie('remember');
+        req.session.destroy();
         res.redirect('../../users/login');
     },
 
     editget: (req, res) => {
+        let userSession = req.session.user
 
-        const id = req.params.id;
+        let params = req.params.id;
+        let id; 
+        if (req.session && req.session.user) {
+            
+            if(req.session.user.admin === 1){
+                id = params;
+            } else {
+                id = req.session.user.id;
+            }
+
+        } else {
+            id = req.params.id;
+        }
+
         const user = users.find(user => user.id == id);
 
-        res.render('userEdit', { user: user, id: id });;
+        res.render('userEdit', { user: user, id: id, userSession: userSession});;
     },
 
     editput: (req, res) => {
+        let userSession = req.session.user
+        let params = req.params.id;
+        let id; 
+        if (req.session && req.session.user) {
+            
+            if(req.session.user.admin === 1){
+                id = params;
+            } else {
+                id = req.session.user.id;
+            }
+
+        } else {
+            id = req.params.id;
+        }
 
         const errors = validationResult(req);
-        const id = req.params.id;
         const user = users.find(user => user.id == id);
         delete user.user_name;
         let existName = users.find(user => user.user_name == req.body.user_name);
         if (existName) {
-            return res.render('userEdit', { msgErrors: { nombreUsuario: { msg: 'El usuario ya existe' } }, old: req.body, id: id });
+            return res.render('userEdit', { msgErrors: { nombreUsuario: { msg: 'El usuario ya existe' } }, old: req.body, id: id, userSession: userSession });
         }
         delete user.email;
         let existEmail = users.find(user => user.email == req.body.email);
         if (existEmail) {
-            return res.render('userEdit', { msgErrors: { email: { msg: 'El usuario ya existe' } }, old: req.body, id: id });
+            return res.render('userEdit', { msgErrors: { email: { msg: 'El usuario ya existe' } }, old: req.body, userSession: userSession, id: id, userSession: userSession });
         }
         const { first_name, last_name, user_name, birth, password, email, admin } = req.body;
 
@@ -187,7 +242,7 @@ const controller2 = {
             fs.writeFileSync(usersFilePath, JSON.stringify(users));
             res.redirect('/');
         } else {
-            res.render('userEdit', { msgErrors: errors.mapped(), user: req.body, id: id });
+            res.render('userEdit', { msgErrors: errors.mapped(), user: req.body, id: id , userSession: userSession});
         }
 
     },

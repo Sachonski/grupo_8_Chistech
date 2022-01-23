@@ -11,25 +11,33 @@ const controller = {
     
     // llevar a carpeta products
     productos: (req, res) => {
-        return res.render('productos', { products: products });
+        let userSession = req.session.user
+
+        return res.render('productos', { products: products, userSession: userSession });
     },
     // llevar a carpeta products
     productosCategoria: (req, res) => {
+        let userSession = req.session.user
+
         const category = req.params.category;
         const productsByCategory = products.filter(product => product.category == category & product.stock == true);
-        return res.render('productos', { products: productsByCategory });
+        return res.render('productos', { products: productsByCategory, userSession: userSession });
     },
     // llevar a carpeta products
     detalleProducto: (req, res) => {
+        let userSession = req.session.user
+
         const id = req.params.id;
         const product = products.find(product => product.id == id);
-        return res.render('detalle-producto', { product: product });
+        return res.render('detalle-producto', { product: product, userSession: userSession });
     },
     
   
     // llevar a carpeta products
     productoCreacion: (req, res) => {
-        return res.render('productoCreacion')
+        let userSession = req.session.user
+
+        return res.render('productoCreacion', {userSession: userSession})
     },
     // llevar a carpeta products
     productoGuardar: (req, res) => {
@@ -53,9 +61,11 @@ const controller = {
     },
     // llevar a carpeta products
     productEdit: (req, res) => {
+        let userSession = req.session.user
+
         const id = req.params.id;
         const product = products.find(product => product.id == id);
-        res.render('productoEdicion', { product: product });
+        res.render('productoEdicion', { product: product, userSession: userSession });
     },
     // llevar a carpeta products
     productUpdate: (req, res) => {
