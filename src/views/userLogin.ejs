@@ -1,49 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+  <%- include('./partials/head', {title: 'Ingresar' }) -%>
 
-<%- include('./partials/head', {title: 'Ingresar' }) -%>
+  <body>
+    <%- include('./partials/header') -%>
 
-    <body>
-        <%- include('./partials/header') -%>
+    <main>
+      <section class="form">
+        <form
+          action="/users/login"
+          method="POST"
+          content-type="application/json"
+          enctype="application/json"
+          class="form-login"
+        >
+          <div class="form-control">
+            <label>Nombre de Usuario</label>
+            <input
+              type="text"
+              name="user_name"
+              placeholder="Nombre de Usuario"
+              class="control"
+              value="<%= locals.old && old.user_name? old.user_name : '' %> "
+            />
+            <span class="feedback" id="feedback"></span>
+          </div>
+          <% if (locals.msgErrors && msgErrors.user_name) { %>
+          <div style="color: maroon"><%= msgErrors.user_name.msg %></div>
+          <% } %>
+          <br /><br />
+          <div class="form-control">
+            <label>Contraseña</label>
+            <input type="password" name="password" class="control" />
+            <span class="feedback" id="feedback"></span>
+          </div>
+          <% if (locals.msgErrors && msgErrors.password) { %>
+          <div style="color: maroon"><%= msgErrors.password.msg %></div>
+          <% } %>
+          <div class="register">
+            <a href="/users/register">Si no tiene usuario registerese aquí</a>
+          </div>
+          <div class="buttons">
+            <button type="submit" class="boton">Enviar</button>
+          </div>
+          <label for="">recordame</label>
+          <input type="checkbox" name="remember" value="true" <%=locals.old &&
+          old.remember=='true' ? 'checked' : '' %>>
+          <br /><br />
+        </form>
+      </section>
+    </main>
 
-            <main>
-                <section class="form">
-                    <form action="/users/login" method='post' enctype='application/json' class='form-login'>
-                        <div class="form-control">
-                            <label>Nombre de Usuario</label>
-                            <input type="text" name="nombreUsuario" placeholder="Nombre de Usuario" class="control" value="<%= locals.old && old.nombreUsuario? old.nombreUsuario : '' %> ">
-                            <span class="feedback" id="feedback"></span>
-                        </div>
-                        <% if (locals.msgErrors && msgErrors.nombreUsuario) { %>
-                            <div style="color: maroon;">
-                                <%= msgErrors.nombreUsuario.msg %>
-                            </div>
-                            <% } %>
-                                <br /><br />
-                                <div class="form-control">
-                                    <label>Contraseña</label>
-                                    <input type="password" name="password"  class="control" >
-                                    <span class="feedback" id="feedback"></span>
-                                </div>
-                                <% if (locals.msgErrors && msgErrors.password) { %>
-                                    <div style="color: maroon;">
-                                        <%= msgErrors.password.msg %>
-                                    </div>
-                                    <% } %>
-                                        <div class=register>
-                                            <a href="/users/register">Si no tiene usuario registerese aquí</a>
-                                        </div>
-                                        <div class="buttons">
-                                            <button type="submit" class="boton">Enviar</button>
-                                        </div>
-                    </form>
-
-                </section>
-
-            </main>
-
-            <%- include('./partials/footer') -%>
-
-    </body>
-
+    <%- include('./partials/footer') -%>
+  </body>
 </html>

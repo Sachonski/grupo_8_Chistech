@@ -10,13 +10,16 @@
         <%- include('./partials/category') -%>
 
         <main>
-           <h1>Pagina en construccion</h1>
-           <% if (locals.user && user.admin===1) { %>
-            <h1>Administrador</h1>
+           <h1>ERROR</h1>
+           <% if (locals.user && user.user_name) { %>
+            <h1>Hola <%= user.user_name %> </h1>
            <% } %>
-           <% if (locals.user && user.admin===0) { %>
-            <h1>Usuario</h1>
+
+           <% if (locals.error && error.msg) { %>
+            <h3>Error al intentar ingresar: <%= error.msg %> </h3>
            <% } %>
+
+
 
         </main>
         <%- include('./partials/footer') -%>

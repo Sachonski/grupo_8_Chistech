@@ -16,7 +16,7 @@
                     <p>
                         Email: <%= user.email %><br>
                         Nombre de Usuario: <%= user.user_name %><br><br>
-                        <% if (user.admin === true) { %>
+                        <% if (user.admin === 1) { %>
                             Administrador
                         <% } else { %>
                             Usuario
@@ -36,6 +36,8 @@
                         <form action="/users/delete/<%= user.id %>?_method=DELETE" method="POST" >
 							<button type="submit" onclick="confirm('Esta seguro que desea borrar el Usuario?')" value="Click para ver un mensaje de alerta" style="display: inline-flex" class="boton admin">Eliminar</button>
 						</form>
+                        <a href="/users/logout" class="boton admin"> Logout</a>
+
  
                     
                 </div>

@@ -1,95 +1,31 @@
 const fs = require('fs');
 const path = require('path');
-
 const productsFilePath = path.join(__dirname, '../../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+
 const controller = {
-    // Initialize the controller
+    // ***este queda en main***
     home: (req, res) => {
-        return res.render('home', { products: products });
+        let userSession = req.session.user
+
+        return res.render('home', { products: products, userSession: userSession });
     },
-    productos: (req, res) => {
-        return res.render('productos', { products: products });
-    },
-    productosCategoria: (req, res) => {
-        const category = req.params.category;
-        const productsByCategory = products.filter(product => product.category == category & product.stock == true);
-        return res.render('productos', { products: productsByCategory });
-    },
-    detalleProducto: (req, res) => {
-        const id = req.params.id;
-        const product = products.find(product => product.id == id);
-        return res.render('detalle-producto', { product: product });
-    },
+    // ***este queda en main***
     carrito: (req, res) => {
-        return res.render('carrito');
-    },
-    sobreNosotros: (req, res) => {
-        return res.render('sobreNosotros');
-    },
-    productoCreacion: (req, res) => {
-        return res.render('productoCreacion')
-    },
-    productoGuardar: (req, res) => {
+        let userSession = req.session.user
 
-        const { name, price, discount, category, description, packaging, stock } = req.body;
-        const newProduct = {}
-        newProduct.id = products[products.length - 1].id + 1;
-        newProduct.name = name;
-        newProduct.price = parseInt(price);
-        newProduct.discount = parseInt(discount);
-        newProduct.category = category;
-        newProduct.description = description;
-        newProduct.packaging = packaging;
-        newProduct.image = (req.file) ? req.file.filename : "no image";
-        newProduct.stock = JSON.parse(stock);
-
-        products.push(newProduct);
-
-        fs.writeFileSync(productsFilePath, JSON.stringify(products));
-        res.redirect('/productos');
-    },
-    productEdit: (req, res) => {
-        const id = req.params.id;
-        const product = products.find(product => product.id == id);
-        res.render('productoEdicion', { product: product });
-    },
-    // Update - Method to update
-    productUpdate: (req, res) => {
-
-        const image = req.file.filename;
-        const id = req.params.id;
-        const product = products.find(product => product.id == id);
-        const { name, price, discount, category, description, packaging, stock } = req.body;
-
-        product.id = product.id;
-        product.name = name;
-        product.price = parseInt(price);
-        product.discount = parseInt(discount);
-        product.category = category;
-        product.description = description;
-        product.packaging = packaging;
-        product.image = (req.file) ? req.file.filename : "no image";
-        product.stock = JSON.parse(stock);
-
-    },
-	// Delete - Delete one product from DB
-	productDestroy: (req, res) => {
-        let confirmacion = window.confirm("¿Está seguro que desea eliminar el producto?");
-        if (confirmacion) {
-		const id = req.params.id;
-		const product = products.find(product => product.id == id);
-
-        products.splice(products.indexOf(product), 1);
-
-        fs.writeFileSync(productsFilePath, JSON.stringify(products));
-
-        if (fs.existsSync(`public/img/products/${product.image}`)) {
-            fs.unlinkSync(`public/img/products/${product.image}`);
+        if (req.session.user) {
+            return res.render('carrito', {userSession: userSession});
+        } else {
+            res.redirect('users/login');
         }
-        res.redirect('/productos');
+    },
+    // ***este queda en main***
+    sobreNosotros: (req, res) => {
+        let userSession = req.session.user
 
+<<<<<<< HEAD
 		if (fs.existsSync(`public/images/${product.image}`)) {
 			fs.unlinkSync(`public/images/${product.image}`);
 		}
@@ -97,6 +33,10 @@ const controller = {
     }
         
 	}
+=======
+        return res.render('sobreNosotros', {userSession: userSession});
+    }, 
+>>>>>>> dev
 }
 
 module.exports = controller;
