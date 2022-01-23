@@ -54,6 +54,11 @@
           <% if (locals.msgErrors && msgErrors.user_name) { %>
           <div style="color: maroon"><%= msgErrors.user_name.msg %></div>
           <% } %>
+          
+          <div class="form-control">
+            <label>Imagen del perfil</label>
+            <input type="file" name="image" accept=".jpg,.png">
+        </div>
 
           <div class="form-control">
             <label>Fecha Nacimiento</label>
