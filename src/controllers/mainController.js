@@ -25,18 +25,8 @@ const controller = {
     sobreNosotros: (req, res) => {
         let userSession = req.session.user
 
-<<<<<<< HEAD
-		if (fs.existsSync(`public/images/${product.image}`)) {
-			fs.unlinkSync(`public/images/${product.image}`);
-		}
-		res.redirect('/productos');
-    }
-        
-	}
-=======
         return res.render('sobreNosotros', {userSession: userSession});
     }, 
->>>>>>> dev
 }
 
 module.exports = controller;
