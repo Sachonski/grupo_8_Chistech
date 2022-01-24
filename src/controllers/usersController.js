@@ -124,7 +124,15 @@ const controller2 = {
             newUser.email = email;
             newUser.birth = birth;
             newUser.password = bcryptjs.hashSync(password, 10);
-            newUser.admin = parseInt(admin) ? parseInt(admin) : 0;
+            if(req.body.admin){
+                if(req.body.adminCode === '123'){
+            newUser.admin = parseInt(admin);
+                } else {
+                    return res.render('userRegister', { msgErrors: { adminCode: { msg: 'El codigo no corresponde' } }, old: req.body , userSession: userSession});
+                }
+            } else {
+                newUser.admin = 0;
+            }
 
 
             users.push(newUser);
@@ -236,8 +244,15 @@ const controller2 = {
             user.birth = birth;
             user.email = email;
             user.password = bcryptjs.hashSync(password, 10);
-            user.admin = parseInt(admin) ? parseInt(admin) : 0;
-
+            if(req.body.admin){
+                if(req.body.adminCode === '123'){
+            user.admin = parseInt(admin);
+                } else {
+                    return res.render('userEdit', { msgErrors: { adminCode: { msg: 'El codigo no corresponde' } }, id: id, old: req.body , userSession: userSession});
+                }
+            } else {
+                user.admin = 0;
+            }
 
             fs.writeFileSync(usersFilePath, JSON.stringify(users));
             res.redirect('/');

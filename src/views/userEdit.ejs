@@ -98,6 +98,18 @@
           <% if (locals.msgErrors && msgErrors.password) { %>
             <div style="color: maroon"><%= msgErrors.password.msg %></div>
             <% } %>
+            <div class="form-control">
+              <label>Código Administrador</label>
+              <input
+                type="password"
+                name="adminCode"
+                class="control"
+              />
+              <span class="feedback" id="feedback"></span>
+            </div>
+            <% if (locals.msgErrors && msgErrors.adminCode) { %>
+              <div style="color: maroon"><%= msgErrors.adminCode.msg %></div>
+              <% } %>
             <label for="">administrador</label>
             <input type="checkbox" name="admin" value= 1 <%=user.admin ==='1' ? 'checked' : 0 %>>
 
