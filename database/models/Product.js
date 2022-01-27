@@ -39,10 +39,11 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
 
-        // packaging: {  // Esto debe ser una tabla nueva , de uno a muchos //
-        //     type: dataTypes.INTEGER,
-        //     allowNull: true
-        // },
+        packaging_id: {  
+            type: dataTypes.INTEGER,
+            allowNull: true
+        
+        },
 
         category_id: {
             type: dataTypes.INTEGER,
@@ -59,6 +60,26 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     const Product = sequelize.define(alias,cols,config);
+
+    Product.associate = function(models){
+        Product.belongsTo(models.Packaging, {
+            as: 'Packaging',
+            foreignKey: 'packaging_id'
+        }),
+        Product.belongsTo(models.Category, {
+            as: 'Category',
+            foreignKey: 'category_id'
+        })
+
+
+        Product.belongsToMany(models.User, {
+            as: 'Users',
+            through: 'products_users',
+            foreignKey: 'product_id',
+            otherKey: 'user_id',
+            timestamps: false
+        })
+    }
 
     return Product
 };

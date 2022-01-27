@@ -6,7 +6,7 @@ const { validationResult } = require('express-validator');
 const usersFilePath = path.join(__dirname, '../../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
-const User = require('../models/User');
+// const User = require('../models/User');
 
 const controller2 = {
     // Initialize the controller

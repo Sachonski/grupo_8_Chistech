@@ -38,7 +38,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(500),
             allowNull: false
         },
-        admin: dataTypes.TINYINT(1)
+        admin: dataTypes.BOOLEAN,
     };
 
     let config = {
@@ -50,22 +50,19 @@ module.exports = (sequelize, dataTypes) => {
 
     const User = sequelize.define(alias,cols,config);
 
-    //Aquí debes realizar lo necesario para crear las relaciones con los otros modelos (Genre - Actor)
-    // User.associate = function(models){
-    //     User.belongsTo(models.Genre, {
-    //         as: 'genre',
-    //         foreignKey: 'genre_id'
-    //     })
 
-    //     User.belongsToMany(models.Actor, {
-    //         as: 'actors',
-    //         through: 'actor_movie',
-    //         foreignKey: 'movie_id',
-    //         otherKey: 'actor_id',
-    //         timestamps: false
-    //     })
+    User.associate = function(models){
 
-    // }
+
+        User.belongsToMany(models.Product, {
+            as: 'Products',
+            through: 'products_users',
+            foreignKey: 'user_id',
+            otherKey: 'product_id',
+            timestamps: false
+        })
+
+    }
 
 
     return User
