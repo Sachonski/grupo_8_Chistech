@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Category'; // esto debería estar en singular
+    let alias = 'Packaging'; // esto debería estar en singular
 
     let cols = {
         id: {

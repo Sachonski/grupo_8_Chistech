@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'User'; // esto debería estar en singular
+    let alias = 'User'; 
 
     let cols = {
         id: {
@@ -8,8 +8,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             autoIncrement: true
         },
-        // created_at: dataTypes.TIMESTAMP,
-        // updated_at: dataTypes.TIMESTAMP,
+
         first_name: {
             type: dataTypes.STRING(500),
             allowNull: false
