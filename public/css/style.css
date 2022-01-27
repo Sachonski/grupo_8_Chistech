@@ -674,7 +674,7 @@ footer h2 {
 
 /* detalle producto */
 
-/*.slider-producto {
+.slider-producto {
   width: 90%;
   max-width: 550px;
   margin: auto;
@@ -696,7 +696,7 @@ footer h2 {
 .slider-producto li{
   list-style: none;
   width: 100%;
-}*/
+}
 
 .slider-producto img { 
   width: 100%;  
