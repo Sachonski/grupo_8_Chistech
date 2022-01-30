@@ -14,7 +14,7 @@ const validateRegister = require('../middlewares/validateRegister');
 router.get('/', /* userSession, */  usersController.listarUsuarios);
 
 // //profile
-// router.get("/perfil/:id", userSession, usersController.detalleUsuario);
+router.get("/perfil/:id", /* userSession, */ usersController.detalleUsuario);
 
 // //login
 // router.get("/login", usersController.login);

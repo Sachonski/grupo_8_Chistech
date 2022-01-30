@@ -14,7 +14,7 @@ const sequelize = db.sequelize;
 
 const controller2 = {
     // Initialize the controller
-    
+
     listarUsuarios: (req, res) => {
         let userSession = req.session.user
         
@@ -41,27 +41,36 @@ const controller2 = {
 
 // },
 
-    // detalleUsuario: (req, res) => {
+    detalleUsuario: (req, res) => {
 
-    //     let userSession = req.session.user
+        // let userSession = req.session.user
 
-    //     let params = req.params.id;
-    //     let id; 
-    //     if (req.session && req.session.user) {
+        // let params = req.params.id;
+        // let id;
+        
+        db.User.findByPk(req.params.id)
+        .then(user => {
+            res.render('userDetail', { user: user /* , userSession: userSession */ });
+        })
+        .catch(error => {
+            res.render('Error', {error: {msg: "error"}} )
+        })
+
+        // if (req.session && req.session.user) {
             
-    //         if(req.session.user.admin === 1){
-    //             id = params;
-    //         } else {
-    //             id = req.session.user.id;
-    //         }
+        //     if(req.session.user.admin === 1){
+        //         id = params;
+        //     } else {
+        //         id = req.session.user.id;
+        //     }
 
-    //     } else {
-    //         id = req.params.id;
-    //     }
+        // } else {
+        //     id = req.params.id;
+        // }
 
-    //     const user = users.find(user => user.id == id);
-    //     return res.render('userDetail', { user: user, userSession: userSession });
-    // },
+        // const user = users.find(user => user.id == id);
+        // return res.render('userDetail', { user: user, userSession: userSession });
+    },
 
     // login: (req, res) => {
     //     let userSession = req.session.user
