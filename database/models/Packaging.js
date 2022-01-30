@@ -2,6 +2,7 @@ module.exports = (sequelize, dataTypes) => {
     let alias = 'Packaging'; // esto debería estar en singular
 
     let cols = {
+        
         id: {
             type: dataTypes.INTEGER,
             primaryKey: true,
