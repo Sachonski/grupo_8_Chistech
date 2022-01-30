@@ -47,6 +47,11 @@ module.exports = (sequelize, dataTypes) => {
             allowNull : false
         },
 
+        discount: {
+            type: dataTypes.INTEGER,
+            allowNull: true
+        },
+
     };
 
     let config = {
