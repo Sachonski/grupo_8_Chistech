@@ -11,28 +11,28 @@ const validateRegister = require('../middlewares/validateRegister');
 
 
 //users
-router.get('/', userSession, usersController.listarUsuarios);
+router.get('/', /* userSession, */  usersController.listarUsuarios);
 
-//profile
-router.get("/perfil/:id", userSession, usersController.detalleUsuario);
+// //profile
+// router.get("/perfil/:id", userSession, usersController.detalleUsuario);
 
-//login
-router.get("/login", usersController.login);
-router.post("/login", validateLogin, usersController.loginpost);
+// //login
+// router.get("/login", usersController.login);
+// router.post("/login", validateLogin, usersController.loginpost);
 
-//logout
-router.get("/logout", usersController.logout);
+// //logout
+// router.get("/logout", usersController.logout);
 
-//register
-router.get("/register", usersController.register);
-router.post("/register", validateRegister, usersController.registerpost);
+// //register
+// router.get("/register", usersController.register);
+// router.post("/register", validateRegister, usersController.registerpost);
 
-//delete
-router.delete("/delete/:id", userSession, usersController.delete);
+// //delete
+// router.delete("/delete/:id", userSession, usersController.delete);
 
-//edit
-router.get("/editar/:id", userSession, usersController.editget);
-router.put("/editar/:id", userSession, validateRegister, usersController.editput);
+// //edit
+// router.get("/editar/:id", userSession, usersController.editget);
+// router.put("/editar/:id", userSession, validateRegister, usersController.editput);
 
 //exports
 module.exports = router;

@@ -3,37 +3,43 @@ const path = require('path');
 const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
 
-const db = require('../../database/models');
+const db = require('../database/models');
 const sequelize = db.sequelize;
 
 // const usersFilePath = path.join(__dirname, '../../data/users.json');
 // const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
-const users = db.User
+// const users = db.User
 
 
 const controller2 = {
     // Initialize the controller
+    
     listarUsuarios: (req, res) => {
         let userSession = req.session.user
         
-        if (req.session && req.session.user) {
+        // if (req.session && req.session.user) {
             
-            if(req.session.user.admin === 1){
+        //     if(req.session.user.admin === 1){
                 
-                db.User.findAll()
-            .then(users => {
+            db.User.findAll()
+            .then(users=> {
                 res.render('users', { users: users, userSession: userSession })
             })
-                // return res.render('users', { users: users, userSession: userSession });
-            
-            } else {
-                return res.render('Error', {error: {msg: 'No tienes permisos para acceder a esta página', userSession: userSession}});
-            }
-
-        }
-
+            .catch(error => {
+                res.render('Error', {error: {msg: "error"}} )
+            })
     },
+
+        //         // return res.render('users', { users: users, userSession: userSession });
+            
+        //     } else {
+        //         return res.render('Error', {error: {msg: 'No tienes permisos para acceder a esta página', userSession: userSession}});
+        //     }
+
+        
+
+// },
 
     // detalleUsuario: (req, res) => {
 

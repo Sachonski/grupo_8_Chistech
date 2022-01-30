@@ -38,31 +38,31 @@ module.exports = (sequelize, dataTypes) => {
 
     let config = {
         tableName: 'Sales',
-        timestamps: true,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at',
-        deletedAt: false
+        timestamps: false,
+        // createdAt: 'created_at',
+        // updatedAt: 'updated_at',
+        // deletedAt: false
     }
 
     const Sale = sequelize.define(alias,cols,config);
 
     Sale.associate = function(models){
 
-        Sale.belongsToMany(models.Product, {
-            as: 'Sales',
-            through: 'Product',
-            foreignKey: 'product_id',
-            otherKey: 'user_id',
-            timestamps: false
-        })
+        // Sale.belongsToMany(models.Product, {
+        //     as: 'Product',
+        //     through: 'Product',
+        //     foreignKey: 'product_id',
+        //     otherKey: 'user_id',
+        //     timestamps: false
+        // })
 
-        Sale.belongsToMany(models.User, {
-            as: 'Sales',
-            through: 'User',
-            foreignKey: 'user_id',
-            otherKey: 'product_id',
-            timestamps: false
-        })
+        // Sale.belongsToMany(models.User, {
+        //     as: 'Sales',
+        //     through: 'User',
+        //     foreignKey: 'user_id',
+        //     otherKey: 'product_id',
+        //     timestamps: false
+        // })
     }
     
 
