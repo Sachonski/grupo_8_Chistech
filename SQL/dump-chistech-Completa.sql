@@ -40,31 +40,6 @@ INSERT INTO `category` VALUES (1,'quesos blandos'),(2,'quesos azules'),(3,'queso
 UNLOCK TABLES;
 
 --
--- Table structure for table `discount`
---
-
-DROP TABLE IF EXISTS `discount`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `discount` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `concepto` varchar(100) NOT NULL,
-  `valor` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `discount`
---
-
-LOCK TABLES `discount` WRITE;
-/*!40000 ALTER TABLE `discount` DISABLE KEYS */;
-INSERT INTO `discount` VALUES (1,'lista',0),(2,'efectivo',10),(3,'oferta',20),(4,'superOferta',40);
-/*!40000 ALTER TABLE `discount` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `packaging`
 --
 
@@ -98,9 +73,9 @@ DROP TABLE IF EXISTS `products`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `products` (
   `id` int(11) NOT NULL,
-  `name` varchar(10) DEFAULT NULL,
+  `name` varchar(50) DEFAULT NULL,
   `description` text DEFAULT NULL,
-  `price` int(11) DEFAULT NULL,
+  `price` decimal(10,0) DEFAULT NULL,
   `image` varchar(49) DEFAULT NULL,
   `stock` int(11) DEFAULT NULL,
   `packaging_id` int(11) DEFAULT NULL,
@@ -198,4 +173,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-01-27 13:25:14
+-- Dump completed on 2022-01-30 15:56:43
