@@ -57,14 +57,14 @@ const controller2 = {
     },
 
     loginpost: (req, res) => {
-        let userSession = req.session.user
-        let user
+        let userSession = req.session.user;
+        // let user;
         let errors = validationResult(req);
 
         if (errors.isEmpty()) {
 
             db.User.findOne({
-                where: { user_name: req.body.user_name }
+                where: { user_name: req.body.user_name.trim() }
             }).then(user => {
 
                 if (user) {
@@ -113,7 +113,7 @@ const controller2 = {
 
         if (errors.isEmpty()) {
             db.User.findOne({
-                where: { user_name: req.body.user_name }
+                where: { user_name: req.body.user_name.trim() }
             }).then(existName => {
                 if (existName) {
                     return res.render('userRegister', { msgErrors: { user_name: { msg: 'Ese nombre ya existe' } }, old: req.body, userSession: userSession });
@@ -145,9 +145,9 @@ const controller2 = {
             }
 
             const newUser = db.User.create({
-                first_name: first_name,
-                last_name: last_name,
-                user_name: user_name,
+                first_name: first_name.trim(),
+                last_name: last_name.trim(),
+                user_name: user_name.trim(),
                 email: email,
                 birth: birth,
                 password: bcryptjs.hashSync(password, 10),
@@ -225,6 +225,9 @@ const controller2 = {
         let id;
         let user = req.body
 
+
+        const errors = validationResult(req);
+
         if (req.session && req.session.user) {
 
             if (req.session.user.admin === 1) {
@@ -237,29 +240,37 @@ const controller2 = {
             id = req.params.id;
         }
 
-        const errors = validationResult(req);
-
-        db.User.findOne({
-            where: { user_name: user.user_name }
-        }).then(existName => {
-            if (existName) {
-                return res.render('userEdit', { msgErrors: { nombreUsuario: { msg: 'El usuario ya existe' } }, old: req.body, id: id, userSession: userSession });
-            }
-        }).catch(error => {
-            res.render('Error', { error: { msg: "error nombre" } })
-        })
-
-        db.User.findOne({
-            where: { email: user.email }
-        }).then(existEmail => {
-            if (existEmail) {
-                return res.render('userEdit', { msgErrors: { email: { msg: 'El usuario ya existe' } }, old: req.body, userSession: userSession, id: id, userSession: userSession });
-            }
-        }).catch(error => {
-            res.render('Error', { error: { msg: "error email" } })
-        })
 
         if (errors.isEmpty()) {
+
+            db.User.findOne({
+                where: { user_name: user.user_name }
+            }).then(user => {
+                console.log('******** ' + user)
+
+                if (user !== undefined /*&& user.user_name !== user_name*/) {
+                    console.log('********  a ver que pa')
+                    // res.render('userEdit');
+                    res.render('userEdit', { msgErrors: { nombreUsuario: { msg: 'El usuario ya existe' } }, old: req.body, id: id, userSession: userSession });
+                }
+            }).catch(error => {
+                res.render('Error', { error: { msg: "error nombre" } })
+            })
+
+            db.User.findOne({
+                where: { email: user.email }
+            }).then(existEmail => {
+
+                if (existEmail !== undefined && existEmail.email !== user.email) {
+                    console.log('********email repetido ')
+
+                    return res.render('userEdit', { msgErrors: { email: { msg: 'El usuario ya existe' } }, old: req.body, userSession: userSession, id: id });
+                }
+
+            }).catch(error => {
+                res.render('Error', { error: { msg: "error email" } })
+            })
+
 
             let { first_name, last_name, user_name, birth, password, email, admin } = user;
 
@@ -273,7 +284,7 @@ const controller2 = {
                 admin = 0;
             }
 
-
+            let fail;
             db.User.update({
                 first_name: first_name,
                 last_name: last_name,
@@ -284,7 +295,18 @@ const controller2 = {
                 admin: admin
             }, {
                 where: { id: id }
-            }).then(res.redirect('/'))
+            }).then( 
+                res.redirect('/'))
+            .catch(error => {
+                    console.log('*********' + error)
+                    fail = error
+
+            })
+            console.log(fail)
+            if (fail !== undefined) {
+                return res.render('userEdit', { msgErrors: { nombreUsuario: { msg: 'El usuario ya existe' } }, old: req.body, id: id, userSession: userSession });
+            }
+
 
         } else {
             res.render('userEdit', { msgErrors: errors.mapped(), user: req.body, id: id, userSession: userSession });

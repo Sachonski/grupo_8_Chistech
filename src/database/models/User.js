@@ -20,7 +20,7 @@ module.exports = (sequelize, dataTypes) => {
         user_name: {
             type: dataTypes.STRING(500),
             allowNull: false,
-            unique : true
+            // unique : true
         },
         birth: {
             type: dataTypes.DATEONLY,
@@ -29,7 +29,7 @@ module.exports = (sequelize, dataTypes) => {
         email: {
             type: dataTypes.STRING(500),
             allowNull: false,
-            unique : true
+            // unique : true
         },
         avatar: {
             type: dataTypes.STRING(500),
