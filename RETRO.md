@@ -41,8 +41,8 @@
 - 5. Dejar de hacer: No comunicar cambios importantes en canales grupales.
 
 # Retrospective - Sprint 5:
-- 1. Comenzar a hacer: 
-- 2. Hacer más:
-- 3. Continuar haciendo: 
-- 4. Hacer menos: 
-- 5. Dejar de hacer: 
+- 1. Comenzar a hacer: Trabajar en reuniones con periodos mas cortos de trabajo.
+- 2. Hacer más: Comentar mas el codigo, para mejor interpretacion en un futuro..
+- 3. Continuar haciendo: Trabajar en equipo y en branches para cada sprint.
+- 4. Hacer menos: No comentar el codigo.
+- 5. Dejar de hacer: Extender las sesiones de trabajo en equipo a mas de 6 horas.
