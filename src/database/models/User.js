@@ -19,7 +19,8 @@ module.exports = (sequelize, dataTypes) => {
         },
         user_name: {
             type: dataTypes.STRING(500),
-            allowNull: false
+            allowNull: false,
+            unique : true
         },
         birth: {
             type: dataTypes.DATEONLY,
@@ -27,7 +28,8 @@ module.exports = (sequelize, dataTypes) => {
         },
         email: {
             type: dataTypes.STRING(500),
-            allowNull: false
+            allowNull: false,
+            unique : true
         },
         avatar: {
             type: dataTypes.STRING(500),
@@ -37,7 +39,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(500),
             allowNull: false
         },
-        admin: dataTypes.BOOLEAN,
+        admin: dataTypes.TINYINT,
     };
 
     let config = {
