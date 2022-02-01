@@ -43,7 +43,12 @@ const controller2 = {
 
         db.User.findByPk(id)
             .then((user) => {
-                res.render("userDetail", { user: user, userSession: userSession });
+                req.session.user = user;
+                if (req.body.remember) {
+                    res.cookie('remember', user, { maxAge: 1000 * 60 * 60 * 24 * 7 });
+
+                }
+                res.render("userDetail", { user: user, userSession: req.session.user });
             })
             .catch((error) => {
                 res.render("Error", { error: { msg: "error" } });
@@ -58,7 +63,7 @@ const controller2 = {
 
     loginpost: (req, res) => {
         let userSession = req.session.user;
-        // let user;
+        
         let errors = validationResult(req);
 
         if (errors.isEmpty()) {
@@ -144,7 +149,7 @@ const controller2 = {
                 admin = 0;
             }
 
-            const newUser = db.User.create({
+            db.User.create({
                 first_name: first_name.trim(),
                 last_name: last_name.trim(),
                 user_name: user_name.trim(),
@@ -225,7 +230,6 @@ const controller2 = {
         let id;
         let user = req.body
 
-
         const errors = validationResult(req);
 
         if (req.session && req.session.user) {
@@ -240,62 +244,74 @@ const controller2 = {
             id = req.params.id;
         }
 
-let ok = false
+        if (req.body.admin) {
+            if (req.body.adminCode === '123') {
+                admin = 1;
+            } else {
+                return res.render('userEdit', { msgErrors: { adminCode: { msg: 'El codigo no corresponde' } }, id: id, old: req.body, userSession: userSession });
+            }
+        } else {
+            admin = 0;
+        }
+
         if (errors.isEmpty()) {
+
+            let ok = false
 
             db.User.findOne({
                 where: { user_name: user.user_name }
             })
-            .then(user => {
-                    let ok = true
-                    db.User.update({
-                        first_name: first_name,
-                        last_name: last_name,
-                        user_name: user_name,
-                        email: email,
-                        birth: birth,
-                        password: bcryptjs.hashSync(password, 10),
-                        admin: admin
-                    }, {
-                        where: { id: id }
-                    })
-                        .then (ok= true)
-                        .catch(error => {
-                        ok= false;
-                        console.log(ok);
-                        res.render('Error', { error: { msg: "Usuario o Email Registrado" },id: id, userSession: userSession  })
+                .then(result => {
+                    if (result && result.id !== id) {
+                        return res.render('userEdit', { msgErrors: { user_name: { msg: 'Ese nombre ya existe' } }, id: id, old: req.body, userSession: userSession });
+
+                    } else {
+                        ok = true
+                    }
+                })
+                .catch(err => {
+                    console.log(err);
+                })
+
+            db.User.findOne({
+                where: { email: user.email }
             })
-            
-            })
-            if (ok){res.redirect('/users/perfil/' + id); console.log("ok")}
-            console.log(ok);
-            /* db.User.findOne({
-                 where: { email: user.email }
-             }).then(existEmail => {
- 
-                 if (existEmail !== undefined && existEmail.email !== user.email) {
-                     console.log('********email repetido ')
- 
-                     return res.render('userEdit', { msgErrors: { email: { msg: 'El usuario ya existe' } }, old: req.body, userSession: userSession, id: id });
-                 }
- 
-             }).catch(error => {
-                 res.render('Error', { error: { msg: "error email" } })
-             })*/
+                .then(value => {
 
+                    if (value && value.id !== id) {
+                        return res.render('userEdit', { msgErrors: { email: { msg: 'Ese email ya existe' } }, id: id, old: req.body, userSession: userSession });
+                    } else {
+                        if (ok === true) {
+                            let userUpdated = db.User.update({
+                                first_name: user.first_name,
+                                last_name: user.last_name,
+                                user_name: user.user_name,
+                                email: user.email,
+                                birth: user.birth,
+                                password: bcryptjs.hashSync(user.password, 10),
+                                admin: admin
+                            }, {
+                                where: { id: id }
+                            })
+                                .then(() => {
+                                    req.session.user = userUpdated;
+                                    if (req.body.remember) {
+                                        res.cookie('remember', userUpdated, { maxAge: 1000 * 60 * 60 * 24 * 7 });
+                                    }
 
-            let { first_name, last_name, user_name, birth, password, email, admin } = user;
+                                })
+                                .catch(error => {
+                                    ok = false;
+                                });
 
-            if (req.body.admin) {
-                if (req.body.adminCode === '123') {
-                    admin = 1;
-                } else {
-                    return res.render('userEdit', { msgErrors: { adminCode: { msg: 'El codigo no corresponde' } }, id: id, old: req.body, userSession: userSession });
-                }
-            } else {
-                admin = 0;
-            }
-
+                            res.redirect('/users/perfil/' + id);
+                            console.log(">>>>> ok <<<")
+                        }
+                    }
+                })
+                .catch(err => {
+                    console.log(err);
+                })
 
 
 
