@@ -240,36 +240,48 @@ const controller2 = {
             id = req.params.id;
         }
 
-
+let ok = false
         if (errors.isEmpty()) {
 
             db.User.findOne({
                 where: { user_name: user.user_name }
-            }).then(user => {
-                console.log('******** ' + user)
-
-                if (user !== undefined /*&& user.user_name !== user_name*/) {
-                    console.log('********  a ver que pa')
-                    // res.render('userEdit');
-                    res.render('userEdit', { msgErrors: { nombreUsuario: { msg: 'El usuario ya existe' } }, old: req.body, id: id, userSession: userSession });
-                }
-            }).catch(error => {
-                res.render('Error', { error: { msg: "error nombre" } })
             })
-
-            db.User.findOne({
-                where: { email: user.email }
-            }).then(existEmail => {
-
-                if (existEmail !== undefined && existEmail.email !== user.email) {
-                    console.log('********email repetido ')
-
-                    return res.render('userEdit', { msgErrors: { email: { msg: 'El usuario ya existe' } }, old: req.body, userSession: userSession, id: id });
-                }
-
-            }).catch(error => {
-                res.render('Error', { error: { msg: "error email" } })
+            .then(user => {
+                    let ok = true
+                    db.User.update({
+                        first_name: first_name,
+                        last_name: last_name,
+                        user_name: user_name,
+                        email: email,
+                        birth: birth,
+                        password: bcryptjs.hashSync(password, 10),
+                        admin: admin
+                    }, {
+                        where: { id: id }
+                    })
+                        .then (ok= true)
+                        .catch(error => {
+                        ok= false;
+                        console.log(ok);
+                        res.render('Error', { error: { msg: "Usuario o Email Registrado" },id: id, userSession: userSession  })
             })
+            
+            })
+            if (ok){res.redirect('/users/perfil/' + id); console.log("ok")}
+            console.log(ok);
+            /* db.User.findOne({
+                 where: { email: user.email }
+             }).then(existEmail => {
+ 
+                 if (existEmail !== undefined && existEmail.email !== user.email) {
+                     console.log('********email repetido ')
+ 
+                     return res.render('userEdit', { msgErrors: { email: { msg: 'El usuario ya existe' } }, old: req.body, userSession: userSession, id: id });
+                 }
+ 
+             }).catch(error => {
+                 res.render('Error', { error: { msg: "error email" } })
+             })*/
 
 
             let { first_name, last_name, user_name, birth, password, email, admin } = user;
@@ -284,28 +296,7 @@ const controller2 = {
                 admin = 0;
             }
 
-            let fail;
-            db.User.update({
-                first_name: first_name,
-                last_name: last_name,
-                user_name: user_name,
-                email: email,
-                birth: birth,
-                password: bcryptjs.hashSync(password, 10),
-                admin: admin
-            }, {
-                where: { id: id }
-            }).then( 
-                res.redirect('/'))
-            .catch(error => {
-                    console.log('*********' + error)
-                    fail = error
 
-            })
-            console.log(fail)
-            if (fail !== undefined) {
-                return res.render('userEdit', { msgErrors: { nombreUsuario: { msg: 'El usuario ya existe' } }, old: req.body, id: id, userSession: userSession });
-            }
 
 
         } else {
