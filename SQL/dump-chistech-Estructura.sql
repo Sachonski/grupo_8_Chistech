@@ -30,21 +30,6 @@ CREATE TABLE `category` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `discount`
---
-
-DROP TABLE IF EXISTS `discount`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `discount` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `concepto` varchar(100) NOT NULL,
-  `valor` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Table structure for table `packaging`
 --
 
@@ -67,20 +52,21 @@ DROP TABLE IF EXISTS `products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `products` (
-  `id` int(11) NOT NULL,
-  `name` varchar(10) DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) DEFAULT NULL,
   `description` text DEFAULT NULL,
-  `price` int(11) DEFAULT NULL,
+  `price` decimal(10,0) DEFAULT NULL,
   `image` varchar(49) DEFAULT NULL,
   `stock` int(11) DEFAULT NULL,
   `packaging_id` int(11) DEFAULT NULL,
   `category_id` int(11) NOT NULL,
+  `discount` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `products_FK` (`category_id`),
   KEY `products_FK_1` (`packaging_id`),
   CONSTRAINT `products_FK` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`),
   CONSTRAINT `products_FK_1` FOREIGN KEY (`packaging_id`) REFERENCES `packaging` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -100,8 +86,8 @@ CREATE TABLE `sales` (
   PRIMARY KEY (`id`),
   KEY `sales_FK` (`user_id`),
   KEY `sales_FK_1` (`product_id`),
-  CONSTRAINT `sales_FK` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
-  CONSTRAINT `sales_FK_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
+  CONSTRAINT `sales_FK` FOREIGN KEY (`id`) REFERENCES `users` (`id`),
+  CONSTRAINT `sales_FK_1` FOREIGN KEY (`id`) REFERENCES `products` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -113,7 +99,7 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
   `user_name` varchar(50) DEFAULT `email`,
@@ -121,9 +107,11 @@ CREATE TABLE `users` (
   `email` varchar(50) NOT NULL,
   `avatar` varchar(13) DEFAULT NULL,
   `password` varchar(50) NOT NULL,
-  `admin` varbinary(100) NOT NULL DEFAULT '0' COMMENT '0: user // 1: admin',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `admin` tinyint(4) NOT NULL DEFAULT 0 COMMENT '0: user // 1: admin',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `User email` (`email`),
+  UNIQUE KEY `User name` (`user_name`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -139,4 +127,4 @@ CREATE TABLE `users` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-01-27 13:22:31
+-- Dump completed on 2022-02-03 18:24:08
