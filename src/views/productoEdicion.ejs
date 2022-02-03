@@ -34,19 +34,19 @@
                         <div class="form-control">
                             <label>Categorias</label>
                             <select name="category" required>
-                                <option value="quesos-duros" <%= product.category == 'quesos-duros'? 'selected' : '' %>>Quesos-Duros</option>
-                                <option value="quesos-blandos" <%= product.category == 'quesos-blandos'? 'selected' : '' %>>Quesos-Blandos</option>
-                                <option value="quesos-azules" <%= product.category == 'quesos-azules'? 'selected' : '' %>>Quesos-Azules</option>
-                                <option value="quesos-frescos" <%= product.category == 'quesos-frescos'? 'selected' : '' %>>Quesos-Frescos</option>
-                                <option value="quesos-corteza" <%= product.category == 'quesos-corteza'? 'selected' : '' %>>Quesos-Corteza</option>
+                                <option value=5 <%= product.category == '5'? 'selected' : '' %>>Quesos-Duros</option>
+                                <option value=1 <%= product.category == '1'? 'selected' : '' %>>Quesos-Blandos</option>
+                                <option value=2 <%= product.category == '2'? 'selected' : '' %>>Quesos-Azules</option>
+                                <option value=3 <%= product.category == '3'? 'selected' : '' %>>Quesos-Frescos</option>
+                                <option value=4 <%= product.category == '4'? 'selected' : '' %>>Quesos-Corteza</option>
                             </select>
                         </div>
 
                         <div class="form-control">
                             <label>Presentacion</label>
                             <select name="packaging" required>
-                                <option value="fraccionado" <%= product.packaging == 'fraccionado'? 'selected' : '' %>>fraccionado</option>
-                                <option value="horma" <%= product.packaging == 'horma'? 'selected' : '' %>>horma</option>
+                                <option value=0 <%= product.packaging == '0'? 'selected' : '' %>>fraccionado</option>
+                                <option value=1 <%= product.packaging == '1'? 'selected' : '' %>>horma</option>
                             </select>
                             <span class="feedback" id="feedback"></span>
                         </div>
@@ -59,7 +59,7 @@
 
                         <div class="form-control">
                             <label>Descuento</label>
-                            <input type="number" name="discount" class="control" value = "<%= product.id %>"/>
+                            <input type="number" name="discount" class="control" value = "<%= product.discount %>"/>
                             <span class="feedback" id="feedback"></span>
                         </div>
 

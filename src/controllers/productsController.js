@@ -1,110 +1,140 @@
-const fs = require('fs');
 const path = require('path');
-const productsFilePath = path.join(__dirname, '../../data/products.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-const usersFilePath = path.join(__dirname, '../../data/users.json');
-const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
-
+const { Op } = require("sequelize");
+const fs = require("fs");
+const db = require("../database/models");
+const sequelize = db.sequelize;
 
 const controller = {
-    
-    // llevar a carpeta products
+
+    // Listar productos de la tienda
     productos: (req, res) => {
         let userSession = req.session.user
-
-        return res.render('productos', { products: products, userSession: userSession });
+        db.Product.findAll()
+            .then(products => {
+                res.render(res.render('productos', { products, userSession }))
+            })
+            .catch((error) => {
+                res.render("Error", { error: { msg: "error" }, userSession });
+            });
     },
-    // llevar a carpeta products
+
+
+    // Listar productos por categoria
     productosCategoria: (req, res) => {
         let userSession = req.session.user
+        db.Product.findAll({
+            where: { category_id: req.params.category }
+        })
+            .then(productsByCategory => {
+                res.render('productos', { products: productsByCategory, userSession: userSession });
+            })
+            .catch((error) => {
+                res.render("Error", { error: { msg: "error" }, userSession });
+            });
 
-        const category = req.params.category;
-        const productsByCategory = products.filter(product => product.category == category & product.stock == true);
-        return res.render('productos', { products: productsByCategory, userSession: userSession });
     },
-    // llevar a carpeta products
+
+    // Detalle del producto seleccionado
     detalleProducto: (req, res) => {
         let userSession = req.session.user
-
         const id = req.params.id;
-        const product = products.find(product => product.id == id);
-        return res.render('detalle-producto', { product: product, userSession: userSession });
+        db.Product.findByPk(id)
+            .then(product => {
+                res.render('detalle-producto', { product: product, userSession: userSession });
+            })
+            .catch((error) => {
+                res.render("Error", { error: { msg: "error" }, userSession });
+            })
     },
-    
-  
-    // llevar a carpeta products
+
+
+    // Vista creaction de producto -- GET
     productoCreacion: (req, res) => {
         let userSession = req.session.user
 
-        return res.render('productoCreacion', {userSession: userSession})
+        return res.render('productoCreacion', { userSession: userSession })
     },
-    // llevar a carpeta products
+    // Creaction de producto -- POST
     productoGuardar: (req, res) => {
 
         const { name, price, discount, category, description, packaging, stock } = req.body;
-        const newProduct = {}
-        newProduct.id = products[products.length - 1].id + 1;
-        newProduct.name = name;
-        newProduct.price = parseInt(price);
-        newProduct.discount = parseInt(discount);
-        newProduct.category = category;
-        newProduct.description = description;
-        newProduct.packaging = packaging;
-        newProduct.image = (req.file) ? req.file.filename : "no image";
-        newProduct.stock = JSON.parse(stock);
-
-        products.push(newProduct);
-
-        fs.writeFileSync(productsFilePath, JSON.stringify(products));
-        res.redirect('/products');
+        db.Product
+            .create(
+                {
+                    name: name,
+                    price: price,
+                    discount: discount,
+                    category_id: category,
+                    description: description,
+                    packaging_id: packaging,
+                    image: (req.file) ? req.file.filename : "no image",
+                    stock: JSON.parse(stock),
+                }
+            )
+            .then(() => {
+                return res.redirect('/products')
+            })
+            .catch(error => res.send(error))
     },
-    // llevar a carpeta products
+
+    // Editar producto vista -- GET
     productEdit: (req, res) => {
         let userSession = req.session.user
 
         const id = req.params.id;
-        const product = products.find(product => product.id == id);
-        res.render('productoEdicion', { product: product, userSession: userSession });
+        db.Product.findByPk(id)
+            .then((product) => {
+                res.render('productoEdicion', { product: product, userSession: userSession });
+
+            })
+            .catch((error) => {
+                res.render("Error", { error: { msg: "error edit" }, userSession });
+            });
+
     },
-    // llevar a carpeta products
+    // Editar producto vista -- PUT
     productUpdate: (req, res) => {
-
-        const image = req.file.filename;
-        const id = req.params.id;
-        const product = products.find(product => product.id == id);
         const { name, price, discount, category, description, packaging, stock } = req.body;
-
-        product.id = product.id;
-        product.name = name;
-        product.price = parseInt(price);
-        product.discount = parseInt(discount);
-        product.category = category;
-        product.description = description;
-        product.packaging = packaging;
-        product.image = (req.file) ? req.file.filename : "no image";
-        product.stock = JSON.parse(stock);
-
-
-        fs.writeFileSync(productsFilePath, JSON.stringify(products));
-        res.redirect('/products');
+        let id = req.params.id;
+        db.Product
+            .update(
+                {
+                    name: name,
+                    price: price,
+                    discount: discount,
+                    category_id: category,
+                    description: description,
+                    packaging_id: packaging,
+                    image: (req.file) ? req.file.filename : "no image",
+                    stock: JSON.parse(stock),
+                },
+                {
+                    where: { id: id }
+                })
+            .then(() => {
+                return res.redirect('/products')
+            })
+            .catch(error => res.send(error))
     },
 
-    // llevar a carpeta products
+
+    // Delete Producto -- DELETE
     productDestroy: (req, res) => {
 
         const id = req.params.id;
-        const product = products.find(product => product.id == id);
 
-        products.splice(products.indexOf(product), 1);
-
-        fs.writeFileSync(productsFilePath, JSON.stringify(products));
-
-        if (fs.existsSync(`public/img/products/${product.image}`)) {
-            fs.unlinkSync(`public/img/products/${product.image}`);
-        }
-        res.redirect('/products');
-
+        db.Product.destroy({
+            where: { id: id }
+        })
+            .then(() => {
+                if (fs.existsSync(`public/img/products/${product.image}`)) {
+                    fs.unlinkSync(`public/img/products/${product.image}`);
+                }
+            })
+            .then(res.redirect('/products'))
+            .catch(error => {
+                res.render('Error', { error: { msg: "error delete" }})
+            })
     }
 }
 
