@@ -80,11 +80,11 @@ const controller2 = {
                         }
                         return res.redirect('/users/perfil/' + user.id);
                     } else {
-                        return res.render('userLogin', { msgErrors: { password: { msg: 'Contraseña incorrecta' } }, old: req.body, userSession: userSession });
+                        return res.render('userLogin', { msgErrors: { password: { msg: 'Email o contraseña incorrecta' } }, old: req.body, userSession: userSession });
                     }
 
                 } else {
-                    return res.render('userLogin', { msgErrors: { user_name: { msg: 'El usuario no existe' } }, old: req.body, userSession: userSession });
+                    return res.render('userLogin', { msgErrors: { user_name: { msg: 'Email o contraseña incorrecta' } }, old: req.body, userSession: userSession });
                 }
             })
                 .catch(error => {

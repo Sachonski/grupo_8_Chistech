@@ -13,9 +13,8 @@ module.exports = [
 		.isDate().withMessage('La fecha de nacimiento no es válida'),
 	check('email')
 	   .notEmpty().trim().withMessage('Debes completar el email').bail()
-	   .isEmail().withMessage('Debes completar un email válido'), //todo consulta existencie) **guglea custom validator**
+	   .isEmail().withMessage('Debes completar un email válido'),
 	check('password')
 	   .notEmpty().trim().withMessage('Debes completar la contraseña').bail()
-	   .isLength({ min: 8 }).withMessage('La contraseña debe ser más larga'), //todo **investigar regex**
+	   .isLength({ min: 8 }).withMessage('La contraseña debe ser más larga'),
   ];
-  //todo cuando este el input de imagen =>> validar extension **investigar extensiones**

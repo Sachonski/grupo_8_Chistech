@@ -7,7 +7,7 @@ const db = require("../database/models");
 const sequelize = db.sequelize;
 
 const controller = {
-
+    
     // Listar productos de la tienda
     productos: (req, res) => {
         let userSession = req.session.user
@@ -64,6 +64,8 @@ const controller = {
         let old = product
         old.image = req.file.filename
         if (errors.isEmpty()) {
+            if( path.extname(req.file.filename) === '.jpg' || path.extname(req.file.filename) === '.jpeg' || path.extname(req.file.filename) === '.png' || path.extname(req.file.filename) === '.gif'){
+
             const { name, price, discount, category, description, packaging, stock } = req.body;
             db.Product
                 .create(
@@ -82,6 +84,9 @@ const controller = {
                     return res.redirect('/products')
                 })
                 .catch(error => res.send(error))
+            }else{
+                return res.render('productoCreacion', { msgErrors: { image: { msg: 'Formato de imagen invalido.' } }, product: product, old: product, userSession: userSession });
+            }
         } else {
         return res.render('productoCreacion', { product, userSession, old, msgErrors: errors.mapped() })
         }
@@ -109,7 +114,8 @@ const controller = {
         let product = req.body;
         let { id, name, price, discount, category, description, packaging, stock } = product;
         if (errors.isEmpty()) {
-            db.Product
+            if( path.extname(req.file.filename) === '.jpg' || path.extname(req.file.filename) === '.jpeg' || path.extname(req.file.filename) === '.png' || path.extname(req.file.filename) === '.gif'){
+                db.Product
                 .update(
                     {
                         name: name,
@@ -130,6 +136,9 @@ const controller = {
                 .catch((error) => {
                     res.render("Error", { error: { msg: "error al editar" }, userSession });
                 });
+            }else{
+                return res.render('productoEdicion', { msgErrors: { image: { msg: 'Formato de imagen invalido.' } }, product: product, old: product, userSession: userSession });
+            }
     
         } else {
             // res.redirect('/products/productoEdicion/' + id)

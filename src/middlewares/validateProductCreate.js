@@ -19,13 +19,6 @@ module.exports = [
     check('description')
         .notEmpty().trim().withMessage('Debes completar la desripcion').bail()
         .isLength({ min: 20 }).withMessage('La descripcion debe ser mas larga'), // .isLength({ min: 2 })
-    // check('image')
-    //     .notEmpty().withMessage('Debes ingresar un archivo').bail()
-    //     .custom((value, { req }) => {
-    //         if (!value === 'jpg' || !value === 'jpeg' || !value === 'png' || !value === 'gif') {
-    //             throw new Error('El archivo debe ser una imagen');
-    //         }
-    //     }),
     check('category')
         .isInt({ min: 0, max: 5 }).withMessage('Debes seleccionar una categoria'),
     check('packaging')
@@ -37,5 +30,4 @@ module.exports = [
         .isInt().withMessage('Debes ingresas numeros'),
     check('stock')
         .notEmpty().withMessage('Debes ingresar un valor').bail()
-
 ];
