@@ -1,5 +1,3 @@
-const fs = require("fs");
-const path = require("path");
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
 
@@ -69,7 +67,7 @@ const controller2 = {
         if (errors.isEmpty()) {
 
             db.User.findOne({
-                where: { user_name: req.body.user_name.trim() }
+                where: { email: req.body.email.trim() }
             }).then(user => {
 
                 if (user) {
@@ -262,7 +260,7 @@ const controller2 = {
                 where: { user_name: user.user_name }
             })
                 .then(result => {
-                    if (result && result.id !== id) {
+                    if (result.id !== req.session.user.id) {
                         return res.render('userEdit', { msgErrors: { user_name: { msg: 'Ese nombre ya existe' } }, id: id, old: req.body, userSession: userSession });
 
                     } else {
@@ -278,7 +276,7 @@ const controller2 = {
             })
                 .then(value => {
 
-                    if (value && value.id !== id) {
+                    if (value.id !== req.session.user.id) {
                         return res.render('userEdit', { msgErrors: { email: { msg: 'Ese email ya existe' } }, id: id, old: req.body, userSession: userSession });
                     } else {
                         if (ok === true) {

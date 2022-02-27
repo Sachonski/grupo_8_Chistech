@@ -3,90 +3,149 @@
 
 <%- include('./partials/head', {title: 'Formulario de Creacion' }) -%>
 
-    <body>
-        <%- include('./partials/header') -%>
+<body>
+  <%- include('./partials/header') -%>
 
-            <main>
-                <section class="form">
+  <main>
+    <section class="form">
 
-                    <h2>Crear Producto</h2>
+      <h2>Crear Producto</h2>
 
-                    <form action="/products/productoCreacion" method="post" class="" name='productoCreacion'
-                        enctype="multipart/form-data">
+      <form action="/products/productoCreacion" method="post" class="" name='productoCreacion' enctype="multipart/form-data">
 
-                        <div class="form-control">
-                            <label>Nombre del Producto</label>
-                            <input type="text" name="name" placeholder="Nombre del producto" required class="control">
-                            <span class="feedback" id="feedback"></span>
-                        </div>
+        <div class="form-control">
+          <label>Nombre del Producto</label>
+          <input type="text" name="name" placeholder="Nombre del producto" class="control" 
+          <% if(locals && locals.old){ %> 
+            <%= "value=" + old.name %> 
+            <% } %> >
+          <span class="feedback" id="feedback"></span>
+        </div>
+        <% if(locals.msgErrors && msgErrors.name) { %>
+        <div style="color: maroon">
+          <%= msgErrors.name.msg %>
+        </div>
+        <% } %>
 
-                        <div class="form-control">
-                            <label>Descripcion del producto</label>
-                            <textarea name="description" rows="10"
-                                cols="50">Agregue su descripcion del producto</textarea>
-                            <span class="feedback" id="feedback"></span>
-                        </div>
 
-                        <div class="form-control">
-                            <label>Imagen del producto</label>
-                            <input type="file" name="image" accept=".jpg,.png">
-                        </div>
+        <div class="form-control">
+          <label>Descripcion del producto</label>
+          <textarea name="description" rows="10" cols="50">
+            <% if(locals && locals.old) { %>
+                <%= old.description %> 
+            <% } else { %> 
+                <%= 'Agregue su descripcion del producto' %>
+            <% } %>
+            </textarea>
+          <span class="feedback" id="feedback"></span>
+        </div>
+        <% if(locals.msgErrors && msgErrors.description) { %>
+        <div style="color: maroon">
+          <%= msgErrors.description.msg %>
+        </div>
+        <% } %>
 
-                        <div class="form-control">
-                            <label>Categorias</label>
-                            <select name="category" required>
-                                <option value=5 selected>Quesos-Duros</option>
-                                <option value=1> Quesos-Blandos</option>
-                                <option value=2> Quesos-Azules</option>
-                                <option value=3> Quesos-Frescos</option>
-                                <option value=4> Quesos-Corteza</option>
-                            </select>
-                        </div>
+        <div class="form-control">
+          <label>Imagen del producto</label>
+          <input type="file" name="image" accept=".jpg,.png" 
+          <% if(locals && locals.old){ %> 
+            <%= "value=" + old.image %> 
+            <% } %> />
+        </div>
+        <% if(locals.msgErrors && msgErrors.image) { %>
+            <div style="color: maroon">
+              <%= msgErrors.image.msg %>
+            </div>
+            <% } %>
 
-                        <div class="form-control">
-                            <label>Presentacion</label>
-                            <select name="packaging" required>
-                                <option value=0 selected>fraccionado</option>
-                                <option value=1>horma</option>
-                            </select>
-                            <span class="feedback" id="feedback"></span>
-                        </div>
+        <div class="form-control">
+          <label>Categorias</label>
+          <select name="category">
+            <option value=5 <%=locals.old && old.category=== 5 ? 'selected' : '' %>>Quesos-Duros</option>
+            <option value=1 <%=locals.old && old.category=== 1 ? 'selected' : '' %>>Quesos-Blandos</option>
+            <option value=2 <%=locals.old && old.category=== 2 ? 'selected' : '' %>>Quesos-Azules</option>
+            <option value=3 <%=locals.old && old.category=== 3 ? 'selected' : '' %>>Quesos-Frescos</option>
+            <option value=4 <%=locals.old && old.category=== 4 ? 'selected' : '' %>>Quesos-Corteza</option>
+          </select>
+        </div>
+        <% if(locals.msgErrors && msgErrors.category) { %>
+        <div style="color: maroon">
+          <%= msgErrors.category.msg %>
+        </div>
+        <% } %>
 
-                        <div class="form-control">
-                            <label>Precio</label>
-                            <input type="number" name="price" required class="control">
-                            <span class="feedback" id="feedback"></span>
-                        </div>
+        <div class="form-control">
+          <label>Presentacion</label>
+          <select name="packaging">
+            <option value=0 <%=locals.old && old.packaging=== 0 ? 'selected' : '' %>>fraccionado</option>
+            <option value=1 <%=locals.old && old.packaging=== 1 ? 'selected' : '' %>>horma</option>
+          </select>
+          <span class="feedback" id="feedback"></span>
+        </div>
+        <% if(locals.msgErrors && msgErrors.packaging) { %>
+        <div style="color: maroon">
+          <%= msgErrors.packaging.msg %>
+        </div>
+        <% } %>
 
-                        <div class="form-control">
-                            <label>Descuento</label>
-                            <input type="number" name="discount" class="control" value = '0'/>
-                            <span class="feedback" id="feedback"></span>
-                        </div>
+        <div class="form-control">
+          <label>Precio</label>
+          <input type="number" name="price" class="control" 
+          <% if(locals && locals.old){ %> 
+            <%= "value=" + old.price %> 
+            <% } %> />
+          <span class="feedback" id="feedback"></span>
+        </div>
+        <% if(locals.msgErrors && msgErrors.price) { %>
+        <div style="color: maroon">
+          <%= msgErrors.price.msg %>
+        </div>
+        <% } %>
 
-                        <div class="form-control inline">
-                            <div>
-                                <label>En Stock</label>
-                                <input name="stock" class="form-control" type="radio" value="true" checked />
-                            </div>
-                            <div>
-                                <label>No en Stock</label>
-                                <input name="stock" class="form-control" type="radio" value="false" />
-                            </div>
-                        </div>
+        <div class="form-control">
+          <label>Descuento</label>
+          <input type="number" name="discount" class="control" 
+          <% if(locals && locals.old){ %> 
+            <%= "value=" + old.discount %> 
+            <% } %> />
+          <span class="feedback" id="feedback"></span>
+        </div>
+        <% if(locals.msgErrors && msgErrors.discount) { %>
+        <div style="color: maroon">
+          <%= msgErrors.discount.msg %>
+        </div>
+        <% } %>
 
-                        <div class="buttons">
-                            <button type="submit" class="boton">Enviar</button>
-                            <button type="reset" class="boton">Borrar</button>
-                        </div>
+        <div class="form-control inline">
+          <div>
+            <label>En Stock</label>
+            <input name="stock" class="form-control" type="radio" value="true" <%=locals.old && old.stock==true ? 'checked' : '' %> />
 
-                    </form>
+          </div>
+          <div>
+            <label>No en Stock</label>
+            <input name="stock" class="form-control" type="radio" value="false" <%=locals.old && old.stock==false ? 'checked' : '' %> />
 
-                </section>
-            </main>
+          </div>
+        </div>
+        <% if(locals.msgErrors && msgErrors.stock) { %>
+        <div style="color: maroon">
+          <%= msgErrors.stock.msg %>
+        </div>
+        <% } %>
 
-            <%- include('./partials/footer') -%>
+        <div class="buttons">
+          <button type="submit" class="boton">Enviar</button>
+          <button type="reset" class="boton">Borrar</button>
+        </div>
 
-    </body>
+      </form>
+
+    </section>
+  </main>
+
+  <%- include('./partials/footer') -%>
+
+</body>
 
 </html>

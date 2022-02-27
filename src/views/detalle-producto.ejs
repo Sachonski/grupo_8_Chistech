@@ -23,10 +23,10 @@
                         <%= product.description %>
                         <br>
                         Este producto se vende
-                        <% if(product.packaging=='horma' ) { %>
-                            <%= 'por ' + product.packaging %>
+                        <% if(product.packaging_id === 0 ) { %>
+                            <%= 'por horma' %>
                                 <% } else { %>
-                                    <%= product.packaging %>
+                                    <%= 'fraccionado' %>
                                         <% } %>
                     </p>
                 </div>

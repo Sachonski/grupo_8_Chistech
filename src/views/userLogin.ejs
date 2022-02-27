@@ -15,12 +15,12 @@
           class="form-login"
         >
           <div class="form-control">
-            <label>Nombre de Usuario</label>
+            <label>Email</label>
             <input
-              type="text"
-              name="user_name"
-              placeholder="Nombre de Usuario"
-              class="control"
+            type="email"
+            name="email"
+            placeholder="ingrese un email"
+            class="control"
               value="<%= locals.old && old.user_name? old.user_name : '' %> "
             />
             <span class="feedback" id="feedback"></span>

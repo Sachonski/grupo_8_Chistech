@@ -1,6 +1,8 @@
 const path = require('path');
 const { Op } = require("sequelize");
 const fs = require("fs");
+const { validationResult } = require("express-validator");
+
 const db = require("../database/models");
 const sequelize = db.sequelize;
 
@@ -56,31 +58,39 @@ const controller = {
     },
     // Creaction de producto -- POST
     productoGuardar: (req, res) => {
+        let userSession = req.session.user
+        let errors = validationResult(req);
+        let product = req.body;
+        let old = product
+        old.image = req.file.filename
+        if (errors.isEmpty()) {
+            const { name, price, discount, category, description, packaging, stock } = req.body;
+            db.Product
+                .create(
+                    {
+                        name: name,
+                        price: price,
+                        discount: discount,
+                        category_id: category,
+                        description: description,
+                        packaging_id: packaging,
+                        image: (req.file) ? req.file.filename : "no image",
+                        stock: JSON.parse(stock),
+                    }
+                )
+                .then(() => {
+                    return res.redirect('/products')
+                })
+                .catch(error => res.send(error))
+        } else {
+        return res.render('productoCreacion', { product, userSession, old, msgErrors: errors.mapped() })
+        }
 
-        const { name, price, discount, category, description, packaging, stock } = req.body;
-        db.Product
-            .create(
-                {
-                    name: name,
-                    price: price,
-                    discount: discount,
-                    category_id: category,
-                    description: description,
-                    packaging_id: packaging,
-                    image: (req.file) ? req.file.filename : "no image",
-                    stock: JSON.parse(stock),
-                }
-            )
-            .then(() => {
-                return res.redirect('/products')
-            })
-            .catch(error => res.send(error))
     },
 
     // Editar producto vista -- GET
     productEdit: (req, res) => {
         let userSession = req.session.user
-
         const id = req.params.id;
         db.Product.findByPk(id)
             .then((product) => {
@@ -88,33 +98,44 @@ const controller = {
 
             })
             .catch((error) => {
-                res.render("Error", { error: { msg: "error edit" }, userSession });
+                res.render("Error", { error: { msg: "error al editar" }, userSession });
             });
 
     },
     // Editar producto vista -- PUT
     productUpdate: (req, res) => {
-        const { name, price, discount, category, description, packaging, stock } = req.body;
-        let id = req.params.id;
-        db.Product
-            .update(
-                {
-                    name: name,
-                    price: price,
-                    discount: discount,
-                    category_id: category,
-                    description: description,
-                    packaging_id: packaging,
-                    image: (req.file) ? req.file.filename : "no image",
-                    stock: JSON.parse(stock),
-                },
-                {
-                    where: { id: id }
+        let userSession = req.session.user
+        let errors = validationResult(req);
+        let product = req.body;
+        let { id, name, price, discount, category, description, packaging, stock } = product;
+        if (errors.isEmpty()) {
+            db.Product
+                .update(
+                    {
+                        name: name,
+                        price: price,
+                        discount: discount,
+                        category_id: category,
+                        description: description,
+                        packaging_id: packaging,
+                        image: (req.file) ? req.file.filename : "no image",
+                        stock: JSON.parse(stock),
+                    },
+                    {
+                        where: { id: id }
+                    })
+                .then(() => {
+                    return res.redirect('/products')
                 })
-            .then(() => {
-                return res.redirect('/products')
-            })
-            .catch(error => res.send(error))
+                .catch((error) => {
+                    res.render("Error", { error: { msg: "error al editar" }, userSession });
+                });
+    
+        } else {
+            // res.redirect('/products/productoEdicion/' + id)
+            res.render('productoEdicion', { msgErrors: errors.mapped(), product: product, old: product, userSession: userSession });
+        }
+
     },
 
 
@@ -133,7 +154,7 @@ const controller = {
             })
             .then(res.redirect('/products'))
             .catch(error => {
-                res.render('Error', { error: { msg: "error delete" }})
+                res.render('Error', { error: { msg: "error al borrar" } })
             })
     }
 }

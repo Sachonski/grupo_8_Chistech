@@ -3,9 +3,9 @@ const router = express.Router();
 
 //controllers
 const usersController = require("../controllers/usersController");
-const adminSession = require("../middlewares/adminSession");
 
 //middlewares
+const adminSession = require("../middlewares/adminSession");
 const userSession = require('../middlewares/userSession');
 const validateLogin = require('../middlewares/validateLogin');
 const validateRegister = require('../middlewares/validateRegister');
@@ -14,7 +14,7 @@ const validateRegister = require('../middlewares/validateRegister');
 //users
 router.get('/' ,  userSession , adminSession ,   usersController.listarUsuarios);
 
-// //profile
+//profile
 router.get("/perfil/:id", userSession, usersController.detalleUsuario);
 
 //login

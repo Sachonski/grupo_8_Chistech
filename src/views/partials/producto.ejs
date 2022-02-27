@@ -12,11 +12,11 @@
                     </h3>
                     <p>
                         Este producto se vende
-                        <% if(product.packaging=='horma' ) { %>
-                            <%= 'por ' + product.packaging %>:
-                                <% } else { %>
-                                    <%= product.packaging %>
-                                        <% } %>
+                        <% if(product.packaging_id === 1 ) { %>
+                            <%= 'fraccionado ' %>:
+                        <% } else { %>
+                            <%= 'por horma' %>
+                        <% } %>
                     </p>
                     <p>
                         <% if(product.discount !== 0) { %>
@@ -26,7 +26,7 @@
                 </div>
                 <div class="product-price">
                     <div aria-hidden="true"></div>
-                    <% if (product.discount) { %>
+                    <% if (product.discount && product.discount !== 0) { %>
                         <p>
                             <spam class="tachado">
                                 $ <%= product.price.toLocaleString(undefined,

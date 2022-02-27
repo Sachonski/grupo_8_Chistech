@@ -1,10 +1,10 @@
 const { check } = require('express-validator');
 
 module.exports = [
-	check('user_name')
-		.notEmpty().withMessage('Debes completar el nombre').bail()
-		.isLength({ min: 5 }).withMessage('El nombre debe ser más largo'),
+	check('email')
+	   .notEmpty().trim().withMessage('Debes completar el email').bail() //loguearse con email
+	   .isEmail().withMessage('Debes completar un email válido'), 
 	check('password')
 	   .notEmpty().withMessage('Debes completar la contraseña').bail()
-	   .isLength({ min: 8 }).withMessage('La contraseña debe ser más larga')
+	   .isLength({ min: 8 }).withMessage('La contraseña debe ser más larga') //todo **investigar regex**
   ];
