@@ -1061,3 +1061,23 @@ LISTA DE TODAS LAS CLASES QUE SE UTILIZAN EN LA PAGINA
 .slider-producto ul 
 
 */
+
+.input-contenedor-incorrecto .formulario__label {
+  color: #bb2929;
+}
+
+.input-contenedor-correcto .formulario__validacion-estado {
+  color: #1ed12d;
+  opacity: 1;
+  display: block;
+}
+
+.formulario__input-error-activo {
+  visibility: visible;
+}
+
+.formulario__input-error {
+  font-size: 12px;
+  margin-bottom: 0;
+  visibility: hidden;
+}
