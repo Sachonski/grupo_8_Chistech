@@ -15,10 +15,10 @@ const { check } = require('express-validator');
 module.exports = [
     check('name')
         .notEmpty().trim().withMessage('El nombre es obligatorio').bail()
-        .isLength({ min: 5 }).withMessage('Debes completar el nombre').bail(), //.isLength({ min: 2 })
+        .isLength({ min: 5 }).withMessage('Debes completar el nombre').bail(),
     check('description')
         .notEmpty().trim().withMessage('Debes completar la desripcion').bail()
-        .isLength({ min: 20 }).withMessage('La descripcion debe ser mas larga'), // .isLength({ min: 2 })
+        .isLength({ min: 20 }).withMessage('La descripcion debe ser mas larga'),
     check('category')
         .isInt({ min: 0, max: 5 }).withMessage('Debes seleccionar una categoria'),
     check('packaging')
