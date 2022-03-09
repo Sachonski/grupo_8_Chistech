@@ -1,89 +1,71 @@
-const formulario = document.getElementById('formularioReg');
-const inputs = document.querySelectorAll('#formularioReg input')
+const id = (id) => document.getElementById(id);
+const inputs = document.querySelectorAll('input');
 
-
-const expresiones = {
-    first_name: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, 
-    last_name: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, 
+const expressions = {
+    first_name: /^[a-zA-ZÀ-ÿ\s]{4,40}$/, 
+    last_name: /^[a-zA-ZÀ-ÿ\s]{4,40}$/, 
     user_name: /^[a-zA-Z0-9\_\-]{5,16}$/, 
-    email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-    password: /^.{8,12}$/, 
-    birth:  /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/\/](19|20)\d{2}$/
+    email: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+    password: /^.{4,12}$/,
+    birth:  /^\d{4}-\d{2}-\d{2}$/
 }
 
-const campos = {
-    first_name: false,
-    last_name: false,
-    user_name: false,
-    password: false,
-    email: false,
-    birth:false
-}
 
-const validarFormulario = (e) => {
+const formData = {
+    first_name: id('first_name'),
+    last_name: id('last_name'),
+    user_name: id('user_name'),
+    birth: id('birth'),
+    email: id('email'),
+    password: id('password'),
+};
+
+const errors = {
+    first_name: id('first_name_error'),
+    last_name: id('last_name_error'),
+    user_name: id('user_name_error'),
+    birth: id('birth_error'),
+    email: id('email_error'),
+    password: id('password_error')
+};
+
+
+
+const validateFields = (e) => {
     switch (e.target.name) {
         case "first_name":
-            validarCampo(expresiones.nombre, e.target, 'first_name');
+            expressions.first_name.test(formData.first_name.value) ? errors.first_name.innerHTML = '' : 
+            errors.first_name.innerHTML = 
+            'El nombre debe tener más de 4 letras, y no puede contener caracteres especiales'; 
             break;
         case "last_name":
-            validarCampo(expresiones.nombre, e.target, 'last_name');
+            expressions.last_name.test(formData.last_name.value) ? errors.last_name.innerHTML = '' :
+            errors.last_name.innerHTML = 
+            'El apellido debe tener más de 4 letras, y no puede contener caracteres especiales'; 
             break;
         case "user_name":
-            validarCampo(expresiones.usuario, e.target, 'user_name');
+            expressions.user_name.test(formData.user_name.value) ? errors.user_name.innerHTML = '' :
+            errors.user_name.innerHTML = 
+            'El nombre de usuario debe tener más de 5 letras, y no puede contener caracteres especiales';
             break;
         case "birth":
-            validarCampo(expresiones.usuario, e.target, 'birth');
-            break;
-        case "password":
-            validarCampo(expresiones.password, e.target, 'password');
-            validarPassword2();
-            break;
-        case "password2":
-            validarPassword2();
+            expressions.birth.test(formData.birth.value) ? errors.birth.innerHTML = '' :
+            errors.birth.innerHTML = 'Formato de fecha no valido';
             break;
         case "email":
-            validarCampo(expresiones.correo, e.target, 'email');
+            expressions.email.test(formData.email.value) ? errors.email.innerHTML = '' :
+            errors.email.innerHTML = 'El email no es válido';
+            break;
+        case "password":
+            expressions.password.test(formData.password.value) ? errors.password.innerHTML = '' :
+            errors.password.innerHTML = 
+            'La contraseña debe tener más de 4 letras, y no puede contener caracteres especiales';
             break;
     }
 }
-const validarCampo = (expresion, input, campo) => {
-    if (expresion.test(input.value)) {
-        document.getElementsByName(`${campo}`).classList.remove('input-contenedor-incorrecto');
-        document.getElementsByName(`${campo}`).classList.add('input-contenedor-correcto');
-        document.getElementsByName(`${campo}`).classList.add('fa-check-circle');
-        document.getElementsByName(`${campo}`).classList.remove('fa-times-circle');
-        campos[campo] = true;
-    } else {
-        document.getElementsByName('first_name').classList.remove('input-contenedor-incorrecto');
-        document.getElementsByName('last_name').classList.add('input-contenedor-correcto');
-        document.getElementsByName('user_name').classList.add('fa-check-circle');
-        document.getElementsByName('email').classList.remove('fa-times-circle');
-        campos[campo] = false;
-    }
-}
 
-const validarPassword2 = () => {
-    const inputPassword1 = document.getElementById('password');
-    const inputPassword2 = document.getElementById('password2');
-
-    if (inputPassword1.value !== inputPassword2.value) {
-        document.getElementById(`grupo__password2`).classList.add('input-contenedor-incorrecto');
-        document.getElementById(`grupo__password2`).classList.remove('input-contenedor-correcto');
-        document.querySelector(`#grupo__password2 i`).classList.add('fa-times-circle');
-        document.querySelector(`#grupo__password2 i`).classList.remove('fa-check-circle');
-        document.querySelector(`#grupo__password2 .formulario__input-error`).classList.add('formulario__input-error-activo');
-        campos['password'] = false;
-    } else {
-        document.getElementById(`grupo__password2`).classList.remove('input-contenedor-incorrecto');
-        document.getElementById(`grupo__password2`).classList.add('input-contenedor-correcto');
-        document.querySelector(`#grupo__password2 i`).classList.remove('fa-times-circle');
-        document.querySelector(`#grupo__password2 i`).classList.add('fa-check-circle');
-        document.querySelector(`#grupo__password2 .formulario__input-error`).classList.remove('formulario__input-error-activo');
-        campos['password'] = true;
-    }
-}
 
 inputs.forEach((input) => {
-    input.addEventListener('keyup', validarFormulario)
-    input.addEventListener('blur', validarFormulario);
+    input.addEventListener('keyup', validateFields);
+    input.addEventListener('blur', validateFields);
 });

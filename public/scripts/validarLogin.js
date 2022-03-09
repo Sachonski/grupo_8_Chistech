@@ -5,7 +5,7 @@ inputs.push(document.getElementsByName("password"));
 
 
 const expresiones = {
-    email: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
+    email: /^[\w-\.]+@([\w-]+\.)+[\w-]{8,20}$/g,
     password: /^.{4,12}$/
 }
 
@@ -31,11 +31,13 @@ const validarFormulario = (e) => {
 }
 const validarCampo = (expresion, input, campo) => {
    
-    if (expresion.test(input.value) == true) {
+    if (expresion.test(input.value)) {
         /*document.getElementById(`email`).classList.remove('input-contenedor-incorrecto');
         document.getElementById(`password}`).classList.add('input-contenedor-correcto');*/
-        let visibility = document.getElementById("emailOculto");
-        visibility.style.visibility = "hidden";
+        let emailMsg = document.getElementById("emailOculto");
+        let passwordMsg = document.getElementById("passwordOculto");
+        emailMsg.style.visibility = "hidden";
+        passwordMsg.style.visibility = "hidden";
         console.log("entra true")
            
     } else if (expresion.test(input.value) == false)  {

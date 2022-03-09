@@ -3,18 +3,17 @@
 <%- include('./partials/head', {title: 'Ingresar' }) -%>
 
   <body>
-    <script type="text/javascript" src="/scripts/validarLogin.js"></script>
     <%- include('./partials/header') -%>
 
       <main>
         <section class="form">
           <form action="/users/login" method="POST" content-type="application/json" enctype="application/json"
-            class="form-login" id="formularioLogin">
+            class="form-login" id="formularioLogin" onsubmit="validarFormulario()">
             <div class="form-control" id="grupo__email">
               <label>Email</label>
               <input type="text" name="email" placeholder="ingrese un email" class="control" id="email"
-                value="<%= locals.old && old.user_name? old.user_name : '' %> " />
-              <p id="emailOculto">
+                value="<%= locals.old && old.user_name? old.user_name : '' %> " autocomplete="email"/>
+              <p id="emailOculto" style="color: maroon">
                 El correo solo puede contener letras, numeros, puntos, guiones
                 y guion bajo.
               </p>
@@ -28,10 +27,10 @@
                
                 <div class="form-control" id="grupo__password">
                   <label>Contraseña</label>
-                  <input type="password" name="password" id="password" class="control" />
+                  <input type="password" name="password" id="password" class="control" autocomplete="current-password" />
                   <span class="feedback" id="feedback"></span>
                 </div>
-                <p visble  >
+                <p id="passwordOculto" style="color: maroon" >
                   La contraseña tiene que ser de 4 a 12 dígitos.
                 </p>
                 <% if (locals.msgErrors && msgErrors.password) { %>
@@ -58,6 +57,7 @@
       </main>
 
       <%- include('./partials/footer') -%>
+      <script type="text/javascript" src="/scripts/validarLogin.js"></script>
 
   </body>
 
