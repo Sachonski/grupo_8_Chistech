@@ -10,7 +10,6 @@ const expressions = {
     birth:  /^\d{4}-\d{2}-\d{2}$/
 }
 
-
 const formData = {
     first_name: id('first_name'),
     last_name: id('last_name'),
@@ -28,8 +27,6 @@ const errors = {
     email: id('email_error'),
     password: id('password_error')
 };
-
-
 
 const validateFields = (e) => {
     switch (e.target.name) {
@@ -63,7 +60,6 @@ const validateFields = (e) => {
             break;
     }
 }
-
 
 inputs.forEach((input) => {
     input.addEventListener('keyup', validateFields);
