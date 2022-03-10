@@ -15,6 +15,10 @@ const usersRoutes = require("./routes/usersRoutes");
 const productsRoutes = require("./routes/productsRoutes");
 const remember = require("./middlewares/remember");
 
+//Aquí llamo a la ruta de las api de movies
+const productsRoutesApi = require('./routes/api/productsRoutesApi')
+const usersRoutesApi = require('./routes/api/usersRoutesApi')
+
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
@@ -50,6 +54,12 @@ app.use('/', mainRoutes);
 app.use ('/users' , usersRoutes);
 
 app.use ('/products' , productsRoutes);
+
+// Configuracion de APIs
+
+//Aquí creo la colección de mis recursos de movies (APIs)
+app.use('/api/products',productsRoutesApi);
+app.use('/api/users',usersRoutesApi);
 
 // configuracion del puerto
 app.listen(process.env.PORT || 3030, () => console.log("Server running on port " + "http://localhost:" + 3030));
