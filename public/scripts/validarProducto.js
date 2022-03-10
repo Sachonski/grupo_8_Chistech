@@ -41,7 +41,7 @@ const validateFields = (e) => {
             "El nombre debe tener más de 4 letras, y no puede contener caracteres especiales");
       break;
     case "description":
-      expressions.description.trim.test(formData.description.value.trim())
+      expressions.description.test(formData.description.value.trim())
         ? (errors.description.innerHTML = "")
         : (errors.description.innerHTML =
             "La descripcion debe tener entre de 4 y 150 caracteres");

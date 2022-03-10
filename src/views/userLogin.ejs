@@ -2,63 +2,64 @@
 <html lang="en">
 <%- include('./partials/head', {title: 'Ingresar' }) -%>
 
-  <body>
-    <%- include('./partials/header') -%>
+<body>
+  <%- include('./partials/header') -%>
 
-      <main>
-        <section class="form">
-          <form action="/users/login" method="POST" content-type="application/json" enctype="application/json"
-            class="form-login" id="formularioLogin" onsubmit="validarFormulario()">
-            <div class="form-control" id="grupo__email">
-              <label>Email</label>
-              <input type="text" name="email" placeholder="ingrese un email" class="control" id="email"
-                value="<%= locals.old && old.user_name? old.user_name : '' %> " autocomplete="email"/>
-              <p id="emailOculto" style="color: maroon">
-                El correo solo puede contener letras, numeros, puntos, guiones
-                y guion bajo.
-              </p>
-              <span class="feedback" id="feedback"></span>
-            </div>
-            <% if (locals.msgErrors && msgErrors.user_name) { %>
-              <div style="color: maroon">
-                <%= msgErrors.user_name.msg %>
-              </div>
-              <% } %>
-               
-                <div class="form-control" id="grupo__password">
-                  <label>Contraseña</label>
-                  <input type="password" name="password" id="password" class="control" autocomplete="current-password" />
-                  <span class="feedback" id="feedback"></span>
-                </div>
-                <p id="passwordOculto" style="color: maroon" >
-                  La contraseña tiene que ser de 4 a 12 dígitos.
-                </p>
-                <% if (locals.msgErrors && msgErrors.password) { %>
-                  <div style="color: maroon">
-                    <%= msgErrors.password.msg %>
-                  </div>
-                  <% } %>
+  <main>
+    <section class="form">
+      <form action="/users/login" method="POST" content-type="application/json" enctype="application/json" class="form-login" id="formularioLogin" onsubmit="validarFormulario()">
+        
+<!-- ! ----------email ------------>
 
-                    <div class="register">
-                      <a href="/users/register">Si no tiene usuario registerese aquí</a>
-                    </div>
+        <div class="form-control" id="grupo__email">
+          <label>Email</label>
+          <input type="text" name="email" placeholder="ingrese un email" class="control" id="email" value="<%= locals.old && old.user_name? old.user_name : '' %> " autocomplete="email" />
+          <div style="color: maroon" id="email_error"></div>
+        </div>
+        <% if (locals.msgErrors && msgErrors.user_name) { %>
+        <div style="color: maroon">
+          <%= msgErrors.user_name.msg %>
+        </div>
+        <% } %>
 
-                    <div class="buttons">
-                      <button type="submit" class="boton">Enviar</button>
-                    </div>
+<!-- ! ----------password ------------>
 
-                    <label for="">recordame</label>
-                    <input type="checkbox" name="remember" value="true" <%=locals.old && old.remember=='true'
-                      ? 'checked' : '' %>>
+        <div class="form-control" id="grupo__password">
+          <label>Contraseña</label>
+          <input type="password" name="password" id="password" class="control" autocomplete="current-password" />
+        </div>
+        <div style="color: maroon" id="password_error"></div>
+        <% if (locals.msgErrors && msgErrors.password) { %>
+        <div style="color: maroon">
+          <%= msgErrors.password.msg %>
+        </div>
+        <% } %>
 
-      
-          </form>
-        </section>
-      </main>
+<!-- ! ----------a register ------------>
 
-      <%- include('./partials/footer') -%>
-      <script type="text/javascript" src="/scripts/validarLogin.js"></script>
+        <div class="register">
+          <a href="/users/register">Si no tiene usuario registerese aquí</a>
+        </div>
 
-  </body>
+<!-- ! ----------submit ------------>
+
+        <div class="buttons">
+          <button type="submit" class="boton">Enviar</button>
+        </div>
+
+<!-- ! ----------remember y admin ------------>
+
+        <label for="">recordame</label>
+        <input type="checkbox" name="remember" value="true" <%=locals.old && old.remember=='true' ? 'checked' : '' %>>
+
+
+      </form>
+    </section>
+  </main>
+
+  <%- include('./partials/footer') -%>
+  <script type="text/javascript" src="/scripts/validarLogin.js"></script>
+
+</body>
 
 </html>

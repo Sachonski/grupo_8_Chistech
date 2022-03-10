@@ -88,8 +88,8 @@
         <div class="form-control">
           <label>Presentacion</label>
           <select name="packaging" id="packaging" class="control">
-            <option value=0 <%=locals.old && old.packaging=== 0 ? 'selected' : '' %>>fraccionado</option>
-            <option value=1 <%=locals.old && old.packaging=== 1 ? 'selected' : '' %>>horma</option>
+            <option value=0 <%=locals.old && old.packaging=== 1 ? 'selected' : '' %>>fraccionado</option>
+            <option value=1 <%=locals.old && old.packaging=== 0 ? 'selected' : '' %>>horma</option>
           </select>
           <div style="color: maroon" id="packaging_error"></div>
         </div>

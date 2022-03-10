@@ -31,17 +31,17 @@ const errors = {
 const validateFields = (e) => {
     switch (e.target.name) {
         case "first_name":
-            expressions.first_name.test(formData.first_name.value) ? errors.first_name.innerHTML = '' : 
+            expressions.first_name.test(formData.first_name.value.trim()) ? errors.first_name.innerHTML = '' : 
             errors.first_name.innerHTML = 
             'El nombre debe tener más de 4 letras, y no puede contener caracteres especiales'; 
             break;
         case "last_name":
-            expressions.last_name.test(formData.last_name.value) ? errors.last_name.innerHTML = '' :
+            expressions.last_name.test(formData.last_name.value.trim()) ? errors.last_name.innerHTML = '' :
             errors.last_name.innerHTML = 
             'El apellido debe tener más de 4 letras, y no puede contener caracteres especiales'; 
             break;
         case "user_name":
-            expressions.user_name.test(formData.user_name.value) ? errors.user_name.innerHTML = '' :
+            expressions.user_name.test(formData.user_name.value.trim()) ? errors.user_name.innerHTML = '' :
             errors.user_name.innerHTML = 
             'El nombre de usuario debe tener más de 5 letras, y no puede contener caracteres especiales';
             break;
@@ -50,11 +50,11 @@ const validateFields = (e) => {
             errors.birth.innerHTML = 'Formato de fecha no valido';
             break;
         case "email":
-            expressions.email.test(formData.email.value) ? errors.email.innerHTML = '' :
+            expressions.email.test(formData.email.value.trim()) ? errors.email.innerHTML = '' :
             errors.email.innerHTML = 'El email no es válido';
             break;
         case "password":
-            expressions.password.test(formData.password.value) ? errors.password.innerHTML = '' :
+            expressions.password.trim.test(formData.password.value.trim()) ? errors.password.innerHTML = '' :
             errors.password.innerHTML = 
             'La contraseña debe tener más de 4 letras, y no puede contener caracteres especiales';
             break;
