@@ -63,6 +63,8 @@ const controller = {
         let product = req.body;
         let old = product
         old.image = req.file.filename
+        old.name = req.body.name.trim()
+        old.description = req.body.description.trim()
         if (errors.isEmpty()) {
             if( path.extname(req.file.filename) === '.jpg' || path.extname(req.file.filename) === '.jpeg' || path.extname(req.file.filename) === '.png' || path.extname(req.file.filename) === '.gif'){
 
@@ -70,11 +72,11 @@ const controller = {
             db.Product
                 .create(
                     {
-                        name: name,
+                        name: name.trim(),
                         price: price,
                         discount: discount,
                         category_id: category,
-                        description: description,
+                        description: description.trim(),
                         packaging_id: packaging,
                         image: (req.file) ? req.file.filename : "no image",
                         stock: JSON.parse(stock),
