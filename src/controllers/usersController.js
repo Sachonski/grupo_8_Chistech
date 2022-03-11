@@ -220,6 +220,11 @@ const controller2 = {
     db.User.destroy({
       where: { id: id },
     })
+      .then((user) => {
+        if (fs.existsSync(`/img/products/${user.avatar}`)) {
+          fs.unlinkSync(`/img/products/${user.avatar}`);
+        }
+      })
       .then(res.clearCookie("remember"))
       .then(req.session.destroy())
       .then(res.redirect("../../users/login"))
@@ -348,7 +353,7 @@ const controller2 = {
                     })
                     .catch((error) => {
                       res.render("Error", { error: { msg: "error edit" } });
-                    });                  
+                    });
 
                   if (req.body.remember) {
                     res.cookie("remember", userUpdated, {

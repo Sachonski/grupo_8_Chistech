@@ -158,9 +158,9 @@ const controller = {
         db.Product.destroy({
             where: { id: id }
         })
-            .then(() => {
-                if (fs.existsSync(`public/img/products/${product.image}`)) {
-                    fs.unlinkSync(`public/img/products/${product.image}`);
+            .then((product) => {
+                if (fs.existsSync(`/img/products/${product.image}`)) {
+                    fs.unlinkSync(`/img/products/${product.image}`);
                 }
             })
             .then(res.redirect('/products'))
