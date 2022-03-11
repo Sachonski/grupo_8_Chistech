@@ -5,6 +5,7 @@ const router = express.Router();
 const usersController = require("../controllers/usersController");
 
 //middlewares
+const uploadFile = require('../middlewares/multer');
 const adminSession = require("../middlewares/adminSession");
 const userSession = require('../middlewares/userSession');
 const validateLogin = require('../middlewares/validateLogin');
@@ -26,14 +27,21 @@ router.get("/logout", usersController.logout);
 
 //register
 router.get("/register", usersController.register);
-router.post("/register", validateRegister, usersController.registerpost);
+router.post("/register", 
+uploadFile.single("image"), //todo midelware validacion formulario creacion
+validateRegister, 
+usersController.registerpost);
 
 //delete
 router.delete("/delete/:id", userSession, usersController.delete);
 
 //edit
 router.get("/editar/:id", userSession, usersController.editget);
-router.put("/editar/:id", userSession, validateRegister, usersController.editput);
+router.put("/editar/:id", 
+uploadFile.single("image"), //todo midelware validacion formulario creacion
+userSession, 
+validateRegister, 
+usersController.editput);
 
 //exports
 module.exports = router;

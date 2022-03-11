@@ -11,11 +11,11 @@
 
       <h2>Editar Producto</h2>
 
-      <form action="/products/productoEdicion/<%= product.id %>?_method=PUT" method="post"  name='productoEdicion' enctype="multipart/form-data" onsubmit = "validateFields()">
+      <form action="/products/productoEdicion/<%= product.id %>?_method=PUT" method="post" name='productoEdicion' enctype="multipart/form-data" onsubmit="validateFields()">
 
         <input style="visibility: hidden;" type="number" name="id" value="<%= product.id  %>">
 
-<!-- ! ----------name ------------>
+        <!-- ! ----------name ------------>
 
         <div class="form-control">
           <label>Nombre del Producto</label>
@@ -28,7 +28,7 @@
         </div>
         <% } %>
 
-<!-- ! ----------description ------------>
+        <!-- ! ----------description ------------>
 
         <div class="form-control">
           <label>Descripcion del producto</label>
@@ -41,7 +41,7 @@
         </div>
         <% } %>
 
-<!-- ! ----------image ------------>
+        <!-- ! ----------image ------------>
 
         <div class="form-control">
           <label>Imagen del producto</label>
@@ -54,16 +54,16 @@
         </div>
         <% } %>
 
-<!-- ! ----------category ------------>
+        <!-- ! ----------category ------------>
 
         <div class="form-control">
           <label>Categorias</label>
           <select id="category" name="category" class="control">
-            <option value=5 <%=product.category_id === 5 ? 'selected' : '' %>>Quesos-Duros</option>
-            <option value=1 <%=product.category_id === 1 ? 'selected' : '' %>>Quesos-Blandos</option>
-            <option value=2 <%=product.category_id === 2 ? 'selected' : '' %>>Quesos-Azules</option>
-            <option value=3 <%=product.category_id === 3 ? 'selected' : '' %>>Quesos-Frescos</option>
-            <option value=4 <%=product.category_id === 4 ? 'selected' : '' %>>Quesos-Corteza</option>
+            <option value=5 <%=product.category_id===5 ? 'selected' : '' %>>Quesos-Duros</option>
+            <option value=1 <%=product.category_id===1 ? 'selected' : '' %>>Quesos-Blandos</option>
+            <option value=2 <%=product.category_id===2 ? 'selected' : '' %>>Quesos-Azules</option>
+            <option value=3 <%=product.category_id===3 ? 'selected' : '' %>>Quesos-Frescos</option>
+            <option value=4 <%=product.category_id===4 ? 'selected' : '' %>>Quesos-Corteza</option>
           </select>
         </div>
         <div style="color: maroon" id="category_error"></div>
@@ -73,13 +73,13 @@
         </div>
         <% } %>
 
-<!-- ! ----------packaging ------------>
+        <!-- ! ----------packaging ------------>
 
         <div class="form-control">
           <label>Presentacion</label>
           <select id="packaging" name="packaging" class="control">
-            <option value=0 <%=product.packaging_id === 1 ? 'selected' : '' %>>fraccionado</option>
-            <option value=1 <%=product.packaging_id === 0 ? 'selected' : '' %>>horma</option>
+            <option value=0 <%=product.packaging_id===1 ? 'selected' : '' %>>fraccionado</option>
+            <option value=1 <%=product.packaging_id===0 ? 'selected' : '' %>>horma</option>
           </select>
           <span class="feedback" id="feedback"></span>
         </div>
@@ -90,7 +90,7 @@
         </div>
         <% } %>
 
-<!-- ! ----------price ------------>
+        <!-- ! ----------price ------------>
 
         <div class="form-control">
           <label>Precio</label>
@@ -104,7 +104,7 @@
         </div>
         <% } %>
 
-<!-- ! ----------discount ------------>
+        <!-- ! ----------discount ------------>
 
         <div class="form-control">
           <label>Descuento</label>
@@ -118,7 +118,7 @@
         </div>
         <% } %>
 
-<!-- ! ----------stock ------------>
+        <!-- ! ----------stock ------------>
 
         <div class="form-control inline">
           <div>
@@ -136,7 +136,7 @@
         </div>
         <% } %>
 
-<!-- ! ----------submit ------------>
+        <!-- ! ----------submit ------------>
 
         <div class="buttons">
           <button type="submit" class="boton">Enviar</button>

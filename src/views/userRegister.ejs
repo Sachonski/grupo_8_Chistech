@@ -3,17 +3,21 @@
   <%- include('./partials/head', {title: 'Registro' }) -%>
 
   <body>
-
     <%- include('./partials/header') -%>
 
     <main>
       <section class="form">
         <h2>Registrar Usuario</h2>
 
-        <form action="/users/register" method="post" enctype='application/json'  id="formRegister" class="form-register" onsubmit = "validateFields()">
-          
-<!-- ! ----------first_name ------------>
-          
+        <form
+          action="/users/register"
+          method="post"
+          enctype="enctype=multipart/form-data"
+          id="formRegister"
+          class="form-register"
+        >
+          <!-- ! ----------first_name ------------>
+
           <div class="form-control">
             <label>Nombre</label>
             <input
@@ -31,8 +35,8 @@
           <div style="color: maroon"><%= msgErrors.first_name.msg %></div>
           <% } %>
 
-<!-- ! ----------last_name ------------>
-          
+          <!-- ! ----------last_name ------------>
+
           <div class="form-control">
             <label>Apellidos</label>
             <input
@@ -50,7 +54,7 @@
           <div style="color: maroon"><%= msgErrors.last_name.msg %></div>
           <% } %>
 
-<!-- ! ----------user_name ------------>
+          <!-- ! ----------user_name ------------>
 
           <div class="form-control">
             <label>Nombre Usuario</label>
@@ -68,19 +72,15 @@
           <% if (locals.msgErrors && msgErrors.user_name) { %>
           <div style="color: maroon"><%= msgErrors.user_name.msg %></div>
           <% } %>
-          
-<!-- ! ----------image ------------>
+
+          <!-- ! ----------avatar ------------>
 
           <div class="form-control">
             <label>Imagen del perfil</label>
-            <input 
-            type="file" 
-            id="image" 
-            name="image" 
-            accept=".jpg,.png">
-        </div>
+            <input type="file" id="avatar" name="avatar" accept=".jpg,.png" />
+          </div>
 
-<!-- ! ----------birth ------------>
+          <!-- ! ----------birth ------------>
 
           <div class="form-control">
             <label>Fecha Nacimiento</label>
@@ -99,7 +99,7 @@
           <div style="color: maroon"><%= msgErrors.birth.msg %></div>
           <% } %>
 
-<!-- ! ----------email ------------>
+          <!-- ! ----------email ------------>
 
           <div class="form-control">
             <label>Email</label>
@@ -118,23 +118,24 @@
           <div style="color: maroon"><%= msgErrors.email.msg %></div>
           <% } %>
 
-<!-- ! ----------password ------------>
+          <!-- ! ----------password ------------>
 
           <div class="form-control">
             <label>Contraseña</label>
-            <input 
-            type="password" 
-            id="password" 
-            name="password" 
-            class="control"
-            autocomplete="current_password" />
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="control"
+              autocomplete="current_password"
+            />
             <div style="color: maroon" id="password_error"></div>
           </div>
           <% if (locals.msgErrors && msgErrors.password) { %>
           <div style="color: maroon"><%= msgErrors.password.msg %></div>
           <% } %>
 
-<!-- ! ----------adminCode ------------>
+          <!-- ! ----------adminCode ------------>
 
           <div class="form-control">
             <label>Código Administrador</label>
@@ -148,36 +149,38 @@
             <div style="color: maroon" id="adminCode_error"></div>
           </div>
           <% if (locals.msgErrors && msgErrors.adminCode) { %>
-            <div style="color: maroon"><%= msgErrors.adminCode.msg %></div>
-            <% } %>
+          <div style="color: maroon"><%= msgErrors.adminCode.msg %></div>
+          <% } %>
 
-<!-- ! ----------a login ------------>
+          <!-- ! ----------a login ------------>
 
           <div class="register">
             <a href="/users/login">Si ya tiene usuario ingrese aquí</a>
           </div>
 
-<!-- ! ----------submit ------------>
+          <!-- ! ----------submit ------------>
 
           <div class="buttons">
             <button type="submit" class="boton">Enviar</button>
             <button type="reset" class="boton">Borrar</button>
           </div>
 
-<!-- ! ----------remember y admin ------------>
+          <!-- ! ----------remember y admin ------------>
 
           <label for="">recordame</label>
-            <input type="checkbox" name="remember" value="true" <%=locals.old && old.remember=='true'? 'checked' : null %>>
+          <input type="checkbox" name="remember" value="true" <%=locals.old &&
+          old.remember=='true'? 'checked' : null %>>
           <label for="">administrador</label>
-          <input type="checkbox" name="admin" value= 1 <%=locals.old && old.admin=== '1'? 'checked' : 0 %>>
-            
-          <br /><br />
+          <input type="checkbox" name="admin" value= 1 <%=locals.old &&
+          old.admin=== '1'? 'checked' : 0 %>>
 
+          <br /><br />
         </form>
       </section>
     </main>
 
     <%- include('./partials/footer') -%>
     <script type="text/javascript" src="/scripts/validarRegistro.js"></script>
+  
   </body>
 </html>

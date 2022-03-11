@@ -12,107 +12,154 @@
         <form
           action="/users/editar/<%= id %>?_method=PUT"
           method="post"
-          enctype="application/json"
           class="form-registro"
           name="usuarioEdicion"
-          enctype="multipart/form-data"
+          enctype="enctype=multipart/form-data"
         >
+
+        <input style="visibility: hidden;" type="number" name="id" value="<%= user.id  %>">
+
+          <!-- ! ----------first_name ------------>
+
           <div class="form-control">
             <label class="info">Nombre</label>
             <input
               type="text"
+              id="first_name"
               name="first_name"
               placeholder="Nombre"
               class="control"
+              autocomplete="first_name"
               value="<%= user.first_name  %>"
             />
-            <span class="feedback" id="feedback"></span>
+            <div style="color: maroon" id="first_name_error"></div>
           </div>
           <% if (locals.msgErrors && msgErrors.first_name) { %>
           <div style="color: maroon"><%= msgErrors.first_name.msg %></div>
           <% } %>
 
+          <!-- ! ----------last_name ------------>
+
           <div class="form-control">
             <label class="info">Apellidos</label>
             <input
               type="text"
+              id="last_name"
               name="last_name"
               placeholder="Apellido"
               class="control"
+              autocomplete="last_name"
               value="<%= user.last_name %>"
             />
-            <span class="feedback" id="feedback"></span>
+            <div style="color: maroon" id="last_name_error"></div>
           </div>
           <% if (locals.msgErrors && msgErrors.last_name) { %>
           <div style="color: maroon"><%= msgErrors.last_name.msg %></div>
           <% } %>
+
+          <!-- ! ----------user_name ------------>
+
           <div class="form-control">
             <label>Nombre Usuario</label>
             <input
               type="text"
+              id="user_name"
               name="user_name"
               placeholder="Nombre Usuario"
               class="control"
+              autocomplete="username"
               value="<%= user.user_name %>"
             />
-            <span class="feedback" id="feedback"></span>
+            <div style="color: maroon" id="user_name_error"></div>
           </div>
           <% if (locals.msgErrors && msgErrors.user_name) { %>
           <div style="color: maroon"><%= msgErrors.user_name.msg %></div>
           <% } %>
+
+          <!-- ! ----------avatar ------------>
+
+          <div class="form-control">
+            <label>Imagen del perfil</label>
+            <input type="file" id="avatar" name="avatar" accept=".jpg,.png" />
+          </div>
+
+          <!-- ! ----------birth ------------>
+
           <div class="form-control">
             <label>Fecha Nacimiento</label>
             <input
               type="date"
+              id="birth"
               name="birth"
               placeholder="Fecha Nacimiento"
               class="control"
+              autocomplete="birth"
               value="<%= user.birth  %>"
             />
-            <span class="feedback" id="feedback"></span>
+            <div style="color: maroon" id="birth_error"></div>
           </div>
           <% if (locals.msgErrors && msgErrors.birth) { %>
-            <div style="color: maroon"><%= msgErrors.birth.msg %></div>
-            <% } %>
-  
+          <div style="color: maroon"><%= msgErrors.birth.msg %></div>
+          <% } %>
+
+          <!-- ! ----------email ------------>
+
           <div class="form-control">
             <label>Email</label>
             <input
               type="email"
+              id="email"
               name="email"
               placeholder="ingrese un email"
               class="control"
               value="<%= user.email  %>"
+              autocomplete="email"
             />
-            <span class="feedback" id="feedback"></span>
+            <div style="color: maroon" id="email_error"></div>
           </div>
           <% if (locals.msgErrors && msgErrors.email) { %>
-            <div style="color: maroon"><%= msgErrors.email.msg %></div>
-            <% } %>
-  
+          <div style="color: maroon"><%= msgErrors.email.msg %></div>
+          <% } %>
+
+          <!-- ! ----------password ------------>
+
           <div class="form-control">
             <label>Contraseña</label>
-            <input type="password" name="password" class="control" />
-            <span class="feedback" id="feedback"></span>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              autocomplete="current_password"
+              class="control"
+            />
+            <div style="color: maroon" id="password_error"></div>
           </div>
           <% if (locals.msgErrors && msgErrors.password) { %>
-            <div style="color: maroon"><%= msgErrors.password.msg %></div>
-            <% } %>
-            <div class="form-control">
-              <label>Código Administrador</label>
-              <input
-                type="password"
-                name="adminCode"
-                class="control"
-              />
-              <span class="feedback" id="feedback"></span>
-            </div>
-            <% if (locals.msgErrors && msgErrors.adminCode) { %>
-              <div style="color: maroon"><%= msgErrors.adminCode.msg %></div>
-              <% } %>
-            <label for="">administrador</label>
-            <input type="checkbox" name="admin" value= 1 <%=user.admin ==='1' ? 'checked' : 0 %>>
+          <div style="color: maroon"><%= msgErrors.password.msg %></div>
+          <% } %>
 
+          <!-- ! ----------adminCode ------------>
+
+          <div class="form-control">
+            <label>Código Administrador</label>
+            <input type="password" 
+            id="adminCode" 
+            name="adminCode"
+            autocomplete="current_adminCode" 
+            class="control" />
+            <div style="color: maroon" id="adminCode_error"></div>
+          </div>
+          <% if (locals.msgErrors && msgErrors.adminCode) { %>
+          <div style="color: maroon"><%= msgErrors.adminCode.msg %></div>
+          <% } %>
+
+          <!-- ! ----------remember y admin ------------>
+
+          <label for="">administrador</label>
+          <input type="checkbox" name="admin" value=1 <%=user.admin ==='1' ?
+          'checked' : 0 %>>
+
+          <!-- ! ----------submit ------------>
 
           <div class="buttons">
             <button type="submit" class="boton">Enviar</button>
@@ -123,5 +170,7 @@
     </main>
 
     <%- include('./partials/footer') -%>
+    <script type="text/javascript" src="/scripts/validarRegistro.js"></script>
+  
   </body>
 </html>
