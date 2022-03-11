@@ -46,3 +46,17 @@
 - 3. Continuar haciendo: Trabajar en equipo y en branches para cada sprint.
 - 4. Hacer menos: No comentar el codigo.
 - 5. Dejar de hacer: Extender las sesiones de trabajo en equipo a mas de 6 horas.
+
+# Retrospective - Sprint 6:
+- 1. Comenzar a hacer: Testear periodicamente los avances.
+- 2. Hacer más: Comentar mas el codigo.
+- 3. Continuar haciendo: Trabajar en equipo y sesiones cortas.
+- 4. Hacer menos: Trabajar en branchs antiguas.
+- 5. Dejar de hacer: Reutilizar branchs.
+
+# Retrospective - Sprint 7:
+- 1. Comenzar a hacer: Reuniones de cierre de proyecto 1 vez por semana.
+- 2. Hacer más: Nombrar funciones y clases con nombres acordes.
+- 3. Continuar haciendo: Seguir comentando el codigo, nunca hay suficientes comentarios ;)
+- 4. Hacer menos: No debatir como vamos a encarar el ultimo sprint.
+- 5. Dejar de hacer: No estimar la dificultad de las tareas correctamente.
