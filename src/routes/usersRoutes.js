@@ -28,7 +28,7 @@ router.get("/logout", usersController.logout);
 //register
 router.get("/register", usersController.register);
 router.post("/register", 
-uploadFile.single("image"), //todo midelware validacion formulario creacion
+uploadFile.single("avatar"), //todo midelware validacion formulario creacion
 validateRegister, 
 usersController.registerpost);
 
@@ -38,7 +38,7 @@ router.delete("/delete/:id", userSession, usersController.delete);
 //edit
 router.get("/editar/:id", userSession, usersController.editget);
 router.put("/editar/:id", 
-uploadFile.single("image"), //todo midelware validacion formulario creacion
+uploadFile.single("avatar"), //todo midelware validacion formulario creacion
 userSession, 
 validateRegister, 
 usersController.editput);

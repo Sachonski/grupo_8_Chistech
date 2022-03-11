@@ -5,6 +5,7 @@ const expressions = {
     first_name: /^[a-zA-ZÀ-ÿ\s]{4,40}$/, 
     last_name: /^[a-zA-ZÀ-ÿ\s]{4,40}$/, 
     user_name: /^[a-zA-Z0-9\_\-]{5,16}$/, 
+    avatar: /(.jpg|.jpeg|.png|.gif)$/i,
     email: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
     password: /^.{4,12}$/,
     birth:  /^\d{4}-\d{2}-\d{2}$/
@@ -14,6 +15,7 @@ const formData = {
     first_name: id('first_name'),
     last_name: id('last_name'),
     user_name: id('user_name'),
+    avatar: id('avatar'),
     birth: id('birth'),
     email: id('email'),
     password: id('password'),
@@ -23,6 +25,7 @@ const errors = {
     first_name: id('first_name_error'),
     last_name: id('last_name_error'),
     user_name: id('user_name_error'),
+    avatar: id("avatar_error"),
     birth: id('birth_error'),
     email: id('email_error'),
     password: id('password_error')
@@ -44,6 +47,12 @@ const validateFields = (e) => {
             expressions.user_name.test(formData.user_name.value.trim()) ? errors.user_name.innerHTML = '' :
             errors.user_name.innerHTML = 
             'El nombre de usuario debe tener más de 5 letras, y no puede contener caracteres especiales';
+            break;    
+        case "avatar":
+            expressions.avatar.test(formData.avatar.value)
+              ? (errors.avatar.innerHTML = "")
+              : (errors.avatar.innerHTML =
+                  "Acepta solo imagenes con extension .jpg, .jpeg, .png, .gif");
             break;
         case "birth":
             expressions.birth.test(formData.birth.value) ? errors.birth.innerHTML = '' :

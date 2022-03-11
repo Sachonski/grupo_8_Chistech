@@ -21,15 +21,14 @@
                         <% } else { %>
                             Usuario
                         <% } %>
-                        </p>
+                    </p>
+                    <img src="\img\users\pngegg.png"  alt="imagen avatar" class="avatar">
                 </div>
+                
             </div>
 
             <section class="detalle-producto">
                 <div class="descripcion">
-       
-                
-                        
                         <a href="/carrito" class="boton">Carrito</a>
                         <a href="#" class="boton">Ver Compras</a>
                         <a href="/users/editar/<%= user.id %>" class="boton admin"> Editar</a>
@@ -37,9 +36,6 @@
 							<button type="submit" onclick="confirm('Esta seguro que desea borrar el Usuario?')" value="Click para ver un mensaje de alerta" style="display: inline-flex" class="boton admin">Eliminar</button>
 						</form>
                         <a href="/users/logout" class="boton admin"> Logout</a>
-
- 
-                    
                 </div>
             </section>
         </article>
