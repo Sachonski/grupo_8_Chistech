@@ -59,4 +59,4 @@
 - 2. Hacer más: Nombrar funciones y clases con nombres acordes.
 - 3. Continuar haciendo: Seguir comentando el codigo, nunca hay suficientes comentarios ;)
 - 4. Hacer menos: No debatir como vamos a encarar el ultimo sprint.
-- 5. Dejar de hacer: No estimar la dificultad de las tareas correctamente.
+- 5. Dejar de hacer: No estimar la dificultad de las tareas.
