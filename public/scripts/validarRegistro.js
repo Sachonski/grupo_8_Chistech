@@ -63,7 +63,7 @@ const validateFields = (e) => {
             errors.email.innerHTML = 'El email no es válido';
             break;
         case "password":
-            expressions.password.trim.test(formData.password.value.trim()) ? errors.password.innerHTML = '' :
+            expressions.password.test(formData.password.value.trim()) ? errors.password.innerHTML = '' :
             errors.password.innerHTML = 
             'La contraseña debe tener más de 4 letras, y no puede contener caracteres especiales';
             break;

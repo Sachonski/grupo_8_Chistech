@@ -14,10 +14,10 @@
           method="post"
           class="form-registro"
           name="usuarioEdicion"
-          enctype="enctype=multipart/form-data"
+          enctype="multipart/form-data"
         >
 
-        <input style="visibility: hidden;" type="number" name="id" value="<%= user.id  %>">
+        <input style="visibility: hidden;" type="number" name="id" value="<%= locals.old && old.id? old.id : user.id %>">
 
           <!-- ! ----------first_name ------------>
 
@@ -30,7 +30,7 @@
               placeholder="Nombre"
               class="control"
               autocomplete="first_name"
-              value="<%= user.first_name  %>"
+              value="<%= locals.old && old.first_name? old.first_name : user.first_name  %>"
             />
             <div style="color: maroon" id="first_name_error"></div>
           </div>
@@ -49,7 +49,7 @@
               placeholder="Apellido"
               class="control"
               autocomplete="last_name"
-              value="<%= user.last_name %>"
+              value="<%= locals.old && old.last_name? old.last_name : user.last_name %>"
             />
             <div style="color: maroon" id="last_name_error"></div>
           </div>
@@ -68,7 +68,7 @@
               placeholder="Nombre Usuario"
               class="control"
               autocomplete="username"
-              value="<%= user.user_name %>"
+              value="<%= locals.old && old.user_name? old.user_name : user.user_name %>"
             />
             <div style="color: maroon" id="user_name_error"></div>
           </div>
@@ -80,7 +80,7 @@
 
           <div class="form-control">
             <label>Imagen del perfil</label>
-            <input type="file" id="avatar" name="avatar" accept=".jpg,.png" />
+            <input type="file" id="avatar" name="avatar" accept=".jpg,.png" value="<%= locals.old && old.avatar? old.avatar : user.avatar %>"/>
           </div>
           <div style="color: maroon" id="avatar_error"></div>
 
@@ -95,7 +95,7 @@
               placeholder="Fecha Nacimiento"
               class="control"
               autocomplete="birth"
-              value="<%= user.birth  %>"
+              value="<%= locals.old && old.birth? old.birth : user.birth  %>"
             />
             <div style="color: maroon" id="birth_error"></div>
           </div>
@@ -113,7 +113,7 @@
               name="email"
               placeholder="ingrese un email"
               class="control"
-              value="<%= user.email  %>"
+              value="<%= locals.old && old.avatar? old.avatar : user.email  %>"
               autocomplete="email"
             />
             <div style="color: maroon" id="email_error"></div>

@@ -1,8 +1,9 @@
+const path = require("path");
 const bcryptjs = require("bcryptjs");
+const fs = require("fs");
 const { validationResult } = require("express-validator");
 
 const db = require("../database/models");
-const sequelize = db.sequelize;
 
 const controller2 = {
   // Initialize the controller
@@ -179,11 +180,13 @@ const controller2 = {
         first_name: first_name.trim(),
         last_name: last_name.trim(),
         user_name: user_name.trim(),
+        avatar: req.file ? req.file.filename : "no image",
         email: email,
         birth: birth,
         password: bcryptjs.hashSync(password, 10),
         admin: admin,
       }).then((newUser) => {
+        console.log(newUser);
         req.session.user = newUser;
 
         if (req.body.remember) {
@@ -257,8 +260,9 @@ const controller2 = {
   editput: (req, res) => {
     let userSession = req.session.user;
     let params = req.params.id;
-    let id;
     let user = req.body;
+    user.avatar = req.file ? req.file.filename : "no image";
+    let id;
 
     const errors = validationResult(req);
 
@@ -327,6 +331,7 @@ const controller2 = {
                   first_name: user.first_name,
                   last_name: user.last_name,
                   user_name: user.user_name,
+                  avatar: req.file ? req.file.filename : "no image",
                   email: user.email,
                   birth: user.birth,
                   password: bcryptjs.hashSync(user.password, 10),
@@ -337,7 +342,14 @@ const controller2 = {
                 }
               )
                 .then(() => {
-                  req.session.user = userUpdated;
+                  db.User.findByPk(id)
+                    .then((user) => {
+                      req.session.user = user;
+                    })
+                    .catch((error) => {
+                      res.render("Error", { error: { msg: "error edit" } });
+                    });                  
+
                   if (req.body.remember) {
                     res.cookie("remember", userUpdated, {
                       maxAge: 1000 * 60 * 60 * 24 * 7,
@@ -347,9 +359,7 @@ const controller2 = {
                 .catch((error) => {
                   ok = false;
                 });
-
               res.redirect("/users/perfil/" + id);
-              console.log(">>>>> ok <<<");
             }
           }
         })

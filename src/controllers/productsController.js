@@ -1,10 +1,8 @@
 const path = require('path');
-const { Op } = require("sequelize");
 const fs = require("fs");
 const { validationResult } = require("express-validator");
 
 const db = require("../database/models");
-const sequelize = db.sequelize;
 
 const controller = {
     
