@@ -2,9 +2,9 @@ const { check } = require('express-validator');
 
 module.exports = [
 	check('first_name')
-		.notEmpty().trim().withMessage('Debes completar el nombre').bail(),
+		.notEmpty().trim().isLength({ min: 2 }).withMessage('Debes completar el nombre').bail(), //.isLength({ min: 2 })
 	check('last_name')
-		.notEmpty().trim().withMessage('Debes completar el apellido').bail(),
+		.notEmpty().trim().isLength({ min: 2 }).withMessage('Debes completar el apellido').bail(), // .isLength({ min: 2 })
 	check('user_name')
 		.notEmpty().trim().withMessage('Debes completar el nombre').bail()
 		.isLength({ min: 5 }).withMessage('El nombre debe ser más largo'),

@@ -789,13 +789,14 @@ footer h2 {
   }
 }
 
-/* .grupo-checkout {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    width: 100%;
-} */
+.avatar {
+  width: 5rem;
+  height: 5rem;
+  margin-top: 5rem;
+  border-radius: 50%;
+  border: 1px solid var(--gray-500);
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.07);
+}
 
 .grupo-checkout div {
   display: flex;
@@ -900,164 +901,3 @@ input[type="file"] {
   padding-left: 0;
 }
 
-/* 
-.productos ul,
-.productos-destacados {
-  border: dotted red 2px;
-  display: flex;
-  align-content: center;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  column-gap: 20px;
-  row-gap: 20px;
-}
-
-.menu-de-registro {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.menu-de-registro div {
-  padding: 4px;
-  margin: 2px;
-}
-
-.menu-user-login {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.menu-user-login div {
-  padding: 4px;
-  margin: 2px;
-} */
-
-/* 
-    i{
-  font-size:1.2rem;}
-/* }  
-
-.productos ul,
-.productos-destacados {
-  border: dotted red 2px;
-  display: flex;
-  align-content: center;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  column-gap: 20px;
-  row-gap: 20px;
-}
-
-.menu-de-registro {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.menu-de-registro div {
-  padding: 4px;
-  margin: 2px;
-}
-
-.menu-user-login {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.menu-user-login div {
-  padding: 4px;
-  margin: 2px;
-} */
-
-/*
-LISTA DE TODAS LAS CLASES QUE SE UTILIZAN EN LA PAGINA
-
-.carrito-checkout 
-.carrito-checkout,
-.carrito-compras 
-.carrito-detalle-compra 
-.carrito-detalle-compra input 
-.carrito-detalle-producto 
-.carrito-detalle-producto div 
-.carrito-imagen 
-.carrito-producto 
-.categorias-productos 
-.categorias-productos a 
-.categorias-productos i 
-.categorias-productos img 
-.categorias-productos li 
-.clase-producto 
-.clase-producto img 
-.clase-producto li 
-.clase-producto p 
-.container 
-.container 
-.container 
-.container-barra-lateral 
-.container-barra-lateral h2 
-.descripcion 
-.descripcion 
-.destacados h2 
-.detalle-producto 
-.detalle-producto 
-.detalle-producto 
-.detalle-producto 
-.detalle-producto .boton,
-.detalle-producto .boton:hover,
-.footer 
-.footer a 
-.footer a:hover 
-.footer li 
-.footer ul 
-.grupo-checkout .boton,
-.grupo-checkout .boton:hover 
-.grupo-checkout .precio 
-.grupo-checkout div 
-.grupo-checkout input 
-.linea-separadora 
-.logo 
-.navbar 
-.navbar a 
-.navbar ul 
-.product .boton 
-.product .boton:hover 
-.product-card 
-.product-description 
-.product-description h3 
-.product-description p 
-.product-image 
-.product-image img 
-.product-price 
-.product-price div 
-.product-price p 
-.producto 
-.producto 
-.producto h2 
-.products 
-.products 
-.products 
-.products 
-.slider-info 
-.slider-info i 
-.slider-info i 
-.slider-info li 
-.slider-info p 
-.slider-info ul 
-.slider-inicial 
-.slider-producto 
-.slider-producto img 
-.slider-producto li 
-.slider-producto ul 
-
-*/

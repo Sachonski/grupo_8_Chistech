@@ -18,7 +18,7 @@
                                 <% for(product of products) { %>
                                     <% if(product.stock){ %>
 
-                                        <%- include('./partials/producto') -%>
+                                        <%- include('./partials/producto', { product }) -%>
                                         <% } %>
                                             <% } %>
 
