@@ -45,9 +45,9 @@ const usersControllerApi = {
       user;
 
     db.User.create({
-      first_name: first_name.trim(),
-      last_name: last_name.trim(),
-      user_name: user_name.trim(),
+      first_name: first_name,
+      last_name: last_name,
+      user_name: user_name,
       email: email,
       birth: birth,
       password: bcryptjs.hashSync(password, 10),

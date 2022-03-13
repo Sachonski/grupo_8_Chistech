@@ -9,10 +9,8 @@ const controller = {
     // Listar productos de la tienda
     productos: (req, res) => {
         let userSession = req.session.user
-        console.log(userSession);
         db.Product.findAll()
             .then(products => {
-                console.log(products);
                 res.render('productos', { products, userSession })
             })
             .catch((error) => {

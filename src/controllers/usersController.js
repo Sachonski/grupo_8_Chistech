@@ -186,7 +186,6 @@ const controller2 = {
         password: bcryptjs.hashSync(password, 10),
         admin: admin,
       }).then((newUser) => {
-        console.log(newUser);
         req.session.user = newUser;
 
         if (req.body.remember) {
