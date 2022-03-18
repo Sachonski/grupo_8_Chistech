@@ -66,9 +66,99 @@ header {
 }
 
 .navbar-movil a {
-  color: black;
+  color: rgb(238, 227, 227);
 }
 
+/*! comienza menu desplegable hamburguesa */
+
+.main-nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 80%;
+  margin-left: -100%;
+  transition: all .2s linear;
+  background-color: var(--gray-smoky);
+  z-index: 10;
+}
+
+.main-nav.show{
+  margin-left: 0;
+}
+
+.nav-links{
+  background-color: var(--gray-smoky);
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: 100%;
+  align-items: center;
+}
+
+.link-item{
+  margin-top: 5rem;
+  color: var(--gray-200);
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+}
+
+.link-item::after {
+  position: absolute;
+  content: "";
+  background-color: var(--gray-smoky);
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  transition: 0.3s ease all;
+}
+
+.link-item:hover::after {
+  width: 100%;
+}
+
+.button-menu{
+  z-index: 11;
+  width: 40px;
+  height: 40px;
+  border: none;
+  display: flex;
+  background: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.button-menu span{
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: var(--gray-200);
+  border-radius: 3px;
+  transform-origin: 4px 0px;
+  transition: all .2s linear;
+}
+
+.button-menu.close span {
+  opacity: 1;
+  transform: rotate(45deg) translate(0px, 0px);
+  background: var(--gray-200);
+}
+
+.button-menu.close span:nth-child(2){
+  transform: rotate(-45deg) translate(-8px, 5px);
+}
+
+.button-menu.close span:nth-child(3){
+  display: none;
+}
+
+
+/*! termina menu desplegable */
 
 i {
   font-size: 1.4rem;
