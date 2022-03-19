@@ -45,6 +45,8 @@ const controller = {
         return res.render('sobreNosotros', {userSession: userSession});
     }, 
 
+   // inicio controlador carrito
+
     mostrarCarrito: (req, res) => {
         let userSession = req.session.user
         // req.session.user.carrito = carrito;
