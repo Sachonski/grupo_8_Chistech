@@ -79,7 +79,7 @@ const controller = {
 
     },
 
-    //! falta hacer andar metodo delete
+  
 
     eliminarCarrito: function (req, res) {
         let id = req.body.id;
@@ -109,6 +109,18 @@ const controller = {
             })
             console.log(sale);
 
+            // for (let i = 0; i < sale.length; i++) {
+            //     const element = sale[i];
+                
+            
+            //     db.Sale.create(element)
+            //         .then(() => {
+            //             console.log('compra realizada');
+            //             carrito.length = 0;
+            //             res.redirect('/carrito');
+            //         })
+            //         .catch((error) => { console.log(error); });
+            // }
             
             db.Sale.bulkCreate(sale)
             .then(() => {
