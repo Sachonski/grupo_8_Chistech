@@ -8,19 +8,29 @@ const bcryptjs = require("bcryptjs");
 const usersControllerApi = {
   list: (req, res) => {
     db.User.findAll()
-      .then((users) => {  
-        let respuesta = {
-          meta: {
-            status: 200,
-            total: users.length,
-            url: "api/users",
-          },
-          data: users,
+    .then((users) => {
+      let usuarios = users.map((user) => {
+        return {
+          first_name : user.first_name,
+          last_name : user.last_name,
+          user_name : user.user_name,
+          birth : user.birth,
+          email : user.email,
+          admin : user.admin,
         };
-        res.json(respuesta);
       })
-      .catch((error) => res.send(error));
-  },
+      let respuesta = {
+        meta: {
+          status: 200,
+          total: users.length,
+          url: "api/users",
+        },
+        data: usuarios,
+      };
+      res.json(respuesta);
+    })
+    .catch((error) => res.send(error));
+},
 
   detail: (req, res) => {
     db.User.findByPk(req.params.id)
