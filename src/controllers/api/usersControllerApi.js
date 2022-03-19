@@ -8,7 +8,7 @@ const bcryptjs = require("bcryptjs");
 const usersControllerApi = {
   list: (req, res) => {
     db.User.findAll()
-      .then((users) => {
+      .then((users) => {  
         let respuesta = {
           meta: {
             status: 200,
@@ -25,13 +25,15 @@ const usersControllerApi = {
   detail: (req, res) => {
     db.User.findByPk(req.params.id)
       .then((users) => {
+        let {first_name , last_name , user_name , birth , email , admin} = users
+
         let respuesta = {
           meta: {
             status: 200,
             total: users.length,
             url: "api/users/detail/:id",
           },
-          data: users,
+          data:{first_name , last_name , user_name , birth , email , admin},
         };
         res.json(respuesta);
       })
