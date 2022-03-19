@@ -64,10 +64,8 @@
 
                             <div class="products">
                                 <% for(product of products) { %>
-                                    <% if(product.discount == 25 && product.stock) { %>
                                         <%- include('./partials/producto', { product }) -%>
                                             <% } %>
-                                                <% } %>
                             </div>
                         </div>
                     </section>

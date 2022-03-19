@@ -56,6 +56,7 @@ module.exports = (sequelize, dataTypes) => {
 
     let config = {
         timestamps: false,
+        underscored: true,
         // createdAt: 'created_at',
         // updatedAt: 'updated_at',
         // deletedAt: false
@@ -75,7 +76,7 @@ module.exports = (sequelize, dataTypes) => {
 
 
         Product.belongsToMany(models.User, {
-            as: 'Users',
+            // as: 'Users',
             through: 'Sales',
             foreignKey: 'product_id',
             otherKey: 'user_id',

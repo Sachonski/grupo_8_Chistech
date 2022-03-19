@@ -33,12 +33,17 @@ module.exports = (sequelize, dataTypes) => {
         total : {
             type : dataTypes.DECIMAL,
             allowNull : false
+        },
+        invoice : {
+            type : dataTypes.STRING,
+            allowNull : false           
         }
     };
 
     let config = {
         tableName: 'Sales',
         timestamps: false,
+        underscored: true,
         // createdAt: 'created_at',
         // updatedAt: 'updated_at',
         // deletedAt: false
@@ -48,23 +53,17 @@ module.exports = (sequelize, dataTypes) => {
 
     Sale.associate = function(models){
 
-        // Sale.belongsToMany(models.Product, {
-        //     as: 'Product',
-        //     through: 'Product',
-        //     foreignKey: 'product_id',
-        //     otherKey: 'user_id',
-        //     timestamps: false
-        // })
+        // Sale.hasMany(models.Product, {
+        //     as: 'Products',
+        //     foreignKey: 'id'
+        // });
+        
+        // Sale.hasMany(models.User, {
+        //     as: 'Users',
+        //     foreignKey: 'id'
+        // });
 
-        // Sale.belongsToMany(models.User, {
-        //     as: 'Sales',
-        //     through: 'User',
-        //     foreignKey: 'user_id',
-        //     otherKey: 'product_id',
-        //     timestamps: false
-        // })
-    }
-    
+    }    
 
     return Sale
 };

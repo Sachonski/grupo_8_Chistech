@@ -54,7 +54,7 @@
                                     <% } %>
                         </p>
                         <input type="number" name=" " id=" " value="1" />
-                        <a href="#" class="boton"> Agregar al carrito</a>
+                        <a href="/carrito/<%= product.id %>" class="boton"> Agregar al carrito</a>
                         <% if (locals.user && user.admin===1) { %>
                             <a href="/products/productoEdicion/<%= product.id %>" class="boton admin"> Editar</a>
                             <form action="/products/productoDelete/<%= product.id %>?_method=DELETE" method="POST" onsubmit=" window.confirm('Seguro que desea eliminar el Producto?')" style="display: inline-flex">

@@ -1,4 +1,3 @@
-const path = require("path");
 const bcryptjs = require("bcryptjs");
 const fs = require("fs");
 const { validationResult } = require("express-validator");
