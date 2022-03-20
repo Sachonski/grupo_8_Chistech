@@ -23,7 +23,7 @@ const totalCarrito = (carrito) => {
 }
 
 // inicio controlador
-const controller = {
+const mainController = {
 
     home: (req, res) => {
         let userSession = req.session.user;
@@ -140,4 +140,4 @@ const controller = {
     
 }
 
-module.exports = controller;
+module.exports = mainController;

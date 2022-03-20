@@ -70,9 +70,9 @@ module.exports = (sequelize, dataTypes) => {
         //     foreignKey: 'product_id'
         // })
 
-        // // Sale.hasMany(models.Product, {
-        // //     foreignKey: 'id'
-        // // });
+        // Sale.hasMany(models.Product, {
+        //     foreignKey: 'id'
+        // });
 
         Product.belongsTo(models.Packaging, {
             as: 'Packaging',
