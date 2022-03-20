@@ -2,6 +2,7 @@ const express = require("express");
 const morgan = require("morgan");
 const bodyParser= require('body-parser')
 const cookies = require('cookie-parser');
+const cors = require('cors')
 
 const app = express();
 
@@ -22,6 +23,8 @@ const salesRoutesApi = require('./routes/api/salesRoutesApi');
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
+app.use(cors())
+
 app.use(session({
     cookie: {maxAge:60*60*1000},
     secret: "mySecret",
@@ -31,7 +34,7 @@ app.use(session({
 
 app.use(cookies());
 
-app.use(userLogged); 
+app.use(userLogged);
 
 app.use(remember);
 
