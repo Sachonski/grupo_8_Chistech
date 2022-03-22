@@ -16,4 +16,5 @@ router.put('/update/:id', productsControllerApi.update);
 //Eliminar una producto
 router.delete('/delete/:id', productsControllerApi.destroy);
 
+
 module.exports = router;

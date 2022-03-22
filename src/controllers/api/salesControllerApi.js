@@ -148,7 +148,24 @@ const salesControllerApi = {
                 res.json(respuesta);
             })
             .catch(error => res.send(error))
-    }
+    },
+
+    
+    categories: (req, res) => {
+        db.Category.findAll()
+            .then(Cat => {
+                let respuesta = {
+                    meta : {
+                        status : 200,
+                        total : Cat.length,
+                        url : 'api/sales/category'
+                    },
+                    data : Cat
+                }
+                res.json(respuesta)
+            })
+    },
+    
 
 }
 

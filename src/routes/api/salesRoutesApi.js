@@ -11,5 +11,7 @@ router.get('/sales', salesControllerApi.sales);
 router.get('/top5', salesControllerApi.top5);
 //Agregar una producto
 router.get('/last', salesControllerApi.last);
+//Categories
+router.get('/category' , salesControllerApi.categories)
 
 module.exports = router;
