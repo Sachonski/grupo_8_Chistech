@@ -13,6 +13,16 @@
   --naranja: #e4ab41;
 }
 
+.destacados {
+  background-color: var(--gray-100);
+  padding: 1rem;
+  margin-left:10rem;
+  margin-right:10rem;
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+
 * {
   position: relative;
   text-decoration: none;
