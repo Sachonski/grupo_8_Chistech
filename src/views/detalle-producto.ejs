@@ -75,7 +75,11 @@
                     <div class="container">
                         <h2 class="bold">Productos En Oferta</h2>
                         <div class="products">
-                           
+                            <% for(product of products) { %>
+                                <% if(product.discount>= 0) { %>
+                                  <%- include('./partials/producto', { product }) -%>
+                                    <% } %>
+                                      <% } %>
                         </div>
                     </div>
                 </section>

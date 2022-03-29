@@ -1,8 +1,10 @@
 const path = require('path');
 const fs = require("fs");
+const db = require("../database/models");
+const { Op } = require("sequelize");
 const { validationResult } = require("express-validator");
 
-const db = require("../database/models");
+
 
 const controller = {
 
@@ -39,13 +41,25 @@ const controller = {
     detalleProducto: (req, res) => {
         let userSession = req.session.user
         const id = req.params.id;
-        db.Product.findByPk(id)
-            .then(product => {
-                res.render('detalle-producto', { product: product, userSession: userSession });
+
+        db.Product.findAll({
+            where: { discount: { [Op.gt]: 20 } },
+
+        })
+            .then(products => {
+
+                let products = products;
+                db.Product.findByPk(id)
+
+                    .then(product => {
+                        res.render('detalle-producto', { product: product, products : products, userSession: userSession });
+                    })
+                    .catch((error) => {
+                        res.render("Error", { error: { msg: "error" }, userSession });
+                    })
+
             })
-            .catch((error) => {
-                res.render("Error", { error: { msg: "error" }, userSession });
-            })
+
     },
 
 

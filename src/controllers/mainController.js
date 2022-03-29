@@ -29,7 +29,7 @@ const mainController = {
         let userSession = req.session.user;
 
         db.Product.findAll({
-            where: { discount: { [Op.gt]: 10 } },
+            where: { discount: { [Op.gt]: 0 } },
         })
             .then(products => {
                 res.render('home', { products, userSession });
