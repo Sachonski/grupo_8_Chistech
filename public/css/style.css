@@ -463,6 +463,7 @@ text-align: left;
   overflow: hidden;
   border-radius: 0.5rem;
   padding: 1rem;
+  background-color: 
 }
 
 .product-price div {
@@ -478,15 +479,17 @@ text-align: left;
 
 .product-price p {
   font-size: 1.2rem;
-  line-height: 1.75rem;
+  padding: 0.3rem;
+  border-radius: 5px;
   font-weight: 600;
   color: var(--naranja);
   margin: 0;
+  background-color: rgba(29, 29, 29, 0.49);
 }
 .tachado {
   text-decoration: line-through;
   font-size: 1rem;
-  color: var(--gray-500);
+  color: var(--gray-100);
 }
 
 .detalle-producto .boton,
@@ -901,6 +904,7 @@ footer h2 {
   font-size: 2rem;
   color: var(--naranja);
   padding: 1rem;
+  
 }
 
 .grupo-checkout .boton,
