@@ -1,81 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include('./partials/head', {title: 'Detalle del Producto'}) -%>
+<%- include('./partials/head', {title: 'Detalle del Producto' }) -%>
 
-<body>
-    <%- include('./partials/header') -%>
+    <body>
+        <%- include('./partials/header') -%>
 
-    <main>
-        <article class="container producto">
-            <section class="slider-producto">
-                <ul>
-                    <% for (var i = 0; i < 4; i++) { %>
-                    <li id="slide2"><img src="..\..\img\products\<%= product.image %>" alt="prod" /></li>
-                    <% } %>
-                </ul>
-            </section>
+            <main>
+                <article class="container producto">
+                    <section class="slider-producto">
+                        <ul>
+                            <% for (var i=0; i < 4; i++) { %>
+                                <li id="slide2"><img src="..\..\img\products\<%= product.image %>" alt="prod" /></li>
+                                <% } %>
+                        </ul>
+                    </section>
 
-            <section class="detalle-producto">
-                <div class="descripcion">
-                    <h2><%= product.name %></h2>
-                    <p>
-                        <%= product.description %>
-                        <br>
-                        Este producto se vende
-                        <% if(product.packaging_id === 0 ) { %>
-                            <%= 'por horma' %>
-                                <% } else { %>
-                                    <%= 'fraccionado' %>
-                                        <% } %>
-                    </p>
-                </div>
-                <div class="grupo-checkout">
+                    <section class="detalle-producto">
+                        <div class="descripcion">
+                            <h2>
+                                <%= product.name %>
+                            </h2>
+                            <p>
+                                <%= product.description %>
+                                    <br>
+                                    Este producto se vende
+                                    <% if(product.packaging_id===0 ) { %>
+                                        <%= 'por horma' %>
+                                            <% } else { %>
+                                                <%= 'fraccionado' %>
+                                                    <% } %>
+                            </p>
+                        </div>
+                        <div class="grupo-checkout">
 
-                    <div>
-                        <p class="precio">
-                            <% if (product.discount) { %>
-                                <p>
-                                    <spam class="tachado">
-                                        $ <%= product.price.toLocaleString(undefined,
-                                            {minimumFractionDigits: 2}) %>
-                                    </spam>
-                                </p>
+                            <div>
                                 <p class="precio">
-                                    $ <%= (product.price - (product.discount *
-                                        product.price / 100)).toLocaleString(undefined,
-                                        {minimumFractionDigits: 2}) %>
+                                    <% if (product.discount) { %>
+                                        <p>
+                                            <spam class="tachado">
+                                                $ <%= product.price.toLocaleString(undefined, {minimumFractionDigits:
+                                                    2}) %>
+                                            </spam>
+                                        </p>
+                                        <p class="precio">
+                                            $ <%= (product.price - (product.discount * product.price /
+                                                100)).toLocaleString(undefined, {minimumFractionDigits: 2}) %>
+                                        </p>
+                                        <% } else { %>
+                                            <p class="precio">
+                                                $ <%= product.price.toLocaleString(undefined, {minimumFractionDigits:
+                                                    2}) %>
+                                            </p>
+                                            <% } %>
                                 </p>
-                                <% } else { %>
-                                    <p class="precio">
-                                        $ <%= product.price.toLocaleString(undefined,
-                                            {minimumFractionDigits: 2}) %>
-                                    </p>
+                                <input type="number" name=" " id=" " value="1" />
+                                <a href="/carrito/<%= product.id %>" class="boton"> Agregar al carrito</a>
+                                <% if (locals.user && user.admin===1) { %>
+                                    <a href="/products/productoEdicion/<%= product.id %>" class="boton admin">
+                                        Editar</a>
+                                    <form action="/products/productoDelete/<%= product.id %>?_method=DELETE"
+                                        method="POST"
+                                        onsubmit=" window.confirm('Seguro que desea eliminar el Producto?')"
+                                        style="display: inline-flex">
+                                        <button type="submit" class="boton admin" class="boton admin">Eliminar</button>
+                                    </form>
                                     <% } %>
-                        </p>
-                        <input type="number" name=" " id=" " value="1" />
-                        <a href="/carrito/<%= product.id %>" class="boton"> Agregar al carrito</a>
-                        <% if (locals.user && user.admin===1) { %>
-                            <a href="/products/productoEdicion/<%= product.id %>" class="boton admin"> Editar</a>
-                            <form action="/products/productoDelete/<%= product.id %>?_method=DELETE" method="POST" onsubmit=" window.confirm('Seguro que desea eliminar el Producto?')" style="display: inline-flex">
-                                <button type="submit" class="boton admin"   class="boton admin">Eliminar</button>
-                            </form>
-                                <% } %>               
- 
+
+                            </div>
+                        </div>
+                    </section>
+                </article>
+                <section class="destacados">
+                    <div class="container">
+                        <h2 class="bold">Productos En Oferta</h2>
+                        <div class="products">
+                           
+                        </div>
                     </div>
-                </div>
-            </section>
-        </article>
-        <section class="destacados">
-            <div class="container">
-                <h2 class="bold">Productos En Oferta</h2>
+                </section>
 
-<!-- aca va la secciond e ofertas -->
-            </div>
-        </section>
-
-    </main>
-    <%- include('./partials/footer') -%>
-</body>
+            </main>
+            <%- include('./partials/footer') -%>
+    </body>
 
 </html>

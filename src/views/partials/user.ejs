@@ -1,20 +1,21 @@
-    <div class="user">
-        <a href="/users/perfil/<%= user.id %> ">
-            <div class="user-card">
-                <div class="user-description">
-                    <h3>
-                        <%= user.first_name %> <%= user.last_name %>
-                    </h3>
-                    <p>
-                        Email: <%= user.email %><br>
+<div class="user">
+    <a href="/users/perfil/<%= user.id %> ">
+        <div class="user-card">
+            <div class="user-description">
+                <h3>
+                    <%= user.first_name %>
+                        <%= user.last_name %>
+                </h3>
+                <p>
+                    Email: <%= user.email %><br>
                         Nombre de Usuario: <%= user.user_name %><br><br>
-                        <% if (user.admin === 1) { %>
-                            Administrador
-                        <% } else { %>
-                            Usuario
-                        <% } %>
-                        </p>
-                </div>
+                            <% if (user.admin===1) { %>
+                                Administrador
+                                <% } else { %>
+                                    Usuario
+                                    <% } %>
+                </p>
             </div>
-        </a>
-    </div>
+        </div>
+    </a>
+</div>
