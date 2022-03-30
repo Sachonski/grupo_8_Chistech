@@ -109,26 +109,11 @@ const mainController = {
                     invoice: userId + ' ' + saleDate
                 });
             })
-            console.log(sale);
-
-            // for (let i = 0; i < sale.length; i++) {
-            //     const element = sale[i];
-                
-            
-            //     db.Sale.create(element)
-            //         .then(() => {
-            //             console.log('compra realizada');
-            //             carrito.length = 0;
-            //             res.redirect('/carrito');
-            //         })
-            //         .catch((error) => { console.log(error); });
-            // }
-            
             db.Sale.bulkCreate(sale)
             .then(() => {
                 console.log('compra realizada');
                 carrito.length = 0;
-                res.redirect('/carrito');
+                res.redirect('/');
             })
             .catch((error) => { console.log(error); });
 

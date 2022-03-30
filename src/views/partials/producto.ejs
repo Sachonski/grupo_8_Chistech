@@ -1,54 +1,48 @@
 <div>
-    <div class="product">
-        <a href="/products/detalle-producto/<%= product.id %> ">
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="..\img\products\<%= product.image %>"
-                        alt="Queso bien rico" />
-                </div>
-                <div class="product-description">
-                    <h3>
-                        <%= product.name %>
-                    </h3>
-                    <p>
-                        Este producto se vende
-                        <% if(product.packaging_id === 1 ) { %>
-                            <%= 'fraccionado.' %>
-                        <% } else { %>
-                            <%= 'por horma.' %>
-                        <% } %>
-                    </p>
-                    <p>
-                        <% if(product.discount !== 0) { %>
-                        % <%= product.discount %> OFF
-                        <% } %>
-                    </p>
-                </div>
-                <div class="product-price">
-                    <div aria-hidden="true"></div>
-                    <% if (product.discount && product.discount !== 0) { %>
-                        <p>
-                            <spam class="tachado">
-                                $ <%= product.price.toLocaleString(undefined,
-                                    {minimumFractionDigits: 2}) %>
-                            </spam>
-                        </p>
-                        <p>
-                            $ <%= (product.price - (product.discount *
-                                product.price / 100)).toLocaleString(undefined,
-                                {minimumFractionDigits: 2}) %>
-                        </p>
-                        <% } else { %>
-                            <p>
-                                $ <%= product.price.toLocaleString(undefined,
-                                    {minimumFractionDigits: 2}) %>
-                            </p>
-                            <% } %>
-                </div>
-            </div>
-        </a>
-        <div>
-            <a href="/carrito/<%= product.id %>" class="boton"> Agregar al carrito</a>
+  <div class="product">
+    <a href="/products/detalle-producto/<%= product.id %> ">
+      <div class="product-card">
+        <div class="product-image">
+          <img
+            src="\img\products\<%= product.image %>"
+            alt="Queso bien rico"
+          />
         </div>
+        <div class="product-description">
+          <h3><%= product.name %></h3>
+          <p>
+            Este producto se vende <% if(product.packaging_id === 1 ) { %> <%=
+            'fraccionado.' %> <% } else { %> <%= 'por horma.' %> <% } %>
+          </p>
+          <p>
+            <% if(product.discount !== 0) { %> % <%= product.discount %> OFF <%
+            } %>
+          </p>
+        </div>
+        <div class="product-price">
+          <div aria-hidden="true"></div>
+          <% if (product.discount && product.discount !== 0) { %>
+          <p>
+            <spam class="tachado">
+              $ <%= product.price.toLocaleString(undefined,
+              {minimumFractionDigits: 2}) %>
+            </spam>
+          </p>
+          <p>
+            $ <%= (product.price - (product.discount * product.price /
+            100)).toLocaleString(undefined, {minimumFractionDigits: 2}) %>
+          </p>
+          <% } else { %>
+          <p>
+            $ <%= product.price.toLocaleString(undefined,
+            {minimumFractionDigits: 2}) %>
+          </p>
+          <% } %>
+        </div>
+      </div>
+    </a>
+    <div>
+      <a href="/carrito/<%= product.id %>" class="boton"> Agregar al carrito</a>
     </div>
+  </div>
 </div>

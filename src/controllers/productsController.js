@@ -47,12 +47,14 @@ const controller = {
 
         })
             .then(products => {
+                console.log('****');
+                console.log(products);
 
-                let products = products;
+                let productos = products;
                 db.Product.findByPk(id)
 
                     .then(product => {
-                        res.render('detalle-producto', { product: product, products : products, userSession: userSession });
+                        res.render('detalle-producto', { product: product, products : productos, userSession: userSession });
                     })
                     .catch((error) => {
                         res.render("Error", { error: { msg: "error" }, userSession });

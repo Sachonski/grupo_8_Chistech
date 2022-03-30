@@ -62,10 +62,10 @@
             <h2 class="bold">Productos Recomendados</h2>
             <div class="products">
               <% for(product of products) { %>
-                <% if(product.discount>= 20 && product.stock) { %>
-                  <%- include('./partials/producto', { product }) -%>
-                    <% } %>
-                      <% } %>
+              <% if(product.discount>= 20 && product.stock) { %>
+              <%- include('./partials/producto', { product }) -%>
+              <% } %>
+              <% } %>
             </div>
           </div>
         </section>
