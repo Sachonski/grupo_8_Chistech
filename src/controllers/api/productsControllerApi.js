@@ -169,8 +169,7 @@ const productsControllerApi = {
             res.json(respuesta);
         })    
         .catch(error => res.send(error))
-    }
-    
+    },
 }
 
 module.exports = productsControllerApi;

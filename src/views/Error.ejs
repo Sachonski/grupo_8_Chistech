@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include('./partials/head', {title: 'Quienes Somos'}) -%>
+<%- include('./partials/head', {title: 'Quienes Somos'}) -%>
 
 <body>
 
-    <body>
-        <%- include('./partials/header') -%>
-        <%- include('./partials/category') -%>
+  <body>
+    <%- include('./partials/header') -%>
+    <%- include('./partials/category') -%>
 
-        <main>
-           <h1>ERROR</h1>
-           <% if (locals.user && user.user_name) { %>
-            <h1>Hola <%= user.user_name %> </h1>
-           <% } %>
+    <main class="sobreNosotros">
+      <div class="oops">
+        <div>
+          <h1>ERROR</h1>
+          <% if (locals.user && user.user_name) { %>
+          <h2>Hola <%= user.user_name %> </h2>
+          <% } %>
+        </div>
+        <% if (locals.error && error.msg) { %>
+        <div class="container">
+          <p>Error : <%= error.msg %> </p>
+        </div>
+        <% } %>
+      </div>
+      <div class="oopsImg">
+      <img  class="oopsImg" src="..\img\products\oops.png" alt="oops" />
+    </div>
 
-           <% if (locals.error && error.msg) { %>
-            <h3>Error al intentar ingresar: <%= error.msg %> </h3>
-           <% } %>
 
 
+    </main>
+    <%- include('./partials/footer') -%>
 
-        </main>
-        <%- include('./partials/footer') -%>
-
-    </body>
+  </body>
 
 </html>

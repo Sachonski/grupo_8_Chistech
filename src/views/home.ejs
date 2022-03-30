@@ -4,7 +4,7 @@
 
     <body>
         <%- include('./partials/header') -%>
-
+        
             <main>
                 <div class="slider-inicial">
                     <ul>
@@ -60,16 +60,17 @@
 
                     <section class="destacados">
                         <div class="container">
-                            <h2 class="bold">Semana super Ofertas</h2>
+                            <h2 class="bold">Ofertas Semanales</h2>
 
                             <div class="products">
                                 <% for(product of products) { %>
-                                    <% if(product.discount == 25 && product.stock) { %>
-                                        <%- include('./partials/producto') -%>
-                                            <% } %>
-                                                <% } %>
+                                    <% if(product.discount>= 0) { %>
+                                      <%- include('./partials/producto', { product }) -%>
+                                        <% } %>
+                                          <% } %>
                             </div>
                         </div>
+                        
                     </section>
                     <div class="linea-separadora"></div>
                     <section class="destacados">

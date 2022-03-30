@@ -1,178 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+<%- include('./partials/head', {title: 'Resumen de tu Compra' }) -%>
 
-    <%- include('./partials/head', {title: 'Resument de tu Compra'}) -%>
-
-<body>
+  <body>
     <%- include('./partials/header') -%>
 
-    <main>
-
+      <main>
         <section class="container carrito-compras destacados">
-            <div>
-                <h2 class="destacados">Detalle de tu compra</h2>
-                <ul class="carrito-lista">
-                    <li class="carrito-producto">
-                        <div class="carrito-detalle-producto">
-                            <a href=" /detalle-producto "><img class="carrito-imagen"
-                                    src="..\img\products\queso-azul-cabra-920x920.png " alt="Queso " /></a>
-                            <div>
-                                <p class="carrito-nombre-producto">Queso Azul</p>
-                                <button class="boton">Remover</button>
-                            </div>
-                        </div>
 
-                        <div class="carrito-detalle-compra">
-                            <input type="number" name="cantidad" value="1" id=" ">
-                            <p>$ 2000.00</p>
-                        </div>
+          <div class="checkout">
+            <h2 class="destacados">Detalle de tu compra</h2>
 
-                    </li>
-                    <li class="carrito-producto">
-                        <div class="carrito-detalle-producto">
-                            <a href=" /detalle-producto "><img class="carrito-imagen"
-                                    src="..\img\products\queso-azul-cabra-920x920.png " alt="Queso " /></a>
-                            <div>
-                                <p class="carrito-nombre-producto">Queso Azul</p>
-                                <button class="boton">Remover</button>
-                            </div>
-                        </div>
+            <ul class="container carrito-lista">
+              <!--! listado de productos en carrito -->
+              <% for(item of carrito) { %>
+                <li class="carrito-producto">
+                  <div class="carrito-detalle-producto">
+                    <a href=" /products/detalle-producto/<%= item.id %>">
+                      <img class="carrito-imagen" src="..\img\products\<%= item.image %>" alt="Queso " /></a>
+                    <div>
+                      <p class="carrito-nombre-producto">
+                        <%= item.name %>
+                      </p>
+                      <!--! boton eliminar articulo -->
+                      <form name="borrar-item" action="/carrito/<%= item.id %>" method="POST">
+                        <input style="visibility: hidden;" type="number" name="id" value="<%= item.id %>" />
+                        <button class="boton" type="submit">
+                          Eliminar
+                        </button>
+                      </form>
+                    </div>
+                  </div>
 
-                        <div class="carrito-detalle-compra">
-                            <input type="number" name="cantidad" value="1" id=" ">
-                            <p>$ 2000.00</p>
-                        </div>
-
-                    </li>
-                    <li class="carrito-producto">
-                        <div class="carrito-detalle-producto">
-                            <a href=" /detalle-producto "><img class="carrito-imagen"
-                                    src="..\img\products\queso-azul-cabra-920x920.png " alt="Queso " /></a>
-                            <div>
-                                <p class="carrito-nombre-producto">Queso Azul</p>
-                                <button class="boton">Remover</button>
-                            </div>
-                        </div>
-
-                        <div class="carrito-detalle-compra">
-                            <input type="number" name="cantidad" value="1" id=" ">
-                            <p>$ 2000.00</p>
-                        </div>
-
-                    </li>
-
-
-                </ul>
-            </div>
+                  <div class="carrito-detalle-compra">
+                    <p>$ <%= item.price %>
+                    </p>
+                  </div>
+                </li>
+                <% } %>
+            </ul>
+          </div>
         </section>
+        <!--! resumen total y total con descuento -->
         <section class="container carrito-checkout destacados">
-            <div>
-                <p>Total: $6000.00</p>
-            </div>
-            <div class="carrito-comprar">
-                <button class="boton">Comprar</button>
-            </div>
+          <div>
+            <p style="text-decoration:line-through;">Total: $ <%= total.precio %>
+            </p>
+            <p>Total: $ <%= total.descuento %>
+            </p>
+          </div>
+
+          <div class="carrito-comprar">
+            <form name="comprar-carrito" action="/carrito" method="POST" enctype="multipart/form-data">
+              
+              <button class="boton">Comprar</button>
+          </div>
         </section>
 
         <section class="destacados">
-            <h2>Productos Sugeridos</h2>
+          <div class="container">
+            <h2 class="bold">Productos Recomendados</h2>
+            <div class="products">
+              <% for(product of products) { %>
+              <% if(product.discount>= 20 && product.stock) { %>
+              <%- include('./partials/producto', { product }) -%>
+              <% } %>
+              <% } %>
+            </div>
+          </div>
         </section>
-        <div class="products">
-            <div>
-                <div class="product">
-                    <a href="/detalle-producto">
-                        <div class="product-card">
-                            <div class="product-image">
-                                <img src="..\img\products\queso-azul-cabra-920x920.png" alt="Queso bien rico" />
-                            </div>
-                            <div class="product-description">
-                                <h3>Queso Azul Tradicional</h3>
-                                <p>200g</p>
-                            </div>
-                            <div class="product-price">
-                                <div aria-hidden="true"></div>
-                                <p>$2000</p>
-                            </div>
-                        </div>
-                    </a>
-                    <div>
-                        <a href="#" class="boton"> Agregar al carrito</a>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="product">
-                    <a href="/detalle-producto">
-                        <div class="product-card">
-                            <div class="product-image">
-                                <img src="..\img\products\queso-mozzarella-polpetta-920x920.png" alt="Queso bien rico" />
-                            </div>
-                            <div class="product-description">
-                                <h3>Queso Mozzarella Polpetta</h3>
-                                <p>250g</p>
-                            </div>
-                            <div class="product-price">
-                                <div aria-hidden="true"></div>
-                                <p>$2000</p>
-                            </div>
-                        </div>
-                    </a>
-                    <div>
-                        <a href="#" class="boton"> Agregar al carrito</a>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="product">
-                    <a href="/detalle-producto">
-                        <div class="product-card">
-                            <div class="product-image">
-                                <img src="..\img\products\queso-pecorino-18-meses-920x920.png" alt="Queso bien rico" />
-                            </div>
-                            <div class="product-description">
-                                <h3>Queso Pecorino 18 Meses</h3>
-                                <p>500g</p>
-                            </div>
-                            <div class="product-price">
-                                <div aria-hidden="true"></div>
-                                <p>$2000</p>
-                            </div>
-                        </div>
-                    </a>
-                    <div>
-                        <a href="#" class="boton"> Agregar al carrito</a>
-                    </div>
-                </div>
-            </div>
-
-            <section>
-                <div>
-                    <div class="product">
-                        <a href="/detalle-producto">
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="..\img\products\queso-provolone-stagionato-920x920.png" alt="Queso bien rico" />
-                                </div>
-                                <div class="product-description">
-                                    <h3>Queso Provolone Stagionato</h3>
-                                    <p>500g</p>
-                                </div>
-                                <div class="product-price">
-                                    <div aria-hidden="true"></div>
-                                    <p>$2000</p>
-                                </div>
-                            </div>
-                        </a>
-                        <div>
-                            <a href="#" class="boton"> Agregar al carrito</a>
-                        </div>
-                    </div>
-                </div>
-        </div>
-        </div>
-        </section>
-    </main>
-    <%- include('./partials/footer') -%>
-</body>
+      </main>
+      <%- include('./partials/footer') -%>
+  </body>
 
 </html>

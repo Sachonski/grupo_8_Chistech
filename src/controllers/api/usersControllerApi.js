@@ -8,30 +8,42 @@ const bcryptjs = require("bcryptjs");
 const usersControllerApi = {
   list: (req, res) => {
     db.User.findAll()
-      .then((users) => {
-        let respuesta = {
-          meta: {
-            status: 200,
-            total: users.length,
-            url: "api/users",
-          },
-          data: users,
+    .then((users) => {
+      let usuarios = users.map((user) => {
+        return {
+          first_name : user.first_name,
+          last_name : user.last_name,
+          user_name : user.user_name,
+          birth : user.birth,
+          email : user.email,
+          admin : user.admin,
         };
-        res.json(respuesta);
       })
-      .catch((error) => res.send(error));
-  },
+      let respuesta = {
+        meta: {
+          status: 200,
+          total: users.length,
+          url: "api/users",
+        },
+        data: usuarios,
+      };
+      res.json(respuesta);
+    })
+    .catch((error) => res.send(error));
+},
 
   detail: (req, res) => {
     db.User.findByPk(req.params.id)
       .then((users) => {
+        let {first_name , last_name , user_name , birth , email , admin} = users
+
         let respuesta = {
           meta: {
             status: 200,
             total: users.length,
             url: "api/users/detail/:id",
           },
-          data: users,
+          data:{first_name , last_name , user_name , birth , email , admin},
         };
         res.json(respuesta);
       })
@@ -45,9 +57,9 @@ const usersControllerApi = {
       user;
 
     db.User.create({
-      first_name: first_name.trim(),
-      last_name: last_name.trim(),
-      user_name: user_name.trim(),
+      first_name: first_name,
+      last_name: last_name,
+      user_name: user_name,
       email: email,
       birth: birth,
       password: bcryptjs.hashSync(password, 10),

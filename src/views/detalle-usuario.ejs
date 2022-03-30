@@ -22,7 +22,7 @@
                         <a href="#" class="boton"> Usuario</a>
                         <!--- Usuario en singular -->
                         <a href="/users/editar/<%= user.id %>" class="boton admin"> Editar</a>
-                        <form action="/users/delete/<%= user.id %>?_method=DELETE" onsubmit="return window.confirm('Seguro que desea eliminar el Usuario?')" method="POST" style="display: inline-flex">
+                        <form action="/users/delete/<%= user.id %>?_method=DELETE" onsubmit="window.confirm('Seguro que desea eliminar el Usuario?')" method="POST" style="display: inline-flex">
                             <button type="submit"  value="Click para ver un mensaje de alerta"  class="boton admin">Eliminar</button>
                         </form>
  

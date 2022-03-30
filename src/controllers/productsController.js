@@ -1,18 +1,19 @@
 const path = require('path');
 const fs = require("fs");
+const db = require("../database/models");
+const { Op } = require("sequelize");
 const { validationResult } = require("express-validator");
 
-const db = require("../database/models");
+
 
 const controller = {
-    
+
     // Listar productos de la tienda
     productos: (req, res) => {
         let userSession = req.session.user
-        console.log(userSession);
+
         db.Product.findAll()
             .then(products => {
-                console.log(products);
                 res.render('productos', { products, userSession })
             })
             .catch((error) => {
@@ -40,13 +41,27 @@ const controller = {
     detalleProducto: (req, res) => {
         let userSession = req.session.user
         const id = req.params.id;
-        db.Product.findByPk(id)
-            .then(product => {
-                res.render('detalle-producto', { product: product, userSession: userSession });
+
+        db.Product.findAll({
+            where: { discount: { [Op.gt]: 20 } },
+
+        })
+            .then(products => {
+                console.log('****');
+                console.log(products);
+
+                let productos = products;
+                db.Product.findByPk(id)
+
+                    .then(product => {
+                        res.render('detalle-producto', { product: product, products : productos, userSession: userSession });
+                    })
+                    .catch((error) => {
+                        res.render("Error", { error: { msg: "error" }, userSession });
+                    })
+
             })
-            .catch((error) => {
-                res.render("Error", { error: { msg: "error" }, userSession });
-            })
+
     },
 
 
@@ -66,31 +81,31 @@ const controller = {
         old.name = req.body.name.trim()
         old.description = req.body.description.trim()
         if (errors.isEmpty()) {
-            if( path.extname(req.file.filename) === '.jpg' || path.extname(req.file.filename) === '.jpeg' || path.extname(req.file.filename) === '.png' || path.extname(req.file.filename) === '.gif'){
+            if (path.extname(req.file.filename) === '.jpg' || path.extname(req.file.filename) === '.jpeg' || path.extname(req.file.filename) === '.png' || path.extname(req.file.filename) === '.gif') {
 
-            const { name, price, discount, category, description, packaging, stock } = req.body;
-            db.Product
-                .create(
-                    {
-                        name: name.trim(),
-                        price: price,
-                        discount: discount,
-                        category_id: category,
-                        description: description.trim(),
-                        packaging_id: packaging,
-                        image: (req.file) ? req.file.filename : "no image",
-                        stock: JSON.parse(stock),
-                    }
-                )
-                .then(() => {
-                    return res.redirect('/products')
-                })
-                .catch(error => res.send(error))
-            }else{
+                const { name, price, discount, category, description, packaging, stock } = req.body;
+                db.Product
+                    .create(
+                        {
+                            name: name.trim(),
+                            price: price,
+                            discount: discount,
+                            category_id: category,
+                            description: description.trim(),
+                            packaging_id: packaging,
+                            image: (req.file) ? req.file.filename : "no image",
+                            stock: JSON.parse(stock),
+                        }
+                    )
+                    .then(() => {
+                        return res.redirect('/products')
+                    })
+                    .catch(error => res.send(error))
+            } else {
                 return res.render('productoCreacion', { msgErrors: { image: { msg: 'Formato de imagen invalido.' } }, product: product, old: product, userSession: userSession });
             }
         } else {
-        return res.render('productoCreacion', { product, userSession, old, msgErrors: errors.mapped() })
+            return res.render('productoCreacion', { product, userSession, old, msgErrors: errors.mapped() })
         }
 
     },
@@ -116,32 +131,32 @@ const controller = {
         let product = req.body;
         let { id, name, price, discount, category, description, packaging, stock } = product;
         if (errors.isEmpty()) {
-            if( path.extname(req.file.filename) === '.jpg' || path.extname(req.file.filename) === '.jpeg' || path.extname(req.file.filename) === '.png' || path.extname(req.file.filename) === '.gif'){
+            if (path.extname(req.file.filename) === '.jpg' || path.extname(req.file.filename) === '.jpeg' || path.extname(req.file.filename) === '.png' || path.extname(req.file.filename) === '.gif') {
                 db.Product
-                .update(
-                    {
-                        name: name,
-                        price: price,
-                        discount: discount,
-                        category_id: category,
-                        description: description,
-                        packaging_id: packaging,
-                        image: (req.file) ? req.file.filename : "no image",
-                        stock: JSON.parse(stock),
-                    },
-                    {
-                        where: { id: id }
+                    .update(
+                        {
+                            name: name,
+                            price: price,
+                            discount: discount,
+                            category_id: category,
+                            description: description,
+                            packaging_id: packaging,
+                            image: (req.file) ? req.file.filename : "no image",
+                            stock: JSON.parse(stock),
+                        },
+                        {
+                            where: { id: id }
+                        })
+                    .then(() => {
+                        return res.redirect('/products')
                     })
-                .then(() => {
-                    return res.redirect('/products')
-                })
-                .catch((error) => {
-                    res.render("Error", { error: { msg: "error al editar" }, userSession });
-                });
-            }else{
+                    .catch((error) => {
+                        res.render("Error", { error: { msg: "error al editar" }, userSession });
+                    });
+            } else {
                 return res.render('productoEdicion', { msgErrors: { image: { msg: 'Formato de imagen invalido.' } }, product: product, old: product, userSession: userSession });
             }
-    
+
         } else {
             // res.redirect('/products/productoEdicion/' + id)
             res.render('productoEdicion', { msgErrors: errors.mapped(), product: product, old: product, userSession: userSession });

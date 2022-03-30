@@ -13,7 +13,15 @@
   --naranja: #e4ab41;
 }
 
+.destacados {
+  background-color: var(--gray-100);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+
 * {
+  position: relative;
   text-decoration: none;
   list-style-type: none;
   box-sizing: border-box;
@@ -39,20 +47,20 @@ h4 {
 
 body {
   background-color: var(--gray-200);
+
   
 }
 
+
+
 header {
-  
   background-color: var(--gray-smoky);
-  /* filter:drop-shadow(2px 2px 2px rgb(0 0 0 / 0.8)); */
+  z-index: 10;
 
 }
 
 
 .navbar-movil {
-  display: flex;
-  justify-content: space-around;
   filter:drop-shadow(2px 2px 2px rgb(0 0 0 / 0.2));
 
 }
@@ -66,9 +74,95 @@ header {
 }
 
 .navbar-movil a {
-  color: black;
+  color: rgb(238, 227, 227);
 }
 
+/*! comienza menu desplegable hamburguesa */
+
+.main-nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  margin-left: -100%;
+  transition: all .2s linear;
+  background-color: var(--gray-smoky);
+}
+
+.main-nav.show{
+  margin-left: 0;
+}
+
+.nav-links{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 100%;
+  align-items: center;
+}
+
+.link-item{
+  margin-top: 5rem;
+  color: var(--gray-200);
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+}
+
+.link-item::after {
+  position: absolute;
+  content: "";
+  background-color: var(--gray-200);
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  transition: 0.3s ease all;
+}
+
+.link-item:hover::after {
+  width: 100%;
+}
+
+.button-menu{
+  width: 40px;
+  height: 40px;
+  border: none;
+  display: flex;
+  background: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.button-menu span{
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  background: var(--gray-200);
+  border-radius: 3px;
+  transform-origin: 4px 0px;
+  transition: all .2s linear;
+}
+
+.button-menu.close span {
+  opacity: 1;
+  transform: rotate(45deg) translate(0px, 0px);
+  background: var(--gray-200);
+}
+
+.button-menu.close span:nth-child(2){
+  transform: rotate(-45deg) translate(-8px, 5px);
+}
+
+.button-menu.close span:nth-child(3){
+  display: none;
+}
+
+
+/*! termina menu desplegable */
 
 i {
   font-size: 1.4rem;
@@ -146,7 +240,6 @@ i {
 .slider-inicial li {
   list-style: none;
   width: 100%;
-  position: relative;
   
 }
 
@@ -209,7 +302,6 @@ i {
  margin: 20px;
 }
 .categorias-productos i {
-  /*filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.2));*/
   font-size: 1.5rem;
   color: var(--gray-200);
   transition: all .5s ease-in-out;
@@ -245,6 +337,7 @@ i {
 /* BEGIN CONTAINER */
 
 .container {
+
   max-width: 42rem;
   margin: 0 auto;
   padding: 1rem 1rem;
@@ -261,6 +354,16 @@ i {
     padding: 2rem 1rem;
     max-width: 80rem;
   }
+}
+
+.sobreNosotros {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+  margin-left:23%;
+  margin-right:23%
 }
 
 /* END CONTAINER */
@@ -296,12 +399,6 @@ i {
   padding-bottom: 1rem;
 }
 
-.product-card,
-.user-card {
-  position: relative;
-  
-  /* margin-bottom: 1.5rem; */
-}
 
 .user {
   display: flex;
@@ -321,7 +418,6 @@ i {
 
 .product-image {
   filter:drop-shadow(0px 2px 2px rgb(0 0 0 /0.2));
-  position: relative;
   width: 100%;
   height: 18rem;
   border-radius: 0.5rem;
@@ -341,7 +437,6 @@ margin: -0.2rem;
 
 .product-description,
 .user-description {
-  position: relative;
   margin-top: 1rem;
 }
 
@@ -386,20 +481,37 @@ text-align: left;
   opacity: 0.15;
   background-image: linear-gradient(to top, rgb(198, 153, 5), rgba(0, 0, 0, 0));
 }
+.sobreNosotros {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  padding: 5rem;
+  text-align: center;
+}
 
+.oops {
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.oopsIgm {
+    width:50%;
+  border-radius: 50%;
+}
 
 .product-price p {
-  position: relative;
   font-size: 1.2rem;
-  line-height: 1.75rem;
+  padding: 0.3rem;
+  border-radius: 5px;
   font-weight: 600;
   color: var(--naranja);
   margin: 0;
+  background-color: rgba(29, 29, 29, 0.49);
 }
 .tachado {
   text-decoration: line-through;
   font-size: 1rem;
-  color: var(--gray-500);
+  color: var(--gray-100);
 }
 
 .detalle-producto .boton,
@@ -407,7 +519,6 @@ text-align: left;
 .carrito-detalle-producto .boton,
 .carrito-comprar .boton,
 .buttons .boton {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -568,7 +679,6 @@ footer h2 {
   align-items: center;
   flex-direction: column;
   background-color: var(--gray-smoky);
-  /*position : absolute */
   bottom: 0;
 }
 
@@ -592,7 +702,6 @@ footer h2 {
 }
 
 #footer-registro {
- /* position: absolute; */
  bottom: 0;
  width: 100%;
 }
@@ -817,6 +926,7 @@ footer h2 {
   font-size: 2rem;
   color: var(--naranja);
   padding: 1rem;
+  
 }
 
 .grupo-checkout .boton,

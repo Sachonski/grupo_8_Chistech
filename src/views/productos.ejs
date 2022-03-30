@@ -3,32 +3,32 @@
 
 <%- include('./partials/head', {title: 'Todos los Productos' }) -%>
 
-    <body>
-        <%- include('./partials/header') -%>
-        <%- include('./partials/category') -%>
-        <main>
+<body>
+  <%- include('./partials/header') -%>
+  <%- include('./partials/category') -%>
+  <main>
 
-                <div class="placeholderProduct"> </div>
-                <section class="destacados">
+    <div class="placeholderProduct"> </div>
+    <section class="destacados">
 
-                        <div class="container">
-                            <h2 class="bold">Productos</h2>
+      <div class="container">
+        <h2 class="bold">Productos</h2>
 
-                            <div class="products">
-                                <% for(product of products) { %>
-                                    <% if(product.stock){ %>
+        <div class="products">
+          <% for(product of products) { %>
+          <% if(product.stock){ %>
 
-                                        <%- include('./partials/producto', { product }) -%>
-                                        <% } %>
-                                            <% } %>
+          <%- include('./partials/producto', { product }) -%>
+          <% } %>
+          <% } %>
 
-                            </div>
-                        </div>
-                </section>
+        </div>
+      </div>
+    </section>
 
-            </main>
-            <%- include('./partials/footer') -%>
+  </main>
+  <%- include('./partials/footer') -%>
 
-    </body>
+</body>
 
 </html>
