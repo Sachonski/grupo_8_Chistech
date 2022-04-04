@@ -91,6 +91,7 @@ const mainController = {
 
     },
 
+   
     comprarCarrito: function (req, res) {
         let sale = [];
         let userId = req.session.user.id;
@@ -113,7 +114,7 @@ const mainController = {
             .then(() => {
                 console.log('compra realizada');
                 carrito.length = 0;
-                res.redirect('/');
+                res.redirect('/thankyou');
             })
             .catch((error) => { console.log(error); });
 
@@ -121,6 +122,12 @@ const mainController = {
             res.redirect('users/login');
         }
 
+    },
+
+    thankyou : (req, res) => {
+        let userSession = req.session.user;
+        res.render("thankyou", { error: { msg: "error al conectar a la base" }, userSession });
+        
     }
     
 }

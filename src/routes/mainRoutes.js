@@ -12,6 +12,7 @@ router.get("/", mainController.home);
 router.get("/sobreNosotros", mainController.sobreNosotros);
 router.get("/carrito", userSession, mainController.mostrarCarrito);
 router.post('/carrito', userSession, mainController.comprarCarrito);
+router.get('/thankyou', userSession, mainController.thankyou);
 router.get('/carrito/:id', userSession, mainController.agregarCarrito);
 router.post('/carrito/:id', userSession, mainController.eliminarCarrito);
 
